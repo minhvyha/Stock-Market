@@ -1,8 +1,11 @@
 import React from 'react'
+import { Line } from 'react-chartjs-2'
 
 function Main() {
   return (
-    <div>Main</div>
+    <div>
+      <Line />
+    </div>
   )
 }
 
