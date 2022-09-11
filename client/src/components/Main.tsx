@@ -8,9 +8,25 @@ function Main() {
   var API_KEY = 'UH9YQHN45N2JZGYW'
   var api = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=${API_KEY}`
 
-  useEffect(() =>{
-    setChartData({
-      label: ''
+  useEffect(() => {
+    const getData = async () => {
+      const response = await fetch(api)
+      return response.json()
+    }
+    getData().then((result) =>{
+      let label = []
+      let data = []
+      let price = result['Time Series (Daily)']
+      for (const [key, value] of Object.entries(price)){
+        try{
+
+          label.push(key)
+
+        }
+        catch (err){
+
+        }
+      }
     })
   }, [])
   return (
