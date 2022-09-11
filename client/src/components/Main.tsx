@@ -1,39 +1,47 @@
-import React, { useEffect, useState } from 'react'
-import { Line } from 'react-chartjs-2'
-import { data } from '../data'
+import React, { useEffect, useState } from "react";
+import { Line } from "react-chartjs-2";
+import { data } from "../data";
+import {Chart as ChartJS} from 'chart.js'
 
 function Main() {
-  const [chartData, setChartData] = useState<{label: Array<any>, datasets: Array<any>}>();
+  const [chartData, setChartData] = useState<{
+    label: Array<any>;
+    datasets: Array<any>;
+  }>({label: [], datasets: []});
 
-  var API_KEY = 'UH9YQHN45N2JZGYW'
-  var api = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=${API_KEY}`
+  var API_KEY = "UH9YQHN45N2JZGYW";
+  var api = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=${API_KEY}`;
 
   useEffect(() => {
     const getData = async () => {
-      const response = await fetch(api)
-      return response.json()
-    }
-    getData().then((result) =>{
-      let label = []
-      let data = []
-      let price = result['Time Series (Daily)']
-      for (const [key, value] of Object.entries(price)){
-        try{
-
-          label.push(key)
-
-        }
-        catch (err){
-
-        }
+      const response = await fetch(api);
+      return response.json();
+    };
+    getData().then((result) => {
+      var label = [];
+      var data = [];
+      let price = result["Time Series (Daily)"];
+      for (const [key] of Object.entries(price)) {
+        label.push(key);
+        data.push(parseFloat(price[key]["1. open"]));
       }
-    })
-  }, [])
-  return (
-    <div>
-      {/* <Line data={} options={} /> */}
-    </div>
-  )
+      setChartData({
+        label: label,
+        datasets: [
+          {
+            label: "Price Changes",
+            data: data,
+          },
+        ],
+      });
+    });
+  }, []);
+
+  return(
+    <Line 
+      data={chartData}
+    />
+  );
 }
 
-export default Main
+export default Main;
