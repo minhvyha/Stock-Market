@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
-import { data } from "../data";
-import {Chart as ChartJS} from 'chart.js'
+import { Chart as ChartJS } from "chart.js/auto";
 
 function Main() {
   const [chartData, setChartData] = useState<{
@@ -38,9 +37,11 @@ function Main() {
   }, []);
 
   return(
+    <>
     <Line 
       data={chartData}
     />
+    </>
   );
 }
 
