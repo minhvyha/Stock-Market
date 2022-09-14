@@ -1,4 +1,6 @@
-import {Line} from 'react-chartjs-2'
+import logo from './logo.svg';
+import './App.css';
+
 function App() {
   return (
     <div className="App">
