@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import BarChart from "./components/BarChart";
 import LineChart from "./components/LineChart";
 import PieChart from "./components/PieChart";
 import { UserData } from "./Data";
+import {Data} from './Data1'
 
 function App() {
+  console.log(Data["Time Series (Daily)"])
+  const [newData, setNewData] = useState()
   const [userData, setUserData] = useState({
     labels: UserData.map((data) => data.year),
     datasets: [
@@ -24,6 +27,14 @@ function App() {
     ],
   });
 
+  useEffect(() =>{
+    let labels = []
+    let datasets = {labels: "Price"}
+    let dataYear = Data["Time Series (Daily)"]
+    for(const [key] of Object.entries(dataYear)) {
+      labels.push(key)
+    }
+  }, [])
   // IF YOU SEE THIS COMMENT: I HAVE GOOD EYESIGHT
 
   return (
