@@ -11,7 +11,9 @@ function App() {
   });
   const [options, setOption] = useState();
 
-  function handleCallBackResponse(response) {}
+  function handleCallBackResponse(response) {
+    console.log("Encoded JWT ID token: " + response.credential)
+  }
 
   useEffect(() => {
     /* global google */
@@ -20,6 +22,11 @@ function App() {
         "492508981332-js4l4e26nhbkkhic3iv1injpjos9ttvt.apps.googleusercontent.com",
       callback: handleCallBackResponse,
     });
+
+    google.accounts.id.renderButton(
+      document.getElementById("signInDiv"),
+      {theme: "outline", size: "large"}
+    )
   }, []);
 
   useEffect(() => {
@@ -71,7 +78,8 @@ function App() {
 
   return (
     <div className="App">
-      <LineChart options={options} data={data} />
+      <div id="signInDiv"></div>
+      {/* <LineChart options={options} data={data} /> */}
     </div>
   );
 }
