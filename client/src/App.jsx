@@ -29,6 +29,7 @@ Chart.register(
 function App() {
   const [data, setData] = useState();
   const [option, setOption] = useState();
+  console.log(data)
 
   useEffect(() => {
     function fetchData() {
@@ -48,9 +49,9 @@ function App() {
           borderWidth: 2,
         },
       ];
-      return { labels, datasets };
-    }
-    setData(fetchData());
+      setData({ labels, datasets });
+    };
+    fetchData()
     setOption({
       responsive: true,
       plugins: {
