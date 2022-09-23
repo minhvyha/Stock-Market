@@ -4,9 +4,9 @@ import LineChart from "./components/LineChart";
 
 function App() {
   const [data, setData] = useState({
-    datasets: []
+    datasets: [],
   });
-  const [option, setOption] = useState();
+  const [options, setOption] = useState();
 
   useEffect(() => {
     function fetchData() {
@@ -37,7 +37,7 @@ function App() {
         },
         title: {
           display: true,
-          text: "test1",
+          text: "Price of ...",
         },
       },
     });
@@ -45,7 +45,7 @@ function App() {
 
   return (
     <div className="App">
-      <LineChart options={option} data={data} />
+      <LineChart options={options} data={data} />
     </div>
   );
 }
