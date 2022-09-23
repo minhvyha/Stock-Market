@@ -27,9 +27,11 @@ Chart.register(
 );
 
 function App() {
-  const [data, setData] = useState();
+  const [data, setData] = useState({
+    datasets: []
+  });
   const [option, setOption] = useState();
-  console.log(data)
+  console.log(data);
 
   useEffect(() => {
     function fetchData() {
@@ -50,8 +52,8 @@ function App() {
         },
       ];
       setData({ labels, datasets });
-    };
-    fetchData()
+    }
+    fetchData();
     setOption({
       responsive: true,
       plugins: {
@@ -68,9 +70,7 @@ function App() {
 
   return (
     <div className="App">
-      <div style={{ width: 700 }}>
-        <Line options={option} data={data} />
-      </div>
+      <Line options={option} data={data} />
     </div>
   );
 }
