@@ -18,6 +18,12 @@ function App() {
     let userObject = jwt_decode(response.credential);
     console.log(userObject);
     setUser(userObject);
+    document.getElementById("signInDiv").hidden = true
+  }
+
+  function handleSignOut(event){
+    setUser({})
+    document.getElementById("signInDiv").hidden = false
   }
 
   useEffect(() => {
@@ -80,13 +86,15 @@ function App() {
       },
     });
   }, []);
-
+  console.log(user)
   return (
     <div className="App">
-      {user ? (
-        <div>
+      {Object.keys(user).length !== 0 ? (
+        <div className="asdf">
           <div id="signInDiv"></div>
           <h3>{user.name}</h3>
+          <h1>asdf</h1>
+          <button onClick={handleSignOut}>Sign Out</button>
         </div>
       ) : (
         <div id="signInDiv"></div>
