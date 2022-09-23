@@ -34,6 +34,7 @@ function App() {
     }
     fetchData();
     setOption({
+      tension: 0.2,
       responsive: true,
       plugins: {
         tooltip: {
