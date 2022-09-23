@@ -10,11 +10,11 @@ function App() {
 
   useEffect(() => {
     async function fetchData() {
-      const apiData = await fetch('https://www.alphavantage.co/query?function=TIME_SERIES_WEEKLY_ADJUSTED&symbol=TSCO.LON&apikey=demo')
+      const apiData = await fetch('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=demo')
       const convertData = await apiData.json()
       let labels = [];
       let data = [];
-      let dataYear = await convertData["Weekly Adjusted Time Series"];
+      let dataYear = await convertData["Time Series (Daily)"];
       for (const [key, val] of Object.entries(dataYear)) {
         labels.push(key);
         data.push((parseFloat(val["1. open"]) + parseFloat(val["3. low"])) / 2);
