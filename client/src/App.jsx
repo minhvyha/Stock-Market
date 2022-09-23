@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Data } from "./Data1";
 import LineChart from "./components/LineChart";
+import jwt_decode from 'jwt-decode'
 
 // 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
 // 492508981332-js4l4e26nhbkkhic3iv1injpjos9ttvt.apps.googleusercontent.com
@@ -13,6 +14,8 @@ function App() {
 
   function handleCallBackResponse(response) {
     console.log("Encoded JWT ID token: " + response.credential)
+    let userObject = jwt_decode(response.credential)
+    console.log(userObject)
   }
 
   useEffect(() => {
