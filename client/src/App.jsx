@@ -10,8 +10,10 @@ function App() {
 
   useEffect(() => {
     async function fetchData() {
-      const apiData = await fetch('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=demo')
-      const convertData = await apiData.json()
+      const apiData = await fetch(
+        "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=demo"
+      );
+      const convertData = await apiData.json();
       let labels = [];
       let data = [];
       let dataYear = await convertData["Time Series (Daily)"];
@@ -34,6 +36,13 @@ function App() {
     setOption({
       responsive: true,
       plugins: {
+        tooltip: {
+          interaction: {
+            mode: "index",
+            axis: "x",
+          },
+          intersect: false
+        },
         legend: {
           display: false,
         },
