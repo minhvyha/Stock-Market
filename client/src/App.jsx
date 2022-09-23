@@ -1,13 +1,26 @@
 import React, { useState, useEffect } from "react";
 import { Data } from "./Data1";
 import LineChart from "./components/LineChart";
+
 // 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
 // 492508981332-js4l4e26nhbkkhic3iv1injpjos9ttvt.apps.googleusercontent.com
+
 function App() {
   const [data, setData] = useState({
     datasets: [],
   });
   const [options, setOption] = useState();
+
+  function handleCallBackResponse(response) {}
+
+  useEffect(() => {
+    /* global google */
+    google.accounts.id.initialize({
+      client_id:
+        "492508981332-js4l4e26nhbkkhic3iv1injpjos9ttvt.apps.googleusercontent.com",
+      callback: handleCallBackResponse,
+    });
+  }, []);
 
   useEffect(() => {
     async function fetchData() {
@@ -43,7 +56,7 @@ function App() {
             mode: "index",
             axis: "x",
           },
-          intersect: false
+          intersect: false,
         },
         legend: {
           display: false,
