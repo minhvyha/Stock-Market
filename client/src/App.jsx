@@ -64,10 +64,11 @@ function App() {
       },
     });
   }, []);
+
   return (
     <div className="App">
-      <div style={{width: 700}}>
-      <Line options={option} data={data} />
+      <div style={{ width: 700 }}>
+        <Line options={option} data={data} />
       </div>
     </div>
   );
