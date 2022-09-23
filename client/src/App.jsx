@@ -83,7 +83,14 @@ function App() {
 
   return (
     <div className="App">
-      <div id="signInDiv"></div>
+      {user ? (
+        <div>
+          <div id="signInDiv"></div>
+          <h3>{user.name}</h3>
+        </div>
+      ) : (
+        <div id="signInDiv"></div>
+      )}
       {/* <LineChart options={options} data={data} /> */}
     </div>
   );
