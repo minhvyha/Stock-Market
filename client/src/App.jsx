@@ -3,11 +3,10 @@ import BarChart from "./components/BarChart";
 import LineChart from "./components/LineChart";
 import PieChart from "./components/PieChart";
 import { UserData } from "./Data";
-import {Data} from './Data1'
+import { Data } from "./Data1";
 
 function App() {
-  console.log(Data["Time Series (Daily)"])
-  const [newData, setNewData] = useState()
+  const [newData, setNewData] = useState();
   const [userData, setUserData] = useState({
     labels: UserData.map((data) => data.year),
     datasets: [
@@ -27,15 +26,28 @@ function App() {
     ],
   });
 
-  useEffect(() =>{
-    let labels = []
-    let datasets = {labels: "Price"}
-    let dataYear = Data["Time Series (Daily)"]
-    for(const [key] of Object.entries(dataYear)) {
-      labels.push(key)
+  useEffect(() => {
+    let labels = [];
+    let data = [];
+    let dataYear = Data["Time Series (Daily)"];
+    for (const [key, val] of Object.entries(dataYear)) {
+      labels.push(key);
+      data.push((val["1. open"] + val["3. low"]) / 2);
     }
-  }, [])
-  // IF YOU SEE THIS COMMENT: I HAVE GOOD EYESIGHT
+    let datasets = [
+      {
+        labels: "Price",
+        data: data,
+        backgroundColor: ["black"],
+        borderColor: "black",
+        borderWidth: 2,
+      },
+    ];
+    setNewData({
+      labels,
+      datasets
+    });
+  }, []);
 
   return (
     <div className="App">
@@ -47,6 +59,9 @@ function App() {
       </div>
       <div style={{ width: 700 }}>
         <PieChart chartData={userData} />
+      </div>
+      <div style={{ width: 700 }}>
+        <LineChart chartData={newData} />
       </div>
     </div>
   );
