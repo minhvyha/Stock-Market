@@ -9,10 +9,12 @@ function App() {
   const [options, setOption] = useState();
 
   useEffect(() => {
-    function fetchData() {
+    async function fetchData() {
+      const apiData = await fetch('https://www.alphavantage.co/query?function=TIME_SERIES_WEEKLY_ADJUSTED&symbol=TSCO.LON&apikey=demo')
+      const convertData = await apiData.json()
       let labels = [];
       let data = [];
-      let dataYear = Data["Time Series (Daily)"];
+      let dataYear = await convertData["Weekly Adjusted Time Series"];
       for (const [key, val] of Object.entries(dataYear)) {
         labels.push(key);
         data.push((parseFloat(val["1. open"]) + parseFloat(val["3. low"])) / 2);
