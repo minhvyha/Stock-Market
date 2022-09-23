@@ -1,21 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { Data } from "./Data1";
 import LineChart from "./components/LineChart";
-import jwt_decode from 'jwt-decode'
+import jwt_decode from "jwt-decode";
 
 // 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
 // 492508981332-js4l4e26nhbkkhic3iv1injpjos9ttvt.apps.googleusercontent.com
 
 function App() {
+  const [user, setUser] = useState({});
   const [data, setData] = useState({
     datasets: [],
   });
   const [options, setOption] = useState();
 
   function handleCallBackResponse(response) {
-    console.log("Encoded JWT ID token: " + response.credential)
-    let userObject = jwt_decode(response.credential)
-    console.log(userObject)
+    console.log("Encoded JWT ID token: " + response.credential);
+    let userObject = jwt_decode(response.credential);
+    console.log(userObject);
+    setUser(userObject);
   }
 
   useEffect(() => {
@@ -26,10 +28,10 @@ function App() {
       callback: handleCallBackResponse,
     });
 
-    google.accounts.id.renderButton(
-      document.getElementById("signInDiv"),
-      {theme: "outline", size: "large"}
-    )
+    google.accounts.id.renderButton(document.getElementById("signInDiv"), {
+      theme: "outline",
+      size: "large",
+    });
   }, []);
 
   useEffect(() => {
