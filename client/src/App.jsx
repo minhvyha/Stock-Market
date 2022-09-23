@@ -7,7 +7,7 @@ import { Data } from "./Data1";
 
 function App() {
   console.log("start");
-  const [newData, setNewData] = useState(fetchData);
+  const [newData, setNewData] = useState(fetchData());
 
   function fetchData() {
     let labels = [];
