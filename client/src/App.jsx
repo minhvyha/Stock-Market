@@ -6,10 +6,10 @@ import { UserData } from "./Data";
 import { Data } from "./Data1";
 
 function App() {
-  console.log('start')
+  console.log("start");
   const [newData, setNewData] = useState(fetchData);
 
-  function fetchData(){
+  function fetchData() {
     let labels = [];
     let data = [];
     let dataYear = Data["Time Series (Daily)"];
@@ -26,7 +26,7 @@ function App() {
         borderWidth: 2,
       },
     ];
-    return {labels, datasets}
+    return { labels, datasets };
   }
 
   return (
