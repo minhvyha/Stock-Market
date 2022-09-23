@@ -1,37 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Data } from "./Data1";
-import {
-  Chart,
-  LineElement,
-  PointElement,
-  LineController,
-  CategoryScale,
-  LinearScale,
-  Legend,
-  Title,
-  Tooltip,
-  SubTitle,
-} from "chart.js";
-import { Line } from "react-chartjs-2";
-
-Chart.register(
-  LineElement,
-  PointElement,
-  LineController,
-  CategoryScale,
-  LinearScale,
-  Legend,
-  Title,
-  Tooltip,
-  SubTitle
-);
+import LineChart from "./components/LineChart";
 
 function App() {
   const [data, setData] = useState({
     datasets: []
   });
   const [option, setOption] = useState();
-  console.log(data);
 
   useEffect(() => {
     function fetchData() {
@@ -70,7 +45,7 @@ function App() {
 
   return (
     <div className="App">
-      <Line options={option} data={data} />
+      <LineChart options={option} data={data} />
     </div>
   );
 }
