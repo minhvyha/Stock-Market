@@ -1,4 +1,4 @@
-[
+export const Symbol = [
   { "Name": "3M", "Sector": "Industrials", "Symbol": "MMM" },
   { "Name": "A. O. Smith", "Sector": "Industrials", "Symbol": "AOS" },
   { "Name": "Abbott Laboratories", "Sector": "Health Care", "Symbol": "ABT" },
