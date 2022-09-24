@@ -92,8 +92,18 @@ function App() {
       <div id="signInDiv"></div>
       {Object.keys(user).length !== 0 && (
         <div>
-          <LineChart options={options} data={data} />
-          <button className="btn-sign-out" onClick={handleSignOut}>Sign Out</button> 
+          <div style={{width: 700}}>
+            <LineChart options={options} data={data} />
+          </div>
+          <label htmlFor="symbolList">Choose a symbol</label>
+          <input type="text" name="symbolList" id="symbolList" list="symbolData" />
+          <datalist id="symbolData">
+            <option value="AAPL">Apple</option>
+          </datalist>
+
+          <button className="btn-sign-out" onClick={handleSignOut}>
+            Sign Out
+          </button>
         </div>
       )}
     </div>
