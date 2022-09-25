@@ -2,6 +2,8 @@ const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
 require('dotenv').config()
+const cookieSession = require("cookie-session")
+const passport = require('passport')
 
 const app = express()
 const port = 3001
