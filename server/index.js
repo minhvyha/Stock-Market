@@ -8,7 +8,11 @@ const passport = require("passport");
 const app = express();
 const port = 3001;
 
-app.use(cors);
+app.use(cors({
+    origin: "https://localhost:3000",
+    methods: "GET,POST,PUT,DELETE",
+    
+}));
 app.use(
   cookieSession({
     name: "session",
