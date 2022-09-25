@@ -16,6 +16,8 @@ app.use(
     maxAge: 24 * 60 * 60 * 100,
   })
 );
+app.use(passport.initialize())
+app.use(passport.session())
 app.use(express.json());
 
 app.listen(port, () => {
