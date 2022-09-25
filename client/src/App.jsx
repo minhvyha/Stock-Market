@@ -92,11 +92,16 @@ function App() {
       <div id="signInDiv"></div>
       {Object.keys(user).length !== 0 && (
         <div>
-          <div style={{width: 700}}>
+          <div style={{ width: 700 }}>
             <LineChart options={options} data={data} />
           </div>
           <label htmlFor="symbolList">Choose a symbol</label>
-          <input type="text" name="symbolList" id="symbolList" list="symbolData" />
+          <input
+            type="text"
+            name="symbolList"
+            id="symbolList"
+            list="symbolData"
+          />
           <datalist id="symbolData">
             <option value="AAPL">Apple</option>
           </datalist>
