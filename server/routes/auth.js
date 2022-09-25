@@ -27,3 +27,5 @@ router.get(
     failureRedirect: "/login/failed",
   })
 );
+
+router.get("/google", passport.authenticate("google", ["profile", "email"]))
