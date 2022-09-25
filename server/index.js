@@ -12,6 +12,7 @@ app.use(cors)
 app.use(cookieSession({
     name: "session",
     keys: ["stock-market"],
+    maxAge: 24 * 60 * 60 * 100
 }))
 app.use(express.json())
 
