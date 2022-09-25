@@ -5,8 +5,8 @@ require("dotenv").config();
 const passportSetup = require("./passport");
 const cookieSession = require("cookie-session");
 const passport = require("passport");
-const passportSetup = require('./passport')
-const authRoute = require('./routes/auth')
+const passportSetup = require("./passport");
+const authRoute = require("./routes/auth");
 
 const app = express();
 app.use(
@@ -26,7 +26,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.json());
-app.use("/auth", authRoute)
+app.use("/auth", authRoute);
 
 const port = process.env.PORT || 8080;
 
