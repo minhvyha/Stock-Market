@@ -4,7 +4,8 @@
   "description": "Stock market - MERN Stack",
   "main": "index.js",
   "scripts": {
-    "node index.js": "npm start"
+    "node index.js": "npm start",
+    "start": "nodemon index.js"
   },
   "author": "Minh Vy Ha",
   "license": "ISC",
