@@ -16,7 +16,7 @@ export default function Login() {
           <img className={styles.img} src="./images/login.jpg" alt="login" />
         </div>
         <div className={styles.right}>
-					<h2 className={styles.form_heading}>Members Log In</h2>
+          <h2 className={styles.form_heading}>Members Log In</h2>
           <input type="text" className={styles.input} placeholder="Email" />
           <input type="text" className={styles.input} placeholder="Password" />
           <button className={styles.btn}>Log In</button>
