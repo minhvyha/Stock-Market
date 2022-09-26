@@ -2,6 +2,12 @@ import { Link } from "react-router-dom";
 import styles from "./style.module.css";
 
 function Login() {
+	const googleAuth = () =>{
+		window.open(
+			`${process.env.REACT_APP_API_URL}/auth/google/callback`,
+			"_self"
+		)
+	}
   return (
     <div className={styles.container}>
       <h1 className={styles.heading}>Log In Form</h1>
