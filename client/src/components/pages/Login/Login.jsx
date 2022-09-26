@@ -18,6 +18,9 @@ function Login() {
 						<img src="./images/google.png" alt="google.icon" />
 						<span>Sign in with Google</span>
 					</button>
+					<p className={styles.text}>
+						New Here? <Link to='/signup'>Sign Up</Link>
+					</p>
 				</div>
       </div>
     </div>
