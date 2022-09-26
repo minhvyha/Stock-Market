@@ -3,9 +3,6 @@ import { Data } from "./TestData";
 import LineChart from "./components/LineChart";
 import jwt_decode from "jwt-decode";
 
-// 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
-// 492508981332-js4l4e26nhbkkhic3iv1injpjos9ttvt.apps.googleusercontent.com
-
 function App() {
   const [user, setUser] = useState({});
   const [data, setData] = useState({
