@@ -19,7 +19,11 @@ export default function Signup() {
           <h2 className={styles.form_heading}>Create Account</h2>
           <input type="text" className={styles.input} placeholder="Username" />
           <input type="text" className={styles.input} placeholder="Email" />
-          <input type="password" className={styles.input} placeholder="Password" />
+          <input
+            type="password"
+            className={styles.input}
+            placeholder="Password"
+          />
           <button className={styles.btn}>Sign Up</button>
           <p className={styles.text}>or</p>
           <button className={styles.google_btn} onClick={googleAuth}>
