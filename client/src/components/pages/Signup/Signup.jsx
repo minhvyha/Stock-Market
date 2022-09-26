@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./style.module.css";
 
-export default function Login() {
+export default function Signup() {
   const googleAuth = () => {
     window.open(
       `${process.env.REACT_APP_API_URL}/auth/google/callback`,
