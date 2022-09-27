@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Data } from "./TestData";
+import axios from 'axios'
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 import LineChart from "./components/LineChart";
 import jwt_decode from "jwt-decode";
 
