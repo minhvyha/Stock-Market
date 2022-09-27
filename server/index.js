@@ -5,7 +5,6 @@ require("dotenv").config();
 const passportSetup = require("./passport");
 const cookieSession = require("cookie-session");
 const passport = require("passport");
-const passportSetup = require("./passport");
 const authRoute = require("./routes/auth");
 
 const app = express();
