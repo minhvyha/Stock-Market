@@ -82,6 +82,13 @@ function App() {
       },
     });
   }
+
+  function handleChoose() {
+    let symbol = document.getElementById('symbolList').value
+    fetchData(symbol)
+    document.getElementById('symbolList').value = ''
+  }
+
   useEffect(() => {
     fetchData("AAPL");
   }, []);
@@ -101,6 +108,7 @@ function App() {
             list="symbolData"
           />
           <datalist id="symbolData">{dataOption}</datalist>
+          <button onClick={handleChoose}>See Price</button>
 
           <button className="btn-sign-out" onClick={handleSignOut}>
             Sign Out
