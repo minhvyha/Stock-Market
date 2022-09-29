@@ -23,7 +23,6 @@ function App() {
     setUser({});
     document.getElementById("signInDiv").hidden = false;
   }
-console.log(process.env.REACT_APP_CLIENT_ID)
   useEffect(() => {
     /* global google */
     google.accounts.id.initialize({
