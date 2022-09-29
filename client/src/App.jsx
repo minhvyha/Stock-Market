@@ -39,12 +39,14 @@ function App() {
   useEffect(() => {
     async function fetchData() {
       const apiData = await fetch(
-        "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=demo"
+        `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AAPL&apikey=${process.env.REACT_APP_API_KEY}`
       );
       const convertData = await apiData.json();
       let labels = [];
       let data = [];
       let dataYear = await convertData["Time Series (Daily)"];
+      let symbol = await convertData["Meta Data"]["2. Symbol"]
+      console.log(symbol)
       for (const [key, val] of Object.entries(dataYear)) {
         labels.push(key);
         data.push((parseFloat(val["1. open"]) + parseFloat(val["3. low"])) / 2);
@@ -59,28 +61,29 @@ function App() {
         },
       ];
       setData({ labels, datasets });
+      setOption({
+        tension: 0.2,
+        responsive: true,
+        plugins: {
+          tooltip: {
+            interaction: {
+              mode: "index",
+              axis: "x",
+            },
+            intersect: false,
+          },
+          legend: {
+            display: false,
+          },
+          title: {
+            display: true,
+            text: symbol,
+          },
+        },
+      });
     }
     fetchData();
-    setOption({
-      tension: 0.2,
-      responsive: true,
-      plugins: {
-        tooltip: {
-          interaction: {
-            mode: "index",
-            axis: "x",
-          },
-          intersect: false,
-        },
-        legend: {
-          display: false,
-        },
-        title: {
-          display: true,
-          text: "Price of ...",
-        },
-      },
-    });
+    
   }, []);
   return (
     <div className="App">
