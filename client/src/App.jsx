@@ -1,8 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { Data } from "./TestData";
+import { Symbol } from "./SP500";
 import axios from 'axios'
 import LineChart from "./components/LineChart";
 import jwt_decode from "jwt-decode";
+
+var dataOption = Symbol.map((company) => {
+  return (
+    <option value={company.Symbol}>{company.Name}</option>
+  )
+})
+
 
 function App() {
   const [user, setUser] = useState({});
@@ -101,7 +108,7 @@ function App() {
             list="symbolData"
           />
           <datalist id="symbolData">
-            <option value="AAPL">Apple</option>
+            {dataOption}
           </datalist>
 
           <button className="btn-sign-out" onClick={handleSignOut}>
