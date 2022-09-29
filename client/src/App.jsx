@@ -1,48 +1,114 @@
-import { Routes, Route, Navigate } from "react-router-dom";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
-// import "./App.css";
+import React, { useState, useEffect } from "react";
+import { Data } from "./TestData";
+import axios from 'axios'
+import LineChart from "./components/LineChart";
+import jwt_decode from "jwt-decode";
 
 function App() {
-	const [user, setUser] = useState(null);
+  const [user, setUser] = useState({});
+  const [data, setData] = useState({
+    datasets: [],
+  });
+  const [options, setOption] = useState();
 
-	const getUser = async () => {
-		try {
-			const url = `${process.env.REACT_APP_API_URL}/auth/login/success`;
-			const { data } = await axios.get(url, { withCredentials: true });
-			setUser(data.user._json);
-		} catch (err) {
-			console.log(err);
-		}
-	};
+  function handleCallBackResponse(response) {
+    console.log("Encoded JWT ID token: " + response.credential);
+    let userObject = jwt_decode(response.credential);
+    console.log(userObject);
+    setUser(userObject);
+    document.getElementById("signInDiv").hidden = true;
+  }
 
-	useEffect(() => {
-		getUser();
-	}, []);
+  function handleSignOut(event) {
+    setUser({});
+    document.getElementById("signInDiv").hidden = false;
+  }
+console.log(process.env.REACT_APP_CLIENT_ID)
+  useEffect(() => {
+    /* global google */
+    google.accounts.id.initialize({
+      client_id: process.env.REACT_APP_CLIENT_ID,
+      callback: handleCallBackResponse,
+    });
 
-	return (
-		<div className="container">
-			<Routes>
-				<Route
-					exact
-					path="/"
-					element={user ? <Home user={user} /> : <Navigate to="/login" />}
-				/>
-				<Route
-					exact
-					path="/login"
-					element={user ? <Navigate to="/" /> : <Login />}
-				/>
-				<Route
-					path="/signup"
-					element={user ? <Navigate to="/" /> : <Signup />}
-				/>
-			</Routes>
-		</div>
-	);
+    google.accounts.id.renderButton(document.getElementById("signInDiv"), {
+      theme: "outline",
+      size: "large",
+    });
+  }, []);
+
+  useEffect(() => {
+    async function fetchData() {
+      const apiData = await fetch(
+        "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=demo"
+      );
+      const convertData = await apiData.json();
+      let labels = [];
+      let data = [];
+      let dataYear = await convertData["Time Series (Daily)"];
+      for (const [key, val] of Object.entries(dataYear)) {
+        labels.push(key);
+        data.push((parseFloat(val["1. open"]) + parseFloat(val["3. low"])) / 2);
+      }
+      let datasets = [
+        {
+          label: "Price",
+          data: data,
+          backgroundColor: ["#ef8e19"],
+          borderColor: "black",
+          borderWidth: 2,
+        },
+      ];
+      setData({ labels, datasets });
+    }
+    fetchData();
+    setOption({
+      tension: 0.2,
+      responsive: true,
+      plugins: {
+        tooltip: {
+          interaction: {
+            mode: "index",
+            axis: "x",
+          },
+          intersect: false,
+        },
+        legend: {
+          display: false,
+        },
+        title: {
+          display: true,
+          text: "Price of ...",
+        },
+      },
+    });
+  }, []);
+  return (
+    <div className="App">
+      <div id="signInDiv"></div>
+      {Object.keys(user).length !== 0 && (
+        <div>
+          <div style={{ width: 700 }}>
+            <LineChart options={options} data={data} />
+          </div>
+          <label htmlFor="symbolList">Choose a symbol</label>
+          <input
+            type="text"
+            name="symbolList"
+            id="symbolList"
+            list="symbolData"
+          />
+          <datalist id="symbolData">
+            <option value="AAPL">Apple</option>
+          </datalist>
+
+          <button className="btn-sign-out" onClick={handleSignOut}>
+            Sign Out
+          </button>
+        </div>
+      )}
+    </div>
+  );
 }
 
 export default App;
