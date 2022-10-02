@@ -34,6 +34,7 @@ iframe {
 .error-text-form{
   color: rgb(255, 72, 72);
   font-size: 14px;
+  margin-top: .5rem;
 }
 .txt_field {
   position: relative;
