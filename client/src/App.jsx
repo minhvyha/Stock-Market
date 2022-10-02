@@ -115,12 +115,6 @@ function App() {
     }
   }
 
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-
-
   return (
     <div className="App">
       <Login
@@ -128,6 +122,7 @@ function App() {
         handleSignUp={handleSignUp}
         handleSignIn={handleSignIn}
         error={errorLogin}
+        handleSubmit={handleSubmitForm}
       />
 
       {Object.keys(user).length !== 0 && (
