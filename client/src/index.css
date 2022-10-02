@@ -25,21 +25,24 @@ iframe {
   height: 100vh;
 }
 .signin-image {
-  width: 190px;
+  width: 180px;
+}
+.login-form-container{
+  max-width: 220px;
 }
 .login-form-title {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   margin-top: 0.5rem;
 }
 .error-text-form{
   color: rgb(255, 72, 72);
-  font-size: 14px;
+  font-size: 11px;
   margin-top: .5rem;
 }
 .txt_field {
   position: relative;
   border-bottom: 2px solid #adadad;
-  margin: 30px 0;
+  margin: 25.5px 0;
 }
 .txt_field input {
   width: 100%;
@@ -99,7 +102,7 @@ iframe {
   cursor: pointer;
   outline: none;
   transition: 0.5s;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
 }
 .submit-button:hover {
   border-color: #2691d9;

@@ -125,7 +125,7 @@ function App() {
       setErrorLogin('Invalid email.')
       return
     }
-    if(password(passwordRegex) === null){
+    if(password.match(passwordRegex) === null){
       setErrorLogin('Password must have minimum length of 8 and contain at least one letter and one number.')
       return
     }
