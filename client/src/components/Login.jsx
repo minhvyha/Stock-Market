@@ -1,30 +1,46 @@
-import React from 'react'
+import React from 'react';
 import SignInImage from '../assets/images/SignIn.png';
+import SignUpImage from '../assets/images/SignUp.png'
 
-function Login({login}) {
+function Login({ login, handleSignUp, handleSignIn }) {
   return (
     <div className="login-container" id="login-container">
-        <img src={SignInImage} alt="Sign In Image" className="signin-image" />
-        <div className="login-form-container">
-          <h1 className="login-form-title">{login ? 'Sign In' : 'Sign Up'}</h1>
-          <div class="txt_field">
-          <input type="text" required/>
+      <img src={login ? SignInImage : SignUpImage} alt="Sign In Image" className="signin-image" />
+      <div className="login-form-container">
+        <h1 className="login-form-title">{login ? 'Sign In' : 'Sign Up'}</h1>
+        <div class="txt_field">
+          <input type="text" required />
           <span></span>
           <label>Username</label>
         </div>
         <div class="txt_field">
-          <input type="password" required/>
+          <input type="password" required />
           <span></span>
           <label>Password</label>
         </div>
-        <button className='submit-button'>{login ? "Sign In" : "Sign Up"}</button>
+        {!login && (
+          <div class="txt_field">
+            <input type="password" required />
+            <span></span>
+            <label>Confirm Password</label>
+          </div>
+        )}
+        <button className="submit-button">
+          {login ? 'Sign In' : 'Sign Up'}
+        </button>
         <div id="signInDiv"></div>
-        <div class="signup_link">
-          Not a member? <a href="#">Signup</a>
-        </div>
+        {login ? (
+          <div class="signup_link">
+            Not a member? <a onClick={handleSignUp}>Register</a>
+          </div>
+        ) : (
+          <div class="signup_link">
+            Joined us before? <a onClick={handleSignIn}>Login</a>
+          </div>
+        )}
       </div>
     </div>
-  )
+  );
 }
 
-export default Login
+export default Login;
