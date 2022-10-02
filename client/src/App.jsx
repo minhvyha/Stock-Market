@@ -23,12 +23,14 @@ function App() {
     console.log(userObject);
     setUser(userObject);
     document.getElementById('signInDiv').hidden = true;
+    document.getElementById('login-container').style.display = "none";
   }
 
   function handleSignOut(event) {
     setUser({});
     document.getElementById('signInDiv').hidden = false;
-  }
+    document.getElementById('login-container').style.display = "flex"
+    }
   useEffect(() => {
     /* global google */
     google.accounts.id.initialize({
@@ -95,7 +97,7 @@ function App() {
   }, []);
   return (
     <div className="App">
-      <div className="login-container">
+      <div className="login-container" id='login-container'>
         <img src={SignInImage} alt="Sign In Image" className='signin-image' />
         <div id="signInDiv"></div>
       </div>
