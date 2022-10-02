@@ -28,7 +28,8 @@ iframe {
   width: 200px;
 }
 .login-form-title{
-  font-size: 1.8rem;
+  font-size: 1.6rem;
+  margin-top: .5rem;
 }
 .txt_field {
   position: relative;
@@ -50,9 +51,9 @@ iframe {
   left: 5px;
   color: #adadad;
   transform: translateY(-50%);
-  font-size: 16px;
+  font-size: 14px;
   pointer-events: none;
-  transition: 0.5s;
+  transition: 0.4s;
 }
 .txt_field span::before {
   content: '';
