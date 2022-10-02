@@ -7,9 +7,9 @@ function Login({login}) {
         <img src={SignInImage} alt="Sign In Image" className="signin-image" />
         <div className="login-form-container">
           <h1 className="login-form-title">{login ? 'Sign In' : 'Sign Up'}</h1>
-          <form>
-              <div className=''></div>
-          </form>
+          <input type="text" placeholder='Email' />
+          <input type="password" placeholder='Password' />
+          {!login && <input type="text"/>}
           <div id="signInDiv"></div>
         </div>
       </div>
