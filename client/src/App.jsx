@@ -99,7 +99,10 @@ function App() {
     <div className="App">
       <div className="login-container" id='login-container'>
         <img src={SignInImage} alt="Sign In Image" className='signin-image' />
+        <div className='login-form-container'>
+
         <div id="signInDiv"></div>
+        </div>
       </div>
 
       {Object.keys(user).length !== 0 && (
