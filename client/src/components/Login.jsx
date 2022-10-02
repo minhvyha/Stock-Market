@@ -1,11 +1,15 @@
 import React from 'react';
 import SignInImage from '../assets/images/SignIn.png';
-import SignUpImage from '../assets/images/SignUp.png'
+import SignUpImage from '../assets/images/SignUp.png';
 
 function Login({ login, handleSignUp, handleSignIn }) {
   return (
     <div className="login-container" id="login-container">
-      <img src={login ? SignInImage : SignUpImage} alt="Sign In Image" className="signin-image" />
+      <img
+        src={login ? SignInImage : SignUpImage}
+        alt="Sign In Image"
+        className="signin-image"
+      />
       <div className="login-form-container">
         <h1 className="login-form-title">{login ? 'Sign In' : 'Sign Up'}</h1>
         <div class="txt_field">
