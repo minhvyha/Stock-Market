@@ -27,9 +27,9 @@ iframe {
 .signin-image {
   width: 190px;
 }
-.login-form-title{
+.login-form-title {
   font-size: 1.6rem;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
 .txt_field {
   position: relative;
