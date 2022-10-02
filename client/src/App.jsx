@@ -4,6 +4,7 @@ import axios from 'axios';
 import LineChart from './components/LineChart';
 import jwt_decode from 'jwt-decode';
 import SignInImage from './assets/images/SignIn.png';
+import Login from './components/Login';
 
 var dataOption = Symbol.map((company) => {
   return <option value={company.Symbol}>{company.Name}</option>;
@@ -25,6 +26,7 @@ function App() {
     setUser(userObject);
     document.getElementById('signInDiv').hidden = true;
     document.getElementById('login-container').style.display = 'none';
+    fetchData()
   }
 
   function handleSignOut(event) {
@@ -98,16 +100,7 @@ function App() {
   }, []);
   return (
     <div className="App">
-      <div className="login-container" id="login-container">
-        <img src={SignInImage} alt="Sign In Image" className="signin-image" />
-        <div className="login-form-container">
-          <h1 className="login-form-title">{login ? 'Sign In' : 'Sign Up'}</h1>
-          <form>
-              <div className=''></div>
-          </form>
-          <div id="signInDiv"></div>
-        </div>
-      </div>
+      <Login login={login} />
 
       {Object.keys(user).length !== 0 && (
         <div>
