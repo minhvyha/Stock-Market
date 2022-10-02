@@ -108,10 +108,19 @@ function App() {
 
   function handleSubmitForm(){
     if(document.getElementById('username').value === ''){
-      console.log('asdfa')
+      setErrorLogin('Please enter username.')
+      return
     }
     if(document.getElementById('password').value === ''){
-      console.log('asasdfa')
+      setErrorLogin('Please enter password.')
+      return
+    }
+    if(!login && document.getElementById('confirmation').value === ''){
+      setErrorLogin('Please enter again password.')
+      return
+    }
+    if(!login && document.getElementById('confirmation').value !== document.getElementById('password').value){
+      setErrorLogin('Your passwords do not match.')
     }
   }
 
