@@ -16,7 +16,7 @@ function App() {
   });
   const [options, setOption] = useState();
   const [stock, setStock] = useState('');
-  const [login, setLogin] = useState(true)
+  const [login, setLogin] = useState(true);
 
   function handleCallBackResponse(response) {
     console.log('Encoded JWT ID token: ' + response.credential);
@@ -101,7 +101,7 @@ function App() {
       <div className="login-container" id="login-container">
         <img src={SignInImage} alt="Sign In Image" className="signin-image" />
         <div className="login-form-container">
-          <h1 className='login-form-title'>{login ? "Sign In" : "Sign Up"}</h1>
+          <h1 className="login-form-title">{login ? 'Sign In' : 'Sign Up'}</h1>
           <div id="signInDiv"></div>
         </div>
       </div>
