@@ -7,12 +7,23 @@ function Login({login}) {
         <img src={SignInImage} alt="Sign In Image" className="signin-image" />
         <div className="login-form-container">
           <h1 className="login-form-title">{login ? 'Sign In' : 'Sign Up'}</h1>
-          <input type="text" placeholder='Email' />
-          <input type="password" placeholder='Password' />
-          {!login && <input type="text"/>}
+          <div class="txt_field">
+          <input type="text" required/>
+          <span></span>
+          <label>Username</label>
+        </div>
+        <div class="txt_field">
+          <input type="password" required/>
+          <span></span>
+          <label>Password</label>
+        </div>
+        <button className='submit-button'>{login ? "Sign In" : "Sign Up"}</button>
+        <div class="signup_link">
+          Not a member? <a href="#">Signup</a>
           <div id="signInDiv"></div>
         </div>
       </div>
+    </div>
   )
 }
 
