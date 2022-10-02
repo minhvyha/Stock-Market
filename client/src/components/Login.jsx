@@ -18,9 +18,9 @@ function Login({login}) {
           <label>Password</label>
         </div>
         <button className='submit-button'>{login ? "Sign In" : "Sign Up"}</button>
+        <div id="signInDiv"></div>
         <div class="signup_link">
           Not a member? <a href="#">Signup</a>
-          <div id="signInDiv"></div>
         </div>
       </div>
     </div>
