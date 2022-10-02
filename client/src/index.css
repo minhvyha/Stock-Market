@@ -31,6 +31,10 @@ iframe {
   font-size: 1.6rem;
   margin-top: 0.5rem;
 }
+.error-text-form{
+  color: rgb(255, 72, 72);
+  font-size: 14px;
+}
 .txt_field {
   position: relative;
   border-bottom: 2px solid #adadad;

@@ -12,7 +12,7 @@ function Login({ login, handleSignUp, handleSignIn, error, handleSubmit }) {
       />
       <div className="login-form-container">
         <h1 className="login-form-title">{login ? 'Sign In' : 'Sign Up'}</h1>
-        <p>{error}</p>
+        <p className='error-text-form'>{error}</p>
         <div class="txt_field">
           <input type="text" id='username' />
           <span></span>
