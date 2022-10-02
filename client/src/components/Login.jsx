@@ -14,18 +14,18 @@ function Login({ login, handleSignUp, handleSignIn, error, handleSubmit }) {
         <h1 className="login-form-title">{login ? 'Sign In' : 'Sign Up'}</h1>
         <p className='error-text-form'>{error}</p>
         <div class="txt_field">
-          <input type="text" id='username' />
+          <input type="text" id='email-login' required />
           <span></span>
-          <label>Username</label>
+          <label>Email</label>
         </div>
         <div class="txt_field">
-          <input type="password" id='password' />
+          <input type="password" id='password-login' required />
           <span></span>
           <label>Password</label>
         </div>
         {!login && (
           <div class="txt_field">
-            <input type="password" id='confirmation' />
+            <input type="password" id='confirmation-login' required />
             <span></span>
             <label>Confirm Password</label>
           </div>

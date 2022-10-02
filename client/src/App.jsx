@@ -10,6 +10,9 @@ var dataOption = Symbol.map((company) => {
   return <option value={company.Symbol}>{company.Name}</option>;
 });
 
+var emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g
+var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/g
+
 function App() {
   const [user, setUser] = useState({});
   const [data, setData] = useState({
@@ -107,20 +110,26 @@ function App() {
   }
 
   function handleSubmitForm(){
-    if(document.getElementById('username').value === ''){
+    let email = document.getElementById('email-login').value
+    let password = document.getElementById('password-login').value
+    if( email === ''){
       setErrorLogin('Please enter username.')
       return
     }
-    if(document.getElementById('password').value === ''){
+    if(password === ''){
       setErrorLogin('Please enter password.')
       return
     }
-    if(!login && document.getElementById('confirmation').value === ''){
-      setErrorLogin('Please enter again password.')
-      return
-    }
-    if(!login && document.getElementById('confirmation').value !== document.getElementById('password').value){
-      setErrorLogin('Your passwords do not match.')
+    if(!login){
+      let confirmation = document.getElementById('confirmation-login').value
+      if (confirmation === ''){
+        setErrorLogin('Please confirm password.')
+        return
+      }
+      if(confirmation !== password){
+        setErrorLogin('Your passwords do not match.')
+        return
+      }
     }
   }
 
