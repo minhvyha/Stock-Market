@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   Chart,
   LineElement,
@@ -10,8 +10,8 @@ import {
   Title,
   Tooltip,
   SubTitle,
-} from "chart.js";
-import { Line } from "react-chartjs-2";
+} from 'chart.js';
+import { Line } from 'react-chartjs-2';
 
 Chart.register(
   LineElement,
