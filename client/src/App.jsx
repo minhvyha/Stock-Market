@@ -18,6 +18,7 @@ function App() {
   const [options, setOption] = useState();
   const [stock, setStock] = useState('');
   const [login, setLogin] = useState(true);
+  const [errorLogin, setErrorLogin] = useState() 
 
   function handleCallBackResponse(response) {
     console.log('Encoded JWT ID token: ' + response.credential);
@@ -34,6 +35,7 @@ function App() {
     document.getElementById('signInDiv').hidden = false;
     document.getElementById('login-container').style.display = 'flex';
   }
+
   useEffect(() => {
     /* global google */
     google.accounts.id.initialize({
@@ -47,6 +49,7 @@ function App() {
     });
     google.accounts.id.prompt();
   }, []);
+
   async function fetchData() {
     const apiData = await fetch(
       `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${stock}&apikey=${process.env.REACT_APP_API_KEY}`
@@ -103,15 +106,28 @@ function App() {
     setLogin(true);
   }
 
+  function handleSubmitForm(){
+    if(document.getElementById('username').value === ''){
+      console.log('asdfa')
+    }
+    if(document.getElementById('password').value === ''){
+      console.log('asasdfa')
+    }
+  }
+
   useEffect(() => {
     fetchData();
   }, []);
+
+
+
   return (
     <div className="App">
       <Login
         login={login}
         handleSignUp={handleSignUp}
         handleSignIn={handleSignIn}
+        error={errorLogin}
       />
 
       {Object.keys(user).length !== 0 && (
