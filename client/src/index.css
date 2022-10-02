@@ -1,24 +1,24 @@
-*{
+* {
   margin: 0;
   box-sizing: border-box;
 }
 
- /* ============== GLOBAL CSS ============== */
-body{
+/* ============== GLOBAL CSS ============== */
+body {
   height: 100vh;
 }
-iframe{
+iframe {
   margin: 0 auto !important;
 }
 
- /* ============== SIGN IN ============== */
-.login-container{
+/* ============== SIGN IN ============== */
+.login-container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   height: 100vh;
 }
-.signin-image{
+.signin-image {
   width: 180px;
 }
