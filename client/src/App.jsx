@@ -14,6 +14,7 @@ function App() {
     datasets: [],
   });
   const [options, setOption] = useState();
+  const [stock, setStock] = useState("")
 
   function handleCallBackResponse(response) {
     console.log("Encoded JWT ID token: " + response.credential);
@@ -39,9 +40,9 @@ function App() {
       size: "large",
     });
   }, []);
-  async function fetchData(symbol) {
+  async function fetchData() {
     const apiData = await fetch(
-      `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${symbol}&apikey=${process.env.REACT_APP_API_KEY}`
+      `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${stock}&apikey=${process.env.REACT_APP_API_KEY}`
     );
     const convertData = await apiData.json();
     let labels = [];
@@ -77,20 +78,19 @@ function App() {
         },
         title: {
           display: true,
-          text: symbol,
+          text: stock,
         },
       },
     });
+    setStock('')
   }
 
   function handleChoose() {
-    let symbol = document.getElementById('symbolList').value
-    fetchData(symbol)
-    document.getElementById('symbolList').value = ''
+    fetchData()
   }
 
   useEffect(() => {
-    fetchData("AAPL");
+    fetchData();
   }, []);
   return (
     <div className="App">
@@ -106,6 +106,8 @@ function App() {
             name="symbolList"
             id="symbolList"
             list="symbolData"
+            value={stock}
+            onChange={e => setStock(e.target.value)}
           />
           <datalist id="symbolData">{dataOption}</datalist>
           <button onClick={handleChoose}>See Price</button>
