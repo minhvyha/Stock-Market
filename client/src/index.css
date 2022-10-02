@@ -94,12 +94,13 @@ iframe {
   cursor: pointer;
   outline: none;
   transition: 0.5s;
+  margin-bottom: 25px;
 }
 .submit-button:hover {
   border-color: #2691d9;
 }
 .signup_link {
-  margin: 20px 0;
+  margin: 15px 0;
   text-align: center;
   font-size: 14px;
   color: #666666;
