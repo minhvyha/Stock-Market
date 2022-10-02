@@ -2,7 +2,7 @@ import React from 'react';
 import SignInImage from '../assets/images/SignIn.png';
 import SignUpImage from '../assets/images/SignUp.png';
 
-function Login({ login, handleSignUp, handleSignIn, error }) {
+function Login({ login, handleSignUp, handleSignIn, error, handleSubmit }) {
   return (
     <div className="login-container" id="login-container">
       <img
@@ -30,7 +30,7 @@ function Login({ login, handleSignUp, handleSignIn, error }) {
             <label>Confirm Password</label>
           </div>
         )}
-        <button className="submit-button">
+        <button onClick={handleSubmit} className="submit-button">
           {login ? 'Sign In' : 'Sign Up'}
         </button>
         <div id="signInDiv"></div>
