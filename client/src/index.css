@@ -9,6 +9,7 @@ body {
 }
 iframe {
   margin: 0 auto !important;
+  transform: translateX(-10px);
 }
 
 /* ============== SIGN IN ============== */
@@ -22,3 +23,4 @@ iframe {
 .signin-image {
   width: 180px;
 }
+
