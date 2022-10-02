@@ -96,11 +96,11 @@ function App() {
     fetchData();
   }
 
-  function handleSignUp(){
-    setLogin(false)
+  function handleSignUp() {
+    setLogin(false);
   }
-  function handleSignIn(){
-    setLogin(true)
+  function handleSignIn() {
+    setLogin(true);
   }
 
   useEffect(() => {
@@ -108,7 +108,11 @@ function App() {
   }, []);
   return (
     <div className="App">
-      <Login login={login} handleSignUp={handleSignUp} handleSignIn={handleSignIn} />
+      <Login
+        login={login}
+        handleSignUp={handleSignUp}
+        handleSignIn={handleSignIn}
+      />
 
       {Object.keys(user).length !== 0 && (
         <div>
