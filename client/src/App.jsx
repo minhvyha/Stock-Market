@@ -120,6 +120,15 @@ function App() {
       setErrorLogin('Please enter password.')
       return
     }
+    console.log(email.match(emailRegex))
+    if(email.match(emailRegex) === null){
+      setErrorLogin('Invalid email.')
+      return
+    }
+    if(password(passwordRegex) === null){
+      setErrorLogin('Password must have minimum length of 8 and contain at least one letter and one number.')
+      return
+    }
     if(!login){
       let confirmation = document.getElementById('confirmation-login').value
       if (confirmation === ''){
