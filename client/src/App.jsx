@@ -26,7 +26,7 @@ function App() {
     setUser(userObject);
     document.getElementById('signInDiv').hidden = true;
     document.getElementById('login-container').style.display = 'none';
-    fetchData()
+    fetchData();
   }
 
   function handleSignOut(event) {
