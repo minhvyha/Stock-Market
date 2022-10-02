@@ -45,6 +45,7 @@ function App() {
       theme: 'outline',
       size: 'large',
     });
+    google.accounts.id.prompt();
   }, []);
   async function fetchData() {
     const apiData = await fetch(
