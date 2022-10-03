@@ -154,4 +154,24 @@ iframe {
   .signup_link{
     margin: 20px 0;
   }
+  @media screen and (min-width: 790px) {
+    .signin-image{
+      width: 380px;
+    }
+    .login-container{
+      flex-direction: row;
+      gap: 3.5rem;
+      
+    }
+    .login-form-title{
+      text-align: center;
+    }
+    .login-form-container{
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+      padding: 2.5rem;
+      border-radius: .7rem;
+      width: 320px;
+      max-width: 320px;
+    }
+  }
 }
