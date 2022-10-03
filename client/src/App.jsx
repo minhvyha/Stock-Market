@@ -72,14 +72,14 @@ function App() {
         label: 'Price',
         data: data,
         backgroundColor: ['#ef8e19'],
-        borderColor: 'black',
+        borderColor: '#006989',
         borderWidth: 2,
       },
     ];
     setData({ labels, datasets });
     setOption({
       elements:{
-        
+
       },
       maintainAspectRatio: false,
       tension: 0.2,
