@@ -173,7 +173,7 @@ iframe {
       width: 320px;
       max-width: 320px;
     }
-    .error-text-form{
+    .error-text-form {
       font-size: 12px;
     }
   }
@@ -181,24 +181,24 @@ iframe {
     .signin-image {
       width: 400px;
     }
-    .login-container{
+    .login-container {
       gap: 5rem;
     }
-    .login-form-container{
+    .login-form-container {
       width: 380px;
       max-width: 380px;
     }
-    .login-form-title{
+    .login-form-title {
       font-size: 1.9rem;
     }
-    .submit-button{
+    .submit-button {
       margin-bottom: 30px;
     }
-    .signup_link{
+    .signup_link {
       margin-top: 30px;
       margin-bottom: 20px;
     }
-    .submit-button{
+    .submit-button {
       font-size: 20px;
       height: 45px;
     }
