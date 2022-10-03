@@ -101,7 +101,7 @@ iframe {
   font-weight: 700;
   cursor: pointer;
   outline: none;
-  transition: 0.5s;
+  transition: 0.4s;
   margin-bottom: 10px;
 }
 .submit-button:hover {
