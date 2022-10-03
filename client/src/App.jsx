@@ -10,8 +10,8 @@ var dataOption = Symbol.map((company) => {
   return <option value={company.Symbol}>{company.Name}</option>;
 });
 
-var emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g
-var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/g
+var emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/g;
 
 function App() {
   const [user, setUser] = useState({});
@@ -19,9 +19,9 @@ function App() {
     datasets: [],
   });
   const [options, setOption] = useState();
-  const [stock, setStock] = useState('');
+  const [stock, setStock] = useState('AAPL');
   const [login, setLogin] = useState(true);
-  const [errorLogin, setErrorLogin] = useState() 
+  const [errorLogin, setErrorLogin] = useState();
 
   function handleCallBackResponse(response) {
     console.log('Encoded JWT ID token: ' + response.credential);
@@ -62,8 +62,10 @@ function App() {
     let data = [];
     let dataYear = await convertData['Time Series (Daily)'];
     for (const [key, val] of Object.entries(dataYear)) {
-      labels.push(key);
-      data.push((parseFloat(val['1. open']) + parseFloat(val['3. low'])) / 2);
+      labels.unshift(key);
+      data.unshift(
+        (parseFloat(val['1. open']) + parseFloat(val['3. low'])) / 2
+      );
     }
     let datasets = [
       {
@@ -76,8 +78,9 @@ function App() {
     ];
     setData({ labels, datasets });
     setOption({
+      maintainAspectRatio: false,
       tension: 0.2,
-      responsive: true,
+      // responsive: true,
       plugins: {
         tooltip: {
           interaction: {
@@ -109,35 +112,37 @@ function App() {
     setLogin(true);
   }
 
-  function handleSubmitForm(){
-    let email = document.getElementById('email-login').value
-    let password = document.getElementById('password-login').value
-    if( email === ''){
-      setErrorLogin('Please enter username.')
-      return
+  function handleSubmitForm() {
+    let email = document.getElementById('email-login').value;
+    let password = document.getElementById('password-login').value;
+    if (email === '') {
+      setErrorLogin('Please enter username.');
+      return;
     }
-    if(password === ''){
-      setErrorLogin('Please enter password.')
-      return
+    if (password === '') {
+      setErrorLogin('Please enter password.');
+      return;
     }
-    console.log(email.match(emailRegex))
-    if(email.match(emailRegex) === null){
-      setErrorLogin('Invalid email.')
-      return
+    console.log(email.match(emailRegex));
+    if (email.match(emailRegex) === null) {
+      setErrorLogin('Invalid email.');
+      return;
     }
-    if(password.match(passwordRegex) === null){
-      setErrorLogin('Password must have minimum length of 8 and contain at least one letter and one number.')
-      return
+    if (password.match(passwordRegex) === null) {
+      setErrorLogin(
+        'Password must have minimum length of 8 and contain at least one letter and one number.'
+      );
+      return;
     }
-    if(!login){
-      let confirmation = document.getElementById('confirmation-login').value
-      if (confirmation === ''){
-        setErrorLogin('Please confirm password.')
-        return
+    if (!login) {
+      let confirmation = document.getElementById('confirmation-login').value;
+      if (confirmation === '') {
+        setErrorLogin('Please confirm password.');
+        return;
       }
-      if(confirmation !== password){
-        setErrorLogin('Your passwords do not match.')
-        return
+      if (confirmation !== password) {
+        setErrorLogin('Your passwords do not match.');
+        return;
       }
     }
   }
@@ -154,7 +159,7 @@ function App() {
 
       {Object.keys(user).length !== 0 && (
         <div>
-          <div style={{ width: 700 }}>
+          <div className="chart-container">
             <LineChart options={options} data={data} />
           </div>
           <label htmlFor="symbolList">Choose a symbol</label>

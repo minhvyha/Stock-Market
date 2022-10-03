@@ -120,3 +120,8 @@ iframe {
 .signup_link a:hover {
   text-decoration: underline;
 }
+/* ============== CHART CSS ============== */
+.chart-container{
+  width: 260px;
+  height: 500px;
+}
