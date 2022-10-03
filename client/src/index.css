@@ -129,6 +129,9 @@ iframe {
 
 /* ============== BREAKPOINT ============== */
 @media screen and (min-width: 350px) {
+  iframe{
+    margin: 0 auto !important;
+  }
   .login-form-title{
     font-size: 1.8rem;
   }
@@ -146,6 +149,9 @@ iframe {
     max-width: 300px;
   }
   .submit-button{
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+  }
+  .signup_link{
+    margin: 20px 0;
   }
 }
