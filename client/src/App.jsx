@@ -78,9 +78,7 @@ function App() {
     ];
     setData({ labels, datasets });
     setOption({
-      elements:{
-
-      },
+      elements: {},
       maintainAspectRatio: false,
       tension: 0.2,
       // responsive: true,
@@ -93,7 +91,7 @@ function App() {
           intersect: false,
         },
         legend: {
-          display: false, 
+          display: false,
         },
         title: {
           display: true,
