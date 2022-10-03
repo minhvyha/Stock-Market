@@ -27,17 +27,17 @@ iframe {
 .signin-image {
   width: 180px;
 }
-.login-form-container{
+.login-form-container {
   max-width: 220px;
 }
 .login-form-title {
   font-size: 1.5rem;
   margin-top: 0.5rem;
 }
-.error-text-form{
+.error-text-form {
   color: rgb(255, 72, 72);
   font-size: 11px;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
 .txt_field {
   position: relative;
@@ -121,7 +121,7 @@ iframe {
   text-decoration: underline;
 }
 /* ============== CHART CSS ============== */
-.chart-container{
+.chart-container {
   width: 260px;
   height: 400px;
   margin-inline: auto;
