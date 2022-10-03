@@ -12,7 +12,7 @@ body {
   height: 100vh;
 }
 iframe {
-  margin: 0 auto !important;
+  margin: 0 !important;
   transform: translateX(-10px);
 }
 
@@ -37,7 +37,7 @@ iframe {
 .error-text-form {
   color: rgb(255, 72, 72);
   font-size: 11px;
-  margin-top: 0.5rem;
+  padding-top: .5rem;
 }
 .txt_field {
   position: relative;
@@ -125,4 +125,15 @@ iframe {
   width: 260px;
   height: 400px;
   margin-inline: auto;
+}
+
+/* ============== BREAKPOINT ============== */
+@media screen and (min-width: 350px) {
+  .signin-image{
+    width: 250px;
+  }
+  .login-form-container{
+    width: 280px;
+    max-width: 280px;
+  }
 }
