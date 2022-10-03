@@ -25,7 +25,8 @@ Chart.register(
   SubTitle
 );
 
-function LineChart({ options, data }) {
+function LineChart({ options, data, fontSize }) {
+  Chart.defaults.font.size = fontSize
   return <Line options={options} data={data} />;
 }
 

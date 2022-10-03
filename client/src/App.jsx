@@ -90,7 +90,7 @@ function App() {
           intersect: false,
         },
         legend: {
-          display: false,
+          display: false, 
         },
         title: {
           display: true,
@@ -160,7 +160,7 @@ function App() {
       {Object.keys(user).length !== 0 && (
         <div>
           <div className="chart-container">
-            <LineChart options={options} data={data} />
+            <LineChart options={options} data={data} fontSize={9} />
           </div>
           <label htmlFor="symbolList">Choose a symbol</label>
           <input
