@@ -78,6 +78,9 @@ function App() {
     ];
     setData({ labels, datasets });
     setOption({
+      elements:{
+        
+      },
       maintainAspectRatio: false,
       tension: 0.2,
       // responsive: true,
