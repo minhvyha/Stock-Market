@@ -3,7 +3,6 @@ import { Symbol } from './SP500';
 import axios from 'axios';
 import LineChart from './components/LineChart';
 import jwt_decode from 'jwt-decode';
-import SignInImage from './assets/images/SignIn.png';
 import Login from './components/Login';
 
 var dataOption = Symbol.map((company) => {
