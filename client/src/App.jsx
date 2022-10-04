@@ -12,6 +12,8 @@ var dataOption = Symbol.map((company) => {
 var emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
 var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/g;
 
+const MainPageContext = React.createContext();
+
 function App() {
   const [user, setUser] = useState({});
   const [data, setData] = useState({
@@ -148,38 +150,40 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <Login
-        login={login}
-        handleSignUp={handleSignUp}
-        handleSignIn={handleSignIn}
-        error={errorLogin}
-        handleSubmit={handleSubmitForm}
-      />
+    <MainPageContext>
+      <div className="App">
+        <Login
+          login={login}
+          handleSignUp={handleSignUp}
+          handleSignIn={handleSignIn}
+          error={errorLogin}
+          handleSubmit={handleSubmitForm}
+        />
 
-      {Object.keys(user).length !== 0 && (
-        <div>
-          <div className="chart-container">
-            <LineChart options={options} data={data} fontSize={9} />
+        {Object.keys(user).length !== 0 && (
+          <div>
+            <div className="chart-container">
+              <LineChart options={options} data={data} fontSize={9} />
+            </div>
+            <label htmlFor="symbolList">Choose a symbol</label>
+            <input
+              type="text"
+              name="symbolList"
+              id="symbolList"
+              list="symbolData"
+              value={stock}
+              onChange={(e) => setStock(e.target.value)}
+            />
+            <datalist id="symbolData">{dataOption}</datalist>
+            <button onClick={handleChoose}>See Price</button>
+
+            <button className="btn-sign-out" onClick={handleSignOut}>
+              Sign Out
+            </button>
           </div>
-          <label htmlFor="symbolList">Choose a symbol</label>
-          <input
-            type="text"
-            name="symbolList"
-            id="symbolList"
-            list="symbolData"
-            value={stock}
-            onChange={(e) => setStock(e.target.value)}
-          />
-          <datalist id="symbolData">{dataOption}</datalist>
-          <button onClick={handleChoose}>See Price</button>
-
-          <button className="btn-sign-out" onClick={handleSignOut}>
-            Sign Out
-          </button>
-        </div>
-      )}
-    </div>
+        )}
+      </div>
+    </MainPageContext>
   );
 }
 
