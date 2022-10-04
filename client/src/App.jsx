@@ -150,7 +150,7 @@ function App() {
   }
 
   return (
-    <MainPageContext.Provider value={null}>
+    <MainPageContext.Provider value={{ options, data, stock, setStock, dataOption, handleChoose, handleSignOut}}>
       <div className="App">
         <Login
           login={login}
