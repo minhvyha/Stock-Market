@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import LineChart from './LineChart';
 import { MainPageContext } from '../App';
 
 function Home() {
+    const context = useContext(MainPageContext)
   return (
     <div>
       <div className="chart-container">
