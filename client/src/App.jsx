@@ -150,7 +150,7 @@ function App() {
   }
 
   return (
-    <MainPageContext>
+    <MainPageContext.Provider>
       <div className="App">
         <Login
           login={login}
@@ -183,7 +183,7 @@ function App() {
           </div>
         )}
       </div>
-    </MainPageContext>
+    </MainPageContext.Provider>
   );
 }
 
