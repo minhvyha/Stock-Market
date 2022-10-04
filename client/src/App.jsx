@@ -4,6 +4,7 @@ import axios from 'axios';
 import LineChart from './components/LineChart';
 import jwt_decode from 'jwt-decode';
 import Login from './components/Login';
+import Home from './components/Home';
 
 var dataOption = Symbol.map((company) => {
   return <option value={company.Symbol}>{company.Name}</option>;
@@ -172,24 +173,7 @@ function App() {
 
         {Object.keys(user).length !== 0 && (
           <div>
-            <div className="chart-container">
-              <LineChart options={options} data={data} fontSize={9} />
-            </div>
-            <label htmlFor="symbolList">Choose a symbol</label>
-            <input
-              type="text"
-              name="symbolList"
-              id="symbolList"
-              list="symbolData"
-              value={stock}
-              onChange={(e) => setStock(e.target.value)}
-            />
-            <datalist id="symbolData">{dataOption}</datalist>
-            <button onClick={handleChoose}>See Price</button>
-
-            <button className="btn-sign-out" onClick={handleSignOut}>
-              Sign Out
-            </button>
+            <Home />
           </div>
         )}
       </div>

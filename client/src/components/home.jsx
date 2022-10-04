@@ -3,7 +3,15 @@ import LineChart from './LineChart';
 import { MainPageContext } from '../App';
 
 function Home() {
-  const context = useContext(MainPageContext);
+  const {
+    options,
+    data,
+    stock,
+    setStock,
+    dataOption,
+    handleChoose,
+    handleSignOut,
+  } = useContext(MainPageContext);
   return (
     <div>
       <div className="chart-container">
@@ -28,4 +36,4 @@ function Home() {
   );
 }
 
-export default home;
+export default Home;
