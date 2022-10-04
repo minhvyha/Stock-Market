@@ -12,7 +12,7 @@ var dataOption = Symbol.map((company) => {
 var emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
 var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/g;
 
-const MainPageContext = React.createContext();
+export const MainPageContext = React.createContext();
 
 function App() {
   const [user, setUser] = useState({});
@@ -150,7 +150,7 @@ function App() {
   }
 
   return (
-    <MainPageContext.Provider>
+    <MainPageContext.Provider value={null}>
       <div className="App">
         <Login
           login={login}

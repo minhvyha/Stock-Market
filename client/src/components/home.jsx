@@ -1,5 +1,6 @@
 import React from 'react';
 import LineChart from './LineChart';
+import {MainPageContext} from '../App'
 
 function Home() {
   return (
