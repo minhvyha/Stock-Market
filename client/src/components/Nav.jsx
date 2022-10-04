@@ -8,7 +8,7 @@ function Nav() {
       <label for="check" class="checkbtn">
         <i class="fas fa-bars"></i>
       </label>
-      <label class="logo">DesignX</label>
+      <label class="logo">StockX</label>
       <ul>
         <li>
           <a class="active" href="#">
