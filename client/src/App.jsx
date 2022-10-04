@@ -5,6 +5,7 @@ import LineChart from './components/LineChart';
 import jwt_decode from 'jwt-decode';
 import Login from './components/Login';
 import Home from './components/Home';
+import Nav from './components/Nav';
 
 var dataOption = Symbol.map((company) => {
   return <option value={company.Symbol}>{company.Name}</option>;
@@ -172,9 +173,10 @@ function App() {
         />
 
         {Object.keys(user).length !== 0 && (
-          <div>
+          <>
+            <Nav />
             <Home />
-          </div>
+          </>
         )}
       </div>
     </MainPageContext.Provider>
