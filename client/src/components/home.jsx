@@ -3,7 +3,7 @@ import LineChart from './LineChart';
 
 function Home() {
   return (
-    <>
+    <div>
       <div className="chart-container">
         <LineChart options={options} data={data} fontSize={9} />
       </div>
@@ -22,7 +22,7 @@ function Home() {
       <button className="btn-sign-out" onClick={handleSignOut}>
         Sign Out
       </button>
-    </>
+    </div>
   );
 }
 
