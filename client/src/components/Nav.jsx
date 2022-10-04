@@ -3,7 +3,7 @@ import './Nav.css';
 
 function Nav() {
   return (
-    <nav>
+    <nav id='navBar'>
       <input type="checkbox" id="check" />
       <label for="check" class="checkbtn">
         <i class="fas fa-bars"></i>
@@ -11,7 +11,7 @@ function Nav() {
       <label class="logo">StockX</label>
       <ul>
         <li>
-          <a class="active" href="#">
+          <a href="#">
             Home
           </a>
         </li>

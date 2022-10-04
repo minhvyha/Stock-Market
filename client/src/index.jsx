@@ -6,3 +6,11 @@ import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);
+
+document.window.scroll(function() {
+    if (document.window.scrollTop() > 10) {
+        document.getElementById('navBar').addClass('floatingNav');
+    } else {
+        document.getElementById("navBar").removeClass('floatingNav');
+    }
+});

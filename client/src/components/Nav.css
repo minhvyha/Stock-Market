@@ -1,11 +1,12 @@
 /* ============== NAV BAR ============== */
 nav {
-  background: #0082e6;
+  background: #ffffff;
   height: 80px;
   width: 100%;
+  box-shadow: 0px 1px 4px #999;
 }
 label.logo {
-  color: white;
+  color: rgb(0, 0, 0);
   font-size: 35px;
   line-height: 80px;
   padding: 0 100px;
@@ -21,16 +22,15 @@ nav ul li {
   margin: 0 5px;
 }
 nav ul li a {
-  color: white;
+  color: rgb(0, 0, 0);
   font-size: 17px;
   padding: 7px 13px;
   border-radius: 3px;
   text-transform: uppercase;
-}
-a.active,
-a:hover {
-  background: #1b9bff;
   transition: 0.5s;
+}
+a:hover {
+  color: #13151b;
 }
 .checkbtn {
   font-size: 30px;
