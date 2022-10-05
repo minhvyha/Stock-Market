@@ -6,7 +6,7 @@ function Nav() {
     <nav id='navBar'>
       <input type="checkbox" id="check" />
       <label for="check" class="checkbtn">
-        <i class="fas fa-bars"></i>
+        <i class="fas fa-bars menu-symbol"></i>
       </label>
       <label class="logo">StockX</label>
       <ul>

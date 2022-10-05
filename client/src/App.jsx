@@ -31,8 +31,7 @@ function App() {
     let userObject = jwt_decode(response.credential);
     console.log(userObject);
     setUser(userObject);
-    document.getElementById('signInDiv').hidden = true;
-    document.getElementById('login-container').style.display = 'none';
+    removeLogin()
     fetchData();
   }
 
@@ -55,6 +54,11 @@ function App() {
     });
     google.accounts.id.prompt();
   }, []);
+  
+  function removeLogin(){
+    document.getElementById('signInDiv').hidden = true;
+    document.getElementById('login-container').style.display = 'none';
+  }
 
   async function fetchData() {
     const apiData = await fetch(
@@ -117,6 +121,9 @@ function App() {
   }
 
   function handleSubmitForm() {
+    setUser({name:'fasdf', asdf: 1})
+    removeLogin()
+    fetchData()
     let email = document.getElementById('email-login').value;
     let password = document.getElementById('password-login').value;
     if (email === '') {
@@ -150,7 +157,7 @@ function App() {
       }
     }
   }
-
+console.log(user)
   return (
     <MainPageContext.Provider
       value={{

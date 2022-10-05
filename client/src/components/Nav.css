@@ -32,6 +32,9 @@ nav ul li a {
 a:hover {
   color: #13151b;
 }
+.menu-symbol{
+  color: black;
+}
 .checkbtn {
   font-size: 30px;
   color: white;
