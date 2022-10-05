@@ -30,7 +30,7 @@ nav ul li a {
   transition: 0.5s;
 }
 a:hover {
-  color: #13151b;
+  color: #1f262e;
 }
 .menu-symbol{
   color: black;
@@ -64,7 +64,7 @@ a:hover {
     position: fixed;
     width: 100%;
     height: 100vh;
-    background: #2c3e50;
+    background: #1c2733;
     top: 80px;
     left: -100%;
     text-align: center;
@@ -80,11 +80,12 @@ a:hover {
   }
   nav ul li a {
     font-size: 20px;
+    color: white;
   }
   a:hover,
   a.active {
     background: none;
-    color: #0082e6;
+    color: #219fff;
   }
   #check:checked ~ ul {
     left: 0;
