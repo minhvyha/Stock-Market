@@ -23,7 +23,7 @@ function Home() {
         name="symbolList"
         id="symbolList"
         list="symbolData"
-        className='symbol-list-box'
+        className="symbol-list-box"
         value={stock}
         onChange={(e) => setStock(e.target.value)}
       />
