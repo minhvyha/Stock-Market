@@ -18,7 +18,6 @@ iframe {
   transform: translateX(-10px);
 }
 
-
 /* ============== SIGN IN ============== */
 .login-container {
   display: flex;
@@ -125,7 +124,7 @@ iframe {
 }
 
 /* ============== HOME PAGE ============== */
-.symbol-list-box{
+.symbol-list-box {
   width: 50px;
 }
 
