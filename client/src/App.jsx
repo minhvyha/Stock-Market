@@ -7,6 +7,7 @@ import Login from './components/Login';
 import Home from './components/Home';
 import Nav from './components/Nav';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { ShareLayout } from './pages/ShareLayout';
 
 var dataOption = Symbol.map((company) => {
   return <option value={company.Symbol}>{company.Name}</option>;
@@ -161,6 +162,11 @@ function App() {
   
   return (
     <BrowserRouter>
+      <Routes>
+        <Route path='/' element={ShareLayout}>
+
+        </Route>
+      </Routes>
       <MainPageContext.Provider
         value={{
           options,
