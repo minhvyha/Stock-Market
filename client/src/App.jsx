@@ -24,7 +24,6 @@ function App() {
   });
   const [options, setOption] = useState();
   const [stock, setStock] = useState('AAPL');
-  const [login, setLogin] = useState(true);
   const [errorLogin, setErrorLogin] = useState();
 
   function handleCallBackResponse(response) {
@@ -112,13 +111,6 @@ function App() {
 
   function handleChoose() {
     fetchData();
-  }
-
-  function handleSignUp() {
-    setLogin(false);
-  }
-  function handleSignIn() {
-    setLogin(true);
   }
 
   function handleSubmitForm() {

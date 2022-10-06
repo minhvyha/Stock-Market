@@ -1,17 +1,17 @@
 import React from 'react';
-import SignInImage from '../assets/images/SignIn.png';
+import SignUpImage from '../assets/images/SignUp.png';
 import { Link } from 'react-router-dom';
 
-function Login({ error, handleSubmit }) {
+function Signup({ handleSignUp, error, handleSignUp }) {
   return (
     <div className="login-container" id="login-container">
       <img
-        src={SignInImage}
+        src={SignUpImage}
         alt="Sign In Image"
         className="signin-image"
       />
       <div className="login-form-container">
-        <h1 className="login-form-title">Sign In</h1>
+        <h1 className="login-form-title">Sign Up</h1>
         {error && <p className="error-text-form">{error}</p>}
         <div class="txt_field">
           <input type="text" id="email-login" required />
@@ -23,13 +23,20 @@ function Login({ error, handleSubmit }) {
           <span></span>
           <label>Password</label>
         </div>
+        
+          <div class="txt_field">
+            <input type="password" id="confirmation-login" required />
+            <span></span>
+            <label>Confirm Password</label>
+          </div>
+
         <button onClick={handleSubmit} className="submit-button">
-          Sign In
+           Sign Up
         </button>
         <div id="signInDiv"></div>
-        <Link to="signup">
+        <Link to="/signup">       
           <div class="signup_link">
-            Not a member? <a onClick={handleSignUp}>Register</a>
+            Joined us before? <a onClick={handleSignIn}>Login</a>
           </div>
         </Link>
 
@@ -38,4 +45,4 @@ function Login({ error, handleSubmit }) {
   );
 }
 
-export default Login;
+export default Signup;
