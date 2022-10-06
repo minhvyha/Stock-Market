@@ -160,6 +160,7 @@ function App() {
   }
   console.log(user);
   return (
+    <BrowserRouter>
     <MainPageContext.Provider
       value={{
         options,
@@ -188,6 +189,7 @@ function App() {
         )}
       </div>
     </MainPageContext.Provider>
+    </BrowserRouter>
   );
 }
 
