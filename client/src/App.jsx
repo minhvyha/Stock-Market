@@ -3,9 +3,10 @@ import { Symbol } from './SP500';
 import axios from 'axios';
 import jwt_decode from 'jwt-decode';
 import Login from './components/Login';
-import Home from './components/Home';
+import Signup from './components/Signup';
+import Home from './pages/Home';
 import Nav from './components/Nav';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Redirect } from 'react-router-dom';
 import ShareLayout from './pages/ShareLayout';
 
 var dataOption = Symbol.map((company) => {
@@ -31,14 +32,12 @@ function App() {
     let userObject = jwt_decode(response.credential);
     console.log(userObject);
     setUser(userObject);
-    removeLogin();
+
     fetchData();
   }
 
   function handleSignOut(event) {
     setUser({});
-    document.getElementById('signInDiv').hidden = false;
-    document.getElementById('login-container').style.display = 'flex';
   }
 
   useEffect(() => {
@@ -54,11 +53,6 @@ function App() {
     });
     google.accounts.id.prompt();
   }, []);
-
-  function removeLogin() {
-    document.getElementById('signInDiv').hidden = true;
-    document.getElementById('login-container').style.display = 'none';
-  }
 
   async function fetchData() {
     const apiData = await fetch(
@@ -113,10 +107,7 @@ function App() {
     fetchData();
   }
 
-  function handleSubmitForm() {
-    setUser({ name: 'fasdf', asdf: 1 });
-    removeLogin();
-    fetchData();
+  function checkError(login){
     let email = document.getElementById('email-login').value;
     let password = document.getElementById('password-login').value;
     if (email === '') {
@@ -127,7 +118,6 @@ function App() {
       setErrorLogin('Please enter password.');
       return;
     }
-    console.log(email.match(emailRegex));
     if (email.match(emailRegex) === null) {
       setErrorLogin('Invalid email.');
       return;
@@ -138,38 +128,17 @@ function App() {
       );
       return;
     }
-    if (!login) {
-      let confirmation = document.getElementById('confirmation-login').value;
-      if (confirmation === '') {
-        setErrorLogin('Please confirm password.');
-        return;
-      }
-      if (confirmation !== password) {
-        setErrorLogin('Your passwords do not match.');
-        return;
-      }
-    }
+  }
+  function handleSignUp(){
+
+  }
+  function handleSignIn(){
+
   }
 
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<ShareLayout />}>
-          <Route
-            path="login"
-            element={
-              <Login
-                login={true}
-                handleSignIn={handleSignIn}
-                error={errorLogin}
-                handleSubmit={handleSubmitForm}
-              />
-            }
-          />
-          <Route path="signup" />
-        </Route>
-      </Routes>
-      <MainPageContext.Provider
+    <MainPageContext.Provider
         value={{
           options,
           data,
@@ -180,22 +149,22 @@ function App() {
           handleSignOut,
         }}
       >
-        <div className="App">
-          <Login
-            login={login}
-            handleSignUp={handleSignUp}
-            handleSignIn={handleSignIn}
-            error={errorLogin}
-            handleSubmit={handleSubmitForm}
+      <Routes>
+        <Route path="/" element={<ShareLayout />}>
+        <Route index element={<Home />} />
+          <Route
+            path="login"
+            element={
+              <Login
+                error={errorLogin}
+                handleSignIn={handleSignIn}
+              />
+            }
           />
-
-          {Object.keys(user).length !== 0 && (
-            <>
-              <Nav />
-              <Home />
-            </>
-          )}
-        </div>
+          <Route path="signup" element={<Signup error={errorLogin} handleSignUp={handleSignUp} />} />
+          
+        </Route>
+      </Routes>
       </MainPageContext.Provider>
     </BrowserRouter>
   );

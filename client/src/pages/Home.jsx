@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
-import LineChart from './LineChart';
+import LineChart from '../components/LineChart';
 import { MainPageContext } from '../App';
+import { Link } from 'react-router-dom';
 
 function Home() {
   const {
@@ -29,10 +30,11 @@ function Home() {
       />
       <datalist id="symbolData">{dataOption}</datalist>
       <button onClick={handleChoose}>See Price</button>
-
+      <Link to="/login">
       <button className="btn-sign-out" onClick={handleSignOut}>
         Sign Out
       </button>
+      </Link>
     </div>
   );
 }

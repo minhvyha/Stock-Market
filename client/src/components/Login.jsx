@@ -2,7 +2,7 @@ import React from 'react';
 import SignInImage from '../assets/images/SignIn.png';
 import { Link } from 'react-router-dom';
 
-function Login({ error, handleSubmit }) {
+function Login({ error, handleSignIn }) {
   return (
     <div className="login-container" id="login-container">
       <img
@@ -23,13 +23,13 @@ function Login({ error, handleSubmit }) {
           <span></span>
           <label>Password</label>
         </div>
-        <button onClick={handleSubmit} className="submit-button">
+        <button onClick={handleSignIn} className="submit-button">
           Sign In
         </button>
         <div id="signInDiv"></div>
         <Link to="signup">
           <div class="signup_link">
-            Not a member? <a onClick={handleSignUp}>Register</a>
+            Not a member? <a>Register</a>
           </div>
         </Link>
 
