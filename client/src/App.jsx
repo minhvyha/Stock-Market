@@ -158,12 +158,23 @@ function App() {
       }
     }
   }
-  
+
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<ShareLayout/>}>
-
+        <Route path="/" element={<ShareLayout />}>
+          <Route
+            path="login"
+            element={
+              <Login
+                login={true}
+                handleSignIn={handleSignIn}
+                error={errorLogin}
+                handleSubmit={handleSubmitForm}
+              />
+            }
+          />
+          <Route path="signup" />
         </Route>
       </Routes>
       <MainPageContext.Provider
