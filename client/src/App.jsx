@@ -161,34 +161,34 @@ function App() {
   console.log(user);
   return (
     <BrowserRouter>
-    <MainPageContext.Provider
-      value={{
-        options,
-        data,
-        stock,
-        setStock,
-        dataOption,
-        handleChoose,
-        handleSignOut,
-      }}
-    >
-      <div className="App">
-        <Login
-          login={login}
-          handleSignUp={handleSignUp}
-          handleSignIn={handleSignIn}
-          error={errorLogin}
-          handleSubmit={handleSubmitForm}
-        />
+      <MainPageContext.Provider
+        value={{
+          options,
+          data,
+          stock,
+          setStock,
+          dataOption,
+          handleChoose,
+          handleSignOut,
+        }}
+      >
+        <div className="App">
+          <Login
+            login={login}
+            handleSignUp={handleSignUp}
+            handleSignIn={handleSignIn}
+            error={errorLogin}
+            handleSubmit={handleSubmitForm}
+          />
 
-        {Object.keys(user).length !== 0 && (
-          <>
-            <Nav />
-            <Home />
-          </>
-        )}
-      </div>
-    </MainPageContext.Provider>
+          {Object.keys(user).length !== 0 && (
+            <>
+              <Nav />
+              <Home />
+            </>
+          )}
+        </div>
+      </MainPageContext.Provider>
     </BrowserRouter>
   );
 }
