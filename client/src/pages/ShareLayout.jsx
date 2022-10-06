@@ -1,7 +1,9 @@
 import React from 'react'
 
-export const ShareLayout = () => {
+function ShareLayout() {
   return (
     <div>ShareLayout</div>
   )
 }
+
+export default ShareLayout

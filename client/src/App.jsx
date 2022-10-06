@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Symbol } from './SP500';
 import axios from 'axios';
-import LineChart from './components/LineChart';
 import jwt_decode from 'jwt-decode';
 import Login from './components/Login';
 import Home from './components/Home';
 import Nav from './components/Nav';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { ShareLayout } from './pages/ShareLayout';
+import ShareLayout from './pages/ShareLayout';
 
 var dataOption = Symbol.map((company) => {
   return <option value={company.Symbol}>{company.Name}</option>;
@@ -163,7 +162,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={ShareLayout}>
+        <Route path='/' element={<ShareLayout/>}>
 
         </Route>
       </Routes>
