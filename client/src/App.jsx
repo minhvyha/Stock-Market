@@ -35,7 +35,6 @@ function App() {
 
     fetchData();
   }
-
   function handleSignOut(event) {
     setUser({});
   }
@@ -107,7 +106,7 @@ function App() {
     fetchData();
   }
 
-  function checkError(login){
+  function checkError(login) {
     let email = document.getElementById('email-login').value;
     let password = document.getElementById('password-login').value;
     if (email === '') {
@@ -129,16 +128,12 @@ function App() {
       return;
     }
   }
-  function handleSignUp(){
-
-  }
-  function handleSignIn(){
-
-  }
+  function handleSignUp() {}
+  function handleSignIn() {}
 
   return (
     <BrowserRouter>
-    <MainPageContext.Provider
+      <MainPageContext.Provider
         value={{
           options,
           data,
@@ -149,22 +144,21 @@ function App() {
           handleSignOut,
         }}
       >
-      <Routes>
-        <Route path="/" element={<ShareLayout />}>
-        <Route index element={<Home />} />
-          <Route
-            path="login"
-            element={
-              <Login
-                error={errorLogin}
-                handleSignIn={handleSignIn}
-              />
-            }
-          />
-          <Route path="signup" element={<Signup error={errorLogin} handleSignUp={handleSignUp} />} />
-          
-        </Route>
-      </Routes>
+        <Routes>
+          <Route path="/" element={<ShareLayout />}>
+            <Route index element={<Home />} />
+            <Route
+              path="login"
+              element={<Login error={errorLogin} handleSignIn={handleSignIn} />}
+            />
+            <Route
+              path="signup"
+              element={
+                <Signup error={errorLogin} handleSignUp={handleSignUp} />
+              }
+            />
+          </Route>
+        </Routes>
       </MainPageContext.Provider>
     </BrowserRouter>
   );
