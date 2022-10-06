@@ -1,8 +1,21 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import SignInImage from '../assets/images/SignIn.png';
 import { Link } from 'react-router-dom';
 
-function Login({ error, handleSignIn }) {
+function Login({ error, handleSignIn, handleCallBackResponse }) {
+  useEffect(() => {
+    /* global google */
+    google.accounts.id.initialize({
+      client_id: process.env.REACT_APP_CLIENT_ID,
+      callback: handleCallBackResponse,
+    });
+
+    google.accounts.id.renderButton(document.getElementById('signInDiv'), {
+      theme: 'outline',
+      size: 'large',
+    });
+    google.accounts.id.prompt();
+  }, []);
   return (
     <div className="login-container" id="login-container">
       <img

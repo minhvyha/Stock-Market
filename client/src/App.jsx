@@ -32,26 +32,11 @@ function App() {
     let userObject = jwt_decode(response.credential);
     console.log(userObject);
     setUser(userObject);
-
     fetchData();
   }
   function handleSignOut(event) {
     setUser({});
   }
-
-  useEffect(() => {
-    /* global google */
-    google.accounts.id.initialize({
-      client_id: process.env.REACT_APP_CLIENT_ID,
-      callback: handleCallBackResponse,
-    });
-
-    google.accounts.id.renderButton(document.getElementById('signInDiv'), {
-      theme: 'outline',
-      size: 'large',
-    });
-    google.accounts.id.prompt();
-  }, []);
 
   async function fetchData() {
     const apiData = await fetch(
@@ -149,12 +134,12 @@ function App() {
             <Route index element={<Home />} />
             <Route
               path="login"
-              element={<Login error={errorLogin} handleSignIn={handleSignIn} />}
+              element={<Login error={errorLogin} handleSignIn={handleSignIn} handleCallBackResponse={handleCallBackResponse} />}
             />
             <Route
               path="signup"
               element={
-                <Signup error={errorLogin} handleSignUp={handleSignUp} />
+                <Signup error={errorLogin} handleSignUp={handleSignUp} handleCallBackResponse={handleCallBackResponse} />
               }
             />
           </Route>
