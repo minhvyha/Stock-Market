@@ -1,9 +1,12 @@
-import React, {useEffect} from 'react';
+import React, { useEffect, useState } from 'react';
 import SignUpImage from '../assets/images/SignUp.png';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Signup({ error, handleCallBackResponse, setUser }) {
   const [errorLogin, setErrorLogin] = useState();
+  var emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+  var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/g;
+  const navigate = useNavigate();
   useEffect(() => {
     /* global google */
     google.accounts.id.initialize({
@@ -18,12 +21,12 @@ function Signup({ error, handleCallBackResponse, setUser }) {
     google.accounts.id.prompt();
   }, []);
 
-  function handleSignUp(){
-    if (checkError()){
-      return
+  function handleSignUp() {
+    if (checkError()) {
+      return;
     }
-    setUser({name: 'asdf'})
-    navigate('/')
+    setUser({ name: 'asdf' });
+    navigate('/');
   }
 
   function checkError() {
@@ -38,9 +41,9 @@ function Signup({ error, handleCallBackResponse, setUser }) {
       setErrorLogin('Enter a password');
       return true;
     }
-    if(confirmation === ''){
-      setErrorLogin('Confirm your password')
-      return true
+    if (confirmation === '') {
+      setErrorLogin('Confirm your password');
+      return true;
     }
     if (email.match(emailRegex) === null) {
       setErrorLogin('Invalid email.');
@@ -50,11 +53,11 @@ function Signup({ error, handleCallBackResponse, setUser }) {
       setErrorLogin(
         'Password must have minimum length of 8 and contain at least one letter and one number.'
       );
-      return true; 
+      return true;
     }
-    if (password !== confirmation){
-      setErrorLogin('Those passwords didn’t match. Try again.')
-      return true
+    if (password !== confirmation) {
+      setErrorLogin('Those passwords didn’t match. Try again.');
+      return true;
     }
   }
 

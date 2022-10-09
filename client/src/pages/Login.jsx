@@ -1,9 +1,11 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import SignInImage from '../assets/images/SignIn.png';
 import { Link, useNavigate } from 'react-router-dom';
 
 function Login({ error, setUser, handleCallBackResponse }) {
   const [errorLogin, setErrorLogin] = useState();
+  var emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/g;
   const navigate = useNavigate()
   useEffect(() => {
     /* global google */

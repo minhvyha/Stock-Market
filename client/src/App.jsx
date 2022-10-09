@@ -13,8 +13,7 @@ var dataOption = Symbol.map((company) => {
   return <option value={company.Symbol}>{company.Name}</option>;
 });
 // https://cloud.iexapis.com/stable/stock/AAPL/quote?token=
-var emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
-var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/g;
+
 
 export const MainPageContext = React.createContext();
 
@@ -117,7 +116,6 @@ function App() {
               path="login"
               element={
                 <Login
-                  error={errorLogin}
                   setUser={setUser}
                   handleCallBackResponse={handleCallBackResponse}
                 />
@@ -127,7 +125,6 @@ function App() {
               path="signup"
               element={
                 <Signup
-                  error={errorLogin}
                   setUser={setUser}
                   handleCallBackResponse={handleCallBackResponse}
                 />
