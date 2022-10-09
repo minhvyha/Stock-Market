@@ -25,6 +25,7 @@ iframe {
   align-items: center;
   flex-direction: column;
   height: 100vh;
+  width: 100%;
 }
 .signin-image {
   width: 180px;
