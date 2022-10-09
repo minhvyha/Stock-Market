@@ -208,6 +208,9 @@ iframe {
 	.intro-title{
 		font-size: 2rem;
 	}
+	.intro-form-container{
+		gap: .9rem;
+	}
 	.intro-subtitle{
 		font-size: 1rem;
 	}
