@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import LineChart from '../components/LineChart';
 import { MainPageContext } from '../App';
 import { Link } from 'react-router-dom';
@@ -12,7 +12,11 @@ function Home() {
     dataOption,
     handleChoose,
     handleSignOut,
+    fetchData
   } = useContext(MainPageContext);
+  useEffect(() =>{
+    fetchData()
+  }, [])
   return (
     <div>
       <div className="chart-container">

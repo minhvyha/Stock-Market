@@ -1,12 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import SignInImage from '../assets/images/SignIn.png';
 import { Link, useNavigate } from 'react-router-dom';
+import jwt_decode from 'jwt-decode';
 
-function Login({ setUser, handleCallBackResponse }) {
+function Login({ setUser }) {
   const [errorLogin, setErrorLogin] = useState();
   var emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
   var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/g;
   const navigate = useNavigate();
+  function handleCallBackResponse(response) {
+    let userObject = jwt_decode(response.credential);
+    console.log(userObject);
+    setUser(userObject);
+    navigate('/')
+  }
   useEffect(() => {
     /* global google */
     google.accounts.id.initialize({

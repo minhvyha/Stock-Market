@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Symbol } from './SP500';
 import axios from 'axios';
-import jwt_decode from 'jwt-decode';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
@@ -23,15 +22,6 @@ function App() {
   });
   const [options, setOption] = useState();
   const [stock, setStock] = useState('AAPL');
-
-  function handleCallBackResponse(response) {
-    console.log('Encoded JWT ID token: ' + response.credential);
-    let userObject = jwt_decode(response.credential);
-    console.log(userObject);
-    setUser(userObject);
-    fetchData();
-  }
-  
   function handleSignOut(event) {
     setUser({});
   }
@@ -100,6 +90,7 @@ function App() {
           dataOption,
           handleChoose,
           handleSignOut,
+          fetchData
         }}
       >
         <Routes>
@@ -119,7 +110,6 @@ function App() {
               element={
                 <Login
                   setUser={setUser}
-                  handleCallBackResponse={handleCallBackResponse}
                 />
               }
             />
@@ -128,7 +118,6 @@ function App() {
               element={
                 <Signup
                   setUser={setUser}
-                  handleCallBackResponse={handleCallBackResponse}
                 />
               }
             />
