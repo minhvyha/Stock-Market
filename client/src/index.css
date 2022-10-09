@@ -254,13 +254,16 @@ iframe {
 		gap: 4rem;
 	}
 	.intro-image{
-		width: 230px;
+		width: 250px;
 	}
 	.intro-title{
 		font-size: 2.3rem;
 	}
 	.intro-subtitle{
 		font-size: 1.15rem;
+	}
+	.intro-form-container{
+		gap: 1.2rem;
 	}
 	.intro-form-container button{
 		width: 270px;
@@ -299,6 +302,12 @@ iframe {
 	.intro-form-container button{
 		width: 300px;
 		padding: 12px 0;
+	}
+	.intro-form-container{
+		gap: 1.3rem;
+	}
+	.intro-subtitle{
+		margin-bottom: .8rem;
 	}
 	.intro-image{
 		width: 300px;
