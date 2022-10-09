@@ -17,7 +17,23 @@ iframe {
 	margin: 0 !important;
 	transform: translateX(-10px);
 }
-
+/* ============== INTRO PAGE ============== */
+.intro-container{
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	align-items: center;
+	justify-content: center;
+}
+.intro-image{
+	width: 50px;
+	height: auto;
+}
+.intro-form-container{
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+}
 /* ============== SIGN IN ============== */
 .login-container {
 	display: flex;
