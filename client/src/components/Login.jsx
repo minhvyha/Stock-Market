@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 function Login({ error, setUser, handleCallBackResponse }) {
   const [errorLogin, setErrorLogin] = useState();
+  const navigate = useNavigate()
   useEffect(() => {
     /* global google */
     google.accounts.id.initialize({
@@ -19,29 +20,33 @@ function Login({ error, setUser, handleCallBackResponse }) {
   }, []);
 
   function handleSignIn(){
+    if (checkError()){
+      return
+    }
     setUser({name: 'asdf'})
+    navigate('/')
   }
-  
-  function checkError(login) {
+
+  function checkError() {
     let email = document.getElementById('email-login').value;
     let password = document.getElementById('password-login').value;
     if (email === '') {
       setErrorLogin('Please enter username.');
-      return;
+      return true;
     }
     if (password === '') {
       setErrorLogin('Please enter password.');
-      return;
+      return true;
     }
     if (email.match(emailRegex) === null) {
       setErrorLogin('Invalid email.');
-      return;
+      return true;
     }
     if (password.match(passwordRegex) === null) {
       setErrorLogin(
         'Password must have minimum length of 8 and contain at least one letter and one number.'
       );
-      return;
+      return true;
     }
   }
 

@@ -19,19 +19,27 @@ function Signup({ error, handleCallBackResponse, setUser }) {
   }, []);
 
   function handleSignUp(){
-
+    if (checkError()){
+      return
+    }
     setUser({name: 'asdf'})
+    navigate('/')
   }
-  function checkError(login) {
+
+  function checkError() {
     let email = document.getElementById('email-login').value;
     let password = document.getElementById('password-login').value;
+    let confirmation = document.getElementById('confirmation-login').value;
     if (email === '') {
       setErrorLogin('Please enter username.');
       return;
     }
     if (password === '') {
-      setErrorLogin('Please enter password.');
+      setErrorLogin('Enter a password');
       return;
+    }
+    if(confirmation === ''){
+      setErrorLogin('Confirm your password')
     }
     if (email.match(emailRegex) === null) {
       setErrorLogin('Invalid email.');
@@ -43,7 +51,11 @@ function Signup({ error, handleCallBackResponse, setUser }) {
       );
       return;
     }
+    if (password !== confirmation){
+      setErrorLogin('Those passwords didn’t match. Try again.')
+    }
   }
+
   return (
     <div className="login-container" id="login-container">
       <img src={SignUpImage} alt="Sign In Image" className="signin-image" />
