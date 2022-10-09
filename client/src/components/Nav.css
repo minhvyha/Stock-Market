@@ -8,6 +8,7 @@
 }
 .nav-container {
   display: flex;
+  margin-inline: auto;
   align-items: center;
   max-width: 1024px;
   width: 100%;

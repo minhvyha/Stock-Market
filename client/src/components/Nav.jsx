@@ -4,7 +4,7 @@ import Logo from '../assets/images/textLogo.png'
 
 function Nav() {
   return (
-    <nav id="navBar">
+    <nav className="navBar">
       <div className='nav-container'>
       <input type="checkbox" id="check" />
       
