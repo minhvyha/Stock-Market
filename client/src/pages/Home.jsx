@@ -12,13 +12,13 @@ function Home() {
     dataOption,
     handleChoose,
     handleSignOut,
-    fetchData
+    fetchData,
   } = useContext(MainPageContext);
-  useEffect(() =>{
-    fetchData()
-  }, [])
+  useEffect(() => {
+    fetchData();
+  }, []);
   return (
-    <div className='main-container'>
+    <div className="main-container">
       <div className="chart-container">
         <LineChart options={options} data={data} fontSize={9} />
       </div>
@@ -35,9 +35,9 @@ function Home() {
       <datalist id="symbolData">{dataOption}</datalist>
       <button onClick={handleChoose}>See Price</button>
       <Link to="/login">
-      <button className="btn-sign-out" onClick={handleSignOut}>
-        Sign Out
-      </button>
+        <button className="btn-sign-out" onClick={handleSignOut}>
+          Sign Out
+        </button>
       </Link>
     </div>
   );
