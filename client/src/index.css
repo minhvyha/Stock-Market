@@ -249,6 +249,24 @@ iframe {
 	
 }
 @media screen and (min-width: 790px) {
+	.intro-container{
+		flex-direction: row;
+		gap: 4rem;
+	}
+	.intro-image{
+		width: 230px;
+	}
+	.intro-title{
+		font-size: 2.3rem;
+	}
+	.intro-subtitle{
+		font-size: 1.15rem;
+	}
+	.intro-form-container button{
+		width: 270px;
+		padding: 10px 0;
+		font-size: 1.2rem;
+	}
 	.signin-image {
 		width: 380px;
 	}
