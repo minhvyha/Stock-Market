@@ -6,7 +6,7 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Home from './pages/Home';
 import Nav from './components/Nav';
-import { BrowserRouter, Routes, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ShareLayout from './pages/ShareLayout';
 
 var dataOption = Symbol.map((company) => {
@@ -25,7 +25,7 @@ function App() {
   });
   const [options, setOption] = useState();
   const [stock, setStock] = useState('AAPL');
-  const [errorLogin, setErrorLogin] = useState();
+  
 
   function handleCallBackResponse(response) {
     console.log('Encoded JWT ID token: ' + response.credential);
@@ -91,30 +91,7 @@ function App() {
     fetchData();
   }
 
-  function checkError(login) {
-    let email = document.getElementById('email-login').value;
-    let password = document.getElementById('password-login').value;
-    if (email === '') {
-      setErrorLogin('Please enter username.');
-      return;
-    }
-    if (password === '') {
-      setErrorLogin('Please enter password.');
-      return;
-    }
-    if (email.match(emailRegex) === null) {
-      setErrorLogin('Invalid email.');
-      return;
-    }
-    if (password.match(passwordRegex) === null) {
-      setErrorLogin(
-        'Password must have minimum length of 8 and contain at least one letter and one number.'
-      );
-      return;
-    }
-  }
-  function handleSignUp() {}
-  function handleSignIn() {}
+  
 
   return (
     <BrowserRouter>
@@ -134,12 +111,12 @@ function App() {
             <Route index element={<Home />} />
             <Route
               path="login"
-              element={<Login error={errorLogin} handleSignIn={handleSignIn} handleCallBackResponse={handleCallBackResponse} />}
+              element={<Login error={errorLogin} setUser={setUser} handleCallBackResponse={handleCallBackResponse} />}
             />
             <Route
               path="signup"
               element={
-                <Signup error={errorLogin} handleSignUp={handleSignUp} handleCallBackResponse={handleCallBackResponse} />
+                <Signup error={errorLogin} setUser={setUser} handleCallBackResponse={handleCallBackResponse} />
               }
             />
           </Route>

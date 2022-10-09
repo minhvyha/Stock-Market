@@ -2,7 +2,8 @@ import React, {useEffect} from 'react';
 import SignUpImage from '../assets/images/SignUp.png';
 import { Link } from 'react-router-dom';
 
-function Signup({ error, handleSignUp, handleCallBackResponse }) {
+function Signup({ error, handleCallBackResponse, setUser }) {
+  const [errorLogin, setErrorLogin] = useState();
   useEffect(() => {
     /* global google */
     google.accounts.id.initialize({
@@ -16,6 +17,33 @@ function Signup({ error, handleSignUp, handleCallBackResponse }) {
     });
     google.accounts.id.prompt();
   }, []);
+
+  function handleSignUp(){
+
+    setUser({name: 'asdf'})
+  }
+  function checkError(login) {
+    let email = document.getElementById('email-login').value;
+    let password = document.getElementById('password-login').value;
+    if (email === '') {
+      setErrorLogin('Please enter username.');
+      return;
+    }
+    if (password === '') {
+      setErrorLogin('Please enter password.');
+      return;
+    }
+    if (email.match(emailRegex) === null) {
+      setErrorLogin('Invalid email.');
+      return;
+    }
+    if (password.match(passwordRegex) === null) {
+      setErrorLogin(
+        'Password must have minimum length of 8 and contain at least one letter and one number.'
+      );
+      return;
+    }
+  }
   return (
     <div className="login-container" id="login-container">
       <img src={SignUpImage} alt="Sign In Image" className="signin-image" />
