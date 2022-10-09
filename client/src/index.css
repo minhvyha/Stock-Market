@@ -35,6 +35,10 @@ iframe {
 	display: flex;
 	flex-direction: column;
 }
+.intro-title{
+	color: #284799;
+	font-size: 1.5rem;
+}
 /* ============== SIGN IN ============== */
 .login-container {
 	display: flex;
