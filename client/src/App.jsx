@@ -112,7 +112,9 @@ function App() {
                 </ProtectedRoute>
               }
             />
-            <Route
+            
+          </Route>
+          <Route
               path="login"
               element={
                 <Login
@@ -130,7 +132,6 @@ function App() {
                 />
               }
             />
-          </Route>
         </Routes>
       </MainPageContext.Provider>
     </BrowserRouter>
