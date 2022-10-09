@@ -32,29 +32,29 @@ function Signup({ error, handleCallBackResponse, setUser }) {
     let confirmation = document.getElementById('confirmation-login').value;
     if (email === '') {
       setErrorLogin('Please enter username.');
-      return;
+      return true;
     }
     if (password === '') {
       setErrorLogin('Enter a password');
-      return;
+      return true;
     }
     if(confirmation === ''){
       setErrorLogin('Confirm your password')
-      return
+      return true
     }
     if (email.match(emailRegex) === null) {
       setErrorLogin('Invalid email.');
-      return;
+      return true;
     }
     if (password.match(passwordRegex) === null) {
       setErrorLogin(
         'Password must have minimum length of 8 and contain at least one letter and one number.'
       );
-      return;
+      return true; 
     }
     if (password !== confirmation){
       setErrorLogin('Those passwords didn’t match. Try again.')
-      return
+      return true
     }
   }
 
