@@ -31,6 +31,7 @@ iframe {
 	display: flex;
 	flex-direction: column;
 	gap: 0.75rem;
+	align-items: center;
 }
 .intro-image {
 	width: 105px;
@@ -51,6 +52,9 @@ iframe {
 	cursor: pointer;
 	font-weight: 500;
 	font-size: 0.95rem;
+}
+.intro-form-container a{
+	width: fit-content;
 }
 .intro-login-btn {
 	background-color: #284799;
