@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Home from './pages/Home';
+import ProtectedRoute from './pages/ProtectedRoute';
 import ShareLayout from './pages/ShareLayout';
 
 var dataOption = Symbol.map((company) => {
