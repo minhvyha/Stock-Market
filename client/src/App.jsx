@@ -31,6 +31,7 @@ function App() {
     setUser(userObject);
     fetchData();
   }
+  
   function handleSignOut(event) {
     setUser({});
   }
