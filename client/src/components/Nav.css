@@ -10,8 +10,9 @@
   display: flex;
   margin-inline: auto;
   align-items: center;
-  max-width: 1024px;
+  max-width: 1124px;
   width: 100%;
+  justify-content: space-between;
 }
 .logo {
   width: 200px;
