@@ -7,12 +7,13 @@ function Login({ setUser }) {
   const [errorLogin, setErrorLogin] = useState();
   var emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
   var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/g;
+
   const navigate = useNavigate();
   function handleCallBackResponse(response) {
     let userObject = jwt_decode(response.credential);
     console.log(userObject);
     setUser(userObject);
-    navigate('/')
+    navigate('/');
   }
   useEffect(() => {
     /* global google */
