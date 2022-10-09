@@ -15,7 +15,7 @@ function Signup({ handleCallBackResponse, setUser }) {
     let userObject = jwt_decode(response.credential);
     console.log(userObject);
     setUser(userObject);
-    navigate('/signup');
+    navigate('/');
   }
 
   useEffect(() => {
@@ -39,7 +39,7 @@ function Signup({ handleCallBackResponse, setUser }) {
     setUser({ name: 'asdf' });
     navigate('/');
   }
-  
+
   function checkError() {
     let email = document.getElementById('email-login').value;
     let password = document.getElementById('password-login').value;

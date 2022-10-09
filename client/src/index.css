@@ -127,7 +127,9 @@ iframe {
 .symbol-list-box {
   width: 50px;
 }
-
+.main-container{
+  padding-top: 100px;
+}
 /* ============== CHART CSS ============== */
 .chart-container {
   width: 260px;

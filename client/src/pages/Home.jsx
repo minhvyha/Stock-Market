@@ -18,7 +18,7 @@ function Home() {
     fetchData()
   }, [])
   return (
-    <div>
+    <div className='main-container'>
       <div className="chart-container">
         <LineChart options={options} data={data} fontSize={9} />
       </div>
