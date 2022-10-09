@@ -7,7 +7,9 @@ function Signup({ handleCallBackResponse, setUser }) {
   const [errorLogin, setErrorLogin] = useState();
   var emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
   var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/g;
+
   const navigate = useNavigate();
+
   function handleCallBackResponse(response) {
     console.log('Encoded JWT ID token: ' + response.credential);
     let userObject = jwt_decode(response.credential);
@@ -15,6 +17,7 @@ function Signup({ handleCallBackResponse, setUser }) {
     setUser(userObject);
     navigate('/signup');
   }
+
   useEffect(() => {
     /* global google */
     google.accounts.id.initialize({
@@ -36,6 +39,7 @@ function Signup({ handleCallBackResponse, setUser }) {
     setUser({ name: 'asdf' });
     navigate('/');
   }
+  
   function checkError() {
     let email = document.getElementById('email-login').value;
     let password = document.getElementById('password-login').value;
