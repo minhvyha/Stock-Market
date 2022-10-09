@@ -7,6 +7,7 @@ import Signup from './pages/Signup';
 import Home from './pages/Home';
 import ProtectedRoute from './pages/ProtectedRoute';
 import ShareLayout from './pages/ShareLayout';
+import Intro from './pages/Intro';
 
 var dataOption = Symbol.map((company) => {
   return <option value={company.Symbol}>{company.Name}</option>;
