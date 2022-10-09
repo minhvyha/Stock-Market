@@ -33,12 +33,12 @@ iframe {
 	gap: .75rem;
 }
 .intro-image{
-	width: 100px;
+	width: 105px;
 	height: auto;
 }
 .intro-title{
 	color: #284799;
-	font-size: 1.55rem;
+	font-size: 1.5rem;
 }
 .intro-subtitle{
 	font-size: .85rem;
@@ -56,7 +56,7 @@ iframe {
 	background-color: #284799;
 	color: white;
 	border: 1px solid #284799;
-	transition: all .5s;
+	transition: .4s;
 }
 .intro-login-btn:hover{
 	background-color: white;
@@ -67,6 +67,13 @@ iframe {
 	background-color: white;
 	color: black;
 	border: 1px solid black;
+	transition: .4s;
+	margin-top: .05rem;
+}
+.intro-signup-btn:hover{
+	background-color: black;
+	border: 1px solid black;
+	color: white;
 }
 /* ============== SIGN IN ============== */
 .login-container {
@@ -124,7 +131,7 @@ iframe {
 	width: 0%;
 	height: 2px;
 	background: #2691d9;
-	transition: 0.5s;
+	transition: 0.4s;
 }
 .txt_field input:focus ~ label,
 .txt_field input:valid ~ label {
