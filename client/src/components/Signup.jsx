@@ -40,6 +40,7 @@ function Signup({ error, handleCallBackResponse, setUser }) {
     }
     if(confirmation === ''){
       setErrorLogin('Confirm your password')
+      return
     }
     if (email.match(emailRegex) === null) {
       setErrorLogin('Invalid email.');
@@ -53,6 +54,7 @@ function Signup({ error, handleCallBackResponse, setUser }) {
     }
     if (password !== confirmation){
       setErrorLogin('Those passwords didn’t match. Try again.')
+      return
     }
   }
 
