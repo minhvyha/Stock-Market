@@ -5,6 +5,7 @@ import Logo from '../assets/images/textLogo.png'
 function Nav() {
   return (
     <nav id="navBar">
+      <div>
       <input type="checkbox" id="check" />
       
       <img className='logo' src={Logo} alt="" />
@@ -28,6 +29,8 @@ function Nav() {
           <a href="#">Feedback</a>
         </li>
       </ul>
+      </div>
+      
 
     </nav>
   );

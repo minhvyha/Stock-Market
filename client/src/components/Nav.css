@@ -42,6 +42,7 @@ a:hover {
   line-height: 80px;
   cursor: pointer;
   display: none;
+  margin-right: 25px;
 }
 #check {
   display: none;
