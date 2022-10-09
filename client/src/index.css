@@ -49,11 +49,19 @@ iframe {
 	padding: 5.5px 0;
 	border-radius: 1rem;
 	cursor: pointer;
+	font-weight: 500;
+	font-size: .95rem;
 }
 .intro-login-btn{
 	background-color: #284799;
 	color: white;
 	border: 1px solid #284799;
+	transition: all .5s;
+}
+.intro-login-btn:hover{
+	background-color: white;
+	border: 1px solid #284799;
+	color: #284799;
 }
 .intro-signup-btn{
 	background-color: white;
