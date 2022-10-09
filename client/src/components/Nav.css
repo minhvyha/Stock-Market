@@ -6,7 +6,7 @@
   box-shadow: 0px 1px 4px #999;
   position: fixed;
 }
-.nav-container{
+.nav-container {
   display: flex;
   align-items: center;
   max-width: 1024px;
