@@ -24,20 +24,26 @@ iframe {
 	height: 100vh;
 	align-items: center;
 	justify-content: center;
-	gap: 2rem;
-}
-.intro-image{
-	width: 100px;
-	height: auto;
+	gap: 1.5rem;
 }
 .intro-form-container{
 	text-align: center;
 	display: flex;
 	flex-direction: column;
+	gap: .5rem;
+}
+.intro-image{
+	width: 100px;
+	height: auto;
 }
 .intro-title{
 	color: #284799;
 	font-size: 1.5rem;
+
+}
+.intro-subtitle{
+	font-size: .85rem;
+	margin-bottom: .5rem;
 }
 /* ============== SIGN IN ============== */
 .login-container {
