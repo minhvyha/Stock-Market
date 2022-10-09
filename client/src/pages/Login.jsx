@@ -10,14 +10,12 @@ function Login({ setUser }) {
 
   const navigate = useNavigate();
 
-
   function handleCallBackResponse(response) {
     let userObject = jwt_decode(response.credential);
     console.log(userObject);
     setUser(userObject);
     navigate('/');
   }
-
 
   useEffect(() => {
     /* global google */
@@ -33,7 +31,6 @@ function Login({ setUser }) {
     google.accounts.id.prompt();
   }, []);
 
-
   function handleSignIn() {
     if (checkError()) {
       return;
@@ -41,7 +38,6 @@ function Login({ setUser }) {
     setUser({ name: 'asdf' });
     navigate('/');
   }
-
 
   function checkError() {
     let email = document.getElementById('email-login').value;
@@ -65,7 +61,6 @@ function Login({ setUser }) {
       return true;
     }
   }
-  
 
   return (
     <div className="login-container" id="login-container">
