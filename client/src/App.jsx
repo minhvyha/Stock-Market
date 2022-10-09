@@ -25,7 +25,6 @@ function App() {
   });
   const [options, setOption] = useState();
   const [stock, setStock] = useState('AAPL');
-  
 
   function handleCallBackResponse(response) {
     console.log('Encoded JWT ID token: ' + response.credential);
@@ -91,8 +90,6 @@ function App() {
     fetchData();
   }
 
-  
-
   return (
     <BrowserRouter>
       <MainPageContext.Provider
@@ -108,17 +105,32 @@ function App() {
       >
         <Routes>
           <Route path="/" element={<ShareLayout />}>
-            <Route index element={<ProtectedRoute user={user}>
-              <Home/>
-            </ProtectedRoute>}/>
+            <Route
+              index
+              element={
+                <ProtectedRoute user={user}>
+                  <Home />
+                </ProtectedRoute>
+              }
+            />
             <Route
               path="login"
-              element={<Login error={errorLogin} setUser={setUser} handleCallBackResponse={handleCallBackResponse} />}
+              element={
+                <Login
+                  error={errorLogin}
+                  setUser={setUser}
+                  handleCallBackResponse={handleCallBackResponse}
+                />
+              }
             />
             <Route
               path="signup"
               element={
-                <Signup error={errorLogin} setUser={setUser} handleCallBackResponse={handleCallBackResponse} />
+                <Signup
+                  error={errorLogin}
+                  setUser={setUser}
+                  handleCallBackResponse={handleCallBackResponse}
+                />
               }
             />
           </Route>
