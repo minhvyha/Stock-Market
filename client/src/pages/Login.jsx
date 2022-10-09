@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import SignInImage from '../assets/images/SignIn.png';
 import { Link, useNavigate } from 'react-router-dom';
 
-function Login({ error, setUser, handleCallBackResponse }) {
+function Login({ setUser, handleCallBackResponse }) {
   const [errorLogin, setErrorLogin] = useState();
   var emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
 var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/g;
@@ -61,7 +61,7 @@ var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/g;
       />
       <div className="login-form-container">
         <h1 className="login-form-title">Sign In</h1>
-        {error && <p className="error-text-form">{error}</p>}
+        {errorLogin && <p className="error-text-form">{errorLogin}</p>}
         <div class="txt_field">
           <input type="text" id="email-login" required />
           <span></span>
@@ -76,7 +76,7 @@ var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/g;
           Sign In
         </button>
         <div id="signInDiv"></div>
-        <Link to="signup">
+        <Link to="/signup">
           <div class="signup_link">
             Not a member? <a>Register</a>
           </div>
