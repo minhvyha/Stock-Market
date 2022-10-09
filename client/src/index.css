@@ -30,7 +30,7 @@ iframe {
 	text-align: center;
 	display: flex;
 	flex-direction: column;
-	gap: .5rem;
+	gap: .65rem;
 }
 .intro-image{
 	width: 100px;
@@ -39,11 +39,10 @@ iframe {
 .intro-title{
 	color: #284799;
 	font-size: 1.5rem;
-
 }
 .intro-subtitle{
 	font-size: .85rem;
-	margin-bottom: .5rem;
+	margin-bottom: .65rem;
 }
 /* ============== SIGN IN ============== */
 .login-container {
