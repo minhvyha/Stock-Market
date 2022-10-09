@@ -2,11 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Symbol } from './SP500';
 import axios from 'axios';
 import jwt_decode from 'jwt-decode';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Home from './pages/Home';
-import Nav from './components/Nav';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ShareLayout from './pages/ShareLayout';
 
 var dataOption = Symbol.map((company) => {
