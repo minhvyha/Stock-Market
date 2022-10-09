@@ -14,7 +14,6 @@ var dataOption = Symbol.map((company) => {
 });
 // https://cloud.iexapis.com/stable/stock/AAPL/quote?token=
 
-
 export const MainPageContext = React.createContext();
 
 function App() {
