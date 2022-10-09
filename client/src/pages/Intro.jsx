@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom'
 
 function Intro() {
   return (
-    <div>Intro</div>
+    <div>
+        
+    </div>
   )
 }
 
