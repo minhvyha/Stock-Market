@@ -108,7 +108,9 @@ function App() {
       >
         <Routes>
           <Route path="/" element={<ShareLayout />}>
-            <Route index element={<Home />} />
+            <Route index element={<ProtectedRoute user={user}>
+              <Home/>
+            </ProtectedRoute>}/>
             <Route
               path="login"
               element={<Login error={errorLogin} setUser={setUser} handleCallBackResponse={handleCallBackResponse} />}
