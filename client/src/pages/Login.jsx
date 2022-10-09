@@ -1,12 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import SignInImage from '../assets/images/SignIn.png';
 import { Link, useNavigate } from 'react-router-dom';
 
 function Login({ setUser, handleCallBackResponse }) {
   const [errorLogin, setErrorLogin] = useState();
   var emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
-var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/g;
-  const navigate = useNavigate()
+  var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/g;
+  const navigate = useNavigate();
   useEffect(() => {
     /* global google */
     google.accounts.id.initialize({
@@ -21,12 +21,12 @@ var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/g;
     google.accounts.id.prompt();
   }, []);
 
-  function handleSignIn(){
-    if (checkError()){
-      return
+  function handleSignIn() {
+    if (checkError()) {
+      return;
     }
-    setUser({name: 'asdf'})
-    navigate('/')
+    setUser({ name: 'asdf' });
+    navigate('/');
   }
 
   function checkError() {
@@ -54,11 +54,7 @@ var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/g;
 
   return (
     <div className="login-container" id="login-container">
-      <img
-        src={SignInImage}
-        alt="Sign In Image"
-        className="signin-image"
-      />
+      <img src={SignInImage} alt="Sign In Image" className="signin-image" />
       <div className="login-form-container">
         <h1 className="login-form-title">Sign In</h1>
         {errorLogin && <p className="error-text-form">{errorLogin}</p>}
@@ -81,7 +77,6 @@ var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/g;
             Not a member? <a>Register</a>
           </div>
         </Link>
-
       </div>
     </div>
   );
