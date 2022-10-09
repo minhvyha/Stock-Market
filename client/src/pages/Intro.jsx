@@ -15,7 +15,7 @@ function Intro() {
 					<button className="intro-login-btn">Log In</button>
 				</Link>
 				<Link to="/signup">
-					<button className="intro-signup-btn">Sign UP</button>
+					<button className="intro-signup-btn">Sign Up</button>
 				</Link>
 			</div>
 		</div>

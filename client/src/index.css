@@ -30,7 +30,7 @@ iframe {
 	text-align: center;
 	display: flex;
 	flex-direction: column;
-	gap: .65rem;
+	gap: .75rem;
 }
 .intro-image{
 	width: 100px;
@@ -38,11 +38,27 @@ iframe {
 }
 .intro-title{
 	color: #284799;
-	font-size: 1.5rem;
+	font-size: 1.55rem;
 }
 .intro-subtitle{
 	font-size: .85rem;
-	margin-bottom: .65rem;
+	margin-bottom: .6rem;
+}
+.intro-form-container button{
+	width: 190px;
+	padding: 5.5px 0;
+	border-radius: 1rem;
+	cursor: pointer;
+}
+.intro-login-btn{
+	background-color: #284799;
+	color: white;
+	border: 1px solid #284799;
+}
+.intro-signup-btn{
+	background-color: white;
+	color: black;
+	border: 1px solid black;
 }
 /* ============== SIGN IN ============== */
 .login-container {
