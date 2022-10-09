@@ -18,7 +18,7 @@ iframe {
 	transform: translateX(-10px);
 }
 /* ============== INTRO PAGE ============== */
-.intro-container{
+.intro-container {
 	display: flex;
 	flex-direction: column;
 	height: 100vh;
@@ -26,51 +26,51 @@ iframe {
 	justify-content: center;
 	gap: 1.5rem;
 }
-.intro-form-container{
+.intro-form-container {
 	text-align: center;
 	display: flex;
 	flex-direction: column;
-	gap: .75rem;
+	gap: 0.75rem;
 }
-.intro-image{
+.intro-image {
 	width: 105px;
 	height: auto;
 }
-.intro-title{
+.intro-title {
 	color: #284799;
 	font-size: 1.5rem;
 }
-.intro-subtitle{
-	font-size: .85rem;
-	margin-bottom: .6rem;
+.intro-subtitle {
+	font-size: 0.85rem;
+	margin-bottom: 0.6rem;
 }
-.intro-form-container button{
+.intro-form-container button {
 	width: 190px;
 	padding: 5.5px 0;
 	border-radius: 2rem;
 	cursor: pointer;
 	font-weight: 500;
-	font-size: .95rem;
+	font-size: 0.95rem;
 }
-.intro-login-btn{
+.intro-login-btn {
 	background-color: #284799;
 	color: white;
 	border: 1px solid #284799;
-	transition: .4s;
+	transition: 0.4s;
 }
-.intro-login-btn:hover{
+.intro-login-btn:hover {
 	background-color: white;
 	border: 1px solid #284799;
 	color: #284799;
 }
-.intro-signup-btn{
+.intro-signup-btn {
 	background-color: white;
 	color: black;
 	border: 1px solid black;
-	transition: .4s;
-	margin-top: .05rem;
+	transition: 0.4s;
+	margin-top: 0.05rem;
 }
-.intro-signup-btn:hover{
+.intro-signup-btn:hover {
 	background-color: black;
 	border: 1px solid black;
 	color: white;
