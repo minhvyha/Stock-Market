@@ -32,7 +32,7 @@ function App() {
 			`https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${stock}&apikey=${process.env.REACT_APP_API_KEY}`
 		);
 		const convertData = await apiData.json();
-		console.log(convertData)
+		console.log(convertData);
 		let labels = [];
 		let data = [];
 		let dataYear = await convertData['Time Series (Daily)'];
@@ -64,9 +64,9 @@ function App() {
 					bodyAlign: 'center',
 					bodyColor: 'black',
 					titleColor: 'black',
-					borderColor: "#284799",
+					borderColor: '#284799',
 					borderWidth: 1,
-					backgroundColor: "white",
+					backgroundColor: 'white',
 					titleAlign: 'center',
 					interaction: {
 						mode: 'index',
@@ -74,10 +74,10 @@ function App() {
 					},
 					intersect: false,
 					callbacks: {
-						beforeTitle: function(context){
-							return stock 
-						}
-					}
+						beforeTitle: function (context) {
+							return stock;
+						},
+					},
 				},
 				legend: {
 					display: false,
@@ -120,7 +120,7 @@ function App() {
 							}
 						/>
 					</Route>
-               <Route path='intro' element={<Intro />} />
+					<Route path="intro" element={<Intro />} />
 					<Route path="login" element={<Login setUser={setUser} />} />
 					<Route path="signup" element={<Signup setUser={setUser} />} />
 				</Routes>
