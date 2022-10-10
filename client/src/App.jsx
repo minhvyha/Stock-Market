@@ -46,7 +46,7 @@ function App() {
 				label: 'Price',
 				data: data,
 				backgroundColor: ['#ef8e19'],
-				borderColor: '#006989',
+				borderColor: '#284799',
 				borderWidth: 2,
 			},
 		];
@@ -58,6 +58,11 @@ function App() {
 			// responsive: true,
 			plugins: {
 				tooltip: {
+					titleColor: 'black',
+					borderColor: "#284799",
+					borderWidth: 1,
+					backgroundColor: "white",
+					titleAlign: 'center',
 					interaction: {
 						mode: 'index',
 						axis: 'x',
