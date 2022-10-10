@@ -32,6 +32,7 @@ function App() {
 			`https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${stock}&apikey=${process.env.REACT_APP_API_KEY}`
 		);
 		const convertData = await apiData.json();
+		console.log(convertData)
 		let labels = [];
 		let data = [];
 		let dataYear = await convertData['Time Series (Daily)'];
@@ -45,7 +46,7 @@ function App() {
 			{
 				label: 'Price',
 				data: data,
-				backgroundColor: ['#ef8e19'],
+				backgroundColor: ['#284799'],
 				borderColor: '#284799',
 				borderWidth: 2,
 			},
@@ -58,6 +59,10 @@ function App() {
 			// responsive: true,
 			plugins: {
 				tooltip: {
+					yAlign: 'bottom',
+					displayColors: false,
+					bodyAlign: 'center',
+					bodyColor: 'black',
 					titleColor: 'black',
 					borderColor: "#284799",
 					borderWidth: 1,
@@ -68,6 +73,11 @@ function App() {
 						axis: 'x',
 					},
 					intersect: false,
+					callbacks: {
+						beforeTitle: function(context){
+							return stock 
+						}
+					}
 				},
 				legend: {
 					display: false,
