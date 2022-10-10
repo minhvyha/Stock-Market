@@ -17,7 +17,7 @@ var dataOption = Symbol.map((company) => {
 export const MainPageContext = React.createContext();
 
 function App() {
-	const [user, setUser] = useState({});
+	const [user, setUser] = useState({name: 'test'});
 	const [data, setData] = useState({
 		datasets: [],
 	});
@@ -49,9 +49,13 @@ function App() {
 				backgroundColor: ['#284799'],
 				borderColor: '#284799',
 				borderWidth: 2,
+				pointHover: 0,
+				pointRadius: 0,
+				pointHitRadius: 0,
 			},
 		];
 		setData({ labels, datasets });
+
 		setOption({
 			elements: {},
 			maintainAspectRatio: false,

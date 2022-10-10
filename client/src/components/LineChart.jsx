@@ -26,9 +26,11 @@ Chart.register(
 );
 
 function LineChart({ options, data, fontSize }) {
+
 	Chart.defaults.font.size = fontSize;
 	Chart.defaults.elements.point.radius = 0;
 	Chart.defaults.maintainAspectRatio = false;
+	
 	return <Line options={options} data={data} />;
 }
 
