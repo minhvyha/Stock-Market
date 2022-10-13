@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import {
 	Chart,
 	LineElement,
@@ -25,12 +25,48 @@ Chart.register(
 	SubTitle
 );
 
-function LineChart({ options, data, fontSize }) {
-
-	Chart.defaults.font.size = fontSize;
+function LineChart({ data }) {
+	const { stock } = useContext(MainPageContext);
+	const options = {
+		elements: {},
+		maintainAspectRatio: false,
+		tension: 0.2,
+		// responsive: true,
+		plugins: {
+			tooltip: {
+				yAlign: 'bottom',
+				displayColors: false,
+				bodyAlign: 'center',
+				bodyColor: 'black',
+				titleColor: 'black',
+				borderColor: '#284799',
+				borderWidth: 1,
+				backgroundColor: 'white',
+				titleAlign: 'center',
+				interaction: {
+					mode: 'index',
+					axis: 'x',
+				},
+				intersect: false,
+				callbacks: {
+					beforeTitle: function (context) {
+						return stock;
+					},
+				},
+			},
+			legend: {
+				display: false,
+			},
+			title: {
+				display: true,
+				text: stock,
+			},
+		},
+	};
+	Chart.defaults.font.size = 9;
 	Chart.defaults.elements.point.radius = 0;
 	Chart.defaults.maintainAspectRatio = false;
-	
+
 	return <Line options={options} data={data} />;
 }
 

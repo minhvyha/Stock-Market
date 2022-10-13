@@ -20,7 +20,7 @@ function Home() {
 	return (
 		<div className="main-container">
 			<div className="chart-container">
-				<LineChart className="main-line-chart" options={options} data={data} fontSize={9} />
+				<LineChart className="main-line-chart" data={data} />
 			</div>
 			<label htmlFor="symbolList">Choose a symbol</label>
 			<input
