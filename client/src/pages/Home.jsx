@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 function Home() {
 	const {
-		options,
 		data,
 		stock,
 		setStock,
