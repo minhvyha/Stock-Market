@@ -17,6 +17,7 @@
 .logo {
 	width: 160px;
 	transform: translateY(1px);
+	margin-left: 1rem;
 }
 nav ul {
 	float: right;
