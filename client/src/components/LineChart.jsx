@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { MainPageContext } from '../App';
 import {
 	Chart,
 	LineElement,
