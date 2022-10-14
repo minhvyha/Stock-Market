@@ -24,17 +24,17 @@ function Home() {
 					options={options}
 				/>
 			</div>
-			<div className='choose-input-container'>
-			<label htmlFor="symbolList">Choose a symbol</label>
-			<input
-				type="text"
-				name="symbolList"
-				id="symbolList"
-				list="symbolData"
-				className="symbol-list-box"
-				value={stock}
-				onChange={(e) => setStock(e.target.value)}
-			/>
+			<div className="choose-input-container">
+				<label htmlFor="symbolList">Choose a symbol</label>
+				<input
+					type="text"
+					name="symbolList"
+					id="symbolList"
+					list="symbolData"
+					className="symbol-list-box"
+					value={stock}
+					onChange={(e) => setStock(e.target.value)}
+				/>
 			</div>
 			<datalist id="symbolData">{dataOption}</datalist>
 			<button onClick={handleChoose}>See Price</button>
