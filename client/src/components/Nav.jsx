@@ -16,16 +16,10 @@ function Nav() {
 						<a href="#">Home</a>
 					</li>
 					<li>
-						<a href="#">About</a>
+						<a href="">Portfolio</a>
 					</li>
 					<li>
-						<a href="#">Services</a>
-					</li>
-					<li>
-						<a href="#">Contact</a>
-					</li>
-					<li>
-						<a href="#">Feedback</a>
+						<a href="#">Account</a>
 					</li>
 				</ul>
 			</div>

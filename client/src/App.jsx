@@ -17,10 +17,11 @@ var dataOption = Symbol.map((company) => {
 export const MainPageContext = React.createContext();
 
 function App() {
-	const [user, setUser] = useState({name: 'test'});
+	const [user, setUser] = useState({name: 'test', stock: {}});
 	const [data, setData] = useState({
 		datasets: [],
 	});
+
 	const [options, setOption] = useState();
 	const [stock, setStock] = useState('AAPL');
 	function handleSignOut(event) {
@@ -115,6 +116,14 @@ function App() {
 					<Route path="/" element={<ShareLayout />}>
 						<Route
 							index
+							element={
+								<ProtectedRoute user={user}>
+									<Home />
+								</ProtectedRoute>
+							}
+						/>
+						<Route
+							path='portfolio'
 							element={
 								<ProtectedRoute user={user}>
 									<Home />
