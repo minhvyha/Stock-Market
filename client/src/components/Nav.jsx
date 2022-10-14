@@ -1,6 +1,7 @@
 import React from 'react';
 import './Nav.css';
 import Logo from '../assets/images/textLogo.png';
+import {Link} from 'react-router-dom'
 
 function Nav() {
 	return (
@@ -13,10 +14,14 @@ function Nav() {
 				</label>
 				<ul>
 					<li>
-						<a href="#">Home</a>
+						<Link to="/">
+							<a href="#">Home</a>
+						</Link>
 					</li>
 					<li>
-						<a href="">Portfolio</a>
+						<Link to="/portfolio">
+							<a href="">Portfolio</a>
+						</Link>
 					</li>
 					<li>
 						<a href="#">Account</a>
