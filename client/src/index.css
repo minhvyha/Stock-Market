@@ -199,7 +199,7 @@ iframe {
 	align-items: center;
 	gap: .7rem;
 	justify-content: center;
-	
+	margin-bottom: .8rem;
 }
 .choose-input-container label{
 	text-align: center;
@@ -209,7 +209,7 @@ iframe {
 	border: 1px solid #000000;
 	outline: none;
 	border-radius: 2px;
-	transition: .4s;
+	transition: .2s;
 }
 .choose-input-container input:focus{
 	border: 2px solid #284799;
