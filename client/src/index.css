@@ -191,6 +191,11 @@ iframe {
 .main-container {
 	padding-top: 100px;
 }
+.choose-input-container{
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
 /* ============== CHART CSS ============== */
 .chart-container {
 	width: 260px;
