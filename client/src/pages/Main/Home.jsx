@@ -33,6 +33,7 @@ function Home() {
 					className="symbol-list-box"
 					value={stock}
 					onChange={(e) => setStock(e.target.value)}
+					placeholder="Symbol"
 				/>
 				<button className='btn check-btn' onClick={handleChoose}>See Price</button>
 			</div>
