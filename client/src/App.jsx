@@ -126,7 +126,7 @@ function App() {
 							path='portfolio'
 							element={
 								<ProtectedRoute user={user}>
-									<Home />
+									<Intro />
 								</ProtectedRoute>
 							}
 						/>
