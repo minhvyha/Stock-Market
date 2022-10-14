@@ -197,9 +197,14 @@ iframe {
 	width: 100%;
 	display: flex;
 	align-items: center;
+	gap: .7rem;
+	justify-content: center;
+}
+.choose-input-container label{
+	text-align: center;
 }
 .symbol-list-box{
-	width: 100%;
+	width: 5.8rem;
 }
 /* ============== CHART CSS ============== */
 .chart-container {
