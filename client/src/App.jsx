@@ -11,12 +11,15 @@ import Intro from './pages/Login/Intro';
 import Portfolio from './pages/Main/Portfolio';
 import Account from './pages/Main/Account';
 
+
 var dataOption = Symbol.map((company) => {
 	return <option value={company.Symbol}>{company.Name}</option>;
 });
 // https://cloud.iexapis.com/stable/stock/AAPL/quote?token=
 
+
 export const MainPageContext = React.createContext();
+
 
 function App() {
 	const [user, setUser] = useState({ name: 'test', stock: {} });
