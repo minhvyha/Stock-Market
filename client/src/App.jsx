@@ -27,12 +27,11 @@ function App() {
 		setUser({});
 	}
 
-	async function fetchData() {
+	async function getData(symbol){
 		const apiData = await fetch(
-			`https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${stock}&apikey=${process.env.REACT_APP_API_KEY}`
+			`https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${symbol}&apikey=${process.env.REACT_APP_API_KEY}`
 		);
 		const convertData = await apiData.json();
-		console.log(convertData);
 		let labels = [];
 		let data = [];
 		let dataYear = await convertData['Time Series (Daily)'];
@@ -54,7 +53,13 @@ function App() {
 				pointHitRadius: 0,
 			},
 		];
-		setData({ labels, datasets });
+		console.log({labels, datasets})
+		return {labels, datasets}
+	}
+
+	async function fetchData() {
+		let data = await getData(stock)
+		setData(data);
 
 		setOption({
 			elements: {},
