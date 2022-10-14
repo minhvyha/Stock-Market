@@ -24,7 +24,7 @@ function Nav() {
 						</Link>
 					</li>
 					<li>
-						<a href="#">Account</a>
+						<a href="/account">Account</a>
 					</li>
 				</ul>
 			</div>
