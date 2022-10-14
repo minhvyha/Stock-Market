@@ -15,16 +15,18 @@ function Nav() {
 				<ul>
 					<li>
 						<Link to="/">
-							<a href="#">Home</a>
+							Home
 						</Link>
 					</li>
 					<li>
 						<Link to="/portfolio">
-							<a href="">Portfolio</a>
+							Porfolio
 						</Link>
 					</li>
 					<li>
-						<a href="/account">Account</a>
+						<Link to="/account">
+							Account
+						</Link>
 					</li>
 				</ul>
 			</div>
