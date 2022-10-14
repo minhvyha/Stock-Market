@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
-import LineChart from '../components/LineChart';
-import { MainPageContext } from '../App';
+import LineChart from '../../components/LineChart';
+import { MainPageContext } from '../../App';
 
 function Home() {
 	const {

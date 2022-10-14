@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Symbol } from './SP500';
 import axios from 'axios';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
-import Home from './pages/Home';
-import ProtectedRoute from './pages/ProtectedRoute';
-import ShareLayout from './pages/ShareLayout';
-import Intro from './pages/Intro';
-import Portfolio from './pages/Portfolio';
-import Account from './pages/Account';
+import Login from './pages/Login/Login';
+import Signup from './pages/Login/Signup';
+import Home from './pages/Main/Home';
+import ProtectedRoute from './pages/Layout/ProtectedRoute';
+import ShareLayout from './pages/Layout/ShareLayout';
+import Intro from './pages/Login/Intro';
+import Portfolio from './pages/Main/Portfolio';
+import Account from './pages/Main/Account';
 
 var dataOption = Symbol.map((company) => {
 	return <option value={company.Symbol}>{company.Name}</option>;
