@@ -19,7 +19,7 @@ var dataOption = Symbol.map((company) => {
 export const MainPageContext = React.createContext();
 
 function App() {
-	const [user, setUser] = useState({name: 'test', stock: {}});
+	const [user, setUser] = useState({ name: 'test', stock: {} });
 	const [data, setData] = useState({
 		datasets: [],
 	});
@@ -30,7 +30,7 @@ function App() {
 		setUser({});
 	}
 
-	async function getData(symbol){
+	async function getData(symbol) {
 		const apiData = await fetch(
 			`https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${symbol}&apikey=${process.env.REACT_APP_API_KEY}`
 		);
@@ -56,11 +56,11 @@ function App() {
 				pointHitRadius: 0,
 			},
 		];
-		return {labels, datasets}
+		return { labels, datasets };
 	}
 
 	async function fetchData() {
-		let data = await getData(stock)
+		let data = await getData(stock);
 		setData(data);
 		const options = {
 			maintainAspectRatio: false,
@@ -92,7 +92,7 @@ function App() {
 				},
 			},
 		};
-		setOption(options)
+		setOption(options);
 		setStock('');
 	}
 
@@ -125,18 +125,18 @@ function App() {
 							}
 						/>
 						<Route
-							path='portfolio'
+							path="portfolio"
 							element={
 								<ProtectedRoute user={user}>
 									<Portfolio />
 								</ProtectedRoute>
 							}
 						/>
-						<Route 
-							path='account'
+						<Route
+							path="account"
 							element={
 								<ProtectedRoute user={user}>
-									<Account/>
+									<Account />
 								</ProtectedRoute>
 							}
 						/>
