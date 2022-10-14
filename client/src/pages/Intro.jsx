@@ -5,7 +5,7 @@ import Logo from '../assets/images/Logo.png';
 function Intro() {
 	return (
 		<div className="intro-container">
-			<img className='intro-image' src={Logo} alt="" />
+			<img className="intro-image" src={Logo} alt="" />
 			<div className="intro-form-container">
 				<h1 className="intro-title">Welcome to StockX</h1>
 				<p className="intro-subtitle">
