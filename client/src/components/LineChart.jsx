@@ -29,7 +29,6 @@ Chart.register(
 function LineChart({ data }) {
 	const { stock } = useContext(MainPageContext);
 	const options = {
-		elements: {},
 		maintainAspectRatio: false,
 		tension: 0.2,
 		// responsive: true,
@@ -49,11 +48,6 @@ function LineChart({ data }) {
 					axis: 'x',
 				},
 				intersect: false,
-				callbacks: {
-					beforeTitle: function (context) {
-						return stock;
-					},
-				},
 			},
 			legend: {
 				display: false,
