@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { MainPageContext } from '../App';
 
 function Account() {
+   const { handleSignOut} = 
 	return (
 		<>
 			<Link to="/intro">
