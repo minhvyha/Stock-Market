@@ -5,7 +5,7 @@ import { MainPageContext } from '../App';
 function Account() {
 	const { handleSignOut } = useContext(MainPageContext);
 	return (
-		<div className='main-container'>
+		<div className="main-container">
 			<Link to="/intro">
 				<button className="btn-sign-out" onClick={handleSignOut}>
 					Sign Out
