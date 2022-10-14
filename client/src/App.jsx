@@ -53,16 +53,13 @@ function App() {
 				pointHitRadius: 0,
 			},
 		];
-		console.log({labels, datasets})
 		return {labels, datasets}
 	}
 
 	async function fetchData() {
 		let data = await getData(stock)
 		setData(data);
-
-		setOption({
-			elements: {},
+		const options = {
 			maintainAspectRatio: false,
 			tension: 0.2,
 			// responsive: true,
@@ -82,11 +79,6 @@ function App() {
 						axis: 'x',
 					},
 					intersect: false,
-					callbacks: {
-						beforeTitle: function (context) {
-							return stock;
-						},
-					},
 				},
 				legend: {
 					display: false,
@@ -96,7 +88,8 @@ function App() {
 					text: stock,
 				},
 			},
-		});
+		};
+		setOption(options)
 		setStock('');
 	}
 

@@ -7,6 +7,7 @@ function Home() {
 	const {
 		data,
 		stock,
+		options,
 		setStock,
 		dataOption,
 		handleChoose,
@@ -19,7 +20,7 @@ function Home() {
 	return (
 		<div className="main-container">
 			<div className="chart-container">
-				<LineChart className="main-line-chart" data={data} />
+				<LineChart className="main-line-chart" data={data} options={options} />
 			</div>
 			<label htmlFor="symbolList">Choose a symbol</label>
 			<input
