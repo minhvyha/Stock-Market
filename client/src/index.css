@@ -206,7 +206,7 @@ iframe {
 }
 .symbol-list-box{
 	width: 5.8rem;
-	border: 2px solid #000000;
+	border: 1px solid #000000;
 	outline: none;
 	border-radius: 2px;
 	transition: .4s;
