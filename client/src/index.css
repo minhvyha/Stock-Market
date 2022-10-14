@@ -199,12 +199,20 @@ iframe {
 	align-items: center;
 	gap: .7rem;
 	justify-content: center;
+	
 }
 .choose-input-container label{
 	text-align: center;
 }
 .symbol-list-box{
 	width: 5.8rem;
+	border: 2px solid #000000;
+	outline: none;
+	border-radius: 2px;
+	transition: .4s;
+}
+.choose-input-container input:focus{
+	border: 2px solid #284799;
 }
 /* ============== CHART CSS ============== */
 .chart-container {
