@@ -24,6 +24,7 @@ function Home() {
 					options={options}
 				/>
 			</div>
+			<div className='choose-input-container'>
 			<label htmlFor="symbolList">Choose a symbol</label>
 			<input
 				type="text"
@@ -34,6 +35,7 @@ function Home() {
 				value={stock}
 				onChange={(e) => setStock(e.target.value)}
 			/>
+			</div>
 			<datalist id="symbolData">{dataOption}</datalist>
 			<button onClick={handleChoose}>See Price</button>
 		</div>
