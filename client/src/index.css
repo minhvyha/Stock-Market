@@ -207,31 +207,38 @@ iframe {
 	align-items: center;
 	gap: 0.7rem;
 	justify-content: center;
-	margin-bottom: 0.8rem;
+	margin-bottom: 1rem;
 }
 .choose-input-container label {
 	text-align: center;
 }
 .symbol-list-box {
-	width: 5.8rem;
+	width: 7rem;
 	border: 1px solid #000000;
 	outline: none;
 	border-radius: 2px;
 	transition: 0.2s;
+	height: 100%;
 }
 .choose-input-container input:focus {
 	border: 2px solid #284799;
 }
-.btn-container {
-	width: 100%;
-	text-align: center;
+.btn {
+	background-color: #284799;
+	color: white;
+	border: none;
+	padding: 4px 9px;
+	border-radius: .3rem;
+}
+.check-btn{
+	font-size: .85rem;
 }
 /* ============== CHART CSS ============== */
 .chart-container {
 	width: 250px;
 	height: 350px;
 	margin-inline: auto;
-	margin-bottom: 0.8rem;
+	margin-bottom: 1rem;
 }
 
 /* ============== BREAKPOINT ============== */
