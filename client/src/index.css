@@ -17,6 +17,10 @@ iframe {
 	margin: 0 !important;
 	transform: translateX(-10px);
 }
+.main-container {
+	padding-top: 100px;
+	padding-inline: 15px;
+}
 /* ============== INTRO PAGE ============== */
 .intro-container {
 	display: flex;
@@ -188,9 +192,7 @@ iframe {
 .symbol-list-box {
 	width: 50px;
 }
-.main-container {
-	padding-top: 100px;
-}
+
 .choose-input-container{
 	width: 100%;
 	display: flex;
@@ -198,7 +200,7 @@ iframe {
 }
 /* ============== CHART CSS ============== */
 .chart-container {
-	width: 260px;
+	width: 250px;
 	height: 400px;
 	margin-inline: auto;
 }
