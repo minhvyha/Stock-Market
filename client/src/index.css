@@ -229,12 +229,12 @@ iframe {
 	border: none;
 	padding: 4px 9px;
 	border-radius: 0.2rem;
-	transition: .35s;
+	transition: 0.35s;
 }
 .check-btn {
 	font-size: 0.85rem;
 }
-.btn:hover{
+.btn:hover {
 	background-color: #000000;
 }
 /* ============== CHART CSS ============== */
