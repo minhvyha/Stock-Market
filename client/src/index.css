@@ -20,6 +20,7 @@ iframe {
 .main-container {
 	padding-top: 100px;
 	padding-inline: 15px;
+	max-width: 300px;
 }
 /* ============== INTRO PAGE ============== */
 .intro-container {
@@ -214,10 +215,14 @@ iframe {
 .choose-input-container input:focus {
 	border: 2px solid #284799;
 }
+.btn-container{
+	width: 100%;
+	text-align: center;
+}
 /* ============== CHART CSS ============== */
 .chart-container {
 	width: 250px;
-	height: 400px;
+	height: 350px;
 	margin-inline: auto;
 	margin-bottom: 0.8rem;
 }
