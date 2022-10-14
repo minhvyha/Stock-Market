@@ -37,6 +37,9 @@ function Home() {
 				<button className='btn check-btn' onClick={handleChoose}>See Price</button>
 			</div>
 			<datalist id="symbolData">{dataOption}</datalist>
+			<div className='action-container'>
+				
+			</div>
 		</div>
 	);
 }
