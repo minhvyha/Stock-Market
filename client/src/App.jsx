@@ -9,6 +9,7 @@ import ProtectedRoute from './pages/ProtectedRoute';
 import ShareLayout from './pages/ShareLayout';
 import Intro from './pages/Intro';
 import Portfolio from './pages/Portfolio';
+import Account from './pages/Account';
 
 var dataOption = Symbol.map((company) => {
 	return <option value={company.Symbol}>{company.Name}</option>;
@@ -128,6 +129,14 @@ function App() {
 							element={
 								<ProtectedRoute user={user}>
 									<Portfolio />
+								</ProtectedRoute>
+							}
+						/>
+						<Route 
+							path='account'
+							element={
+								<ProtectedRoute user={user}>
+									<Account/>
 								</ProtectedRoute>
 							}
 						/>
