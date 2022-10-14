@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import LineChart from '../components/LineChart';
 import { MainPageContext } from '../App';
-import { Link } from 'react-router-dom';
 
 function Home() {
 	const {
@@ -11,7 +10,6 @@ function Home() {
 		setStock,
 		dataOption,
 		handleChoose,
-		handleSignOut,
 		fetchData,
 	} = useContext(MainPageContext);
 	useEffect(() => {
@@ -20,7 +18,11 @@ function Home() {
 	return (
 		<div className="main-container">
 			<div className="chart-container">
-				<LineChart className="main-line-chart" data={data} options={options} />
+				<LineChart
+					className="main-line-chart"
+					data={data}
+					options={options}
+				/>
 			</div>
 			<label htmlFor="symbolList">Choose a symbol</label>
 			<input
@@ -34,7 +36,6 @@ function Home() {
 			/>
 			<datalist id="symbolData">{dataOption}</datalist>
 			<button onClick={handleChoose}>See Price</button>
-	
 		</div>
 	);
 }
