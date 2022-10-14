@@ -198,6 +198,9 @@ iframe {
 	display: flex;
 	align-items: center;
 }
+.symbol-list-box{
+	width: 100%;
+}
 /* ============== CHART CSS ============== */
 .chart-container {
 	width: 250px;
