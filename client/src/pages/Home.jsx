@@ -34,11 +34,7 @@ function Home() {
 			/>
 			<datalist id="symbolData">{dataOption}</datalist>
 			<button onClick={handleChoose}>See Price</button>
-			<Link to="/intro">
-				<button className="btn-sign-out" onClick={handleSignOut}>
-					Sign Out
-				</button>
-			</Link>
+	
 		</div>
 	);
 }
