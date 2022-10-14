@@ -4,7 +4,13 @@ import {MainPageContext} from '../App'
 
 function Account() {
   return (
-    <div>Account</div>
+    <>
+    <Link to="/intro">
+				<button className="btn-sign-out" onClick={handleSignOut}>
+					Sign Out
+				</button>
+			</Link>
+    </>
   )
 }
 
