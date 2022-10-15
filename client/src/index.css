@@ -237,6 +237,27 @@ iframe {
 .btn:hover {
 	background-color: #000000;
 }
+.action-container{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	gap: .5rem;
+}
+.action-buy{
+	background-color: #27a69a;
+	padding: 5px 0;
+	border-radius: .2rem;
+	width: 100%;
+	text-align: center;
+}
+.action-sell{
+	background-color: #ef5351;
+	padding: 5px;
+	width: 100%;
+	border-radius: .2rem;
+	text-align: center;
+}
 /* ============== CHART CSS ============== */
 .chart-container {
 	width: 250px;
