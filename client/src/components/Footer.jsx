@@ -10,11 +10,13 @@ function Footer() {
 				<span class="material-symbols-outlined">home</span>
 			</div>
          </Link>
+         <Link>
 			<div className="footer-item-container">
 				<span class="material-symbols-outlined">
 					account_balance_wallet
 				</span>
 			</div>
+         </Link>
 			<div className="footer-item-container">
 				<span class="material-symbols-outlined">paid</span>
 			</div>
