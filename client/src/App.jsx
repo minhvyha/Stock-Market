@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Symbol } from './SP500';
 import axios from 'axios';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './pages/Login/Login';
 import Signup from './pages/Login/Signup';
 import Home from './pages/Main/Home';
@@ -116,8 +116,9 @@ function App() {
 			>
 				<Routes>
 					<Route path="/" element={<ShareLayout />}>
+						<Route index element={<Navigate to="/home" />} />
 						<Route
-							index
+							path="/home"
 							element={
 								<ProtectedRoute user={user}>
 									<Home />

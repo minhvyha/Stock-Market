@@ -89,8 +89,8 @@ a:hover {
 		font-size: 20px;
 		color: white;
 	}
-	a:hover,
-	a.active {
+	nav a:hover,
+	nav a.active {
 		background: none;
 		color: #219fff;
 	}
