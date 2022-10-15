@@ -35,16 +35,14 @@ function Home() {
 					onChange={(e) => setStock(e.target.value)}
 					placeholder="Symbol"
 				/>
-				<button className='btn check-btn' onClick={handleChoose}>See Price</button>
+				<button className="btn check-btn" onClick={handleChoose}>
+					See Price
+				</button>
 			</div>
 			<datalist id="symbolData">{dataOption}</datalist>
-			<div className='action-container'>
-				<div className='action-buy'>
-					Buy
-				</div>
-				<div className='action-sell'>
-					Sell
-				</div>
+			<div className="action-container">
+				<div className="action-buy">Buy</div>
+				<div className="action-sell">Sell</div>
 			</div>
 		</div>
 	);
