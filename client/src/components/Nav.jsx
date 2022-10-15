@@ -1,7 +1,7 @@
 import React from 'react';
 import './Nav.css';
 import Logo from '../assets/images/textLogo.png';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 function Nav() {
 	return (
@@ -14,19 +14,13 @@ function Nav() {
 				</label>
 				<ul>
 					<li>
-						<Link to="/">
-							Home
-						</Link>
+						<Link to="/">Home</Link>
 					</li>
 					<li>
-						<Link to="/portfolio">
-							Porfolio
-						</Link>
+						<Link to="/portfolio">Porfolio</Link>
 					</li>
 					<li>
-						<Link to="/account">
-							Account
-						</Link>
+						<Link to="/account">Account</Link>
 					</li>
 				</ul>
 			</div>
