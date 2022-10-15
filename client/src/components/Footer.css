@@ -1,0 +1,7 @@
+footer{
+   display: flex;
+}
+
+footer a{
+   color: black;
+}
