@@ -5,9 +5,11 @@ import { Link } from 'react-router-dom'
 function Footer() {
 	return (
 		<footer>
+         <Link to='/'>
 			<div className="footer-item-container">
 				<span class="material-symbols-outlined">home</span>
 			</div>
+         </Link>
 			<div className="footer-item-container">
 				<span class="material-symbols-outlined">
 					account_balance_wallet
