@@ -13,6 +13,12 @@ function Footer() {
 				</span>
 			</div>
 			<div className="footer-item-container">
+				<span class="material-symbols-outlined">paid</span>
+			</div>
+			<div className="footer-item-container">
+				<span class="material-symbols-outlined">trending_down</span>
+			</div>
+			<div className="footer-item-container">
 				<span class="material-symbols-outlined">person</span>
 			</div>
 		</footer>
