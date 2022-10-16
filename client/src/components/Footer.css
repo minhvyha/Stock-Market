@@ -24,13 +24,13 @@ footer a {
 	font-size: 9px;
 }
 @media screen and (min-width: 300px) {
-	footer{
+	footer {
 		padding-inline: 25px;
 	}
 	.footer-item-container span {
 		font-size: 30px;
 	}
-	.footer-item-container label{
+	.footer-item-container label {
 		font-size: 11px;
 	}
 }
