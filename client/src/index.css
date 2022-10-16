@@ -364,6 +364,10 @@ iframe {
 	.main-container {
 		flex-direction: row;
 	}
+	.chart-container{
+		width: 500px;
+		height: 500px;
+	}
 	.intro-container {
 		flex-direction: row;
 		gap: 4rem;
