@@ -281,7 +281,10 @@ iframe {
 	}
 	.chart-container{
 		width: 300px;
-		margin-bottom: 1.5rem;
+		margin-bottom: 1.6rem;
+	}
+	.choose-input-container{
+		margin-bottom: 1.6rem;
 	}
 }
 @media screen and (min-height: 720px) {
