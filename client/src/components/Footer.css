@@ -2,6 +2,10 @@ footer {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	position: fixed;
+	bottom: 0;
+	width: 100vw;
+	left: 0;
 }
 footer a {
 	color: black;
