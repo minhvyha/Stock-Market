@@ -89,8 +89,9 @@ function App() {
 				title: {
 					display: true,
 					text: stock,
+					padding: 15,
 					font: {
-						size: 15
+						size: 16
 					}
 				},
 			},
