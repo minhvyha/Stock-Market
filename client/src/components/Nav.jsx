@@ -20,10 +20,10 @@ function Nav() {
 						<Link to="/portfolio">Porfolio</Link>
 					</li>
 					<li>
-						<Link to='/buy'>Buy</Link>
+						<Link to="/buy">Buy</Link>
 					</li>
 					<li>
-						<Link to='/sell'>Sell</Link>
+						<Link to="/sell">Sell</Link>
 					</li>
 					<li>
 						<Link to="/account">Account</Link>
