@@ -289,16 +289,16 @@ iframe {
 		width: 11rem;
 		height: 2rem;
 	}
-	.check-btn{
+	.check-btn {
 		font-size: 1rem;
 	}
-	.action-container{
+	.action-container {
 		font-size: 1.1rem;
 	}
-	.action-buy{
+	.action-buy {
 		padding: 7px 0;
 	}
-	.action-sell{
+	.action-sell {
 		padding: 7px 0;
 	}
 }
