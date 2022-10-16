@@ -10,6 +10,7 @@ import {
 	Title,
 	Tooltip,
 	SubTitle,
+	Filler
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 
@@ -22,7 +23,8 @@ Chart.register(
 	Legend,
 	Title,
 	Tooltip,
-	SubTitle
+	SubTitle,
+	Filler
 );
 
 function LineChart({ data, options }) {

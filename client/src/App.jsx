@@ -48,12 +48,13 @@ function App() {
 			{
 				label: 'Price',
 				data: data,
-				backgroundColor: ['#284799'],
+				backgroundColor: 'rgba(200,214,234,.5)',
 				borderColor: '#284799',
 				borderWidth: 2,
 				pointHover: 0,
 				pointRadius: 0,
 				pointHitRadius: 0,
+				fill: true,
 			},
 		];
 		return { labels, datasets };
