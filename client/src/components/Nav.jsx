@@ -28,7 +28,6 @@ function Nav() {
 					<li>
 						<Link to="/account">Account</Link>
 					</li>
-					
 				</ul>
 			</div>
 		</nav>
