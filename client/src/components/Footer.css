@@ -7,6 +7,7 @@ footer {
 	width: 100vw;
 	left: 0;
 	padding: 1.5rem 20px;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 12px;
 }
 footer a {
 	color: black;
