@@ -10,7 +10,7 @@ import {
 	Title,
 	Tooltip,
 	SubTitle,
-	Filler
+	Filler,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 
