@@ -19,3 +19,10 @@ footer a {
 .footer-item-container span {
 	font-size: 28px;
 }
+@media screen and (min-width: 858px) {
+	footer{
+		display: none;
+		opacity: 0;
+		visibility: hidden;
+	}
+}
