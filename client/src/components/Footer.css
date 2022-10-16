@@ -20,6 +20,9 @@ footer a {
 .footer-item-container span {
 	font-size: 28px;
 }
+.footer-item-container label{
+	font-size: 14px;
+}
 @media screen and (min-width: 858px) {
 	footer {
 		display: none;
