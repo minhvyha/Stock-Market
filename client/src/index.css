@@ -8,7 +8,7 @@
 	list-style: none;
 	font-family: 'Poppins', sans-serif;
 }
-#root{
+#root {
 	height: 100vh;
 }
 /* ============== GLOBAL CSS ============== */
@@ -225,7 +225,7 @@ iframe {
 	outline: none;
 	border-radius: 2px;
 	transition: 0.2s;
-	height: 1.8rem
+	height: 1.8rem;
 }
 .choose-input-container input:focus {
 	border: 2px solid #284799;
@@ -244,25 +244,25 @@ iframe {
 .btn:hover {
 	background-color: #000000;
 }
-.action-container{
+.action-container {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	color: white;
-	gap: .5rem;
+	gap: 0.5rem;
 }
-.action-buy{
+.action-buy {
 	background-color: #27a69a;
 	padding: 5px 0;
-	border-radius: .2rem;
+	border-radius: 0.2rem;
 	width: 100%;
 	text-align: center;
 }
-.action-sell{
+.action-sell {
 	background-color: #ef5351;
 	padding: 5px;
 	width: 100%;
-	border-radius: .2rem;
+	border-radius: 0.2rem;
 	text-align: center;
 }
 /* ============== CHART CSS ============== */
