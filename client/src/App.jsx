@@ -66,7 +66,6 @@ function App() {
 		const options = {
 			maintainAspectRatio: false,
 			tension: 0.2,
-			// responsive: true,
 			plugins: {
 				tooltip: {
 					yAlign: 'bottom',
