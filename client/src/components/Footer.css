@@ -23,6 +23,11 @@ footer a {
 .footer-item-container label {
 	font-size: 9px;
 }
+@media screen and (min-width: 300px) {
+	footer{
+		padding-inline: 25px;
+	}
+}
 @media screen and (min-width: 858px) {
 	footer {
 		display: none;
