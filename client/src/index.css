@@ -309,7 +309,7 @@ iframe {
 }
 @media screen and (min-height: 790px) {
 	.chart-container {
-		height: 450px;
+		height: 480px;
 	}
 }
 @media screen and (min-width: 350px) {
