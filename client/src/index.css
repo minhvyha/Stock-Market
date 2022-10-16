@@ -366,7 +366,6 @@ iframe {
 		margin: 0 !important;
 		width: 100vw;
 		justify-content: space-between;
-		gap: 2rem;
 		padding-bottom: 2rem;
 	}
 	.side-container{
@@ -378,7 +377,8 @@ iframe {
 		width: 7rem;
 	}
 	.chart-container {
-		width: 100%;
+		margin-right: 2rem;
+		flex: 1;
 		height: 100%;
 	}
 	.intro-container {
