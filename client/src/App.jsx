@@ -90,6 +90,7 @@ function App() {
 					display: true,
 					text: stock,
 					padding: 15,
+					color: 'black',
 					font: {
 						size: 16,
 					},
