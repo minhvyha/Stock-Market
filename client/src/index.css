@@ -287,7 +287,10 @@ iframe {
 	}
 	.symbol-list-box {
 		width: 11rem;
-		height: 2.3rem;
+		height: 2rem;
+	}
+	.check-btn{
+		font-size: 1rem;
 	}
 }
 @media screen and (min-height: 720px) {
