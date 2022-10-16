@@ -20,7 +20,7 @@ footer a {
 	font-size: 28px;
 }
 @media screen and (min-width: 858px) {
-	footer{
+	footer {
 		display: none;
 		opacity: 0;
 		visibility: hidden;
