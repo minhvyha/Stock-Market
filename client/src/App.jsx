@@ -89,6 +89,9 @@ function App() {
 				title: {
 					display: true,
 					text: stock,
+					font: {
+						size: 15
+					}
 				},
 			},
 		};
