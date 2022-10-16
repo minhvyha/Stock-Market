@@ -361,6 +361,23 @@ iframe {
 	}
 }
 @media screen and (min-width: 858px) {
+	.choose-input-container{
+		flex-direction: column;
+	}
+	.symbol-list-box{
+		width: 100%;
+		height: 2.5rem;
+	}
+	.symbol-list-box::-webkit-input-placeholder{
+		font-size: 18px;
+		padding-left: .5rem;
+	}
+	.action-container{
+		flex-direction: column;
+	}
+	.check-btn{
+		width: 100%;
+	}
 	.main-container {
 		flex-direction: row;
 		margin: 0 !important;
@@ -370,9 +387,6 @@ iframe {
 	}
 	.side-container{
 		width: 300px;
-	}
-	.symbol-list-box{
-		width: 7rem;
 	}
 	.chart-container {
 		margin-right: 2rem;
