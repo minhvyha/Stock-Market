@@ -292,6 +292,15 @@ iframe {
 	.check-btn{
 		font-size: 1rem;
 	}
+	.action-container{
+		font-size: 1.1rem;
+	}
+	.action-buy{
+		padding: 7px 0;
+	}
+	.action-sell{
+		padding: 7px 0;
+	}
 }
 @media screen and (min-height: 720px) {
 	.chart-container {
