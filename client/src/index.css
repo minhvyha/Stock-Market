@@ -286,6 +286,10 @@ iframe {
 	.choose-input-container{
 		margin-bottom: 1.6rem;
 	}
+	.symbol-list-box{
+		width: 11rem;
+		height: 2.3rem;
+	}
 }
 @media screen and (min-height: 720px) {
 	.chart-container{
