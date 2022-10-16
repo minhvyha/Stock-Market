@@ -24,6 +24,7 @@ function Home() {
 					options={options}
 				/>
 			</div>
+			<div className='side-container'>
 			<div className="choose-input-container">
 				<input
 					type="text"
@@ -43,6 +44,7 @@ function Home() {
 			<div className="action-container">
 				<div className="action-buy">Buy</div>
 				<div className="action-sell">Sell</div>
+			</div>
 			</div>
 		</div>
 	);

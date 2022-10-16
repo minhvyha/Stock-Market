@@ -360,7 +360,10 @@ iframe {
 		margin: 20px 0;
 	}
 }
-@media screen and (min-width: 790px) {
+@media screen and (min-width: 858px) {
+	.main-container {
+		flex-direction: row;
+	}
 	.intro-container {
 		flex-direction: row;
 		gap: 4rem;
