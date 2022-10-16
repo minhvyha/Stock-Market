@@ -28,8 +28,13 @@ iframe {
 .main-container {
 	padding-top: 100px;
 	padding-inline: 15px;
+	padding-bottom: 100px;
 	max-width: 300px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
 	margin-inline: auto;
+	height: 100vh;
 }
 /* ============== INTRO PAGE ============== */
 .intro-container {
