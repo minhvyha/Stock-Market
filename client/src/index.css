@@ -370,8 +370,6 @@ iframe {
 	}
 	.side-container{
 		width: 300px;
-		max-width: 300px;
-		min-width: 300px;
 	}
 	.symbol-list-box{
 		width: 7rem;
