@@ -1,12 +1,12 @@
 footer {
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
 	position: fixed;
 	bottom: 0;
 	width: 100vw;
 	left: 0;
-	padding: 2rem 0;
+	padding: 2rem 20px;
 }
 footer a {
 	color: black;
