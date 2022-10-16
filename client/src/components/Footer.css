@@ -6,6 +6,7 @@ footer {
 	bottom: 0;
 	width: 100vw;
 	left: 0;
+	padding: 2rem 0;
 }
 footer a {
 	color: black;
@@ -14,4 +15,7 @@ footer a {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+.footer-item-container span{
+	font-size: 28px;
 }
