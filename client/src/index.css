@@ -308,6 +308,11 @@ iframe {
 		padding: 7px 0;
 	}
 }
+@media screen and (min-width: 488px) {
+	.main-container{
+		padding-inline: 2.5rem;
+	}
+}
 @media screen and (min-height: 720px) {
 	.chart-container {
 		height: 400px;
