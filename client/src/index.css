@@ -361,26 +361,26 @@ iframe {
 	}
 }
 @media screen and (min-width: 858px) {
-	.choose-input-container{
+	.choose-input-container {
 		flex-direction: column;
 	}
-	.symbol-list-box{
+	.symbol-list-box {
 		width: 100%;
 		height: 3rem;
 	}
-	.symbol-list-box::-webkit-input-placeholder{
+	.symbol-list-box::-webkit-input-placeholder {
 		font-size: 18px;
-		padding-left: .5rem;
+		padding-left: 0.5rem;
 	}
-	.action-container{
+	.action-container {
 		flex-direction: column;
 		gap: 1rem;
 		font-size: 1.25rem;
 	}
-	.action-container div{
+	.action-container div {
 		padding: 9px 0;
 	}
-	.check-btn{
+	.check-btn {
 		width: 100%;
 		font-size: 1.15rem;
 		padding: 9px 0;
@@ -392,7 +392,7 @@ iframe {
 		justify-content: space-between;
 		padding-bottom: 2rem;
 	}
-	.side-container{
+	.side-container {
 		width: 300px;
 		display: flex;
 		flex-direction: column;
