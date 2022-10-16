@@ -48,7 +48,7 @@ function App() {
 			{
 				label: 'Price',
 				data: data,
-				backgroundColor: 'rgba(200,214,234,.5)',
+				backgroundColor: 'rgba(197,208,234,.5)',
 				borderColor: '#284799',
 				borderWidth: 2,
 				pointHover: 0,
