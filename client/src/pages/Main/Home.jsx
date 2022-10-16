@@ -24,27 +24,27 @@ function Home() {
 					options={options}
 				/>
 			</div>
-			<div className='side-container'>
-			<div className="choose-input-container">
-				<input
-					type="text"
-					name="symbolList"
-					id="symbolList"
-					list="symbolData"
-					className="symbol-list-box"
-					value={stock}
-					onChange={(e) => setStock(e.target.value)}
-					placeholder="Symbol"
-				/>
-				<button className="btn check-btn" onClick={handleChoose}>
-					See Price
-				</button>
-			</div>
-			<datalist id="symbolData">{dataOption}</datalist>
-			<div className="action-container">
-				<div className="action-buy">Buy</div>
-				<div className="action-sell">Sell</div>
-			</div>
+			<div className="side-container">
+				<div className="choose-input-container">
+					<input
+						type="text"
+						name="symbolList"
+						id="symbolList"
+						list="symbolData"
+						className="symbol-list-box"
+						value={stock}
+						onChange={(e) => setStock(e.target.value)}
+						placeholder="Symbol"
+					/>
+					<button className="btn check-btn" onClick={handleChoose}>
+						See Price
+					</button>
+				</div>
+				<datalist id="symbolData">{dataOption}</datalist>
+				<div className="action-container">
+					<div className="action-buy">Buy</div>
+					<div className="action-sell">Sell</div>
+				</div>
 			</div>
 		</div>
 	);
