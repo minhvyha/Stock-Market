@@ -8,7 +8,9 @@
 	list-style: none;
 	font-family: 'Poppins', sans-serif;
 }
-
+#root{
+	height: 100vh;
+}
 /* ============== GLOBAL CSS ============== */
 body {
 	width: 100%;
