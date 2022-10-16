@@ -6,3 +6,8 @@ footer {
 footer a {
 	color: black;
 }
+.footer-item-container{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
