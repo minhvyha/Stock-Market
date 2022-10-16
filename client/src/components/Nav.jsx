@@ -20,8 +20,15 @@ function Nav() {
 						<Link to="/portfolio">Porfolio</Link>
 					</li>
 					<li>
+						<Link to='/buy'>Buy</Link>
+					</li>
+					<li>
+						<Link to='/sell'>Sell</Link>
+					</li>
+					<li>
 						<Link to="/account">Account</Link>
 					</li>
+					
 				</ul>
 			</div>
 		</nav>
