@@ -91,8 +91,8 @@ function App() {
 					text: stock,
 					padding: 15,
 					font: {
-						size: 16
-					}
+						size: 16,
+					},
 				},
 			},
 		};
