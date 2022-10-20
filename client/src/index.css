@@ -299,6 +299,7 @@ iframe {
 .sign-out-action-container{
 	display: flex;
 	justify-content: flex-end;
+	gap: .7rem;
 }
 /* ============== BREAKPOINT ============== */
 @media screen and (min-width: 300px) {
