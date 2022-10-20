@@ -21,7 +21,7 @@ var dataOption = Symbol.map((company) => {
 export const MainPageContext = React.createContext();
 
 function App() {
-	const [user, setUser] = useState({ name: 'test', stock: {} });
+	const [user, setUser] = useState({ name: 'Minh Vy Ha', stock: {} });
 	const [data, setData] = useState({
 		datasets: [],
 	});
