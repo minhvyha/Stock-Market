@@ -11,6 +11,7 @@ import Intro from './pages/Login/Intro';
 import Portfolio from './pages/Main/Portfolio';
 import Account from './pages/Main/Account';
 import Buy from './pages/Main/Buy';
+import Sell from './pages/Main/Sell';
 
 var dataOption = Symbol.map((company) => {
 	return <option value={company.Symbol}>{company.Name}</option>;
