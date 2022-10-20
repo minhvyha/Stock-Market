@@ -5,7 +5,7 @@ import { MainPageContext } from '../../App';
 function Account() {
 	const { handleSignOut, user } = useContext(MainPageContext);
 	function handlePopUp() {
-		document.getElementById('sign-out-form').style.display = 'block';
+		document.getElementById('sign-out-form').style.display = 'grid';
 	}
 	function handleCancel() {
 		document.getElementById('sign-out-form').style.display = 'none';

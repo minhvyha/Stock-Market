@@ -275,11 +275,15 @@ iframe {
 /* ============== ACCOUNT CSS ============== */
 #sign-out-form{
 	/* display: none; */
+	display: grid;
 	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	
+	top: 0;
+	left: 0;
+	background-color: rgba(25, 36, 42, 0.615);
+	width: 100vw;
+	height: 100vh;
+	place-items: center;
+	z-index: 10;
 }
 
 
