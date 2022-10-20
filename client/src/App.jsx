@@ -156,7 +156,7 @@ function App() {
 								</ProtectedRoute>
 							}
 						/>
-						<Route path='sell' element={<ProtectedRoute></ProtectedRoute>} />
+						<Route path='sell' element={<ProtectedRoute><Sell /></ProtectedRoute>} />
 					</Route>
 					<Route path="intro" element={<Intro />} />
 					<Route path="login" element={<Login setUser={setUser} />} />
