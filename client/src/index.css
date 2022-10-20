@@ -291,7 +291,7 @@ iframe {
 	border-radius: .5rem;
 	display: flex;
 	flex-direction: column;
-	gap: 1rem;
+	gap: 1.2rem;
 }
 .sign-out-inner h4{
 	font-size: 1.25rem;
@@ -300,6 +300,13 @@ iframe {
 	display: flex;
 	justify-content: flex-end;
 	gap: .7rem;
+}
+.sign-out-action-container button{
+	padding: 7px 15px;
+	font-size: 1rem;
+}
+.cancel-btn{
+	
 }
 /* ============== BREAKPOINT ============== */
 @media screen and (min-width: 300px) {
