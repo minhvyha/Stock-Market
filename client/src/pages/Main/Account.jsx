@@ -4,12 +4,14 @@ import { MainPageContext } from '../../App';
 
 function Account() {
 	const { handleSignOut, user } = useContext(MainPageContext);
-	function
+	function handlePopUp(){
+		
+	}
 	return (
 		<div className="main-container">
 			<div className="sign-out-container">
 				<h2 className="sign-out-name">{user.name}</h2>
-				<button className="btn-sign-out" onClick={handleSignOut}>
+				<button className="btn-sign-out" onClick={handlePopUp}>
 						Sign Out
 				</button>
 				<div className='sign-out-form'>
