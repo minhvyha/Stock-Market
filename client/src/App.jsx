@@ -115,6 +115,7 @@ function App() {
 		<BrowserRouter>
 			<MainPageContext.Provider
 				value={{
+					user,
 					options,
 					data,
 					stock,
