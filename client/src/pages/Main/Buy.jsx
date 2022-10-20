@@ -3,7 +3,7 @@ import React from 'react'
 
 function Buy() {
   return (
-    <div>Buy</div>
+    <div className='main-container'>Buy</div>
   )
 }
 
