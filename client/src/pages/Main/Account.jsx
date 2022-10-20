@@ -14,7 +14,7 @@ function Account() {
 					</button>
 				</Link>
 				<div className='sign-out-form'>
-
+					
 				</div>
 			</div>
 		</div>
