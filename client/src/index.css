@@ -286,7 +286,9 @@ iframe {
 	z-index: 10;
 }
 .sign-out-inner{
-	
+	background-color: white;
+	padding: 2rem 3rem;
+	border-radius: .5rem;
 }
 /* ============== BREAKPOINT ============== */
 @media screen and (min-width: 300px) {
