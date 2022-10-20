@@ -290,6 +290,9 @@ iframe {
 	padding: 2rem 3rem;
 	border-radius: .5rem;
 }
+.sign-out-inner h4{
+	font-size: 1.25rem;
+}
 /* ============== BREAKPOINT ============== */
 @media screen and (min-width: 300px) {
 	.main-container {
