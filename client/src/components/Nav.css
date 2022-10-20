@@ -65,7 +65,7 @@ a:hover {
 	}
 }
 @media (max-width: 827px) {
-	.nav-container{
+	.nav-container {
 		padding-inline: 0;
 	}
 	.checkbtn {
