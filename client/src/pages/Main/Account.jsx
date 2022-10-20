@@ -20,11 +20,18 @@ function Account() {
 				<div id="sign-out-form">
 					<div className="sign-out-inner">
 						<h4>Are you sure you want to sign out?</h4>
-						<div className='sign-out-action-container'>
-						<button className='cancel-btn' onClick={handleCancel}>CANCEL</button>
-						<Link to="/intro">
-							<button className='real-btn-sign-out' onClick={handleSignOut}>SIGN OUT</button>
-						</Link>
+						<div className="sign-out-action-container">
+							<button className="cancel-btn" onClick={handleCancel}>
+								CANCEL
+							</button>
+							<Link to="/intro">
+								<button
+									className="real-btn-sign-out"
+									onClick={handleSignOut}
+								>
+									SIGN OUT
+								</button>
+							</Link>
 						</div>
 					</div>
 				</div>
