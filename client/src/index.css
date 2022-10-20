@@ -285,7 +285,9 @@ iframe {
 	place-items: center;
 	z-index: 10;
 }
-
+.sign-out-inner{
+	
+}
 /* ============== BREAKPOINT ============== */
 @media screen and (min-width: 300px) {
 	.main-container {
