@@ -273,7 +273,7 @@ iframe {
 	margin-bottom: 1rem;
 }
 /* ============== ACCOUNT CSS ============== */
-#sign-out-form{
+#sign-out-form {
 	/* display: none; */
 	display: grid;
 	position: fixed;
@@ -285,7 +285,6 @@ iframe {
 	place-items: center;
 	z-index: 10;
 }
-
 
 /* ============== BREAKPOINT ============== */
 @media screen and (min-width: 300px) {
