@@ -18,11 +18,14 @@ function Account() {
 					Sign Out
 				</button>
 				<div id="sign-out-form">
+					<div className='sign-out-inner'>
+
 					<h4>Are you sure you want to sign out?</h4>
 					<button onClick={handleCancel}>CANCEL</button>
 					<Link to="/intro">
 						<button onClick={handleSignOut}>SIGN OUT</button>
 					</Link>
+					</div>
 				</div>
 			</div>
 		</div>
