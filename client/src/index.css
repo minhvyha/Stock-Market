@@ -272,6 +272,11 @@ iframe {
 	margin-inline: auto;
 	margin-bottom: 1rem;
 }
+/* ============== ACCOUNT CSS ============== */
+#sign-out-form{
+	display: none;
+}
+
 
 /* ============== BREAKPOINT ============== */
 @media screen and (min-width: 300px) {
