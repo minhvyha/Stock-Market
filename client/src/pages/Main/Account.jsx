@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { MainPageContext } from '../../App';
 
 function Account() {
-	const { handleSignOut } = useContext(MainPageContext);
+	const { handleSignOut, user } = useContext(MainPageContext);
 	return (
 		<div className="main-container">
 			<Link to="/intro">
