@@ -285,35 +285,34 @@ iframe {
 	place-items: center;
 	z-index: 10;
 }
-.sign-out-inner{
+.sign-out-inner {
 	background-color: #f3f3f3;
 	padding: 2rem 3rem;
-	border-radius: .5rem;
+	border-radius: 0.5rem;
 	display: flex;
 	flex-direction: column;
 	gap: 1.2rem;
 }
-.sign-out-inner h4{
+.sign-out-inner h4 {
 	font-size: 1.25rem;
 }
-.sign-out-action-container{
+.sign-out-action-container {
 	display: flex;
 	justify-content: flex-end;
-	gap: .7rem;
+	gap: 0.7rem;
 }
-.sign-out-action-container button{
+.sign-out-action-container button {
 	padding: 7px 15px;
 	font-size: 1rem;
 	border: none;
 	color: white;
-	border-radius: .5rem;
+	border-radius: 0.5rem;
 }
-.cancel-btn{
+.cancel-btn {
 	background-color: #838fa4;
 }
-.real-btn-sign-out{
+.real-btn-sign-out {
 	background-color: #ee5c6c;
-	
 }
 /* ============== BREAKPOINT ============== */
 @media screen and (min-width: 300px) {
