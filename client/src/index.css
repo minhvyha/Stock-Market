@@ -294,10 +294,7 @@ iframe {
 	.check-btn {
 		font-size: 0.95rem;
 	}
-	.symbol-list-box::-webkit-input-placeholder {
-		font-size: 18px;
-		padding-left: 0.5rem;
-	}
+	
 	.action-container {
 		font-size: 1.1rem;
 	}
