@@ -286,7 +286,7 @@ iframe {
 	z-index: 10;
 }
 .sign-out-inner{
-	background-color: white;
+	background-color: #f3f3f3;
 	padding: 2rem 3rem;
 	border-radius: .5rem;
 	display: flex;
@@ -304,8 +304,14 @@ iframe {
 .sign-out-action-container button{
 	padding: 7px 15px;
 	font-size: 1rem;
+	border: none;
+	color: white;
 }
 .cancel-btn{
+	background-color: #838fa4;
+}
+.real-btn-sign-out{
+	background-color: #ee5c6c;
 	
 }
 /* ============== BREAKPOINT ============== */
