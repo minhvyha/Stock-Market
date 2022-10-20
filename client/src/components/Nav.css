@@ -22,7 +22,6 @@
 }
 nav ul {
 	float: right;
-	margin-right: 20px;
 }
 nav ul li {
 	display: inline-block;
@@ -64,7 +63,7 @@ a:hover {
 		font-size: 16px;
 	}
 }
-@media (max-width: 858px) {
+@media (max-width: 827px) {
 	.checkbtn {
 		display: block;
 	}
