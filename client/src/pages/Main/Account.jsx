@@ -7,6 +7,9 @@ function Account() {
 	function handlePopUp(){
 		document.getElementById('sign-out-form').style.display = 'block'
 	}
+	function handleCancel(){
+		document.getElementById('sign-out-form').style.display = 'none'
+	}
 	return (
 		<div className="main-container">
 			<div className="sign-out-container">
