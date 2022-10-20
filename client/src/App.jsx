@@ -10,6 +10,7 @@ import ShareLayout from './pages/Layout/ShareLayout';
 import Intro from './pages/Login/Intro';
 import Portfolio from './pages/Main/Portfolio';
 import Account from './pages/Main/Account';
+import Buy from './pages/Main/Buy';
 
 var dataOption = Symbol.map((company) => {
 	return <option value={company.Symbol}>{company.Name}</option>;
@@ -146,7 +147,7 @@ function App() {
 								</ProtectedRoute>
 							}
 						/>
-						<Route path='buy' element={<ProtectedRoute></ProtectedRoute>}
+						<Route path='buy' element={<ProtectedRoute user={user}><Buy/></ProtectedRoute>}
 					</Route>
 					<Route path="intro" element={<Intro />} />
 					<Route path="login" element={<Login setUser={setUser} />} />
