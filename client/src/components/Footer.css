@@ -7,6 +7,7 @@ footer {
 	position: fixed;
 	padding: 1.5rem 20px;
 	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 12px;
+	background-color: white;
 }
 footer a {
 	color: black;
@@ -34,7 +35,7 @@ footer a {
 		font-size: 11px;
 	}
 }
-@media screen and (min-width: 858px) {
+@media screen and (min-width: 828px) {
 	footer {
 		display: none;
 		opacity: 0;
