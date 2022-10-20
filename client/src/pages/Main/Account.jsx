@@ -6,8 +6,8 @@ function Account() {
 	const { handleSignOut, user } = useContext(MainPageContext);
 	return (
 		<div className="main-container">
-			<div className=''>
-
+			<div className='sign-out-form'>
+			<h2 className='sign-out-name'>{user.name}</h2>
 			<Link to="/intro">
 				<button className="btn-sign-out" onClick={handleSignOut}>
 					Sign Out
