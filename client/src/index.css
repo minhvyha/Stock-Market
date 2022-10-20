@@ -289,9 +289,16 @@ iframe {
 	background-color: white;
 	padding: 2rem 3rem;
 	border-radius: .5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
 }
 .sign-out-inner h4{
 	font-size: 1.25rem;
+}
+.sign-out-action-container{
+	display: flex;
+	justify-content: flex-end;
 }
 /* ============== BREAKPOINT ============== */
 @media screen and (min-width: 300px) {
