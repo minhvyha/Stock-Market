@@ -303,12 +303,12 @@ iframe {
 	flex-direction: column-reverse;
 	gap: 0.7rem;
 }
-.sign-out-action-container a{
+.sign-out-action-container a {
 	color: white;
 }
-.sign-out-action-container button{
+.sign-out-action-container button {
 	padding: 7px 15px;
-	font-size: .9rem;
+	font-size: 0.9rem;
 	border: none;
 	color: white;
 	border-radius: 0.3rem;
