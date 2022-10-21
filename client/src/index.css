@@ -314,6 +314,7 @@ iframe {
 	border: none;
 	color: white;
 	border-radius: 0.3rem;
+	cursor: pointer;
 }
 .cancel-btn {
 	background-color: #838fa4;
