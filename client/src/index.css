@@ -293,6 +293,7 @@ iframe {
 	flex-direction: column;
 	gap: 1.2rem;
 	text-align: center;
+	max-width: 240px;
 }
 .sign-out-inner h4 {
 	font-size: 1.25rem;
@@ -310,7 +311,7 @@ iframe {
 	font-size: 1rem;
 	border: none;
 	color: white;
-	border-radius: 0.5rem;
+	border-radius: 0.3rem;
 }
 .cancel-btn {
 	background-color: #838fa4;
