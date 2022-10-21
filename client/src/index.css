@@ -287,11 +287,12 @@ iframe {
 }
 .sign-out-inner {
 	background-color: #f3f3f3;
-	padding: 2rem 3rem;
+	padding: 1rem 2rem;
 	border-radius: 0.5rem;
 	display: flex;
 	flex-direction: column;
 	gap: 1.2rem;
+	text-align: center;
 }
 .sign-out-inner h4 {
 	font-size: 1.25rem;
