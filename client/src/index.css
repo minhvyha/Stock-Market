@@ -287,13 +287,14 @@ iframe {
 }
 .sign-out-inner {
 	background-color: #f3f3f3;
-	padding: 1rem 1.8rem;
+	padding: 1rem 2rem;
 	border-radius: 0.5rem;
 	display: flex;
 	flex-direction: column;
 	gap: 1.2rem;
 	text-align: center;
 	max-width: 240px;
+	align-items: center;
 }
 .sign-out-inner h4 {
 	font-size: 1.25rem;
@@ -302,6 +303,7 @@ iframe {
 	display: flex;
 	flex-direction: column-reverse;
 	gap: 0.7rem;
+	width: 90%;
 }
 .sign-out-action-container a {
 	color: white;
