@@ -24,14 +24,14 @@ function Account() {
 							<button className="cancel-btn" onClick={handleCancel}>
 								CANCEL
 							</button>
-							<Link to="/intro">
 								<button
 									className="real-btn-sign-out"
 									onClick={handleSignOut}
 								>
+							<Link to="/intro">
 									SIGN OUT
-								</button>
 							</Link>
+								</button>
 						</div>
 					</div>
 				</div>
