@@ -206,7 +206,6 @@ iframe {
 /* ============== HOME PAGE ============== */
 .symbol-list-box::-webkit-input-placeholder {
 	font-size: 18px;
-	padding-left: 0.5rem;
 }
 .choose-input-container {
 	width: 100%;
@@ -226,6 +225,7 @@ iframe {
 	border-radius: 2px;
 	transition: 0.2s;
 	height: 1.8rem;
+	padding-left: .5rem;
 }
 .choose-input-container input:focus {
 	border: 2px solid #284799;
