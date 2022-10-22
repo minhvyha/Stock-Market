@@ -318,14 +318,18 @@ iframe {
 	transition: .4s all ease;
 }
 .cancel-btn {
-	background-color: #838fa4;
+	background-color: #797f88;
 }
 .real-btn-sign-out {
 	background-color: #ff697b;
 }
 .real-btn-sign-out:hover{
-	background-color: #ff3333;
+	background-color: #d23c3c;
 	color: white;
+}
+.cancel-btn:hover{
+	background-color: #626367;
+	
 }
 /* ============== BREAKPOINT ============== */
 @media screen and (min-width: 300px) {
