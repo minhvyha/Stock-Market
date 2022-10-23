@@ -225,7 +225,7 @@ iframe {
 	border-radius: 2px;
 	transition: 0.2s;
 	height: 1.8rem;
-	padding-left: .5rem;
+	padding-left: 0.5rem;
 }
 .choose-input-container input:focus {
 	border: 2px solid #284799;
@@ -315,7 +315,7 @@ iframe {
 	color: white;
 	border-radius: 0.3rem;
 	cursor: pointer;
-	transition: .4s all ease;
+	transition: 0.4s all ease;
 }
 .cancel-btn {
 	background-color: #797f88;
@@ -323,13 +323,12 @@ iframe {
 .real-btn-sign-out {
 	background-color: #ff697b;
 }
-.real-btn-sign-out:hover{
+.real-btn-sign-out:hover {
 	background-color: #d23c3c;
 	color: white;
 }
-.cancel-btn:hover{
+.cancel-btn:hover {
 	background-color: #626367;
-	
 }
 /* ============== BREAKPOINT ============== */
 @media screen and (min-width: 300px) {
