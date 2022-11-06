@@ -46,7 +46,7 @@ function Home() {
 					id={`${company.Symbol}`}
 					name="category"
 				/>
-				<label for="automobiles">{`${company.Name} - ${company.Symbol}`}</label>
+				<label for={`${company.Symbol}`}>{`${company.Name} - ${company.Symbol}`}</label>
 			</div>
 		);
 	});
@@ -78,7 +78,6 @@ function Home() {
 			</div>
 			<div className="side-container">
 				<div className="choose-input-container">
-				<div>Font Size: </div>
 					<div class="select-box">
 						<div
 							class={
@@ -91,7 +90,7 @@ function Home() {
 						</div>
 
 						<div class="selected" onClick={selectBoxClick}>
-							Select Video Category
+							Select Symbol
 						</div>
 
 						<div class="search-box">
