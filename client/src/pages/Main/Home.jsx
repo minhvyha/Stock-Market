@@ -21,8 +21,8 @@ function Home() {
 		const searchBox = document.querySelector('.search-box input');
 		setIsDropDown((value) => !value);
 		console.log(isDropDown);
-		// searchBox.value = '';
-		// filterList('');
+		searchBox.value = '';
+		filterList('');
 
 		if (!optionsContainer.classList.contains('active')) {
 			searchBox.focus();
@@ -49,6 +49,21 @@ function Home() {
 			</div>
 		);
 	});
+	const filterList = (searchTerm) => {
+		const optionsList = document.querySelectorAll('.option');
+		searchTerm = searchTerm.toLowerCase();
+		optionsList.forEach((option) => {
+			let label =
+				option.firstElementChild.nextElementSibling.innerText.toLowerCase();
+			if (label.indexOf(searchTerm) != -1) {
+				option.style.display = 'block';
+			} else {
+				option.style.display = 'none';
+			}
+		});
+	};
+
+	
 	return (
 		<div className="main-container">
 			<div className="chart-container">
@@ -76,7 +91,7 @@ function Home() {
 							Select Video Category
 						</div>
 
-						{/* <div class="search-box">
+						<div class="search-box">
 							<input
 								type="text"
 								placeholder="Start Typing..."
@@ -84,7 +99,7 @@ function Home() {
 									filterList(e.target.value);
 								}}
 							/>
-						</div> */}
+						</div>
 					</div>
 					<input
 						type="text"
