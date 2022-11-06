@@ -45,6 +45,19 @@ function Account() {
 		);
 	});
 
+	function changeFontSizeRoot(fontSize) {
+		const root = document.querySelector(':root');
+		root.style.setProperty('--my-color', 'blue');
+	}
+
+	function changeFontSize(value) {
+		switch (value){
+			case 'Small':
+
+		}
+
+	}
+
 	// const filterList = (searchTerm) => {
 	// 	const optionsList = document.querySelectorAll('.option');
 	// 	searchTerm = searchTerm.toLowerCase();
