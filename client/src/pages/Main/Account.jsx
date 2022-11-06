@@ -23,68 +23,41 @@ function Account() {
 			searchBox.focus();
 		}
 	}
-	// const selected = document.querySelector('.selected');
-	// const optionsContainer = document.querySelector('.options-container');
-	// const searchBox = document.querySelector('.search-box input');
-
-	// const optionsList = document.querySelectorAll('.option');
-
-	// selected.addEventListener('click', () => {
-	// 	optionsContainer.classList.toggle('active');
-
-	// 	searchBox.value = '';
-	// 	filterList('');
-
-	// 	if (optionsContainer.classList.contains('active')) {
-	// 		searchBox.focus();
-	// 	}
-	// });
-
-	// optionsList.forEach((o) => {
-	// 	o.addEventListener('click', () => {
-	// 		selected.innerHTML = o.querySelector('label').innerHTML;
-	// 		optionsContainer.classList.remove('active');
-	// 	});
-	// });
 	let fontSize = ['Small', 'Medium', 'Large'];
 	let optionList = fontSize.map((value) => {
 		return (
-			<div class="option" onClick={() =>{
-				console.log(value)
-				document.querySelector('.selected').innerHTML = `${value}`
-				setIsDropDown((value) => !value);
-			}}>
+			<div
+				class="option"
+				onClick={() => {
+					console.log(value);
+					document.querySelector('.selected').innerHTML = `${value}`;
+					setIsDropDown((value) => !value);
+				}}
+			>
 				<input
 					type="radio"
 					class="radio"
-					id="automobiles"
+					id={`font-size-${value}`}
 					name="category"
-					onKeyUp={function(e){
-						filterList(e.target.value);
-					}}
 				/>
 				<label for="automobiles">{value}</label>
 			</div>
 		);
 	});
-	// document.querySelector('.search-box input');
-	// searchBox.addEventListener('keyup', function (e) {
-	// 	filterList(e.target.value);
-	// });
 
-	const filterList = (searchTerm) => {
-		const optionsList = document.querySelectorAll('.option');
-		searchTerm = searchTerm.toLowerCase();
-		optionsList.forEach((option) => {
-			let label =
-				option.firstElementChild.nextElementSibling.innerText.toLowerCase();
-			if (label.indexOf(searchTerm) != -1) {
-				option.style.display = 'block';
-			} else {
-				option.style.display = 'none';
-			}
-		});
-	};
+	// const filterList = (searchTerm) => {
+	// 	const optionsList = document.querySelectorAll('.option');
+	// 	searchTerm = searchTerm.toLowerCase();
+	// 	optionsList.forEach((option) => {
+	// 		let label =
+	// 			option.firstElementChild.nextElementSibling.innerText.toLowerCase();
+	// 		if (label.indexOf(searchTerm) != -1) {
+	// 			option.style.display = 'block';
+	// 		} else {
+	// 			option.style.display = 'none';
+	// 		}
+	// 	});
+	// };
 
 	return (
 		<div className="main-container">
@@ -107,9 +80,15 @@ function Account() {
 							Select Video Category
 						</div>
 
-						<div class="search-box">
-							<input type="text" placeholder="Start Typing..." />
-						</div>
+						{/* <div class="search-box">
+							<input
+								type="text"
+								placeholder="Start Typing..."
+								onKeyUp={function (e) {
+									filterList(e.target.value);
+								}}
+							/>
+						</div> */}
 					</div>
 				</div>
 				<button className="btn-sign-out" onClick={handlePopUp}>
