@@ -275,7 +275,7 @@ iframe {
 /* ============== ACCOUNT CSS ============== */
 #sign-out-form {
 	/* display: none; */
-	display: grid;
+	display: none;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -287,7 +287,7 @@ iframe {
 }
 .sign-out-inner {
 	background-color: #f3f3f3;
-	padding: 1rem 2rem;
+	padding: 1.5rem 2rem;
 	border-radius: 0.5rem;
 	display: flex;
 	flex-direction: column;
