@@ -16,8 +16,8 @@ function Account() {
 		const searchBox = document.querySelector('.search-box input');
 		setIsDropDown((value) => !value);
 		console.log(isDropDown);
-		searchBox.value = '';
-		filterList('');
+		// searchBox.value = '';
+		// filterList('');
 
 		if (!optionsContainer.classList.contains('active')) {
 			searchBox.focus();
