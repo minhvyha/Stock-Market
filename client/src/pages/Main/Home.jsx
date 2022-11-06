@@ -13,9 +13,11 @@ function Home() {
 		handleChoose,
 		fetchData,
 	} = useContext(MainPageContext);
+	
 	useEffect(() => {
 		fetchData();
 	}, []);
+
 	function selectBoxClick() {
 		const optionsContainer = document.querySelector('.options-container');
 		const searchBox = document.querySelector('.search-box input');
@@ -28,7 +30,9 @@ function Home() {
 			searchBox.focus();
 		}
 	}
+
 	let fontSize = ['Small', 'Medium', 'Large'];
+
 	let optionList = fontSize.map((value) => {
 		return (
 			<div
@@ -49,6 +53,7 @@ function Home() {
 			</div>
 		);
 	});
+
 	const filterList = (searchTerm) => {
 		const optionsList = document.querySelectorAll('.option');
 		searchTerm = searchTerm.toLowerCase();
@@ -63,7 +68,7 @@ function Home() {
 		});
 	};
 
-	
+
 	return (
 		<div className="main-container">
 			<div className="chart-container">
