@@ -19,7 +19,7 @@ function Account() {
 		searchBox.value = '';
 		filterList('');
 
-		if (optionsContainer.classList.contains('active')) {
+		if (!optionsContainer.classList.contains('active')) {
 			searchBox.focus();
 		}
 	}
@@ -46,12 +46,34 @@ function Account() {
 	// 		optionsContainer.classList.remove('active');
 	// 	});
 	// });
-
+	let fontSize = ['Small', 'Medium', 'Large'];
+	let optionList = fontSize.map((value) => {
+		return (
+			<div class="option" onClick={() =>{
+				console.log(value)
+				document.querySelector('.selected').innerHTML = `${value}`
+				setIsDropDown((value) => !value);
+			}}>
+				<input
+					type="radio"
+					class="radio"
+					id="automobiles"
+					name="category"
+					onKeyUp={function(e){
+						filterList(e.target.value);
+					}}
+				/>
+				<label for="automobiles">{value}</label>
+			</div>
+		);
+	});
+	// document.querySelector('.search-box input');
 	// searchBox.addEventListener('keyup', function (e) {
 	// 	filterList(e.target.value);
 	// });
 
 	const filterList = (searchTerm) => {
+		const optionsList = document.querySelectorAll('.option');
 		searchTerm = searchTerm.toLowerCase();
 		optionsList.forEach((option) => {
 			let label =
@@ -78,95 +100,7 @@ function Account() {
 									: 'options-container'
 							}
 						>
-							<div class="option">
-								<input
-									type="radio"
-									class="radio"
-									id="automobiles"
-									name="category"
-								/>
-								<label for="automobiles">Automobiles</label>
-							</div>
-
-							<div class="option">
-								<input
-									type="radio"
-									class="radio"
-									id="film"
-									name="category"
-								/>
-								<label for="film">Film & Animation</label>
-							</div>
-
-							<div class="option">
-								<input
-									type="radio"
-									class="radio"
-									id="science"
-									name="category"
-								/>
-								<label for="science">Science & Technology</label>
-							</div>
-
-							<div class="option">
-								<input
-									type="radio"
-									class="radio"
-									id="art"
-									name="category"
-								/>
-								<label for="art">Art</label>
-							</div>
-
-							<div class="option">
-								<input
-									type="radio"
-									class="radio"
-									id="music"
-									name="category"
-								/>
-								<label for="music">Music</label>
-							</div>
-
-							<div class="option">
-								<input
-									type="radio"
-									class="radio"
-									id="travel"
-									name="category"
-								/>
-								<label for="travel">Travel & Events</label>
-							</div>
-
-							<div class="option">
-								<input
-									type="radio"
-									class="radio"
-									id="sports"
-									name="category"
-								/>
-								<label for="sports">Sports</label>
-							</div>
-
-							<div class="option">
-								<input
-									type="radio"
-									class="radio"
-									id="news"
-									name="category"
-								/>
-								<label for="news">News & Politics</label>
-							</div>
-
-							<div class="option">
-								<input
-									type="radio"
-									class="radio"
-									id="tutorials"
-									name="category"
-								/>
-								<label for="tutorials">Tutorials</label>
-							</div>
+							{optionList}
 						</div>
 
 						<div class="selected" onClick={selectBoxClick}>
