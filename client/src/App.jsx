@@ -13,9 +13,6 @@ import Account from './pages/Main/Account';
 import Buy from './pages/Main/Buy';
 import Sell from './pages/Main/Sell';
 
-var dataOption = Symbol.map((company) => {
-	return <option value={company.Symbol}>{company.Name}</option>;
-});
 // https://cloud.iexapis.com/stable/stock/AAPL/quote?token=
 
 export const MainPageContext = React.createContext();
@@ -115,12 +112,11 @@ function App() {
 		<BrowserRouter>
 			<MainPageContext.Provider
 				value={{
+					Symbol,
 					user,
 					options,
 					data,
-					stock,
 					setStock,
-					dataOption,
 					handleChoose,
 					handleSignOut,
 					fetchData,

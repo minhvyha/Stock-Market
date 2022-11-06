@@ -5,15 +5,14 @@ import { MainPageContext } from '../../App';
 function Home() {
 	const [isDropDown, setIsDropDown] = useState(false);
 	const {
+		Symbol,
 		data,
-		stock,
 		options,
 		setStock,
-		dataOption,
 		handleChoose,
 		fetchData,
 	} = useContext(MainPageContext);
-	
+
 	useEffect(() => {
 		fetchData();
 	}, []);
@@ -31,36 +30,35 @@ function Home() {
 		}
 	}
 
-	let fontSize = ['Small', 'Medium', 'Large'];
-
-	let optionList = fontSize.map((value) => {
+	let optionList = Symbol.map((company) => {
 		return (
 			<div
 				class="option"
 				onClick={() => {
-					console.log(value);
-					document.querySelector('.selected').innerHTML = `${value}`;
+					setStock(company.Symbol)
+					document.querySelector('.selected').innerHTML = `${company.Symbol}`;
 					setIsDropDown((value) => !value);
 				}}
 			>
 				<input
 					type="radio"
 					class="radio"
-					id={`font-size-${value}`}
+					id={`${company.Symbol}`}
 					name="category"
 				/>
-				<label for="automobiles">{value}</label>
+				<label for="automobiles">{`${company.Name} - ${company.Symbol}`}</label>
 			</div>
 		);
 	});
 
 	const filterList = (searchTerm) => {
+		setStock(searchTerm)
 		const optionsList = document.querySelectorAll('.option');
 		searchTerm = searchTerm.toLowerCase();
 		optionsList.forEach((option) => {
 			let label =
 				option.firstElementChild.nextElementSibling.innerText.toLowerCase();
-			if (label.indexOf(searchTerm) != -1) {
+			if (label.indexOf(searchTerm) !== -1) {
 				option.style.display = 'block';
 			} else {
 				option.style.display = 'none';
@@ -106,21 +104,10 @@ function Home() {
 							/>
 						</div>
 					</div>
-					<input
-						type="text"
-						name="symbolList"
-						id="symbolList"
-						list="symbolData"
-						className="symbol-list-box"
-						value={stock}
-						onChange={(e) => setStock(e.target.value)}
-						placeholder="Symbol"
-					/>
 					<button className="btn check-btn" onClick={handleChoose}>
 						See Price
 					</button>
 				</div>
-				<datalist id="symbolData">{dataOption}</datalist>
 				<div className="action-container">
 					<div className="action-buy">Buy</div>
 					<div className="action-sell">Sell</div>
