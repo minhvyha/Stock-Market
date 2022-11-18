@@ -4,14 +4,8 @@ import { MainPageContext } from '../../App';
 
 function Home() {
 	const [isDropDown, setIsDropDown] = useState(false);
-	const {
-		Symbol,
-		data,
-		options,
-		setStock,
-		handleChoose,
-		fetchData,
-	} = useContext(MainPageContext);
+	const { Symbol, data, options, setStock, handleChoose, fetchData } =
+		useContext(MainPageContext);
 
 	useEffect(() => {
 		fetchData();
@@ -35,8 +29,10 @@ function Home() {
 			<div
 				class="option"
 				onClick={() => {
-					setStock(company.Symbol)
-					document.querySelector('.selected').innerHTML = `${company.Symbol}`;
+					setStock(company.Symbol);
+					document.querySelector(
+						'.selected'
+					).innerHTML = `${company.Symbol}`;
 					setIsDropDown((value) => !value);
 				}}
 			>
@@ -46,13 +42,15 @@ function Home() {
 					id={`${company.Symbol}`}
 					name="category"
 				/>
-				<label for={`${company.Symbol}`}>{`${company.Name} - ${company.Symbol}`}</label>
+				<label
+					for={`${company.Symbol}`}
+				>{`${company.Name} - ${company.Symbol}`}</label>
 			</div>
 		);
 	});
 
 	const filterList = (searchTerm) => {
-		setStock(searchTerm)
+		setStock(searchTerm);
 		const optionsList = document.querySelectorAll('.option');
 		searchTerm = searchTerm.toLowerCase();
 		optionsList.forEach((option) => {
@@ -65,7 +63,6 @@ function Home() {
 			}
 		});
 	};
-
 
 	return (
 		<div className="main-container">
