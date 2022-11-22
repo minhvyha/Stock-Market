@@ -27,7 +27,7 @@ function Account() {
 	let optionList = fontSize.map((value) => {
 		return (
 			<div
-				class="option"
+				className="option"
 				onClick={() => {
 					console.log(value);
 					document.querySelector('.selected').innerHTML = `${value}`;
@@ -36,7 +36,7 @@ function Account() {
 			>
 				<input
 					type="radio"
-					class="radio"
+					className="radio"
 					id={`font-size-${value}`}
 					name="category"
 				/>
@@ -80,9 +80,9 @@ function Account() {
 				<h2 className="sign-out-name">{user.name}</h2>
 				<div className="eye-disability-support-container">
 					<div>Font Size: </div>
-					<div class="select-box">
+					<div className="select-box">
 						<div
-							class={
+							className={
 								isDropDown
 									? 'options-container active'
 									: 'options-container'
@@ -91,11 +91,11 @@ function Account() {
 							{optionList}
 						</div>
 
-						<div class="selected" onClick={selectBoxClick}>
+						<div className="selected" onClick={selectBoxClick}>
 							Select Video Category
 						</div>
 
-						{/* <div class="search-box">
+						{/* <div className="search-box">
 							<input
 								type="text"
 								placeholder="Start Typing..."

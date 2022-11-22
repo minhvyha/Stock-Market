@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import LineChart from '../../components/LineChart';
 import { MainPageContext } from '../../App';
+import { nanoid } from 'nanoid'
 
 function Home() {
 	const [isDropDown, setIsDropDown] = useState(false);
@@ -15,7 +16,6 @@ function Home() {
 		const optionsContainer = document.querySelector('.options-container');
 		const searchBox = document.querySelector('.search-box input');
 		setIsDropDown((value) => !value);
-		console.log(isDropDown);
 		searchBox.value = '';
 		filterList('');
 
@@ -27,7 +27,8 @@ function Home() {
 	let optionList = Symbol.map((company) => {
 		return (
 			<div
-				class="option"
+				key={nanoid()}
+				className="option"
 				onClick={() => {
 					setStock(company.Symbol);
 					document.querySelector(
@@ -38,12 +39,12 @@ function Home() {
 			>
 				<input
 					type="radio"
-					class="radio"
+					className="radio"
 					id={`${company.Symbol}`}
 					name="category"
 				/>
 				<label
-					for={`${company.Symbol}`}
+					htmlFor={`${company.Symbol}`}
 				>{`${company.Name} - ${company.Symbol}`}</label>
 			</div>
 		);
@@ -75,9 +76,9 @@ function Home() {
 			</div>
 			<div className="side-container">
 				<div className="choose-input-container">
-					<div class="select-box">
+					<div className="select-box">
 						<div
-							class={
+							className={
 								isDropDown
 									? 'options-container active'
 									: 'options-container'
@@ -86,11 +87,11 @@ function Home() {
 							{optionList}
 						</div>
 
-						<div class="selected" onClick={selectBoxClick}>
+						<div className="selected" onClick={selectBoxClick}>
 							Select Symbol
 						</div>
 
-						<div class="search-box">
+						<div className="search-box">
 							<input
 								type="text"
 								placeholder="Start Typing..."

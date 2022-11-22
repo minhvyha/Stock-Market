@@ -5,15 +5,15 @@ import { NavLink } from 'react-router-dom';
 function Footer() {
 	return (
 		<footer>
-			<NavLink to="/home" exact activeClassName="active">
+			<NavLink to="/home" exact="true" activeclassname="active">
 				<div className="footer-item-container">
-					<span class="material-symbols-outlined">home</span>
+					<span className="material-symbols-outlined">home</span>
 					<label>Home</label>
 				</div>
 			</NavLink>
-			<NavLink to="/portfolio" exact activeClassName="active">
+			<NavLink to="/portfolio" exact="true" activeclassname="active">
 				<div className="footer-item-container">
-					<span class="material-symbols-outlined">
+					<span className="material-symbols-outlined">
 						account_balance_wallet
 					</span>
 					<label>Portfolio</label>
@@ -24,7 +24,7 @@ function Footer() {
 				className={({ isActive }) => (isActive ? 'active-footer' : '')}
 			>
 				<div className="footer-item-container">
-					<span class="material-symbols-outlined">paid</span>
+					<span className="material-symbols-outlined">paid</span>
 					<label>Buy</label>
 				</div>
 			</NavLink>
@@ -33,7 +33,7 @@ function Footer() {
 				className={({ isActive }) => (isActive ? 'active-footer' : '')}
 			>
 				<div className="footer-item-container">
-					<span class="material-symbols-outlined">trending_down</span>
+					<span className="material-symbols-outlined">trending_down</span>
 					<label>Sell</label>
 				</div>
 			</NavLink>
@@ -42,7 +42,7 @@ function Footer() {
 				className={({ isActive }) => (isActive ? 'active-footer' : '')}
 			>
 				<div className="footer-item-container">
-					<span class="material-symbols-outlined">person</span>
+					<span className="material-symbols-outlined">person</span>
 					<label>Account</label>
 				</div>
 			</NavLink>

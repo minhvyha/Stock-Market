@@ -9,7 +9,7 @@ function Nav() {
 			<div className="nav-container">
 				<input type="checkbox" id="check" />
 				<img className="logo" src={Logo} alt="" />
-				<label for="check" className="checkbtn">
+				<label htmlFor="check" className="checkbtn">
 					<i className="fas fa-bars menu-symbol"></i>
 				</label>
 				<ul>

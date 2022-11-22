@@ -34,10 +34,10 @@ function App() {
 	}
 
 	async function getData(symbol) {
-		setStock('');
 		const apiData = await fetch(
-			`https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${symbol}&apikey=${process.env.REACT_APP_API_KEY}`
+			`https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${symbol}&apikey=${process.env.REACT_APP_API_KEY}`
 		);
+		setStock('');
 		const convertData = await apiData.json();
 		let labels = [];
 		let data = [];
