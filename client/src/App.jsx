@@ -72,43 +72,48 @@ function App() {
 
 	async function fetchData() {
 		toggleLoader(true)
-		let data = await getData(stock);
-		setData(data);
-		const options = {
-			maintainAspectRatio: false,
-			tension: 0.2,
-			plugins: {
-				tooltip: {
-					yAlign: 'bottom',
-					displayColors: false,
-					bodyAlign: 'center',
-					bodyColor: 'black',
-					titleColor: 'black',
-					borderColor: '#284799',
-					borderWidth: 1,
-					backgroundColor: 'white',
-					titleAlign: 'center',
-					interaction: {
-						mode: 'index',
-						axis: 'x',
+		try{
+			let data = await getData(stock);
+			setData(data);
+			const options = {
+				maintainAspectRatio: false,
+				tension: 0.2,
+				plugins: {
+					tooltip: {
+						yAlign: 'bottom',
+						displayColors: false,
+						bodyAlign: 'center',
+						bodyColor: 'black',
+						titleColor: 'black',
+						borderColor: '#284799',
+						borderWidth: 1,
+						backgroundColor: 'white',
+						titleAlign: 'center',
+						interaction: {
+							mode: 'index',
+							axis: 'x',
+						},
+						intersect: false,
 					},
-					intersect: false,
-				},
-				legend: {
-					display: false,
-				},
-				title: {
-					display: true,
-					text: stock,
-					padding: 15,
-					color: 'black',
-					font: {
-						size: 16,
+					legend: {
+						display: false,
+					},
+					title: {
+						display: true,
+						text: stock,
+						padding: 15,
+						color: 'black',
+						font: {
+							size: 16,
+						},
 					},
 				},
-			},
-		};
-		setOption(options);
+			};
+			setOption(options);
+		}
+		catch(err){
+			openResolveModal(false)	
+		}
 		toggleLoader(false)
 	}
 
