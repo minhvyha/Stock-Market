@@ -4,22 +4,22 @@ import './PopUp.css';
 
 function SuccessPopUp() {
 	return (
-		<div class="popup-modal success" id="success-modal">
-			<div class="popup" id="success-content">
-				<div class="success-content">
-					<div class="imgbox">
-						<img src="src/img/checked.png" alt="" class="img" />
+		<div className="popup-modal success" id="success-modal">
+			<div className="popup" id="success-content">
+				<div className="success-content">
+					<div className="imgbox">
+						<img src="src/img/checked.png" alt="" className="img" />
 					</div>
-					<div class="title">
+					<div className="title">
 						<h3>Success!</h3>
 					</div>
-					<p class="para">
+					<p className="para">
 						Your website has been decarbonize successfully
 					</p>
-					<p class="success-note">
+					<p className="success-note">
 						* Note that dependencies may mark up the data
 					</p>
-					<a href="#" class="button" id="success-resolve">
+					<a href="#" className="button" id="success-resolve">
 						OKAY
 					</a>
 				</div>

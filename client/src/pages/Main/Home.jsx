@@ -12,9 +12,9 @@ function Home() {
 		setStock,
 		handleChoose,
 		fetchData,
-		SuccessPopUp,
-		FailPopUp,
-		Loader,
+		openResolveModal,
+		closeResolveModal,
+		toggleLoader,
 	} = useContext(MainPageContext);
 
 	useEffect(() => {

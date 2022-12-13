@@ -71,6 +71,7 @@ function App() {
 	}
 
 	async function fetchData() {
+		toggleLoader(true)
 		let data = await getData(stock);
 		setData(data);
 		const options = {
@@ -108,6 +109,7 @@ function App() {
 			},
 		};
 		setOption(options);
+		toggleLoader(false)
 	}
 
 	function handleChoose() {

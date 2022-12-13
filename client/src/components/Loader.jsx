@@ -3,8 +3,8 @@ import './Loader.css';
 
 function Loader() {
 	return (
-		<div class="popup-loader loader">
-			<div class="screen-loader"></div>
+		<div className="popup-loader loader">
+			<div className="screen-loader"></div>
 		</div>
 	);
 }
