@@ -125,7 +125,7 @@ function App() {
 					fetchData,
 					SuccessPopUp,
 					FailPopUp,
-					Loader
+					Loader,
 				}}
 			>
 				<Routes>
