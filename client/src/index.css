@@ -8,6 +8,36 @@
 	list-style: none;
 	font-family: 'Poppins', sans-serif;
 }
+:root {
+	--first-color: hsl(147, 56%, 55%);
+	--popup-color: hsl(59, 56%, 55%);
+	--body-color: hsl(210, 11%, 14%);
+	--main-color: hsl(213, 9%, 25%);
+	--container-alternate-color: hsl(210, 9%, 18%);
+	--disable-color: rgb(144, 144, 144);
+	/* --container-alternate-color-v2: hsl(210, 9%, 18%); */
+	--container-color: hsl(216, 10%, 20%);
+	--reduction-border: 1.6px solid hsl(0, 0%, 39%);
+	/*========== Font and typography ==========*/
+	/*.5rem = 8px | 1rem = 16px ...*/
+	--biggest-font-size: 1.75rem;
+	--h1-font-size: 1.55rem;
+	--h2-font-size: 1.25rem;
+	--h3-font-size: 1rem;
+	--normal-font-size: 0.938rem;
+	--small-font-size: 0.813rem;
+	--smaller-font-size: 0.75rem;
+	--tiny-font-size: 0.625rem;
+
+	/*========== Font weight ==========*/
+	--font-medium: 500;
+	--font-semibold: 600;
+
+	/*========== z index ==========*/
+	--z-tooltip: 10;
+	--z-fixed: 100;
+	--z-modal: 1000;
+}
 #root {
 	height: 100vh;
 }
@@ -352,7 +382,6 @@ iframe {
 	order: 1;
 	overflow-y: scroll;
 	margin-top: 58px;
-	
 }
 
 .selected {
@@ -377,11 +406,10 @@ iframe {
 	transition: all 0.4s ease-in-out;
 }
 
-.select-box .options-container.font-size-selector{
+.select-box .options-container.font-size-selector {
 	margin-top: 0px;
 	transition: all 0.48s ease-in-out;
 	border-radius: 6px;
-
 }
 
 .select-box .options-container.active {
