@@ -7,7 +7,7 @@ function Intro() {
 		<div className="intro-container">
 			<img className="intro-image" src={Logo} alt="" />
 			<div className="intro-form-container">
-				<h1 className="intro-title">Welcome to StockX</h1>
+				<h1 className="intro-title">Welcome to <span className='company-name'>S&C</span></h1>
 				<p className="intro-subtitle">
 					Exchange, trade, monitor<br></br>stocks and cryptos.
 				</p>

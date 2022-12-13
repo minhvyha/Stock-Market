@@ -60,6 +60,9 @@ iframe {
 	color: #284799;
 	font-size: 1.5rem;
 }
+.company-name{
+	font-size: 1.7rem;
+}
 .intro-subtitle {
 	font-size: 0.85rem;
 	margin-bottom: 0.6rem;
@@ -441,7 +444,6 @@ iframe {
 	opacity: 1;
 	pointer-events: auto;
  }
-
 /* ============== BREAKPOINT ============== */
 @media screen and (min-width: 300px) {
 	.main-container {
@@ -500,6 +502,9 @@ iframe {
 	}
 	.intro-title {
 		font-size: 2rem;
+	}
+	.company-name{
+		font-size: 2.2rem;
 	}
 	.intro-form-container {
 		gap: 0.9rem;
@@ -588,6 +593,9 @@ iframe {
 	.intro-title {
 		font-size: 2.3rem;
 	}
+	.company-name{
+		font-size: 2.5rem;
+	}
 	.intro-subtitle {
 		font-size: 1.15rem;
 	}
@@ -624,6 +632,9 @@ iframe {
 @media screen and (min-width: 992px) {
 	.intro-title {
 		font-size: 2.75rem;
+	}
+	.company-name{
+		font-size: 3rem;
 	}
 	.intro-subtitle {
 		font-size: 1.25rem;
