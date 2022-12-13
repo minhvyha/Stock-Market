@@ -76,7 +76,6 @@ function Home() {
 
 	return (
 		<div className="main-container">
-			< SuccessPopUp />
 			<div className="chart-container">
 				<LineChart
 					className="main-line-chart"

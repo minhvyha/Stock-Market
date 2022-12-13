@@ -29,6 +29,8 @@ function App() {
 	const [data, setData] = useState({
 		datasets: [],
 	});
+	const [successPopUp, setSuccessPopUp] = useState(false)
+	const [failPopUp, setFailPopUp] = useState(false)
 
 	const [options, setOption] = useState();
 	const [stock, setStock] = useState('AAPL');
@@ -111,10 +113,23 @@ function App() {
 		fetchData();
 	}
 
-	
+	function openResolveModal(isSuccess){
+		if (isSuccess){
+			setSuccessPopUp(true)
+		}
+		else{
+			setFailPopUp(true)
+		}
+	}
 
+	function closeResolveModal(){
+		setSuccessPopUp(false)
+		setFailPopUp(false)
+	}
+	
 	return (
 		<BrowserRouter>
+
 			<MainPageContext.Provider
 				value={{
 					Symbol,
@@ -125,8 +140,8 @@ function App() {
 					handleChoose,
 					handleSignOut,
 					fetchData,
-					SuccessPopUp,
-					FailPopUp,
+					openResolveModal,
+					closeResolveModal,
 					Loader,
 				}}
 			>
