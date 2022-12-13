@@ -1,66 +1,66 @@
 .error-content,
 .success-content {
-  width: 326px;
-  height: 408px;
-  background: white;
-  box-shadow: 4px 4px 70px 10px rgb(0 0 0/11%);
-  border-radius: 25px;
+	width: 326px;
+	height: 408px;
+	background: white;
+	box-shadow: 4px 4px 70px 10px rgb(0 0 0/11%);
+	border-radius: 25px;
 }
 .imgbox {
-  text-align: center;
+	text-align: center;
 }
 .img {
-  width: 112px;
-  margin-top: 40px;
+	width: 112px;
+	margin-top: 40px;
 }
 .title {
-  font-weight: 500;
-  font-size: 28px;
-  letter-spacing: 0.04em;
-  text-align: center;
-  margin: 1rem;
+	font-weight: 500;
+	font-size: 28px;
+	letter-spacing: 0.04em;
+	text-align: center;
+	margin: 1rem;
 }
 #success-content .title {
-  color: #32ba7c;
+	color: #32ba7c;
 }
 #error-content .title {
-  color: #ff3636;
+	color: #ff3636;
 }
 #success-content .success-note {
-  font-weight: 500;
-  font-size: 12px;
-  text-align: center;
-  color: black;
+	font-weight: 500;
+	font-size: 12px;
+	text-align: center;
+	color: black;
 }
 #success-content .para,
 #error-content .para {
-  font-weight: 500;
-  width: 80%;
-  font-size: 18px;
-  line-height: 30px;
-  letter-spacing: 0.04em;
-  text-align: center;
-  margin: 1.5rem;
-  color: black;
+	font-weight: 500;
+	width: 80%;
+	font-size: 18px;
+	line-height: 30px;
+	letter-spacing: 0.04em;
+	text-align: center;
+	margin: 1.5rem;
+	color: black;
 }
 #success-content .para {
-  margin-bottom: 0.5rem;
+	margin-bottom: 0.5rem;
 }
 #success-content .button,
 #error-content .button {
-  width: 50%;
-  display: block;
-  margin: 20px auto;
-  border-radius: 25px;
-  padding: 10px;
-  text-decoration: none;
-  color: white;
-  text-align: center;
-  letter-spacing: 0.04em;
+	width: 50%;
+	display: block;
+	margin: 20px auto;
+	border-radius: 25px;
+	padding: 10px;
+	text-decoration: none;
+	color: white;
+	text-align: center;
+	letter-spacing: 0.04em;
 }
 #success-resolve {
-  background: #32ba7c;
+	background: #32ba7c;
 }
 #error-resolve {
-  background: #ff3636;
+	background: #ff3636;
 }
