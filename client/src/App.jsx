@@ -123,6 +123,9 @@ function App() {
 					handleChoose,
 					handleSignOut,
 					fetchData,
+					SuccessPopUp,
+					FailPopUp,
+					Loader
 				}}
 			>
 				<Routes>
