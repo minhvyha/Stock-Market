@@ -346,11 +346,13 @@ iframe {
 	max-height: 0;
 	width: 100%;
 	opacity: 0;
-	transition: all 0.4s;
+	transition: all 0.4s ease-in-out;
 	border-radius: 8px;
 	overflow: hidden;
-
 	order: 1;
+	overflow-y: scroll;
+	margin-top: 54px;
+	
 }
 
 .selected {
@@ -373,18 +375,17 @@ iframe {
 	width: 32px;
 	right: 10px;
 	top: 5px;
-	transition: all 0.9s ease-in-out;
+	transition: all 0.4s ease-in-out;
 }
 
-.select-box .options-container.font-size-selector.active{
+.select-box .options-container.font-size-selector{
 	margin-top: 5px;
+	transition: all 0.5s ease-in-out;
 }
 
 .select-box .options-container.active {
-	max-height: 240px;
 	opacity: 1;
-	overflow-y: scroll;
-	margin-top: 54px;
+	max-height: 240px;
 }
 
 .select-box .options-container.active + .selected::after {
