@@ -115,6 +115,7 @@ function App() {
 			openResolveModal(false)	
 		}
 		toggleLoader(false)
+		openResolveModal(true)
 	}
 
 	function handleChoose() {
