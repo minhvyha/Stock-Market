@@ -29,9 +29,9 @@ function App() {
 	const [data, setData] = useState({
 		datasets: [],
 	});
-	const [successPopUpOpen, setSuccessPopUpOpen] = useState(false)
-	const [failPopUpOpen, setFailPopUpOpen] = useState(false)
-	const [loaderPopUp, setLoaderPopUp] = useState(false)
+	const [successPopUpOpen, setSuccessPopUpOpen] = useState(false);
+	const [failPopUpOpen, setFailPopUpOpen] = useState(false);
+	const [loaderPopUp, setLoaderPopUp] = useState(false);
 
 	const [options, setOption] = useState();
 	const [stock, setStock] = useState('AAPL');
@@ -71,8 +71,8 @@ function App() {
 	}
 
 	async function fetchData() {
-		toggleLoader(true)
-		try{
+		toggleLoader(true);
+		try {
 			let data = await getData(stock);
 			setData(data);
 			const options = {
@@ -110,46 +110,43 @@ function App() {
 				},
 			};
 			setOption(options);
+		} catch (err) {
+			openResolveModal(false);
 		}
-		catch(err){
-			openResolveModal(false)	
-		}
-		toggleLoader(false)
-		openResolveModal(true)
+		toggleLoader(false);
+		openResolveModal(true);
 	}
 
 	function handleChoose() {
 		fetchData();
 	}
 
-	function openResolveModal(isSuccess){
-		if (isSuccess){
-			setSuccessPopUpOpen(true)
-		}
-		else{
-			setFailPopUpOpen(true)
+	function openResolveModal(isSuccess) {
+		if (isSuccess) {
+			setSuccessPopUpOpen(true);
+		} else {
+			setFailPopUpOpen(true);
 		}
 	}
 
-	function closeResolveModal(){
-		setSuccessPopUpOpen(false)
-		setFailPopUpOpen(false)
+	function closeResolveModal() {
+		setSuccessPopUpOpen(false);
+		setFailPopUpOpen(false);
 	}
 
-	function toggleLoader(display){
-		if (display){
-			setLoaderPopUp(true)
-		}
-		else{
-			setLoaderPopUp(false)
+	function toggleLoader(display) {
+		if (display) {
+			setLoaderPopUp(true);
+		} else {
+			setLoaderPopUp(false);
 		}
 	}
-	
+
 	return (
 		<BrowserRouter>
-			{successPopUpOpen === true && <SuccessPopUp/>}
-			{failPopUpOpen === true && <FailPopUp/>}
-			{loaderPopUp === true && <Loader/>}
+			{successPopUpOpen === true && <SuccessPopUp />}
+			{failPopUpOpen === true && <FailPopUp />}
+			{loaderPopUp === true && <Loader />}
 			<MainPageContext.Provider
 				value={{
 					Symbol,
