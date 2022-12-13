@@ -45,34 +45,16 @@ function Account() {
 		);
 	});
 
-	// const filterList = (searchTerm) => {
-	// 	const optionsList = document.querySelectorAll('.option');
-	// 	searchTerm = searchTerm.toLowerCase();
-	// 	optionsList.forEach((option) => {
-	// 		let label =
-	// 			option.firstElementChild.nextElementSibling.innerText.toLowerCase();
-	// 		if (label.indexOf(searchTerm) != -1) {
-	// 			option.style.display = 'block';
-	// 		} else {
-	// 			option.style.display = 'none';
-	// 		}
-	// 	});
-	// };
-
 	function changeFontSizeRoot(fontSize) {
 		const root = document.querySelector(':root');
 		root.style.setProperty('--my-color', 'blue');
 	}
 
 	function changeFontSize(value) {
-		switch (value){
+		switch (value) {
 			case 'Small':
-
 		}
-
 	}
-
-	
 
 	return (
 		<div className="main-container">
