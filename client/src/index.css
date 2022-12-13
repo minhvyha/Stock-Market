@@ -8,7 +8,7 @@
 	list-style: none;
 	font-family: 'Poppins', sans-serif;
 }
-:root {
+html {
 	--first-color: hsl(147, 56%, 55%);
 	--popup-color: hsl(59, 56%, 55%);
 	--body-color: hsl(210, 11%, 14%);
