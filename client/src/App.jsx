@@ -139,9 +139,9 @@ function App() {
 	
 	return (
 		<BrowserRouter>
-			{successPopUpOpen && SuccessPopUp}
-			{failPopUpOpen && FailPopUp}
-			{loaderPopUp && Loader}
+			{successPopUpOpen === true && <SuccessPopUp/>}
+			{failPopUpOpen === true && <FailPopUp/>}
+			{loaderPopUp === true && <Loader/>}
 			<MainPageContext.Provider
 				value={{
 					Symbol,
