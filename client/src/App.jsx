@@ -29,8 +29,9 @@ function App() {
 	const [data, setData] = useState({
 		datasets: [],
 	});
-	const [successPopUp, setSuccessPopUp] = useState(false)
-	const [failPopUp, setFailPopUp] = useState(false)
+	const [successPopUpOpen, setSuccessPopUpOpen] = useState(false)
+	const [failPopUpOpen, setFailPopUpOpen] = useState(false)
+	const [loaderPopUp, setLoaderPopUp] = useState(false)
 
 	const [options, setOption] = useState();
 	const [stock, setStock] = useState('AAPL');
@@ -115,21 +116,32 @@ function App() {
 
 	function openResolveModal(isSuccess){
 		if (isSuccess){
-			setSuccessPopUp(true)
+			setSuccessPopUpOpen(true)
 		}
 		else{
-			setFailPopUp(true)
+			setFailPopUpOpen(true)
 		}
 	}
 
 	function closeResolveModal(){
-		setSuccessPopUp(false)
-		setFailPopUp(false)
+		setSuccessPopUpOpen(false)
+		setFailPopUpOpen(false)
+	}
+
+	function toggleLoader(display){
+		if (display){
+			setLoaderPopUp(true)
+		}
+		else{
+			setLoaderPopUp(false)
+		}
 	}
 	
 	return (
 		<BrowserRouter>
-
+			{successPopUpOpen && SuccessPopUp}
+			{failPopUpOpen && FailPopUp}
+			{loaderPopUp && Loader}
 			<MainPageContext.Provider
 				value={{
 					Symbol,
@@ -142,7 +154,7 @@ function App() {
 					fetchData,
 					openResolveModal,
 					closeResolveModal,
-					Loader,
+					toggleLoader,
 				}}
 			>
 				<Routes>
