@@ -379,7 +379,7 @@ iframe {
 
 .select-box .options-container.font-size-selector{
 	margin-top: 0px;
-	transition: all 0.5s ease-in-out;
+	transition: all 0.48s ease-in-out;
 	border-radius: 6px;
 
 }

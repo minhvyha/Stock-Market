@@ -12,14 +12,7 @@ function Account() {
 		document.getElementById('sign-out-form').style.display = 'none';
 	}
 	function selectBoxClick() {
-		const optionsContainer = document.querySelector('.options-container');
-		const searchBox = document.querySelector('.search-box input');
 		setIsDropDown((value) => !value);
-		console.log(isDropDown);
-
-		if (!optionsContainer.classList.contains('active')) {
-			searchBox.focus();
-		}
 	}
 	let fontSize = ['Small', 'Medium', 'Large'];
 	let optionList = fontSize.map((value) => {
@@ -72,18 +65,8 @@ function Account() {
 						</div>
 
 						<div className="selected" onClick={selectBoxClick}>
-							Select Video Category
+							Select Font Size
 						</div>
-
-						{/* <div className="search-box">
-							<input
-								type="text"
-								placeholder="Start Typing..."
-								onKeyUp={function (e) {
-									filterList(e.target.value);
-								}}
-							/>
-						</div> */}
 					</div>
 				</div>
 				<button className="btn-sign-out" onClick={handlePopUp}>
