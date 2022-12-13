@@ -111,6 +111,8 @@ function App() {
 		fetchData();
 	}
 
+	
+
 	return (
 		<BrowserRouter>
 			<MainPageContext.Provider

@@ -11,6 +11,4 @@
    background-color: hsla(216, 10%, 20%, 0.713);
    z-index: var(--z-modal);
    transition: 0.4s all ease-in-out;
-   visibility: hidden;
-   opacity: 0;
  }

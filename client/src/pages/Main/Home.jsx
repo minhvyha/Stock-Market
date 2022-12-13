@@ -1,12 +1,21 @@
 import React, { useContext, useEffect, useState } from 'react';
 import LineChart from '../../components/LineChart';
 import { MainPageContext } from '../../App';
-import { nanoid } from 'nanoid'
+import { nanoid } from 'nanoid';
 
 function Home() {
 	const [isDropDown, setIsDropDown] = useState(false);
-	const { Symbol, data, options, setStock, handleChoose, fetchData } =
-		useContext(MainPageContext);
+	const {
+		Symbol,
+		data,
+		options,
+		setStock,
+		handleChoose,
+		fetchData,
+		SuccessPopUp,
+		FailPopUp,
+		Loader,
+	} = useContext(MainPageContext);
 
 	useEffect(() => {
 		fetchData();
@@ -67,6 +76,7 @@ function Home() {
 
 	return (
 		<div className="main-container">
+			< SuccessPopUp />
 			<div className="chart-container">
 				<LineChart
 					className="main-line-chart"
