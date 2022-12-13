@@ -1,4 +1,6 @@
 import React from 'react';
+import './StatusPopUp.css';
+import './PopUp.css';
 
 function FailPopUp() {
 	return (
