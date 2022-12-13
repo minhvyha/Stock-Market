@@ -2,7 +2,7 @@ import React from 'react';
 import './StatusPopUp.css';
 import './PopUp.css';
 
-function FailPopUp() {
+function FailPopUp({ message }) {
 	return (
 		<div className="popup-modal error" id="error-modal">
 			<div className="popup" id="error-content">

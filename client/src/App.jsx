@@ -70,7 +70,7 @@ function App() {
 		return { labels, datasets };
 	}
 
-	async function fetchData() {
+	async function fetchData(defaultFetch=true) {
 		toggleLoader(true);
 		try {
 			let data = await getData(stock);
@@ -114,11 +114,14 @@ function App() {
 			openResolveModal(false);
 		}
 		toggleLoader(false);
-		openResolveModal(true);
+		console.log(defaultFetch)
+		if (!defaultFetch){
+			openResolveModal(true);
+		}
 	}
 
 	function handleChoose() {
-		fetchData();
+		fetchData(false);
 	}
 
 	function openResolveModal(isSuccess) {

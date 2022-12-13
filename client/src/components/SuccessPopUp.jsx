@@ -2,7 +2,7 @@ import React from 'react';
 import './StatusPopUp.css';
 import './PopUp.css';
 
-function SuccessPopUp() {
+function SuccessPopUp({ message }) {
 	return (
 		<div className="popup-modal success" id="success-modal">
 			<div className="popup" id="success-content">
