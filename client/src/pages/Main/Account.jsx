@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MainPageContext } from '../../App';
+import './Account.css'
 
 function Account() {
 	const [isDropDown, setIsDropDown] = useState(false);

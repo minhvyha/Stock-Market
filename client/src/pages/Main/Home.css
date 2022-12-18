@@ -1,0 +1,62 @@
+/* ============== HOME PAGE ============== */
+.symbol-list-box::-webkit-input-placeholder {
+	font-size: 18px;
+}
+.choose-input-container {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	gap: 0.7rem;
+	justify-content: center;
+	margin-bottom: 1rem;
+}
+.choose-input-container label {
+	text-align: center;
+}
+.symbol-list-box {
+	width: 8.6rem;
+	border: 1px solid #000000;
+	outline: none;
+	border-radius: 2px;
+	transition: 0.2s;
+	height: 1.8rem;
+	padding-left: 0.5rem;
+}
+.choose-input-container input:focus {
+	border: 2px solid #284799;
+}
+.btn {
+	background-color: #284799;
+	color: white;
+	border: none;
+	padding: 6px 8px;
+	border-radius: 0.2rem;
+	transition: 0.35s;
+}
+.check-btn {
+	font-size: 0.85rem;
+}
+.btn:hover {
+	background-color: #000000;
+}
+.action-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	gap: 0.5rem;
+}
+.action-buy {
+	background-color: #27a69a;
+	padding: 5px 0;
+	border-radius: 0.2rem;
+	width: 100%;
+	text-align: center;
+}
+.action-sell {
+	background-color: #ef5351;
+	padding: 5px;
+	width: 100%;
+	border-radius: 0.2rem;
+	text-align: center;
+}

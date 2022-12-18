@@ -1,0 +1,65 @@
+/* ============== INTRO PAGE ============== */
+.intro-container {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	align-items: center;
+	justify-content: center;
+	gap: 1.5rem;
+}
+.intro-form-container {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	align-items: center;
+}
+.intro-image {
+	width: 105px;
+	height: auto;
+}
+.intro-title {
+	color: #284799;
+	font-size: 1.5rem;
+}
+.company-name {
+	font-size: 1.7rem;
+}
+.intro-subtitle {
+	font-size: 0.85rem;
+	margin-bottom: 0.6rem;
+}
+.intro-form-container button {
+	width: 190px;
+	padding: 5.5px 0;
+	border-radius: 2rem;
+	cursor: pointer;
+	font-weight: 500;
+	font-size: 0.95rem;
+}
+.intro-form-container a {
+	width: fit-content;
+}
+.intro-login-btn {
+	background-color: #284799;
+	color: white;
+	border: 1px solid #284799;
+	transition: 0.4s;
+}
+.intro-login-btn:hover {
+	background-color: rgb(0, 0, 0);
+	border: 1px solid #000000;
+	color: #ffffff;
+}
+.intro-signup-btn {
+	background-color: white;
+	color: black;
+	border: 1px solid black;
+	transition: 0.4s;
+	margin-top: 0.05rem;
+}
+.intro-signup-btn:hover {
+	background-color: black;
+	border: 1px solid black;
+	color: white;
+}

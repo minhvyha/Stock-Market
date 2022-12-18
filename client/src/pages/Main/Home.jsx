@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import LineChart from '../../components/LineChart';
 import { MainPageContext } from '../../App';
 import { nanoid } from 'nanoid';
+import './Home.css'
 
 function Home() {
 	const [isDropDown, setIsDropDown] = useState(false);

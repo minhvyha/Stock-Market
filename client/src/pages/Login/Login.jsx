@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import SignInImage from '../../assets/images/SignIn.png';
 import { Link, useNavigate } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
+import './Login.css'
 
 function Login({ setUser }) {
 	const [errorLogin, setErrorLogin] = useState();
