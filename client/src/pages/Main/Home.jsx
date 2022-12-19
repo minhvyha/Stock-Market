@@ -81,7 +81,7 @@ function Home() {
 	return (
 		<div className="main-container">
 			{isErrorReceiveStock && (
-				<img src={HomeError} alt="Error when trying to retrieve stock." />
+				<img className='home-error-image' src={HomeError} alt="Error when trying to retrieve stock." />
 			)}
 			{!isErrorReceiveStock && (
 				<div className="chart-container">
