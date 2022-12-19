@@ -5,7 +5,7 @@ import { MainPageContext } from '../App';
 
 function FailPopUp({ message }) {
 	const {
-		toggleLoader
+		closeResolveModal
 	} = useContext(MainPageContext);
 	return (
 		<div className="popup-modal error" id="error-modal">
@@ -21,7 +21,7 @@ function FailPopUp({ message }) {
 						Something went wrong. Please mannually make a copy of your
 						folder and try again!
 					</p>
-					<a href="#" className="button" id="error-resolve" onClick={toggleLoader}>
+					<a href="#" className="button" id="error-resolve" onClick={closeResolveModal}>
 						TRY AGAIN
 					</a>
 				</div>

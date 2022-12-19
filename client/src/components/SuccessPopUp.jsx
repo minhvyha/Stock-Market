@@ -5,7 +5,7 @@ import { MainPageContext } from '../App';
 
 function SuccessPopUp({ message }) {
 	const {
-		toggleLoader
+		closeResolveModal
 	} = useContext(MainPageContext);
 	return (
 		<div className="popup-modal success" id="success-modal">
@@ -23,7 +23,7 @@ function SuccessPopUp({ message }) {
 					<p className="success-note">
 						* Note that dependencies may mark up the data
 					</p>
-					<a href="#" className="button" id="success-resolve" onClick={toggleLoader}>
+					<a href="#" className="button" id="success-resolve" onClick={closeResolveModal}>
 						OKAY
 					</a>
 				</div>
