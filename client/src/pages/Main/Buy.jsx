@@ -1,11 +1,17 @@
 import React from 'react';
 import './Buy.css'
-import BuyImage from '../../assets/images/StackPaper.png'
+import BuyImage from '../../assets/images/BuyImage.png'
 
 function Buy() {
 	return <div className="main-container">
 		<div>
+			<div className='buy-title'>
+				Choose a stock symbol to buy.
+			</div>
 			<img className='buy-image' src={BuyImage} alt="buy image" />
+		</div>
+		<div className='buy-action-container'>
+			
 		</div>
 	</div>;
 }
