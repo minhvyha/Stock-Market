@@ -16,7 +16,9 @@
 	font-family: 'Poppins', sans-serif;
 }
 html {
-	--first-color: hsl(147, 56%, 55%);
+	--first-color: hsl(222, 62%, 53%);
+	--background-light-color: hsl(222, 55%, 79%); 
+	--text-dark-color: hsl(223, 57%, 25%);
 	--popup-color: hsl(59, 56%, 55%);
 	--body-color: hsl(210, 11%, 14%);
 	--main-color: hsl(213, 9%, 25%);

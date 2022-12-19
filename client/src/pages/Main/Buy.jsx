@@ -6,7 +6,7 @@ function Buy() {
 	return (
 		<div className="main-container">
 			<div className="buy-main-container">
-				<div>
+				<div className='buy-intro-container'>
 					<div className="buy-title">Choose a stock symbol to buy.</div>
 					<img className="buy-image" src={BuyImage} alt="buy image" />
 				</div>
