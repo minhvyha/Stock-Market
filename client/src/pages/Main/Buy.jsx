@@ -5,6 +5,7 @@ import BuyImage from '../../assets/images/BuyImage.png';
 function Buy() {
 	return (
 		<div className="main-container">
+			<div className='buy-main-container'>
 			<div>
 				<div className="buy-title">Choose a stock symbol to buy.</div>
 				<img className="buy-image" src={BuyImage} alt="buy image" />
@@ -13,8 +14,9 @@ function Buy() {
 				<div className="buy-search-container">
 					<div className='buy-search-title'>Find the right stock for you</div>
 					<div className='buy-search-subtitle'>Receive accurated live pricing of the stock based on your buy preference.</div>
-					<span class="material-symbols-outlined">search</span>
+					<span className="material-symbols-outlined">search</span>
 				</div>
+			</div>
 			</div>
 		</div>
 	);
