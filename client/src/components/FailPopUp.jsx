@@ -1,8 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import './StatusPopUp.css';
 import './PopUp.css';
+import { MainPageContext } from '../App';
 
 function FailPopUp({ message }) {
+	const {
+		toggleLoader
+	} = useContext(MainPageContext);
 	return (
 		<div className="popup-modal error" id="error-modal">
 			<div className="popup" id="error-content">
@@ -17,7 +21,7 @@ function FailPopUp({ message }) {
 						Something went wrong. Please mannually make a copy of your
 						folder and try again!
 					</p>
-					<a href="#" className="button" id="error-resolve">
+					<a href="#" className="button" id="error-resolve" onClick={toggleLoader}>
 						TRY AGAIN
 					</a>
 				</div>

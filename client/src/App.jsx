@@ -147,9 +147,7 @@ function App() {
 
 	return (
 		<BrowserRouter>
-			{successPopUpOpen === true && <SuccessPopUp />}
-			{failPopUpOpen === true && <FailPopUp />}
-			{loaderPopUp === true && <Loader />}
+			
 			<MainPageContext.Provider
 				value={{
 					Symbol,
@@ -165,6 +163,9 @@ function App() {
 					toggleLoader,
 				}}
 			>
+				{successPopUpOpen === true && <SuccessPopUp />}
+				{failPopUpOpen === true && <FailPopUp />}
+				{loaderPopUp === true && <Loader />}
 				<Routes>
 					<Route path="/" element={<ShareLayout />}>
 						<Route index element={<Navigate to="/home" />} />

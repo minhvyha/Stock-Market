@@ -1,8 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import './StatusPopUp.css';
 import './PopUp.css';
+import { MainPageContext } from '../App';
 
 function SuccessPopUp({ message }) {
+	const {
+		toggleLoader
+	} = useContext(MainPageContext);
 	return (
 		<div className="popup-modal success" id="success-modal">
 			<div className="popup" id="success-content">
@@ -19,7 +23,7 @@ function SuccessPopUp({ message }) {
 					<p className="success-note">
 						* Note that dependencies may mark up the data
 					</p>
-					<a href="#" className="button" id="success-resolve">
+					<a href="#" className="button" id="success-resolve" onClick={toggleLoader}>
 						OKAY
 					</a>
 				</div>
