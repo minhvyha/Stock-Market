@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Symbol } from './SP500';
 import axios from 'axios';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { nanoid } from 'nanoid';
+
 import Login from './pages/Login/Login';
 import Signup from './pages/Login/Signup';
 import Home from './pages/Main/Home';
@@ -180,6 +182,7 @@ function App() {
 									<Home />
 								</ProtectedRoute>
 							}
+							key={nanoid()}
 						/>
 						<Route
 							path="portfolio"

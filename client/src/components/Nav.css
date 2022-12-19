@@ -101,4 +101,5 @@ nav a:hover {
 	#check:checked ~ ul {
 		left: 0;
 	}
+	
 }
