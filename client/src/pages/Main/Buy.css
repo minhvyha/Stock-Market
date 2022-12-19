@@ -1,4 +1,21 @@
-
+.buy-main-container{
+   display: flex;
+   width: 100%;
+   flex-direction: column;
+   gap: 1rem;
+   text-align: center;
+}
+.buy-title{
+   font-size: 1.4rem;
+   font-weight: 600;
+}
+.buy-search-title{
+   font-size: 1.1rem;
+   font-weight: 600;
+}
+.buy-search-subtitle{
+   font-size: .75rem;
+}
 .buy-image{
-   width: 250px;
+   width: 230px;
 }
