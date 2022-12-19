@@ -9,12 +9,17 @@
    font-size: 1.4rem;
    font-weight: 600;
 }
+.buy-search-container{
+   border: 1.2px solid rgb(24, 24, 24);
+   padding: .2rem;
+   border-radius: .3rem;
+}
 .buy-search-title{
-   font-size: 1.1rem;
+   font-size: 1rem;
    font-weight: 600;
 }
 .buy-search-subtitle{
-   font-size: .75rem;
+   font-size: .7rem;
 }
 .buy-image{
    width: 230px;
