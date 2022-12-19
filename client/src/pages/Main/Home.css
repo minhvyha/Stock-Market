@@ -60,6 +60,10 @@
 	border-radius: 0.2rem;
 	text-align: center;
 }
+.home-error-image{
+	width: 240px;
+	margin-inline: auto;
+}
 @media screen and (min-width: 300px) {}
 @media screen and (min-width: 350px) {}
 @media screen and (min-width: 828px) {}

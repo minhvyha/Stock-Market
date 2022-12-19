@@ -32,7 +32,7 @@ function App() {
 	const [successPopUpOpen, setSuccessPopUpOpen] = useState(false);
 	const [failPopUpOpen, setFailPopUpOpen] = useState(false);
 	const [loaderPopUp, setLoaderPopUp] = useState(false);
-	const [isErrorReceiveStock, setIsErrorReceiveStock] = useState(false)
+	const [isErrorReceiveStock, setIsErrorReceiveStock] = useState(true)
 	const [options, setOption] = useState();
 	const [stock, setStock] = useState('AAPL');
 	function handleSignOut(event) {
