@@ -16,6 +16,8 @@
    text-align: left;
    display: flex;
    flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
 }
 .buy-search-title{
    font-size: 0.9rem;

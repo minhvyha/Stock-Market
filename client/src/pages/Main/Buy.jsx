@@ -12,13 +12,13 @@ function Buy() {
 				</div>
 				<div className="buy-search-container">
 					<div>
-					<div className="buy-search-title">
-						Find the right stock for you
-					</div>
-					<div className="buy-search-subtitle">
-						Receive accurated live pricing of the stock based on your buy
-						preference.
-					</div>
+						<div className="buy-search-title">
+							Find the right stock for you
+						</div>
+						<div className="buy-search-subtitle">
+							Receive accurated live pricing of the stock based on your
+							buy preference.
+						</div>
 					</div>
 					<span className="material-symbols-outlined">search</span>
 				</div>
