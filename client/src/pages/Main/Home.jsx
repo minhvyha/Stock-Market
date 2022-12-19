@@ -2,10 +2,12 @@ import React, { useContext, useEffect, useState } from 'react';
 import LineChart from '../../components/LineChart';
 import { MainPageContext } from '../../App';
 import { nanoid } from 'nanoid';
-import './Home.css'
+import './Home.css';
+import HomeError from '../../assets/images/HomeError.png';
 
 function Home() {
 	const [isDropDown, setIsDropDown] = useState(false);
+
 	const {
 		Symbol,
 		data,
@@ -13,6 +15,7 @@ function Home() {
 		setStock,
 		handleChoose,
 		fetchData,
+		isErrorReceiveStock,
 		openResolveModal,
 		closeResolveModal,
 		toggleLoader,
@@ -77,13 +80,19 @@ function Home() {
 
 	return (
 		<div className="main-container">
-			<div className="chart-container">
-				<LineChart
-					className="main-line-chart"
-					data={data}
-					options={options}
-				/>
-			</div>
+			{isErrorReceiveStock && (
+				<img src={HomeError} alt="Error when trying to retrieve stock." />
+			)}
+			{!isErrorReceiveStock && (
+				<div className="chart-container">
+					<LineChart
+						className="main-line-chart"
+						data={data}
+						options={options}
+					/>
+				</div>
+			)}
+
 			<div className="side-container">
 				<div className="choose-input-container">
 					<div className="select-box">
