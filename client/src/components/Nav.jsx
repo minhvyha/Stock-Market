@@ -4,10 +4,10 @@ import Logo from '../assets/images/Logo.png';
 import { Link } from 'react-router-dom';
 
 function Nav() {
-	function handleNavigation(){
-		let input = document.getElementById('check')
-		if (input){
-			input.checked = false
+	function handleNavigation() {
+		let input = document.getElementById('check');
+		if (input) {
+			input.checked = false;
 		}
 	}
 	return (
