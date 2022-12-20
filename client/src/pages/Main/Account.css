@@ -1,4 +1,4 @@
-/* ============== ACCOUNT CSS ============== */
+/* ============== SIGN OUT CSS ============== */
 #sign-out-form {
 	/* display: none; */
 	display: none;
@@ -56,6 +56,8 @@
 .cancel-btn:hover {
 	background-color: #626367;
 }
+
+/* ============== EYE DISABILITY SUPPORT CSS ============== */
 .select-box {
 	position: relative;
 	display: flex;
@@ -169,4 +171,9 @@
 .select-box .options-container.active ~ .search-box input {
 	opacity: 1;
 	pointer-events: auto;
+}
+
+/* ============== ACCOUNT NAV CSS ============== */
+.account-setting-list{
+	cursor: pointer;
 }
