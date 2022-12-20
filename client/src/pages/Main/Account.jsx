@@ -61,6 +61,9 @@ function Account() {
 				<div>Appearance</div>
 				<div>Help</div>
 			</div>
+			<div className='account-main-content'>
+				
+			</div>
 			<div className="sign-out-container">
 				<h2 className="sign-out-name">{user.name}</h2>
 				<div className="eye-disability-support-container">
