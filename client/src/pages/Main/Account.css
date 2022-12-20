@@ -177,3 +177,18 @@
 .account-setting-list{
 	cursor: pointer;
 }
+.account-main-content{
+	display: none;
+}
+.account-main-content.account-active{
+	display: block;
+}
+@media screen and (min-width: 300px) {
+}
+@media screen and (min-width: 350px) {}
+@media screen and (min-width: 828px) {
+	.account-main-content{
+		display: block;
+	}
+}
+@media screen and (min-width: 992px) {}
