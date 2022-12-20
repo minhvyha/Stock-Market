@@ -26,7 +26,7 @@ function App() {
 	const [user, setUser] = useState({
 		name: 'Minh Vy Ha',
 		stock: {},
-		money: 100000,
+		cash: 100_000,
 	});
 	const [data, setData] = useState({
 		datasets: [],
