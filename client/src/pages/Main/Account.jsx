@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MainPageContext } from '../../App';
-import './Account.css'
+import './Account.css';
 
 function Account() {
 	const [isDropDown, setIsDropDown] = useState(false);
@@ -50,6 +50,13 @@ function Account() {
 
 	return (
 		<div className="main-container">
+			<div className="account-navigation-bar">
+				<div className="account-nav-title">Setting</div>
+				<div>Personal</div>
+				<div>Password</div>
+				<div>Appearance</div>
+				<div>Help</div>
+			</div>
 			<div className="sign-out-container">
 				<h2 className="sign-out-name">{user.name}</h2>
 				<div className="eye-disability-support-container">

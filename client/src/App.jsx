@@ -168,6 +168,7 @@ function App() {
 					openResolveModal,
 					closeResolveModal,
 					toggleLoader,
+					setIsLightMode,
 				}}
 			>
 				{successPopUpOpen === true && <SuccessPopUp />}
