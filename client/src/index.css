@@ -17,8 +17,18 @@
 }
 html {
 	--first-color: hsl(222, 62%, 53%);
-	--background-light-color: hsl(222, 55%, 79%); 
+	--second-color: hsl(222, 62%, 53%);
+	
+	--main-light-background: hsl(195, 15%, 95%);
+	--background-light-color: hsl(222, 55%, 79%);
+
+	--main-dark-background: hsl(220, 30%, 8%);
+	--dark-container: hsl(204, 18%, 11%);
+	
+	
 	--text-dark-color: hsl(223, 57%, 25%);
+
+
 	--popup-color: hsl(59, 56%, 55%);
 	--body-color: hsl(210, 11%, 14%);
 	--main-color: hsl(213, 9%, 25%);

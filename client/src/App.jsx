@@ -31,6 +31,7 @@ function App() {
 	const [data, setData] = useState({
 		datasets: [],
 	});
+	const [isLightMode, setIsLightMode] = useState(true)
 	const [successPopUpOpen, setSuccessPopUpOpen] = useState(false);
 	const [failPopUpOpen, setFailPopUpOpen] = useState(false);
 	const [loaderPopUp, setLoaderPopUp] = useState(false);
