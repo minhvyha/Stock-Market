@@ -7,23 +7,29 @@ import Personal from '../../components/Account/Personal';
 
 function Account() {
 	const [isDropDown, setIsDropDown] = useState(false);
+	const [activeSetting, setActiveSetting] = useState('personal');
 	const { handleSignOut, user } = useContext(MainPageContext);
-	function handlePopUp() {
-		document.getElementById('sign-out-form').style.display = 'grid';
-	}
-	function handleCancel() {
-		document.getElementById('sign-out-form').style.display = 'none';
-	}
-	function selectBoxClick() {
-		setIsDropDown((value) => !value);
-	}
+
+	let settingList = ['personal', 'appearance', 'password', 'help'];
+
+	let settings = settingList.map((setting) => {
+		return (
+			<div
+				id={`account-${setting}`}
+				className="account-setting-list"
+				onClick={() => {setActiveSetting(setting)}}
+			>
+				{capitalize(setting)}
+			</div>
+		);
+	});
+
 	let fontSize = ['Small', 'Medium', 'Large'];
 	let optionList = fontSize.map((value) => {
 		return (
 			<div
 				className="option"
 				onClick={() => {
-					console.log(value);
 					document.querySelector('.selected').innerHTML = `${value}`;
 					setIsDropDown((value) => !value);
 				}}
@@ -39,9 +45,25 @@ function Account() {
 		);
 	});
 
+	function handlePopUp() {
+		document.getElementById('sign-out-form').style.display = 'grid';
+	}
+
+	function handleCancel() {
+		document.getElementById('sign-out-form').style.display = 'none';
+	}
+
+	function selectBoxClick() {
+		setIsDropDown((value) => !value);
+	}
+
 	function changeFontSizeRoot(fontSize) {
 		const root = document.querySelector(':root');
 		root.style.setProperty('--my-color', 'blue');
+	}
+
+	function capitalize(word) {
+		return word[0].toUpperCase() + word.slice(1).toLowerCase();
 	}
 
 	function changeFontSize(value) {
@@ -56,14 +78,9 @@ function Account() {
 		<div className="main-container">
 			<div className="account-navigation-bar">
 				<div className="account-nav-title">Setting</div>
-				<div>Personal</div>
-				<div>Password</div>
-				<div>Appearance</div>
-				<div>Help</div>
+				{settings}
 			</div>
-			<div className='account-main-content'>
-				
-			</div>
+			<div className="account-main-content"></div>
 			<div className="sign-out-container">
 				<h2 className="sign-out-name">{user.name}</h2>
 				<div className="eye-disability-support-container">
