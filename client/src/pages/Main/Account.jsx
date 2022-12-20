@@ -90,8 +90,10 @@ function Account() {
 				<div className="account-nav-title">Setting</div>
 				{settings}
 			</div>
-			<div className="account-main-content"></div>
-			<div className="sign-out-container">
+			<div className="account-main-content">
+				{activeSetting}
+			</div>
+			{/* <div className="sign-out-container">
 				<h2 className="sign-out-name">{user.name}</h2>
 				<div className="eye-disability-support-container">
 					<div>Font Size: </div>
@@ -130,7 +132,7 @@ function Account() {
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> */}
 		</div>
 	);
 }
