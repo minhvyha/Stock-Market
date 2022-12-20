@@ -27,6 +27,7 @@ function Account() {
 				className="account-setting-list"
 				onClick={() => {
 					setActiveSetting(setting.component);
+					document.getElementById('account-nav').classList.add('disable')
 					document.getElementById('account-main-content').classList.add('account-active')
 				}}
 			>
@@ -87,7 +88,7 @@ function Account() {
 
 	return (
 		<div className="main-container">
-			<div className="account-navigation-bar">
+			<div id='account-nav' className="account-navigation-bar">
 				<div className="account-nav-title">Setting</div>
 				{settings}
 			</div>
