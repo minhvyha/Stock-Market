@@ -15,21 +15,21 @@ function Account() {
 
 	let settingList = [
 		{ name: 'personal', component: Personal },
-		'appearance',
-		'password',
-		'help',
+		{ name: 'password', component: Password },
+		{ name: 'appearance', component: Appearance },
+		{ name: 'help', component: Help },
 	];
 
 	let settings = settingList.map((setting) => {
 		return (
 			<div
-				id={`account-${setting}`}
+				id={`account-${setting.name}`}
 				className="account-setting-list"
 				onClick={() => {
-					setActiveSetting(setting);
+					setActiveSetting(setting.component);
 				}}
 			>
-				{capitalize(setting)}
+				{capitalize(setting.name)}
 			</div>
 		);
 	});
