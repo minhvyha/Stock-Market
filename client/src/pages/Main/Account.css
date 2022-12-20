@@ -59,7 +59,7 @@
 .select-box {
 	position: relative;
 	display: flex;
-	width: 400px;
+	width: 240px;
 	flex-direction: column;
 }
 

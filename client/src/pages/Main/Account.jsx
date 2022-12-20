@@ -45,6 +45,8 @@ function Account() {
 	function changeFontSize(value) {
 		switch (value) {
 			case 'Small':
+			case 'Medium':
+			case 'Large':
 		}
 	}
 
