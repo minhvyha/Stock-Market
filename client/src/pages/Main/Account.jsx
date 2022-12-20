@@ -10,17 +10,24 @@ import Help from '../../components/Account/Help';
 
 function Account() {
 	const [isDropDown, setIsDropDown] = useState(false);
-	const [activeSetting, setActiveSetting] = useState('personal');
+	const [activeSetting, setActiveSetting] = useState(Personal);
 	const { handleSignOut, user } = useContext(MainPageContext);
 
-	let settingList = [{name:'personal', component: Personal}, 'appearance', 'password', 'help'];
+	let settingList = [
+		{ name: 'personal', component: Personal },
+		'appearance',
+		'password',
+		'help',
+	];
 
 	let settings = settingList.map((setting) => {
 		return (
 			<div
 				id={`account-${setting}`}
 				className="account-setting-list"
-				onClick={() => {setActiveSetting(setting)}}
+				onClick={() => {
+					setActiveSetting(setting);
+				}}
 			>
 				{capitalize(setting)}
 			</div>
