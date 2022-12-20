@@ -27,6 +27,7 @@ function Account() {
 				className="account-setting-list"
 				onClick={() => {
 					setActiveSetting(setting.component);
+					document.getElementById('account-main-content').classList.add('account-active')
 				}}
 			>
 				{capitalize(setting.name)}
@@ -90,7 +91,7 @@ function Account() {
 				<div className="account-nav-title">Setting</div>
 				{settings}
 			</div>
-			<div className="account-main-content">
+			<div id='account-main-content' className="account-main-content">
 				{activeSetting}
 			</div>
 			{/* <div className="sign-out-container">
