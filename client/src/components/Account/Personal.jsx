@@ -1,11 +1,9 @@
-import React, {useContext} from 'react'
-import { MainPageContext } from '../../App'
+import React, { useContext } from 'react';
+import { MainPageContext } from '../../App';
 
 function Personal() {
-   const { user } = useContext(MainPageContext);
-  return (
-    <div>Personal</div>
-  )
+	const { user } = useContext(MainPageContext);
+	return <div>Personal</div>;
 }
 
-export default Personal
+export default Personal;
