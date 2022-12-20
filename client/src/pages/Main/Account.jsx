@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { MainPageContext } from '../../App';
 import './Account.css';
 
+import Personal from '../../components/Account/Personal';
+
 function Account() {
 	const [isDropDown, setIsDropDown] = useState(false);
 	const { handleSignOut, user } = useContext(MainPageContext);
