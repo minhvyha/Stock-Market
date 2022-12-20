@@ -4,13 +4,16 @@ import { MainPageContext } from '../../App';
 import './Account.css';
 
 import Personal from '../../components/Account/Personal';
+import Appearance from '../../components/Account/Appearance';
+import Password from '../../components/Account/Password';
+import Help from '../../components/Account/Help';
 
 function Account() {
 	const [isDropDown, setIsDropDown] = useState(false);
 	const [activeSetting, setActiveSetting] = useState('personal');
 	const { handleSignOut, user } = useContext(MainPageContext);
 
-	let settingList = ['personal', 'appearance', 'password', 'help'];
+	let settingList = [{name:'personal', component: Personal}, 'appearance', 'password', 'help'];
 
 	let settings = settingList.map((setting) => {
 		return (
