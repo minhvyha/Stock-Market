@@ -28,10 +28,7 @@ function App() {
 		stock: {},
 		cash: 100_000,
 	});
-	const [data, setData] = useState({
-		datasets: [],
-	});
-	const [data2, setData2] = useState()
+	const [data, setData] = useState({});
 	const [isLightMode, setIsLightMode] = useState(true)
 	const [successPopUpOpen, setSuccessPopUpOpen] = useState(false);
 	const [failPopUpOpen, setFailPopUpOpen] = useState(false);
@@ -49,10 +46,7 @@ function App() {
 		);
 		setStock('');
 		const convertData = await apiData.json();
-		console.log(convertData)
-		let labels = [];
-		let data = [];
-		let data2 = [{
+		let data = [{
 			"id": convertData["Meta Data"]["2. Symbol"],
 			"color": "#284699" ,
 			"data" : []
@@ -60,28 +54,10 @@ function App() {
 		let dataYear = await convertData['Time Series (Daily)'];
 		let arrayData =[]
 		for (const [key, val] of Object.entries(dataYear)) {
-			labels.unshift(key);
-			data.unshift(
-				(parseFloat(val['1. open']) + parseFloat(val['3. low'])) / 2
-			);
 			arrayData.unshift( {"x" : key, "y": (parseFloat(val['1. open']) + parseFloat(val['3. low'])) / 2})
 		}
-		let datasets = [
-			{
-				label: 'Price',
-				data: data,
-				backgroundColor: 'rgba(197,208,234,.5)',
-				borderColor: '#284799',
-				borderWidth: 2,
-				pointHover: 0,
-				pointRadius: 0,
-				pointHitRadius: 0,
-				fill: true,
-			},
-		];
-		data2[0]['data'] = arrayData
-		console.log(data2)
-		return { labels, datasets };
+		data[0]['data'] = arrayData
+		return data;
 	}
 
 	async function fetchData(defaultFetch=true) {
@@ -89,41 +65,6 @@ function App() {
 		try {
 			let data = await getData(stock);
 			setData(data);
-			const options = {
-				maintainAspectRatio: false,
-				tension: 0.2,
-				plugins: {
-					tooltip: {
-						yAlign: 'bottom',
-						displayColors: false,
-						bodyAlign: 'center',
-						bodyColor: 'black',
-						titleColor: 'black',
-						borderColor: '#284799',
-						borderWidth: 1,
-						backgroundColor: 'white',
-						titleAlign: 'center',
-						interaction: {
-							mode: 'index',
-							axis: 'x',
-						},
-						intersect: false,
-					},
-					legend: {
-						display: false,
-					},
-					title: {
-						display: true,
-						text: stock,
-						padding: 15,
-						color: 'black',
-						font: {
-							size: 16,
-						},
-					},
-				},
-			};
-			setOption(options);
 		} 
 		catch (err) {
 			openResolveModal(false);
@@ -172,7 +113,6 @@ function App() {
 					user,
 					options,
 					data,
-					data2,
 					setStock,
 					handleChoose,
 					handleSignOut,
