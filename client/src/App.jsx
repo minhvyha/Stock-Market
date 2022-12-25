@@ -31,6 +31,7 @@ function App() {
 	const [data, setData] = useState({
 		datasets: [],
 	});
+	const [data2, setData2] = useState()
 	const [isLightMode, setIsLightMode] = useState(true)
 	const [successPopUpOpen, setSuccessPopUpOpen] = useState(false);
 	const [failPopUpOpen, setFailPopUpOpen] = useState(false);
@@ -48,14 +49,22 @@ function App() {
 		);
 		setStock('');
 		const convertData = await apiData.json();
+		console.log(convertData)
 		let labels = [];
 		let data = [];
+		let data2 = [{
+			"id": convertData["Meta Data"]["2. Symbol"],
+			"color": "#284699" ,
+			"data" : []
+		}]
 		let dataYear = await convertData['Time Series (Daily)'];
+		let arrayData =[]
 		for (const [key, val] of Object.entries(dataYear)) {
 			labels.unshift(key);
 			data.unshift(
 				(parseFloat(val['1. open']) + parseFloat(val['3. low'])) / 2
 			);
+			arrayData.unshift( {"x" : key, "y": (parseFloat(val['1. open']) + parseFloat(val['3. low'])) / 2})
 		}
 		let datasets = [
 			{
@@ -70,6 +79,8 @@ function App() {
 				fill: true,
 			},
 		];
+		data2[0]['data'] = arrayData
+		console.log(data2)
 		return { labels, datasets };
 	}
 
@@ -118,6 +129,7 @@ function App() {
 			openResolveModal(false);
 			toggleLoader(false);
 			setIsErrorReceiveStock(true)
+			console.log(err)
 			throw 'Cannot retrieve stock price.'
 		}
 		toggleLoader(false);
@@ -160,6 +172,7 @@ function App() {
 					user,
 					options,
 					data,
+					data2,
 					setStock,
 					handleChoose,
 					handleSignOut,

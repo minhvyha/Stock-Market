@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 import LineChart from '../../components/LineChart';
+import LineChart2 from '../../components/LineChart2';
 import { MainPageContext } from '../../App';
 import { nanoid } from 'nanoid';
 import './Home.css';
 import HomeError from '../../assets/images/HomeError.png';
+import { mockLineData } from './MockData';
 
 function Home() {
 	const [isDropDown, setIsDropDown] = useState(false);
@@ -11,6 +13,7 @@ function Home() {
 	const {
 		Symbol,
 		data,
+		data2,
 		options,
 		setStock,
 		handleChoose,
@@ -77,10 +80,11 @@ function Home() {
 			}
 		});
 	};
+	console.log(mockLineData)
 
 	return (
 		<div className="main-container">
-			{isErrorReceiveStock && (
+			{/* {isErrorReceiveStock && (
 				<img className='home-error-image' src={HomeError} alt="Error when trying to retrieve stock." />
 			)}
 			{!isErrorReceiveStock && (
@@ -91,8 +95,9 @@ function Home() {
 						options={options}
 					/>
 				</div>
-			)}
+			)} */}
 
+			<LineChart2 data={mockLineData}/>
 			<div className="side-container">
 				<div className="choose-input-container">
 					<div className="select-box">
