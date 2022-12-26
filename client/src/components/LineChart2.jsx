@@ -1,6 +1,6 @@
 import { ResponsiveLine } from '@nivo/line';
 
-const LineChart2 = ({ data, bottomTickValues }) => {
+const LineChart2 = ({ data, xAxis }) => {
 	return (
 		<ResponsiveLine
         data={data}
@@ -17,7 +17,7 @@ const LineChart2 = ({ data, bottomTickValues }) => {
         axisTop={null}
         axisRight={null}
         axisBottom={{
-            tickValues: bottomTickValues,
+            tickValues: xAxis,
             orient: 'bottom',
             tickSize: 5,
             tickPadding: 5,

@@ -13,8 +13,7 @@ function Home() {
 	const {
 		Symbol,
 		data,
-		data2,
-		options,
+		xAxis,
 		setStock,
 		handleChoose,
 		fetchData,
@@ -84,20 +83,16 @@ function Home() {
 
 	return (
 		<div className="main-container">
-			{/* {isErrorReceiveStock && (
+			{isErrorReceiveStock && (
 				<img className='home-error-image' src={HomeError} alt="Error when trying to retrieve stock." />
 			)}
 			{!isErrorReceiveStock && (
 				<div className="chart-container">
-					<LineChart
-						className="main-line-chart"
-						data={data}
-						options={options}
-					/>
+					<LineChart2 data={data} xAxis={xAxis} />
 				</div>
-			)} */}
+			)}
 
-			<LineChart2 data={mockLineData}/>
+			
 			<div className="side-container">
 				<div className="choose-input-container">
 					<div className="select-box">

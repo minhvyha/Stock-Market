@@ -34,7 +34,7 @@ function App() {
 	const [successPopUpOpen, setSuccessPopUpOpen] = useState(false);
 	const [failPopUpOpen, setFailPopUpOpen] = useState(false);
 	const [loaderPopUp, setLoaderPopUp] = useState(false);
-	const [isErrorReceiveStock, setIsErrorReceiveStock] = useState(true)
+	const [isErrorReceiveStock, setIsErrorReceiveStock] = useState(false)
 	const [options, setOption] = useState();
 	const [stock, setStock] = useState('AAPL');
 	function handleSignOut(event) {
@@ -78,7 +78,6 @@ function App() {
 			openResolveModal(false);
 			toggleLoader(false);
 			setIsErrorReceiveStock(true)
-			console.log(err)
 			throw 'Cannot retrieve stock price.'
 		}
 		toggleLoader(false);
@@ -111,7 +110,6 @@ function App() {
 			setLoaderPopUp(false);
 		}
 	}
-
 	return (
 		<BrowserRouter>
 			
@@ -121,6 +119,7 @@ function App() {
 					user,
 					options,
 					data,
+					xAxis,
 					setStock,
 					handleChoose,
 					handleSignOut,
