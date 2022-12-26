@@ -24,6 +24,31 @@ const LineChart = ({ data }) => {
 					minimumFractionDigits: 2,
 				})} $`
 			}
+			sliceTooltip={({ slice }) => {
+				return (
+					<div
+						style={{
+							background: 'white',
+							padding: '9px 12px',
+							border: '1px solid #ccc',
+						}}
+					>
+						<div>x: {slice.id}</div>
+						{slice.points.map((point) => (
+							<div
+								key={point.id}
+								style={{
+									color: point.serieColor,
+									padding: '3px 0',
+								}}
+							>
+								<strong>{point.serieId}</strong>
+								{point.data.yFormatted}
+							</div>
+						))}
+					</div>
+				);
+			}}
 			axisTop={null}
 			axisRight={null}
 			axisBottom={{
