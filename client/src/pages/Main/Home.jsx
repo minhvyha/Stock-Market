@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
 import LineChart from '../../components/LineChart';
-import LineChart2 from '../../components/LineChart2';
 import { MainPageContext } from '../../App';
 import { nanoid } from 'nanoid';
 import './Home.css';
@@ -13,18 +12,18 @@ function Home() {
 	const {
 		Symbol,
 		data,
-		xAxis,
 		setStock,
 		handleChoose,
 		fetchData,
 		isErrorReceiveStock,
+		setIsErrorReceiveStock,
 		openResolveModal,
 		closeResolveModal,
 		toggleLoader,
 	} = useContext(MainPageContext);
 
 	useEffect(() => {
-		fetchData();
+		fetchData(true);
 	}, []);
 
 	function selectBoxClick() {
@@ -79,16 +78,15 @@ function Home() {
 			}
 		});
 	};
-	console.log(mockLineData)
 
 	return (
 		<div className="main-container">
 			{isErrorReceiveStock && (
 				<img className='home-error-image' src={HomeError} alt="Error when trying to retrieve stock." />
 			)}
-			{!isErrorReceiveStock && (
+			{!isErrorReceiveStock && data &&  (
 				<div className="chart-container">
-					<LineChart2 data={data} xAxis={xAxis} />
+					<LineChart data={data} />
 				</div>
 			)}
 

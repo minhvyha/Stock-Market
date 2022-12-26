@@ -28,8 +28,7 @@ function App() {
 		stock: {},
 		cash: 100_000,
 	});
-	const [data, setData] = useState({});
-	const [xAxis, setxAxis] = useState([])
+	const [data, setData] = useState();
 	const [isLightMode, setIsLightMode] = useState(true)
 	const [successPopUpOpen, setSuccessPopUpOpen] = useState(false);
 	const [failPopUpOpen, setFailPopUpOpen] = useState(false);
@@ -54,16 +53,9 @@ function App() {
 		}]
 		let dataYear = await convertData['Time Series (Daily)'];
 		let arrayData = []
-		let xAxis = []
 		for (const [key, val] of Object.entries(dataYear)) {
 			arrayData.unshift( {"x" : key, "y": (parseFloat(val['1. open']) + parseFloat(val['3. low'])) / 2})
 		}
-		if ( arrayData.length > 10){
-			for(let i = 0; i < arrayData.length; i+=arrayData.length/10){
-				xAxis.unshift(arrayData[i].x)
-			}
-		}
-		setxAxis(xAxis)
 		data[0]['data'] = arrayData
 		return data;
 	}
@@ -85,11 +77,11 @@ function App() {
 			openResolveModal(true);
 		}
 	}
-
+	
 	function handleChoose() {
 		fetchData(false);
 	}
-
+	
 	function openResolveModal(isSuccess) {
 		if (isSuccess) {
 			setSuccessPopUpOpen(true);
@@ -110,6 +102,9 @@ function App() {
 			setLoaderPopUp(false);
 		}
 	}
+
+
+
 	return (
 		<BrowserRouter>
 			
@@ -127,6 +122,7 @@ function App() {
 					fetchData,
 					openResolveModal,
 					closeResolveModal,
+					setIsErrorReceiveStock,
 					toggleLoader,
 					setIsLightMode,
 				}}
