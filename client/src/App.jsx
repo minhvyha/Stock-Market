@@ -52,10 +52,17 @@ function App() {
 			"data" : []
 		}]
 		let dataYear = await convertData['Time Series (Daily)'];
-		let arrayData =[]
+		let arrayData = []
+		let xAxis = []
 		for (const [key, val] of Object.entries(dataYear)) {
 			arrayData.unshift( {"x" : key, "y": (parseFloat(val['1. open']) + parseFloat(val['3. low'])) / 2})
 		}
+		if ( arrayData.length > 10){
+			for(let i = 0; i < arrayData.length; i+=arrayData.length/10){
+				xAxis.unshift(arrayData[i].x)
+			}
+		}
+		console.log(xAxis)
 		data[0]['data'] = arrayData
 		return data;
 	}
