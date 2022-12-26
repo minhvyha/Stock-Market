@@ -115,7 +115,6 @@ function App() {
 					user,
 					options,
 					data,
-					xAxis,
 					setStock,
 					handleChoose,
 					handleSignOut,

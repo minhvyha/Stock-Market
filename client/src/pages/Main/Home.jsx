@@ -82,15 +82,18 @@ function Home() {
 	return (
 		<div className="main-container">
 			{isErrorReceiveStock && (
-				<img className='home-error-image' src={HomeError} alt="Error when trying to retrieve stock." />
+				<img
+					className="home-error-image"
+					src={HomeError}
+					alt="Error when trying to retrieve stock."
+				/>
 			)}
-			{!isErrorReceiveStock && data &&  (
+			{!isErrorReceiveStock && data && (
 				<div className="chart-container">
 					<LineChart data={data} />
 				</div>
 			)}
 
-			
 			<div className="side-container">
 				<div className="choose-input-container">
 					<div className="select-box">
