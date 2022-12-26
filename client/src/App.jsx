@@ -29,11 +29,11 @@ function App() {
 		cash: 100_000,
 	});
 	const [data, setData] = useState();
-	const [isLightMode, setIsLightMode] = useState(true)
+	const [isLightMode, setIsLightMode] = useState(true);
 	const [successPopUpOpen, setSuccessPopUpOpen] = useState(false);
 	const [failPopUpOpen, setFailPopUpOpen] = useState(false);
 	const [loaderPopUp, setLoaderPopUp] = useState(false);
-	const [isErrorReceiveStock, setIsErrorReceiveStock] = useState(false)
+	const [isErrorReceiveStock, setIsErrorReceiveStock] = useState(false);
 	const [options, setOption] = useState();
 	const [stock, setStock] = useState('AAPL');
 	function handleSignOut(event) {
@@ -46,42 +46,46 @@ function App() {
 		);
 		setStock('');
 		const convertData = await apiData.json();
-		let data = [{
-			"id": convertData["Meta Data"]["2. Symbol"],
-			"color": "#284699" ,
-			"data" : []
-		}]
+		let data = [
+			{
+				id: convertData['Meta Data']['2. Symbol'],
+				color: '#284699',
+				data: [],
+			},
+		];
 		let dataYear = await convertData['Time Series (Daily)'];
-		let arrayData = []
+		let arrayData = [];
 		for (const [key, val] of Object.entries(dataYear)) {
-			arrayData.unshift( {"x" : key, "y": (parseFloat(val['1. open']) + parseFloat(val['3. low'])) / 2})
+			arrayData.unshift({
+				x: key,
+				y: (parseFloat(val['1. open']) + parseFloat(val['3. low'])) / 2,
+			});
 		}
-		data[0]['data'] = arrayData
+		data[0]['data'] = arrayData;
 		return data;
 	}
 
-	async function fetchData(defaultFetch=true) {
+	async function fetchData(defaultFetch = true) {
 		toggleLoader(true);
 		try {
 			let data = await getData(stock);
 			setData(data);
-		} 
-		catch (err) {
+		} catch (err) {
 			openResolveModal(false);
 			toggleLoader(false);
-			setIsErrorReceiveStock(true)
-			throw 'Cannot retrieve stock price.'
+			setIsErrorReceiveStock(true);
+			throw 'Cannot retrieve stock price.';
 		}
 		toggleLoader(false);
-		if (!defaultFetch){
+		if (!defaultFetch) {
 			openResolveModal(true);
 		}
 	}
-	
+
 	function handleChoose() {
 		fetchData(false);
 	}
-	
+
 	function openResolveModal(isSuccess) {
 		if (isSuccess) {
 			setSuccessPopUpOpen(true);
@@ -103,11 +107,8 @@ function App() {
 		}
 	}
 
-
-
 	return (
 		<BrowserRouter>
-			
 			<MainPageContext.Provider
 				value={{
 					Symbol,
