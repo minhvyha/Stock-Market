@@ -29,6 +29,7 @@ function App() {
 		cash: 100_000,
 	});
 	const [data, setData] = useState({});
+	const [xAxis, setxAxis] = useState([])
 	const [isLightMode, setIsLightMode] = useState(true)
 	const [successPopUpOpen, setSuccessPopUpOpen] = useState(false);
 	const [failPopUpOpen, setFailPopUpOpen] = useState(false);
@@ -62,7 +63,7 @@ function App() {
 				xAxis.unshift(arrayData[i].x)
 			}
 		}
-		console.log(xAxis)
+		setxAxis(xAxis)
 		data[0]['data'] = arrayData
 		return data;
 	}
