@@ -63,3 +63,31 @@
 	border: 1px solid black;
 	color: white;
 }
+
+@media screen and (min-width: 300px) {}
+@media screen and (min-width: 350px) {}
+@media screen and (min-width: 828px) {.intro-container {
+	flex-direction: row;
+	gap: 4rem;
+}
+.intro-image {
+	width: 250px;
+}
+.intro-title {
+	font-size: 2.3rem;
+}
+.company-name {
+	font-size: 2.5rem;
+}
+.intro-subtitle {
+	font-size: 1.15rem;
+}
+.intro-form-container {
+	gap: 1.2rem;
+}
+.intro-form-container button {
+	width: 270px;
+	padding: 10px 0;
+	font-size: 1.2rem;
+}}
+@media screen and (min-width: 992px) {}

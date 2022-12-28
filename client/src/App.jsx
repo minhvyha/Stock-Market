@@ -24,9 +24,9 @@ export const MainPageContext = React.createContext();
 
 function App() {
 	const [user, setUser] = useState({
-		name: 'Minh Vy Ha',
-		stock: {},
-		cash: 100_000,
+		// name: 'Minh Vy Ha',
+		// stock: {},
+		// cash: 100_000,
 	});
 	const [data, setData] = useState();
 	const [isLightMode, setIsLightMode] = useState(true);

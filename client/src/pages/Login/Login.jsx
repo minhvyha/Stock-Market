@@ -83,11 +83,10 @@ function Login({ setUser }) {
 					Sign In
 				</button>
 				<div id="signInDiv"></div>
-				<Link to="/signup">
+				
 					<div className="signup_link">
-						Not a member? <a>Register</a>
+						Not a member? <Link to="/signup">Register</Link>
 					</div>
-				</Link>
 			</div>
 		</div>
 	);
