@@ -22,10 +22,16 @@ html {
 	--main-light-background: hsl(195, 15%, 95%);
 	--background-light-color: hsl(222, 55%, 79%);
 
+	--light-background: #0c0c0c;
+	--light-container: #0f0f0f;
+	--light-button-background: #1b1b1b;
+	--light-button-alternative-background: #3d69d1;
+	--light-text: #f8f8f8;
+
 	--dark-background: #0c0c0c;
 	--dark-container: #0f0f0f;
 	--dark-button-background: #1b1b1b;
-	--second-color: #3d69d1;
+	--dark-button-alternative-background: #3d69d1;
 	--dark-text: #f8f8f8;
 	
 	
