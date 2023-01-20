@@ -22,8 +22,11 @@ html {
 	--main-light-background: hsl(195, 15%, 95%);
 	--background-light-color: hsl(222, 55%, 79%);
 
-	--main-dark-background: hsl(220, 30%, 8%);
-	--dark-container: hsl(204, 18%, 11%);
+	--dark-background: #0c0c0c;
+	--dark-container: #0f0f0f;
+	--dark-button-background: #1b1b1b;
+	--second-color: #3d69d1;
+	--dark-text: #f8f8f8;
 	
 	
 	--text-dark-color: hsl(223, 57%, 25%);
