@@ -92,6 +92,7 @@ function Account() {
 				<div className="account-nav-title">Setting</div>
 				{settings}
 			</div>
+			
 			<div id='account-main-content' className="account-main-content">
 				{activeSetting}
 			</div>

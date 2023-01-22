@@ -1,10 +1,12 @@
 import React from 'react';
 import './Footer.css';
 import { NavLink } from 'react-router-dom';
+import Wallet from '../assets/images/wallet.png'
 
 function Footer() {
 	return (
 		<footer>
+			<img src={Wallet} alt="" />
 			<NavLink to="/home" exact="true" activeclassname="active">
 				<div className="footer-item-container">
 					<span className="material-symbols-outlined">home</span>

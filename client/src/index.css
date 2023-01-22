@@ -16,27 +16,37 @@
 	font-family: 'Poppins', sans-serif;
 }
 html {
-	--first-color: hsl(222, 62%, 53%);
-	--second-color: hsl(222, 62%, 53%);
+	--first-color: #ff9332;
+	--second-color: #ffb347;
 	
 	--main-light-background: hsl(195, 15%, 95%);
 	--background-light-color: hsl(222, 55%, 79%);
+	--button-alternative-background: #3d69d1;
 
-	--light-background: #0c0c0c;
-	--light-container: #0f0f0f;
-	--light-button-background: #1b1b1b;
-	--light-button-alternative-background: #3d69d1;
-	--light-text: #f8f8f8;
+	--light-background: #ffffff;
+	--light-container: #ffffff;
+	--light-text: #000000;
+	--light-small-text: #181818;
 
-	--dark-background: #0c0c0c;
+	--dark-background: #0b0b0b;
 	--dark-container: #0f0f0f;
-	--dark-button-background: #1b1b1b;
-	--dark-button-alternative-background: #3d69d1;
-	--dark-text: #f8f8f8;
-	
-	
+	--dark-button-background: #262626;
+	--dark-first-color: #ff9332;
+	--dark-second-color: #ffb347;
+	--dark-text: #f8f8f8; 
+
 	--text-dark-color: hsl(223, 57%, 25%);
 
+	--CS1Color: #ffb347;
+	--CS2Color: #ff9332;
+	--CS3Color: #ea5237;
+	--RedLightColor: #f02934;
+	--GreenLightColor: #34b349;
+	--RedDarkColor: #ff4d4d;
+	--GreenDarkColor: #6ccf59;
+	--BlackColor: #000000;
+	--WhiteColor: #ffffff;
+	--buttonHoverColor: #ff9e47;
 
 	--popup-color: hsl(59, 56%, 55%);
 	--body-color: hsl(210, 11%, 14%);
@@ -95,6 +105,24 @@ iframe {
 	height: 100vh;
 }
 
+/* ============== DARK MODE CSS ============== */
+body.dark{
+	background-color: var(--dark-background);
+	color: var(--dark-text);
+}
+.dark .intro-title{
+	color: var(--dark-first-color);
+}
+.dark .intro-login-btn{
+	background-color: var(--dark-first-color);
+}
+.dark .intro-login-btn:hover{
+	background-color: var(--dark-second-color);
+}
+.dark .intro-signup-btn{
+	background-color: var(--dark-button-background);
+	color: var(--dark-text);
+}
 /* ============== CHART CSS ============== */
 .chart-container {
 	width: 250px;
