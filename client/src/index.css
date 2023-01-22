@@ -31,8 +31,6 @@ html {
 	--dark-background: #0b0b0b;
 	--dark-container: #0f0f0f;
 	--dark-button-background: #262626;
-	--dark-first-color: #ff9332;
-	--dark-second-color: #ffb347;
 	--dark-text: #f8f8f8; 
 
 	--text-dark-color: hsl(223, 57%, 25%);
@@ -47,6 +45,7 @@ html {
 	--BlackColor: #000000;
 	--WhiteColor: #ffffff;
 	--buttonHoverColor: #ff9e47;
+	--buttonHoverColorDark: #2d2d2d;
 
 	--popup-color: hsl(59, 56%, 55%);
 	--body-color: hsl(210, 11%, 14%);
@@ -114,14 +113,22 @@ body.dark{
 	color: var(--dark-first-color);
 }
 .dark .intro-login-btn{
-	background-color: var(--dark-first-color);
+	background-color: var(--first-color);
+	color: black;
 }
 .dark .intro-login-btn:hover{
-	background-color: var(--dark-second-color);
+	background-color: var(--buttonHoverColor);
+	color: black;
 }
 .dark .intro-signup-btn{
 	background-color: var(--dark-button-background);
 	color: var(--dark-text);
+}
+.dark .intro-signup-btn:hover{
+	background-color: var(--buttonHoverColorDark);
+}
+.dark .submit-button{
+	background-color: var(--first-color);
 }
 /* ============== CHART CSS ============== */
 .chart-container {

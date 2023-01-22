@@ -19,7 +19,7 @@
 	height: auto;
 }
 .intro-title {
-	color: #284799;
+	color: var(--first-color);
 	font-size: 1.5rem;
 }
 .company-name {
@@ -41,14 +41,13 @@
 	width: fit-content;
 }
 .intro-login-btn {
-	background-color: #284799;
+	background-color: var(--first-color);
 	color: white;
-	border: 1px solid #284799;
+	border: none;
 	transition: 0.4s;
 }
 .intro-login-btn:hover {
 	background-color: rgb(0, 0, 0);
-	border: 1px solid #000000;
 	color: #ffffff;
 }
 .intro-signup-btn {
