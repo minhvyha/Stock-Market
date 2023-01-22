@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react';
 import SignInImage from '../../assets/images/SignIn.png';
 import { Link, useNavigate } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
-import './Login.css'
+import './Login.css';
 import useWindowDimensions from '../../components/useWindowDimensions';
 
 function Login({ setUser }) {
 	const [errorLogin, setErrorLogin] = useState();
 	const { height, width } = useWindowDimensions();
-	
+
 	var emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
 	var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/g;
 
@@ -27,18 +27,17 @@ function Login({ setUser }) {
 			client_id: process.env.REACT_APP_CLIENT_ID,
 			callback: handleCallBackResponse,
 		});
-		let buttonWidth = 300
-		if (width <350){
-			buttonWidth = 220
-		}
-		else if (width > 827 && width < 992){
-			buttonWidth = 240
+		let buttonWidth = 300;
+		if (width < 350) {
+			buttonWidth = 220;
+		} else if (width > 827 && width < 992) {
+			buttonWidth = 240;
 		}
 		google.accounts.id.renderButton(document.getElementById('signInDiv'), {
 			theme: 'outline',
 			size: 'large',
 			width: buttonWidth,
-			logo_alignment: "center"
+			logo_alignment: 'center',
 		});
 		google.accounts.id.prompt();
 	}, []);
@@ -94,10 +93,10 @@ function Login({ setUser }) {
 					Sign In
 				</button>
 				<div id="signInDiv"></div>
-				
-					<div className="signup_link">
-						Not a member? <Link to="/signup">Register</Link>
-					</div>
+
+				<div className="signup_link">
+					Not a member? <Link to="/signup">Register</Link>
+				</div>
 			</div>
 		</div>
 	);

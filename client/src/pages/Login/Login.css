@@ -94,7 +94,7 @@
 	color: #666666;
 }
 .signup_link a {
-	color: #284799;
+	color: var(--first-color);
 	text-decoration: none;
 }
 .signup_link a:hover {
