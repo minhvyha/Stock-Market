@@ -8,6 +8,7 @@ import useWindowDimensions from '../../components/useWindowDimensions';
 function Login({ setUser }) {
 	const [errorLogin, setErrorLogin] = useState();
 	const { height, width } = useWindowDimensions();
+	
 	var emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
 	var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/g;
 
@@ -29,6 +30,9 @@ function Login({ setUser }) {
 		let buttonWidth = 300
 		if (width <350){
 			buttonWidth = 220
+		}
+		else if (width > 827 && width < 992){
+			buttonWidth = 240
 		}
 		google.accounts.id.renderButton(document.getElementById('signInDiv'), {
 			theme: 'outline',

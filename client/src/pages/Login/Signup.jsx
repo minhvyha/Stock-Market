@@ -3,9 +3,12 @@ import SignUpImage from '../../assets/images/SignUp.png';
 import { Link, useNavigate } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
 import './Login.css'
+import useWindowDimensions from '../../components/useWindowDimensions';
 
 function Signup({ handleCallBackResponse, setUser }) {
 	const [errorLogin, setErrorLogin] = useState();
+	const { height, width } = useWindowDimensions();
+
 	var emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
 	var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/g;
 
@@ -25,10 +28,18 @@ function Signup({ handleCallBackResponse, setUser }) {
 			client_id: process.env.REACT_APP_CLIENT_ID,
 			callback: handleCallBackResponse,
 		});
-
+		let buttonWidth = 300
+		if (width <350){
+			buttonWidth = 220
+		}
+		else if (width > 827 && width < 992){
+			buttonWidth = 240
+		}
 		google.accounts.id.renderButton(document.getElementById('signInDiv'), {
 			theme: 'outline',
 			size: 'large',
+			width: buttonWidth,
+			logo_alignment: "center"
 		});
 		google.accounts.id.prompt();
 	}, []);
