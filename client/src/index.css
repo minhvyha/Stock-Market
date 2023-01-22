@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap');
 
-
 /* BREAK OUT TEMPLATE */
 /* @media screen and (min-width: 300px) {}
 @media screen and (min-width: 350px) {}
@@ -18,7 +17,7 @@
 html {
 	--first-color: #ff9332;
 	--second-color: #ffb347;
-	
+
 	--main-light-background: hsl(195, 15%, 95%);
 	--background-light-color: hsl(222, 55%, 79%);
 	--button-alternative-background: #3d69d1;
@@ -29,9 +28,9 @@ html {
 	--light-small-text: #181818;
 
 	--dark-background: #0b0b0b;
-	--dark-container: #0f0f0f;
+	--dark-container: #101010;
 	--dark-button-background: #262626;
-	--dark-text: #f8f8f8; 
+	--dark-text: #f8f8f8;
 
 	--text-dark-color: hsl(223, 57%, 25%);
 
@@ -105,31 +104,54 @@ iframe {
 }
 
 /* ============== DARK MODE CSS ============== */
-body.dark{
+body.dark {
 	background-color: var(--dark-background);
 	color: var(--dark-text);
 }
-.dark .intro-title{
+.dark .intro-title {
 	color: var(--dark-first-color);
 }
-.dark .intro-login-btn{
+.dark .intro-login-btn {
 	background-color: var(--first-color);
 	color: black;
 }
-.dark .intro-login-btn:hover{
+.dark .intro-login-btn:hover {
 	background-color: var(--buttonHoverColor);
 	color: black;
 }
-.dark .intro-signup-btn{
+.dark .intro-signup-btn {
 	background-color: var(--dark-button-background);
 	color: var(--dark-text);
 }
-.dark .intro-signup-btn:hover{
+.dark .intro-signup-btn:hover {
 	background-color: var(--buttonHoverColorDark);
 }
-.dark .submit-button{
+.dark .submit-button {
 	background-color: var(--first-color);
 }
+.dark .txt_field input {
+	color: var(--dark-text);
+}
+.dark .txt_field input:-internal-autofill-selected {
+	background-color: var(--BlackColor) !important;
+}
+.dark input:-webkit-autofill,
+.dark input:-webkit-autofill:hover, 
+.dark input:-webkit-autofill:focus,
+.dark textarea:-webkit-autofill,
+.dark textarea:-webkit-autofill:hover,
+.dark textarea:-webkit-autofill:focus,
+.dark select:-webkit-autofill,
+.dark select:-webkit-autofill:hover,
+.dark select:-webkit-autofill:focus {
+  border: none;
+  -webkit-text-fill-color: var(--dark-text);
+  -webkit-box-shadow: transparent;
+  transition: background-color 5000s ease-in-out 0s;
+}
+.dark input:-webkit-autofill {
+	caret-color: white;
+ }
 /* ============== CHART CSS ============== */
 .chart-container {
 	width: 250px;
@@ -215,7 +237,6 @@ body.dark{
 		font-size: 1.1rem;
 		border-radius: 2.5rem;
 	}
-	
 }
 @media screen and (min-width: 828px) {
 	.choose-input-container {
@@ -259,8 +280,6 @@ body.dark{
 		width: 75%;
 		height: 100%;
 	}
-	
-	
 }
 @media screen and (min-width: 992px) {
 	.intro-title {
@@ -288,5 +307,4 @@ body.dark{
 	.intro-container {
 		gap: 5.5rem;
 	}
-	
 }

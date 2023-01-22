@@ -28,6 +28,8 @@ function Login({ setUser }) {
 		google.accounts.id.renderButton(document.getElementById('signInDiv'), {
 			theme: 'outline',
 			size: 'large',
+			width: 300,
+			logo_alignment: "center"
 		});
 		google.accounts.id.prompt();
 	}, []);

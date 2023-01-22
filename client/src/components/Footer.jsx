@@ -1,22 +1,25 @@
 import React from 'react';
 import './Footer.css';
 import { NavLink } from 'react-router-dom';
-import Wallet from '../assets/images/wallet.png'
+import Logo from '../assets/images/Logo.png';
+import Wallet from '../assets/images/Wallet.png';
+import Card from '../assets/images/Card.png';
+import Down from '../assets/images/Down.png';
+import Account from '../assets/images/Account.png';
 
 function Footer() {
 	return (
 		<footer>
 			<NavLink to="/home" exact="true" activeclassname="active">
 				<div className="footer-item-container">
-					<span className="material-symbols-outlined">home</span>
+					<img src={Logo} alt="" />
 					<label>Home</label>
 				</div>
 			</NavLink>
 			<NavLink to="/portfolio" exact="true" activeclassname="active">
 				<div className="footer-item-container">
-					<span className="material-symbols-outlined">
-						account_balance_wallet
-					</span>
+					<img src={Wallet} alt="" />
+
 					<label>Portfolio</label>
 				</div>
 			</NavLink>
@@ -25,7 +28,8 @@ function Footer() {
 				className={({ isActive }) => (isActive ? 'active-footer' : '')}
 			>
 				<div className="footer-item-container">
-					<span className="material-symbols-outlined">paid</span>
+					<img src={Card} alt="" />
+
 					<label>Buy</label>
 				</div>
 			</NavLink>
@@ -34,7 +38,8 @@ function Footer() {
 				className={({ isActive }) => (isActive ? 'active-footer' : '')}
 			>
 				<div className="footer-item-container">
-					<span className="material-symbols-outlined">trending_down</span>
+					<img src={Down} alt="" />
+
 					<label>Sell</label>
 				</div>
 			</NavLink>
@@ -43,7 +48,7 @@ function Footer() {
 				className={({ isActive }) => (isActive ? 'active-footer' : '')}
 			>
 				<div className="footer-item-container">
-					<span className="material-symbols-outlined">person</span>
+					<img src={Account} alt="" />
 					<label>Account</label>
 				</div>
 			</NavLink>

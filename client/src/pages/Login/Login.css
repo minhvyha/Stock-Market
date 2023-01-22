@@ -53,13 +53,13 @@
 	left: 0;
 	width: 0%;
 	height: 2px;
-	background: #284799;
+	background: var(--first-color);
 	transition: 0.4s;
 }
 .txt_field input:focus ~ label,
 .txt_field input:valid ~ label {
 	top: -5px;
-	color: #284799;
+	color: var(--first-color);
 }
 .txt_field input:focus ~ span::before,
 .txt_field input:valid ~ span::before {
