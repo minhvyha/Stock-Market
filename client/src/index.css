@@ -15,7 +15,7 @@
 	font-family: 'Poppins', sans-serif;
 }
 html {
-	--first-color: #ff9332;
+	--first-color: #fa8e30;
 	--second-color: #ffb347;
 
 	--main-light-background: hsl(195, 15%, 95%);
@@ -128,6 +128,10 @@ body.dark {
 }
 .dark .submit-button {
 	background-color: var(--first-color);
+	color: var(--BlackColor);
+}
+.dark .submit-button:hover {
+	background-color: var(--buttonHoverColor);
 }
 .dark .txt_field input {
 	color: var(--dark-text);
@@ -152,6 +156,10 @@ body.dark {
 .dark input:-webkit-autofill {
 	caret-color: white;
  }
+ .dark .signup_link {
+	color: #b7b7b7;
+}
+
 /* ============== CHART CSS ============== */
 .chart-container {
 	width: 250px;

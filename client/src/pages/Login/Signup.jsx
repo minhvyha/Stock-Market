@@ -111,11 +111,11 @@ function Signup({ handleCallBackResponse, setUser }) {
 					Sign Up
 				</button>
 				<div id="signInDiv"></div>
-				<Link to="/login">
+				
 					<div className="signup_link">
-						Joined us before? <a>Login</a>
+						Joined us before? <Link to="/login">Login</Link>
 					</div>
-				</Link>
+				
 			</div>
 		</div>
 	);
