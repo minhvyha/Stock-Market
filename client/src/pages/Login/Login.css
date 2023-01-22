@@ -141,6 +141,14 @@
 		margin: 20px 0;
 	}
 }
+@media screen and (min-width: 550px) {
+	.login-form-container::before {
+		content: '';
+		width: 450px;
+		height: 450px;
+		right: calc((100% - 450px) / 2);
+	}
+}
 @media screen and (min-width: 828px) {
 	.signin-image {
 		width: 380px;
@@ -148,6 +156,12 @@
 	.login-container {
 		flex-direction: row;
 		gap: 3.5rem;
+	}
+	.login-form-container::before {
+		content: '';
+		width: 450px;
+		height: 450px;
+		right: calc((100% - 380px - 320px - 3.5rem) / 2 - (450px - 320px) / 2);
 	}
 	.login-form-title {
 		text-align: center;
