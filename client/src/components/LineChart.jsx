@@ -1,38 +1,32 @@
 import { ResponsiveLine } from '@nivo/line';
-// axis: {
-// 	domain: {
-// 	  line: {
-// 		 stroke: colors.grey[100],
-// 	  },
-// 	},
-// 	legend: {
-// 	  text: {
-// 		 fill: colors.grey[100],
-// 	  },
-// 	},
-// 	ticks: {
-// 	  line: {
-// 		 stroke: colors.grey[100],
-// 		 strokeWidth: 1,
-// 	  },
-// 	  text: {
-// 		 fill: colors.grey[100],
-// 	  },
-// 	},
-//  },
+
 const LineChart = ({ data }) => {
 	return (
 		<ResponsiveLine
 			data={data}
 			margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
 			theme={{
-				axis:{
+				axis: {
 					domain: {
-						line: {
-						  stroke: 'rgb(0,0,0)',
-						},
-					 },
-				}
+					  line: {
+						 stroke: 'rgb(255, 255, 255)',
+					  },
+					},
+					legend: {
+					  text: {
+						 fill: 'rgb(255, 255, 255)',
+					  },
+					},
+					ticks: {
+					  line: {
+						 stroke: 'rgb(255, 255, 255)',
+						 strokeWidth: 1,
+					  },
+					  text: {
+						 fill: 'rgb(255, 255, 255)',
+					  },
+					},
+				 },
 			}}
 			xScale={{
 				type: 'time',
