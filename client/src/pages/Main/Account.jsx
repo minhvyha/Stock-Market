@@ -2,7 +2,8 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MainPageContext } from '../../App';
 import './Account.css';
-
+import LineChart from './Line';
+import TradingViewWidget from '../../components/TradingView';
 import Personal from '../../components/Account/Personal';
 import Appearance from '../../components/Account/Appearance';
 import Password from '../../components/Account/Password';
@@ -92,7 +93,7 @@ function Account() {
 				<div className="account-nav-title">Setting</div>
 				{settings}
 			</div>
-			
+			<TradingViewWidget />
 			<div id='account-main-content' className="account-main-content">
 				{activeSetting}
 			</div>

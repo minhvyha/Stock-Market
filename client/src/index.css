@@ -77,6 +77,10 @@ html {
 #root {
 	height: 100vh;
 }
+#tradingview_288b8{
+	width: 900px;
+	height: 500px;
+}
 /* ============== GLOBAL CSS ============== */
 body {
 	width: 100%;
