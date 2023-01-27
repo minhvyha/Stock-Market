@@ -4,6 +4,7 @@ import { MainPageContext } from '../../App';
 import { nanoid } from 'nanoid';
 import './Home.css';
 import HomeError from '../../assets/images/HomeError.png';
+import TradingViewWidget from '../../components/TradingView';
 import { mockLineData } from './MockData';
 
 function Home() {
@@ -13,6 +14,7 @@ function Home() {
 		Symbol,
 		data,
 		setStock,
+		stock,
 		handleChoose,
 		fetchData,
 		isErrorReceiveStock,
@@ -22,9 +24,6 @@ function Home() {
 		toggleLoader,
 	} = useContext(MainPageContext);
 
-	useEffect(() => {
-		fetchData(true);
-	}, []);
 
 	function selectBoxClick() {
 		const optionsContainer = document.querySelector('.options-container');
@@ -81,19 +80,9 @@ function Home() {
 
 	return (
 		<div className="main-container">
-			{isErrorReceiveStock && (
-				<img
-					className="home-error-image"
-					src={HomeError}
-					alt="Error when trying to retrieve stock."
-				/>
-			)}
-			{!isErrorReceiveStock && data && (
-				<div className="chart-container">
-					<LineChart data={data} />
-				</div>
-			)}
-
+			<div id='home-chart-container'>
+				<TradingViewWidget symbol={stock} />
+			</div>
 			<div className="side-container">
 				<div className="choose-input-container">
 					<div className="select-box">

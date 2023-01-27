@@ -31,80 +31,9 @@ function App() {
 	const [data, setData] = useState();
 	const [isLightMode, setIsLightMode] = useState(true);
 	const [successPopUpOpen, setSuccessPopUpOpen] = useState(false);
-	const [failPopUpOpen, setFailPopUpOpen] = useState(false);
-	const [loaderPopUp, setLoaderPopUp] = useState(false);
-	const [isErrorReceiveStock, setIsErrorReceiveStock] = useState(false);
-	const [options, setOption] = useState();
 	const [stock, setStock] = useState('AAPL');
 	function handleSignOut(event) {
 		setUser({});
-	}
-
-	async function getData(symbol) {
-		const apiData = await fetch(
-			`https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${symbol}&apikey=${process.env.REACT_APP_API_KEY}`
-		);
-		setStock('');
-		const convertData = await apiData.json();
-		let data = [
-			{
-				id: convertData['Meta Data']['2. Symbol'],
-				color: '#284699',
-				data: [],
-			},
-		];
-		let dataYear = await convertData['Time Series (Daily)'];
-		let arrayData = [];
-		for (const [key, val] of Object.entries(dataYear)) {
-			arrayData.unshift({
-				x: key,
-				y: (parseFloat(val['1. open']) + parseFloat(val['3. low'])) / 2,
-			});
-		}
-		data[0]['data'] = arrayData;
-		return data;
-	}
-
-	async function fetchData(defaultFetch = true) {
-		toggleLoader(true);
-		try {
-			let data = await getData(stock);
-			setData(data);
-		} catch (err) {
-			openResolveModal(false);
-			toggleLoader(false);
-			setIsErrorReceiveStock(true);
-			throw 'Cannot retrieve stock price.';
-		}
-		toggleLoader(false);
-		if (!defaultFetch) {
-			openResolveModal(true);
-		}
-	}
-
-	function handleChoose() {
-		fetchData(false);
-	}
-
-	function openResolveModal(isSuccess) {
-		if (isSuccess) {
-			setSuccessPopUpOpen(true);
-		} else {
-			setFailPopUpOpen(true);
-		}
-	}
-
-	function closeResolveModal() {
-		setSuccessPopUpOpen(false);
-		setFailPopUpOpen(false);
-	}
-
-	function toggleLoader(display) {
-		if (display) {
-			setLoaderPopUp(true);
-		} else {
-			setLoaderPopUp(false);
-		}
 	}
 
 	return (
@@ -113,23 +42,13 @@ function App() {
 				value={{
 					Symbol,
 					user,
-					options,
 					data,
+					stock,
 					setStock,
-					handleChoose,
 					handleSignOut,
-					isErrorReceiveStock,
-					fetchData,
-					openResolveModal,
-					closeResolveModal,
-					setIsErrorReceiveStock,
-					toggleLoader,
 					setIsLightMode,
 				}}
 			>
-				{successPopUpOpen === true && <SuccessPopUp />}
-				{failPopUpOpen === true && <FailPopUp />}
-				{loaderPopUp === true && <Loader />}
 				<Routes>
 					<Route path="/" element={<ShareLayout />}>
 						<Route index element={<Navigate to="/home" />} />

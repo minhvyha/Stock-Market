@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from 'react';
 
 let tvScriptLoadingPromise;
 
-export default function TradingViewWidget() {
+export default function TradingViewWidget({symbol}) {
   const onLoadScriptRef = useRef();
 
   useEffect(
@@ -31,7 +31,7 @@ export default function TradingViewWidget() {
         if (document.getElementById('tradingview_288b8') && 'TradingView' in window) {
           new window.TradingView.widget({
             autosize: true,
-            symbol: "AAPL",
+            symbol: symbol || "AAPL",
             interval: "D",
             timezone: "Etc/UTC",
             theme: "dark",
