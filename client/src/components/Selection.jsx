@@ -3,7 +3,7 @@ import { Symbol } from '../SP500';
 import { MainPageContext } from '../App';
 import { nanoid } from 'nanoid';
 
-function Selection() {
+function Selection({handleChoose}) {
    const [isDropDown, setIsDropDown] = useState(false);
    const {
 		setStock,
@@ -32,6 +32,7 @@ function Selection() {
 						'.selected'
 					).innerHTML = `${company.Symbol}`;
 					setIsDropDown((value) => !value);
+               handleChoose()
 				}}
 			>
 				<input
@@ -48,7 +49,6 @@ function Selection() {
 	});
 
 	const filterList = (searchTerm) => {
-		setStock(searchTerm);
 		const optionsList = document.querySelectorAll('.option');
 		searchTerm = searchTerm.toLowerCase();
 		optionsList.forEach((option) => {
@@ -87,9 +87,6 @@ function Selection() {
 					/>
 				</div>
 			</div>
-			<button className="btn check-btn">
-				See Price
-			</button>
 		</div>
 	);
 }

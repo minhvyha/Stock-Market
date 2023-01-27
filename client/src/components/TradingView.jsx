@@ -46,7 +46,7 @@ export default function TradingViewWidget({symbol}) {
         }
       }
     },
-    []
+    [symbol]
   );
 
   return (
