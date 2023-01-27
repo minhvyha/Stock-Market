@@ -1,8 +1,6 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { MainPageContext } from '../../App';
 import './Account.css';
-import LineChart from './Line';
 import TradingViewWidget from '../../components/TradingView';
 import Personal from '../../components/Account/Personal';
 import Appearance from '../../components/Account/Appearance';
