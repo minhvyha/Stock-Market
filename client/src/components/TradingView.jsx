@@ -31,7 +31,7 @@ export default function TradingViewWidget() {
         if (document.getElementById('tradingview_288b8') && 'TradingView' in window) {
           new window.TradingView.widget({
             autosize: true,
-            symbol: "MMM",
+            symbol: "AAPL",
             interval: "D",
             timezone: "Etc/UTC",
             theme: "dark",
@@ -41,7 +41,6 @@ export default function TradingViewWidget() {
             enable_publishing: false,
             withdateranges: true,
             hide_side_toolbar: false,
-            allow_symbol_change: true,
             container_id: "tradingview_288b8"
           });
         }
@@ -53,8 +52,6 @@ export default function TradingViewWidget() {
   return (
     <div className='tradingview-widget-container'>
       <div id='tradingview_288b8' />
-      <div className="tradingview-widget-copyright">
-      </div>
     </div>
   );
 }

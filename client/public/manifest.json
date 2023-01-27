@@ -1,6 +1,6 @@
 {
-  "short_name": "S&C Exchange",
-  "name": "Stock & Crypto Exchange",
+  "short_name": "FUT",
+  "name": "Futuris",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
