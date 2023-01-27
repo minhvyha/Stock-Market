@@ -2,6 +2,7 @@ import React, {useContext, useState} from 'react';
 import { Symbol } from '../SP500';
 import { MainPageContext } from '../App';
 import { nanoid } from 'nanoid';
+import './Selection.css'
 
 function Selection({handleChoose}) {
    const [isDropDown, setIsDropDown] = useState(false);
