@@ -1,6 +1,7 @@
 import React from 'react';
 import './Nav.css';
-import Logo from '../assets/images/Logo.png';
+import LogoTextLight from '../assets/images/LogoTextLight.png';
+import LogoTextDark from '../assets/images/LogoTextDark.png';
 import { Link } from 'react-router-dom';
 
 function Nav() {
@@ -14,7 +15,7 @@ function Nav() {
 		<nav className="navBar">
 			<div className="nav-container">
 				<input type="checkbox" id="check" />
-				<img className="logo" src={Logo} alt="" />
+				<img className="logo" src={LogoTextDark} alt="" />
 				<label htmlFor="check" className="checkbtn">
 					<i className="fas fa-bars menu-symbol"></i>
 				</label>

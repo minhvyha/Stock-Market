@@ -16,6 +16,7 @@ function Home() {
 	return (
 		<div className="main-container">
 			<div id='home-chart-container'>
+
 				<TradingViewWidget symbol={stock} />
 			</div>
 			<div className="side-container">

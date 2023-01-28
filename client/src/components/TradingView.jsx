@@ -1,6 +1,6 @@
-// TradingViewWidget.js
-
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import './TradingView.css'
+import Loader from './Loader';
 
 let tvScriptLoadingPromise;
 
@@ -37,7 +37,7 @@ export default function TradingViewWidget({symbol}) {
             theme: "dark",
             style: "1",
             locale: "en",
-            toolbar_bg: "#f1f3f6",
+          
             enable_publishing: false,
             withdateranges: true,
             hide_side_toolbar: false,
@@ -45,6 +45,7 @@ export default function TradingViewWidget({symbol}) {
           });
         }
       }
+
     },
     [symbol]
   );

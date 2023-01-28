@@ -2,6 +2,7 @@
 	position: relative;
 	display: flex;
 	flex-direction: column;
+	width: 100%;
 }
 .select-box .options-container {
 	background: #2f3640;
