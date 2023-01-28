@@ -17,7 +17,7 @@
 	padding-inline: 30px;
 }
 .logo {
-	width: 80px;
+	width: 140px;
 	transform: translateY(1px);
 	margin-left: 1rem;
 }
@@ -35,10 +35,10 @@ nav ul li a {
 	padding: 7px 13px;
 	border-radius: 3px;
 	text-transform: uppercase;
-	transition: 0.5s;
+	transition: 0.2s;
 }
 nav a:hover {
-	color: #1f262e;
+	color: var(--first-color);
 }
 .menu-symbol {
 	color: black;

@@ -1,5 +1,8 @@
 /* ============== INTRO PAGE ============== */
 .intro-container {
+	
+}
+.intro-content-container{
 	display: flex;
 	flex-direction: column;
 	height: 100vh;
@@ -64,7 +67,7 @@
 }
 @media screen and (min-width: 300px) {}
 @media screen and (min-width: 350px) {}
-@media screen and (min-width: 828px) {.intro-container {
+@media screen and (min-width: 828px) {.intro-content-container {
 	flex-direction: row;
 	gap: 4rem;
 }

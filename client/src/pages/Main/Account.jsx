@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { MainPageContext } from '../../App';
 import './Account.css';
-import TradingViewWidget from '../../components/TradingView';
 import Personal from '../../components/Account/Personal';
 import Appearance from '../../components/Account/Appearance';
 import Password from '../../components/Account/Password';
@@ -26,10 +25,8 @@ function Account() {
 				className="account-setting-list"
 				onClick={() => {
 					setActiveSetting(setting.component);
-					document.getElementById('account-nav').classList.add('disable');
-					document
-						.getElementById('account-main-content')
-						.classList.add('account-active');
+					document.getElementById('account-nav').classList.add('disable')
+					document.getElementById('account-main-content').classList.add('account-active')
 				}}
 			>
 				{capitalize(setting.name)}
@@ -89,11 +86,11 @@ function Account() {
 
 	return (
 		<div className="main-container">
-			<div id="account-nav" className="account-navigation-bar">
+			<div id='account-nav' className="account-navigation-bar">
 				<div className="account-nav-title">Setting</div>
 				{settings}
 			</div>
-			<div id="account-main-content" className="account-main-content">
+			<div id='account-main-content' className="account-main-content">
 				{activeSetting}
 			</div>
 			{/* <div className="sign-out-container">
