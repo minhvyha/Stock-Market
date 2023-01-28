@@ -1,14 +1,12 @@
-import React, {useContext, useState} from 'react';
+import React, { useContext, useState } from 'react';
 import { Symbol } from '../SP500';
 import { MainPageContext } from '../App';
 import { nanoid } from 'nanoid';
-import './Selection.css'
+import './Selection.css';
 
-function Selection({handleChoose}) {
-   const [isDropDown, setIsDropDown] = useState(false);
-   const {
-		setStock,
-	} = useContext(MainPageContext);
+function Selection({ handleChoose }) {
+	const [isDropDown, setIsDropDown] = useState(false);
+	const { setStock } = useContext(MainPageContext);
 
 	function selectBoxClick() {
 		const optionsContainer = document.querySelector('.options-container');
@@ -33,7 +31,7 @@ function Selection({handleChoose}) {
 						'.selected'
 					).innerHTML = `${company.Symbol}`;
 					setIsDropDown((value) => !value);
-               handleChoose()
+					handleChoose();
 				}}
 			>
 				<input
