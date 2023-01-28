@@ -1,3 +1,40 @@
-#intro-image{
-   cursor: pointer;
+#intro-image {
+	cursor: pointer;
+}
+.navBar.intro-nav {
+	background-color: var(--dark-background);
+	box-shadow: none;
+}
+.navBar.intro-nav::after {
+	background: #fff;
+	content: '';
+	display: block;
+	width: 100%;
+	height: 100%;
+	top: -100%;
+	position: absolute;
+	transition: all 0.3s ease;
+}
+.scroll-header .navBar.intro-nav::after {
+	top: 0;
+}
+.scroll-header nav ul li a {
+	color: var(--light-text);
+}
+#intro-image-light {
+	position: absolute;
+	left: 0;
+	visibility: hidden;
+	opacity: 0;
+}
+.scroll-header #intro-image-light {
+	visibility: visible;
+	opacity: 1;
+}
+.scroll-header #intro-image {
+	visibility: hidden;
+	opacity: 0;
+}
+a img {
+	transition: all 0.3s ease;
 }

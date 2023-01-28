@@ -13,13 +13,15 @@
 	align-items: center;
 	max-width: 1124px;
 	width: 100%;
+	position: relative;
 	justify-content: space-between;
 	padding-inline: 30px;
+	z-index: 2;
 }
 .logo {
 	width: 140px;
 	transform: translateY(1px);
-	margin-left: 1rem;
+	padding-left: 1rem;
 }
 nav ul {
 	float: right;
