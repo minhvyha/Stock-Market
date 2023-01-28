@@ -6,12 +6,6 @@ import Selection from '../../components/Selection';
 
 function Home() {
 	const { stock } = useContext(MainPageContext);
-	function handleChoose() {
-		console.log(stock);
-		document.getElementById('home-chart-container').innerHTML = (
-			<TradingViewWidget symbol={stock} />
-		);
-	}
 	return (
 		<div className="main-container">
 			<div id="home-chart-container">
