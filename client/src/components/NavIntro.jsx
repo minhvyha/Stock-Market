@@ -9,24 +9,28 @@ function NavIntro() {
 	return (
 		<nav className="navBar intro-nav">
 			<div className="nav-container">
-				<Link to="/">
-					<img
-						id="intro-image"
-						className="logo"
-						src={LogoTextDark}
-						alt=""
-					/>
-               <img
-						id="intro-image-light"
-						className="logo"
-						src={LogoTextLight}
-						alt=""
-					/>
-				</Link>
+					
+					<input type="checkbox" id="intro-check" />
+					<div className='nav-subcontainer'>
+					<Link to="/">
+						<img
+							id="intro-image"
+							className="logo"
+							src={LogoTextDark}
+							alt=""
+						/>
+						<img
+							id="intro-image-light"
+							className="logo"
+							src={LogoTextLight}
+							alt=""
+						/>
+					</Link>
+					<label htmlFor="intro-check" className="checkbtn">
+						<i className="fas fa-bars menu-symbol"></i>
+					</label>
+					</div>
 
-				<label htmlFor="check" className="checkbtn">
-					<i className="fas fa-bars menu-symbol"></i>
-				</label>
 				<ul>
 					<li>
 						<Link to="/">Home</Link>

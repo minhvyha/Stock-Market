@@ -7,7 +7,7 @@
 	position: fixed;
 	z-index: var(--z-modal);
 }
-.nav-container {
+.nav-subcontainer {
 	display: flex;
 	margin-inline: auto;
 	align-items: center;
@@ -17,6 +17,7 @@
 	justify-content: space-between;
 	padding-inline: 30px;
 	z-index: 2;
+	background-color: var(--dark-container);
 }
 .logo {
 	width: 140px;
@@ -43,7 +44,7 @@ nav a:hover {
 	color: var(--first-color);
 }
 .menu-symbol {
-	color: black;
+	color: whtie;
 }
 .checkbtn {
 	font-size: 30px;
@@ -54,7 +55,7 @@ nav a:hover {
 	display: none;
 	margin-right: 25px;
 }
-#check {
+#intro-check {
 	display: none;
 }
 @media (max-width: 952px) {
@@ -67,21 +68,27 @@ nav a:hover {
 	}
 }
 @media (max-width: 827px) {
-	.nav-container {
+	.navBar{
+		height: 70px;
+	}
+	.nav-subcontainer {
 		padding-inline: 0;
 	}
 	.checkbtn {
 		display: block;
 	}
+	
 	ul {
 		position: fixed;
+		padding-top: 80px;
 		width: 100%;
 		height: 100vh;
-		background: #112348;
-		top: 80px;
-		left: -100%;
+		background: var(--dark-container);
+		top: -100%;
 		text-align: center;
-		transition: all 0.5s;
+		transition: opacity .6s cubic-bezier(.77,0,.175,1),top .6s cubic-bezier(.77,0,.175,1),visibility .6s cubic-bezier(.77,0,.175,1);
+		z-index: -1;
+		opacity: 0;
 	}
 	label.logo {
 		padding: 0 15px;
@@ -98,10 +105,11 @@ nav a:hover {
 	nav a:hover,
 	nav a.active {
 		background: none;
-		color: #219fff;
+		color: var(--first-color);
 	}
-	#check:checked ~ ul {
-		left: 0;
+	#intro-check:checked ~ ul {
+		top: 0;
+		opacity: 1;
 	}
 	
 }
