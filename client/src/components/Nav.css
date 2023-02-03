@@ -76,11 +76,12 @@ nav a:hover {
 	}
 	.checkbtn {
 		display: block;
+		line-height: 70px;
 	}
-	
+
 	ul {
 		position: fixed;
-		padding-top: 80px;
+		padding-top: 70px;
 		width: 100%;
 		height: 100vh;
 		background: var(--dark-container);
