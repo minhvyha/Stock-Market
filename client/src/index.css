@@ -114,21 +114,6 @@ body.dark {
 .dark .intro-title {
 	color: var(--dark-first-color);
 }
-.dark .intro-login-btn {
-	background-color: var(--first-color);
-	color: black;
-}
-.dark .intro-login-btn:hover {
-	background-color: var(--buttonHoverColor);
-	color: black;
-}
-.dark .intro-signup-btn {
-	background-color: var(--dark-button-background);
-	color: var(--dark-text);
-}
-.dark .intro-signup-btn:hover {
-	background-color: var(--buttonHoverColorDark);
-}
 .dark .submit-button {
 	background-color: var(--first-color);
 	color: var(--BlackColor);

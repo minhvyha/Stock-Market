@@ -2,42 +2,42 @@
 .intro-content-container{
 	display: flex;
 	flex-direction: column;
-	height: 100vh;
 	align-items: center;
 	justify-content: center;
 	gap: 1.5rem;
+	padding-top: 85px;
 }
 .intro-form-container {
 	text-align: center;
 	display: flex;
 	flex-direction: column;
-	gap: 0.75rem;
+	gap: 1rem;
 	align-items: center;
+	padding-inline: 20px;
 }
 .intro-image {
-	width: 105px;
+	width: 265px;
 	height: auto;
 }
 .intro-title {
 	color: var(--first-color);
-	font-size: 1.5rem;
-}
-.company-name {
-	font-size: 1.7rem;
+	font-size: 1.8rem;
+	font-weight: 700;
+	line-height: 42px;
 }
 .intro-subtitle {
-	font-size: 0.85rem;
+	font-size: 16px;
 	margin-bottom: 0.6rem;
 }
 .dark .intro-main-btn  {
 	overflow: hidden;
 	position: relative;
 	width: 190px;
-	padding: 5.5px 0;
-	border-radius: 2rem;
+	padding: 12px 40px;
+	border-radius: 5px;
 	cursor: pointer;
 	font-weight: 500;
-	font-size: 0.95rem;
+	font-size: 1rem;
 }
 
 .dark .intro-main-btn::after {
@@ -64,27 +64,15 @@
 .intro-form-container a {
 	width: fit-content;
 }
-.intro-login-btn {
+.intro-signup-btn {
 	background-color: var(--first-color);
 	color: white;
 	border: none;
 	transition: 0.4s;
 }
-.intro-login-btn:hover {
+.intro-signup-btn:hover {
 	background-color: rgb(0, 0, 0);
 	color: #ffffff;
-}
-.intro-signup-btn {
-	background-color: white;
-	color: black;
-	border: 1px solid black;
-	transition: 0.4s;
-	margin-top: 0.05rem;
-}
-.intro-signup-btn:hover {
-	background-color: black;
-	border: 1px solid black;
-	color: white;
 }
 @media screen and (min-width: 300px) {}
 @media screen and (min-width: 350px) {}
