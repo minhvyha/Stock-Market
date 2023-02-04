@@ -4,9 +4,11 @@
 .navBar.intro-nav {
 	background-color: var(--dark-nav-background);
 	box-shadow: none;
+	transition: .35s ease;
 }
 .scroll-header .navBar.intro-nav{
 	box-shadow: none;
+	background-color: var(--first-color);
 }
 .scroll-header nav ul li a {
 	color: var(--light-text);
@@ -25,6 +27,6 @@
 	visibility: hidden;
 	opacity: 0;
 }
-a img {
+.navBar.intro-nav a img {
 	transition: all 0.3s ease;
 }
