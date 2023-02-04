@@ -4,9 +4,9 @@
 .navBar.intro-nav {
 	background-color: var(--dark-nav-background);
 	box-shadow: none;
-	transition: .35s ease;
+	transition: 0.35s ease;
 }
-.scroll-header .navBar.intro-nav{
+.scroll-header .navBar.intro-nav {
 	box-shadow: none;
 	background-color: var(--first-color);
 }
