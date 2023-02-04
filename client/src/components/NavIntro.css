@@ -2,21 +2,11 @@
 	cursor: pointer;
 }
 .navBar.intro-nav {
-	background-color: var(--dark-background);
+	background-color: var(--dark-nav-background);
 	box-shadow: none;
 }
-.navBar.intro-nav::after {
-	background: #fff;
-	content: '';
-	display: block;
-	width: 100%;
-	height: 100%;
-	top: -100%;
-	position: absolute;
-	transition: all 0.3s ease;
-}
-.scroll-header .navBar.intro-nav::after {
-	top: 0;
+.scroll-header .navBar.intro-nav{
+	box-shadow: none;
 }
 .scroll-header nav ul li a {
 	color: var(--light-text);

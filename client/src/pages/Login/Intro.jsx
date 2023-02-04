@@ -13,10 +13,10 @@ function Intro() {
 			<div className="intro-content-container">
 				<div className="intro-form-container">
 					<h1 className="intro-title">
-						Most Advanced Australian Stock and Crypto Exchange
+						Most Advanced Stock and Crypto Exchange
 					</h1>
 					<p className="intro-subtitle">
-					Trade stocks and cryptocurrencies with confidence on our secure, fast and feature-packed exchange platform.
+					Trade stocks and cryptocurrencies on our secure, fast and feature-packed exchange platform.
 					</p>
 					<Link to="/signup">
 						<button className="intro-signup-btn intro-main-btn">Get started</button>
