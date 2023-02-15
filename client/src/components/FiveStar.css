@@ -1,0 +1,17 @@
+.five-star-container{
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-start;
+   width: 100%;
+   align-items: center;
+}
+.material-symbols-outlined.star{
+   color: var(--second-color);
+   font-size: 1.5rem;
+}
+.star-comment{
+   font-weight: 700 ;
+   margin-top: 3px;
+   font-size: 17px;
+   margin-right: 5px;
+}

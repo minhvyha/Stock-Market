@@ -14,10 +14,7 @@
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
 		/>
 		<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-		<link
-			rel="stylesheet"
-			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
-		/>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
 		<script src="https://accounts.google.com/gsi/client" async defer></script>
 		<title>Futuris</title>
 	</head>
@@ -26,7 +23,7 @@
 		<script>
 			function scrollHeader() {
 				const header = document.getElementById('root');
-				if (this.scrollY >= 30) header.classList.add('scroll-header');
+				if (this.scrollY >= 20) header.classList.add('scroll-header');
 				else header.classList.remove('scroll-header');
 			}
 			window.addEventListener('scroll', scrollHeader);

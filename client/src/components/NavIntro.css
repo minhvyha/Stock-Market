@@ -4,7 +4,7 @@
 .navBar.intro-nav {
 	background-color: var(--dark-nav-background);
 	box-shadow: none;
-	transition: 0.35s ease;
+	transition: 0.25s ease;
 }
 .scroll-header .navBar.intro-nav {
 	box-shadow: none;
@@ -28,5 +28,5 @@
 	opacity: 0;
 }
 .navBar.intro-nav a img {
-	transition: all 0.3s ease;
+	transition: all 0.25s ease;
 }

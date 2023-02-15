@@ -27,10 +27,10 @@ html {
 	--light-text: #000000;
 	--light-small-text: #181818;
 
-	--dark-background: #0b0b0b;
-	--dark-container: #101010;
-	--dark-nav-background: #181818;
-	--dark-button-background: #262626;
+	--dark-background: #000000;
+	--dark-container: #131313;
+	--dark-nav-background: #1a1a1a;
+	--dark-button-background: #272727;
 	--dark-text: #f8f8f8;
 
 	--text-dark-color: hsl(223, 57%, 25%);

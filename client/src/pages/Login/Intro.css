@@ -14,7 +14,7 @@
 	gap: 2rem;
 	align-items: center;
 	padding-inline: 20px;
-	padding-bottom: 100px;
+padding-bottom: 80px;
 }
 .intro-image {
 	width: 265px;
@@ -75,6 +75,7 @@
 	background-color: rgb(0, 0, 0);
 	color: #ffffff;
 }
+
 @media screen and (min-width: 300px) {}
 @media screen and (min-width: 350px) {}
 @media screen and (min-width: 828px) {.intro-content-container {
