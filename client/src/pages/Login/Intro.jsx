@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../../assets/images/Logo.png';
+import IntroTrade from '../../assets/images/IntroTrade.png';
+import IntroPortfolio from '../../assets/images/IntroPortfolio.png';
+import IntroSecurity from '../../assets/images/IntroSecurity.png';
 import IntroMainImage from '../../assets/images/IntroMainImage.png';
 import FiveStar from '../../components/FiveStar';
 import NavIntro from '../../components/NavIntro';
@@ -58,6 +61,9 @@ function Intro() {
 						</div>
 					</div>
 				</div>
+			</div>
+			<div className='intro-feature-container'>
+
 			</div>
 		</div>
 	);
