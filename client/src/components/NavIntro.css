@@ -7,7 +7,7 @@
 	transition: 0.25s ease;
 }
 .scroll-header .navBar.intro-nav {
-	box-shadow: none;
+	box-shadow: 0 10px 10px rgb(0 0 0 / 25%);
 	background-color: var(--first-color);
 }
 .scroll-header nav ul li a {

@@ -7,11 +7,11 @@ function FiveStar() {
          <div className='star-comment'>
          Excellent
          </div>
-			<span class="material-symbols-outlined star">star</span>
-			<span class="material-symbols-outlined star">star</span>
-			<span class="material-symbols-outlined star">star</span>
-			<span class="material-symbols-outlined star">star</span>
-			<span class="material-symbols-outlined star">star</span>
+			<span className="material-symbols-outlined star">star</span>
+			<span className="material-symbols-outlined star">star</span>
+			<span className="material-symbols-outlined star">star</span>
+			<span className="material-symbols-outlined star">star</span>
+			<span className="material-symbols-outlined star">star</span>
 		</div>
 	);
 }

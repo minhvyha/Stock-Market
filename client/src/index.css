@@ -17,6 +17,8 @@
 html {
 	--first-color: #fa8e30;
 	--second-color: #ffb347;
+	--box-color: #ffefe0;
+	
 
 	--main-light-background: hsl(195, 15%, 95%);
 	--background-light-color: hsl(222, 55%, 79%);
