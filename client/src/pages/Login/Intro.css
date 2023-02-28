@@ -71,10 +71,13 @@
 	color: white;
 	border: none;
 	transition: 0.4s;
+	border: 2px solid;
+	border-color: var(--first-color);
 }
 .intro-signup-btn:hover {
-	background-color: rgb(0, 0, 0);
+	background-color: transparent;
 	color: #ffffff;
+	border-color: white;
 }
 .intro-stat-container{
 	width: 100%;
@@ -110,6 +113,9 @@
 .intro-stat-description{
 	font-size: 14px;
 	color: rgb(189, 189, 189);
+}
+.feature-image{
+	width: 80px;
 }
 @media screen and (min-width: 300px) {}
 @media screen and (min-width: 350px) {}

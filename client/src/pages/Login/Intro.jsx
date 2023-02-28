@@ -63,7 +63,22 @@ function Intro() {
 				</div>
 			</div>
 			<div className='intro-feature-container'>
-
+				<div className='intro-feature-title'>
+					What you will get with Futuris
+				</div>
+				<div className='intro-feature'>
+					<div className='feature-container'>
+						<div className='feature'>
+							<img className='feature-image' src={IntroTrade} />
+						</div>
+						<div className='feature'>
+							<img className='feature-image' src={IntroPortfolio} />
+						</div>
+					</div>
+					<div className='feature'>
+							<img className='feature-image' src={IntroSecurity} />
+						</div>
+				</div>
 			</div>
 		</div>
 	);
