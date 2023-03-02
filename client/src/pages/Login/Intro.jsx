@@ -70,13 +70,22 @@ function Intro() {
 					<div className='feature-container'>
 						<div className='feature'>
 							<img className='feature-image' src={IntroTrade} />
+							<div className='feature-description'>
+								AUD & USD Trading
+							</div>
 						</div>
 						<div className='feature'>
 							<img className='feature-image' src={IntroPortfolio} />
+							<div className='feature-description'>
+								Portfolio Tracking
+							</div>
 						</div>
 					</div>
 					<div className='feature'>
 							<img className='feature-image' src={IntroSecurity} />
+							<div className='feature-description'>
+								Robust Encryption
+							</div>
 						</div>
 				</div>
 			</div>
