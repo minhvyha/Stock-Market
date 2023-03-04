@@ -5,6 +5,10 @@
 	background-color: var(--dark-nav-background);
 	box-shadow: none;
 	transition: 0.25s ease;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding-inline: 50px;
 }
 .scroll-header .navBar.intro-nav .nav-container{
 	box-shadow: 0 10px 10px rgb(0 0 0 / 25%);
