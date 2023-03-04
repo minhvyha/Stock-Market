@@ -1,13 +1,12 @@
 /* ============== INTRO PAGE ============== */
-.intro-content-container{
+.intro-content-container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	gap: 1.5rem;
-	padding-top:135px;
+	padding-top: 135px;
 	padding-bottom: 30px;
-
 }
 .intro-form-container {
 	text-align: center;
@@ -32,7 +31,7 @@
 	font-size: 16px;
 	margin-bottom: 0.6rem;
 }
-.dark .intro-main-btn  {
+.dark .intro-main-btn {
 	overflow: hidden;
 	position: relative;
 	width: 190px;
@@ -80,14 +79,14 @@
 	color: #ffffff;
 	border-color: white;
 }
-.intro-stat-container{
+.intro-stat-container {
 	width: 100%;
 	background-color: var(--dark-container);
 	color: white;
 	padding-inline: 40px;
 	margin-bottom: 50px;
 }
-.intro-stat-container i{
+.intro-stat-container i {
 	color: var(--first-color);
 	font-size: 40px;
 	min-width: 46px;
@@ -97,29 +96,29 @@
 .intro-stat-container .intro-stat:not(:first-child) {
 	border-top: 0.1px solid var(--second-color);
 }
-.intro-stat{
+.intro-stat {
 	display: flex;
 	flex-direction: row;
 	gap: 1.2rem;
 	padding: 25px 0;
 }
-.intro-stat-content{
+.intro-stat-content {
 	display: flex;
 	flex-direction: column;
-	gap: .25rem;
+	gap: 0.25rem;
 }
-.intro-stat-header{
+.intro-stat-header {
 	font-weight: 700;
 	font-size: 18px;
 }
-.intro-stat-description{
+.intro-stat-description {
 	font-size: 14px;
 	color: var(--dark-subtext);
 }
-.feature-image{
+.feature-image {
 	width: 80px;
 }
-.intro-feature-container{
+.intro-feature-container {
 	padding-inline: 20px;
 	display: flex;
 	flex-direction: column;
@@ -127,111 +126,112 @@
 	padding-bottom: 32px;
 	align-items: center;
 }
-.feature-container{
+.feature-container {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	gap: .5rem;
+	gap: 0.5rem;
 }
-.intro-feature{
+.intro-feature {
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;
 }
-.intro-feature-title{
+.intro-feature-title {
 	text-align: center;
 	font-size: 1.8rem;
 	font-weight: 700;
 	line-height: 42px;
 }
-.feature{
+.feature {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
-	gap: .5rem;
+	gap: 0.5rem;
 }
-.feature-description{
+.feature-description {
 	text-align: center;
 	color: var(--dark-subtext);
-	font-size: .9rem;
+	font-size: 0.9rem;
 }
 @media screen and (min-width: 300px) {
-	.intro-title, .intro-feature-title {
+	.intro-title,
+	.intro-feature-title {
 		font-size: 2rem;
 	}
-	.intro-form-container{
+	.intro-form-container {
 		padding-inline: 40px;
 	}
-	.intro-subtitle{
+	.intro-subtitle {
 		font-size: 18px;
 	}
-	.intro-image{
+	.intro-image {
 		width: 290px;
 	}
-	.intro-stat-container{
+	.intro-stat-container {
 		padding-inline: 40px;
 	}
-	.intro-stat-header{
+	.intro-stat-header {
 		font-size: 19px;
 	}
-	.intro-stat-description{
+	.intro-stat-description {
 		font-size: 15px;
 	}
-	.intro-feature-container{
+	.intro-feature-container {
 		padding-inline: 30px;
 	}
 }
 @media screen and (min-width: 350px) {
-	.intro-form-container{
+	.intro-form-container {
 		padding-inline: 50px;
 		padding-bottom: 50px;
 	}
-	.intro-image{
+	.intro-image {
 		width: 330px;
 	}
-	.intro-stat-container{
+	.intro-stat-container {
 		padding-inline: 50px;
 	}
-	.intro-feature-container{
+	.intro-feature-container {
 		padding-inline: 50px;
 	}
-	.feature-container{
+	.feature-container {
 		justify-content: space-around;
 		gap: 1rem;
 	}
-	.intro-feature{
+	.intro-feature {
 		max-width: 400px;
 		width: 100%;
 	}
-	.intro-stat-container i{
+	.intro-stat-container i {
 		width: 60px;
 		height: auto;
 		font-size: 45px;
 	}
-	.intro-stat-header{
+	.intro-stat-header {
 		font-size: 20px;
 	}
-	.intro-stat-description{
+	.intro-stat-description {
 		font-size: 16px;
 	}
-	.feature-description{
+	.feature-description {
 		font-size: 16px;
 	}
 }
 @media screen and (min-width: 606px) {
-	.intro-content-container{
+	.intro-content-container {
 		flex-direction: row;
 		padding-inline: 50px;
 		gap: 1rem;
 	}
-	.intro-title{
+	.intro-title {
 		font-size: 1.8rem;
 	}
-	.intro-image{
+	.intro-image {
 		width: 50%;
 	}
-	.intro-form-container{
+	.intro-form-container {
 		text-align: left;
 		align-items: flex-start;
 		padding: 0;
@@ -239,63 +239,79 @@
 }
 @media screen and (min-width: 828px) {
 	.intro-content-container {
-	flex-direction: row;
-	gap: 2rem;
-	padding-bottom: 50px;
+		flex-direction: row;
+		gap: 2rem;
+		padding-bottom: 50px;
+	}
+	.intro-stat-container .intro-stat:not(:first-child) {
+		border-top: 0.25px solid var(--second-color);
+	}
+	.intro-feature-title {
+		font-size: 2.3rem;
+	}
+	.intro-stat {
+		padding: 40px 0;
+	}
+	.intro-stat-header {
+		font-size: 22px;
+	}
+	.intro-stat-description {
+		font-size: 18px;
+	}
+	.intro-stat-container i {
+		font-size: 50px;
+		width: 70px;
+	}
+	.intro-feature-container {
+		gap: 3rem;
+		padding-bottom: 45px;
+	}
+	.feature-image {
+		width: 110px;
+	}
+	.feature {
+		gap: 1rem;
+	}
+	.feature-container {
+		gap: 1.5rem;
+	}
+	.intro-feature {
+		gap: 2.6rem;
+	}
+	.feature-description {
+		font-size: 18px;
+	}
+	.intro-title {
+		font-size: 2.3rem;
+	}
+	.company-name {
+		font-size: 2.5rem;
+	}
+	.intro-subtitle {
+		font-size: 1.15rem;
+	}
+	.intro-form-container {
+		gap: 1.8rem;
+	}
+	.intro-form-container button {
+		width: 270px;
+		padding: 10px 0;
+		font-size: 1.2rem;
+	}
 }
-.intro-stat-container .intro-stat:not(:first-child){
-	border-top: 0.25px solid var(--second-color);
+@media screen and (min-width: 992px) {
+	.intro-content-container {
+		max-width: 1280px;
+		margin-inline: auto;
+	}
+	.intro-form-container {
+		gap: 2rem;
+	}
+	.intro-stat {
+		max-width: 1180px;
+		margin-inline: auto;
+	}
+	.feature-image{
+		width: 120px;
+	}
 }
-.intro-feature-title{
-	font-size: 2.3rem;
-}
-.intro-stat{
-	padding: 40px 0;
-}
-.intro-stat-header{
-	font-size: 22px;
-}
-.intro-stat-description{
-	font-size: 18px;
-}
-.intro-stat-container i {
-	font-size: 50px;
-	width: 70px;
-}
-.intro-feature-container{
-	gap: 3rem;
-	padding-bottom: 45px;
-}
-.feature-image{
-	width: 110px;
-}
-.feature{
-	gap: 1rem;
-}
-.feature-container{
-	gap: 1.5rem;
-}
-.intro-feature{
-	gap: 2.6rem;
-}
-.feature-description{
-	font-size: 18px;
-}
-.intro-title {
-	font-size: 2.3rem;
-}
-.company-name {
-	font-size: 2.5rem;
-}
-.intro-subtitle {
-	font-size: 1.15rem;
-}
-.intro-form-container {
-	gap: 1.8rem;
-}
-.intro-form-container button {
-	width: 270px;
-	padding: 10px 0;
-	font-size: 1.2rem;
-}}
-@media screen and (min-width: 992px) {}
