@@ -240,10 +240,46 @@
 @media screen and (min-width: 828px) {
 	.intro-content-container {
 	flex-direction: row;
-	gap: 4rem;
+	gap: 2rem;
+	padding-bottom: 50px;
 }
-.intro-image {
-	width: 550px;
+.intro-stat-container .intro-stat:not(:first-child){
+	border-top: 0.25px solid var(--second-color);
+}
+.intro-feature-title{
+	font-size: 2.3rem;
+}
+.intro-stat{
+	padding: 40px 0;
+}
+.intro-stat-header{
+	font-size: 22px;
+}
+.intro-stat-description{
+	font-size: 18px;
+}
+.intro-stat-container i {
+	font-size: 50px;
+	width: 70px;
+}
+.intro-feature-container{
+	gap: 3rem;
+	padding-bottom: 45px;
+}
+.feature-image{
+	width: 110px;
+}
+.feature{
+	gap: 1rem;
+}
+.feature-container{
+	gap: 1.5rem;
+}
+.intro-feature{
+	gap: 2.6rem;
+}
+.feature-description{
+	font-size: 18px;
 }
 .intro-title {
 	font-size: 2.3rem;
@@ -255,7 +291,7 @@
 	font-size: 1.15rem;
 }
 .intro-form-container {
-	gap: 1.2rem;
+	gap: 1.8rem;
 }
 .intro-form-container button {
 	width: 270px;
