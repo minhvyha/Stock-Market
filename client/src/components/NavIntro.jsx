@@ -47,7 +47,15 @@ function NavIntro() {
 					<li>
 						<Link to="/demo">Demo</Link>
 					</li>
+					<li>
+					<Link className='login-button' to="/">Login</Link>
+
+					</li>
+					<li>
+					<Link className='signup-button' to="/">Signup</Link>
+					</li>
 				</ul>
+				
 			</div>
 		</nav>
 	);

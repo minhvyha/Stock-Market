@@ -246,18 +246,10 @@
 	.intro-stat-container .intro-stat:not(:first-child) {
 		border-top: 0.25px solid var(--second-color);
 	}
-	.intro-feature-title {
-		font-size: 2.3rem;
-	}
 	.intro-stat {
 		padding: 40px 0;
 	}
-	.intro-stat-header {
-		font-size: 22px;
-	}
-	.intro-stat-description {
-		font-size: 18px;
-	}
+	
 	.intro-stat-container i {
 		font-size: 50px;
 		width: 70px;
@@ -278,17 +270,20 @@
 	.intro-feature {
 		gap: 2.6rem;
 	}
-	.feature-description {
+	.intro-stat-header {
 		font-size: 18px;
 	}
-	.intro-title {
-		font-size: 2.3rem;
+	.feature-description, .intro-stat-description {
+		font-size: 15px;
+	}
+	.intro-title, .intro-feature-title {
+		font-size: 2.1rem;
 	}
 	.company-name {
 		font-size: 2.5rem;
 	}
 	.intro-subtitle {
-		font-size: 1.15rem;
+		font-size: 1rem;
 	}
 	.intro-form-container {
 		gap: 1.8rem;
