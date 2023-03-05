@@ -8,9 +8,10 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	padding-inline: 50px;
 	max-width: 1280px;
 	margin-inline: auto;
+	width: 100%;
+	padding-inline: 50px;
 }
 .navBar.intro-nav{
 	transition: .25s ease;
@@ -37,4 +38,9 @@
 }
 .navBar.intro-nav a img {
 	transition: all 0.25s ease;
+}
+@media (max-width: 755px) {
+	#intro-image-light{
+		left: 20px;
+	}
 }

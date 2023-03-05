@@ -53,18 +53,24 @@ nav a:hover {
 #intro-check {
 	display: none;
 }
-@media (max-width: 605px) {
+@media (max-width: 755px) {
+
 	.navBar{
 		height: 100px;
-	}
-	.nav-subcontainer {
-		padding-inline: 50px;
 	}
 	.checkbtn {
 		display: block;
 		line-height: 100px;
 	}
+	.nav-container{
+	padding-inline: 0 !important;
 
+	}
+	.nav-subcontainer{
+		padding-inline: 20px;
+	width: 100%;
+
+	}
 	ul {
 		position: fixed;
 		padding-top: 70px;
@@ -100,9 +106,9 @@ nav a:hover {
 	}
 	
 }
-@media (max-width: 827px) {
+@media (max-width: 967px) {
 	nav ul li a{
-		padding: 4px 6px;
+		padding: 4px 4px;
 	}
 	label.logo {
 		font-size: 30px;
