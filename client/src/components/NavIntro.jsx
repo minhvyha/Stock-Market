@@ -48,11 +48,11 @@ function NavIntro() {
 						<Link to="/demo">Demo</Link>
 					</li>
 					<li>
-					<Link className='login-button' to="/">Login</Link>
+					<Link className='login-button' to="/login">Login</Link>
 
 					</li>
 					<li>
-					<Link className='signup-button' to="/">Signup</Link>
+					<Link className='signup-button' to="/signup">Signup</Link>
 					</li>
 				</ul>
 				

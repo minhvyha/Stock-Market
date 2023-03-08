@@ -95,6 +95,10 @@ function App() {
 						/>
 					</Route>
 					<Route path="intro" element={<Intro />} />
+					<Route path="assets" element={<Intro />} />
+					<Route path="learn" element={<Intro />} />
+					<Route path="features" element={<Intro />} />
+					<Route path="demo" element={<Intro />} />
 					<Route path="login" element={<Login setUser={setUser} />} />
 					<Route path="signup" element={<Signup setUser={setUser} />} />
 				</Routes>

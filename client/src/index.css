@@ -32,8 +32,10 @@ html {
 
 	--dark-background: #000000;
 	--dark-container: #131313;
-	--dark-nav-background: #1a1a1a;
+	--dark-nav-background: #191919;
 	--dark-button-background: #272727;
+	--dark-button-atlernative-background: #333333;
+
 	--dark-text: #ffffff;
 	--dark-subtext: #bebebe;
 
