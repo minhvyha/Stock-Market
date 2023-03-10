@@ -33,7 +33,7 @@ function Intro() {
 			</div>
 			<div className="intro-stat-container">
 				<div className="intro-stat">
-				<i className="fa-solid fa-chart-simple"></i>
+					<i className="fa-solid fa-chart-simple"></i>
 					<div className="intro-stat-content">
 						<div className="intro-stat-header">Real-time Market</div>
 						<div className="intro-stat-description">
@@ -42,7 +42,7 @@ function Intro() {
 					</div>
 				</div>
 				<div className="intro-stat">
-				<i className="fa-solid fa-shield-halved"></i>
+					<i className="fa-solid fa-shield-halved"></i>
 					<div className="intro-stat-content">
 						<div className="intro-stat-header">Advanced security</div>
 						<div className="intro-stat-description">
@@ -51,7 +51,7 @@ function Intro() {
 					</div>
 				</div>
 				<div className="intro-stat">
-				<i className="fa-solid fa-user-check"></i>
+					<i className="fa-solid fa-user-check"></i>
 					<div className="intro-stat-content">
 						<div className="intro-stat-header">
 							User-friendly interface
@@ -62,31 +62,29 @@ function Intro() {
 					</div>
 				</div>
 			</div>
-			<div className='intro-feature-container'>
-				<div className='intro-feature-title'>
+			<div className="intro-feature-container">
+				<div className="intro-feature-title">
 					What you will get with Futuris
 				</div>
-				<div className='intro-feature'>
-					<div className='feature-container'>
-						<div className='feature'>
-							<img className='feature-image' src={IntroTrade} />
-							<div className='feature-description'>
+				<div className="intro-feature">
+					<div className="feature-container">
+						<div className="feature">
+							<img className="feature-image" src={IntroTrade} />
+							<div className="feature-description">
 								AUD & USD Trading
 							</div>
 						</div>
-						<div className='feature'>
-							<img className='feature-image' src={IntroPortfolio} />
-							<div className='feature-description'>
+						<div className="feature">
+							<img className="feature-image" src={IntroPortfolio} />
+							<div className="feature-description">
 								Portfolio Tracking
 							</div>
 						</div>
 					</div>
-					<div className='feature'>
-							<img className='feature-image' src={IntroSecurity} />
-							<div className='feature-description'>
-								Robust Encryption
-							</div>
-						</div>
+					<div className="feature">
+						<img className="feature-image" src={IntroSecurity} />
+						<div className="feature-description">Robust Encryption</div>
+					</div>
 				</div>
 			</div>
 		</div>

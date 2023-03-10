@@ -10,6 +10,10 @@ import Home from './pages/Main/Home';
 import ProtectedRoute from './pages/Layout/ProtectedRoute';
 import ShareLayout from './pages/Layout/ShareLayout';
 import Intro from './pages/Login/Intro';
+import Features from './pages/Login/Features';
+import Assets from './pages/Login/Assets';
+import Learn from './pages/Login/Learn';
+import Demo from './pages/Login/Demo';
 import Portfolio from './pages/Main/Portfolio';
 import Account from './pages/Main/Account';
 import Buy from './pages/Main/Buy';
@@ -95,10 +99,10 @@ function App() {
 						/>
 					</Route>
 					<Route path="intro" element={<Intro />} />
-					<Route path="assets" element={<Intro />} />
-					<Route path="learn" element={<Intro />} />
-					<Route path="features" element={<Intro />} />
-					<Route path="demo" element={<Intro />} />
+					<Route path="assets" element={<Assets />} />
+					<Route path="learn" element={<Learn />} />
+					<Route path="features" element={<Features />} />
+					<Route path="demo" element={<Demo />} />
 					<Route path="login" element={<Login setUser={setUser} />} />
 					<Route path="signup" element={<Signup setUser={setUser} />} />
 				</Routes>
