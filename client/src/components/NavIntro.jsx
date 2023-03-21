@@ -5,7 +5,7 @@ import LogoTextLight from '../assets/images/LogoTextLight.png';
 import LogoTextDark from '../assets/images/LogoTextDark.png';
 import { Link } from 'react-router-dom';
 
-function NavIntro() {
+function NavIntro({activePage}) {
 	return (
 		<nav className="navBar intro-nav">
 			<div className="nav-container">
