@@ -76,6 +76,8 @@ function Login({ setUser }) {
 
 	return (
 		<div className="login-container" id="login-container">
+      <NavIntro />
+
 			<img src={SignInImage} alt="Sign In Image" className="signin-image" />
 			<div className="login-form-container">
 				<h1 className="login-form-title">Sign In</h1>

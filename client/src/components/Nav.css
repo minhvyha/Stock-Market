@@ -6,6 +6,7 @@
 	position: fixed;
 	background-color: var(--dark-nav-background);
 	z-index: var(--z-modal);
+	top: 0;
 }
 .nav-subcontainer {
 	display: flex;
