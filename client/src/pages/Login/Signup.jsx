@@ -87,6 +87,8 @@ function Signup({ handleCallBackResponse, setUser }) {
 
 	return (
 		<div className="login-container" id="login-container">
+      <NavIntro />
+
 			<img src={SignUpImage} alt="Sign In Image" className="signin-image" />
 			<div className="login-form-container">
 				<h1 className="login-form-title">Sign Up</h1>
