@@ -148,12 +148,16 @@
 		height: 450px;
 		right: calc((100% - 450px) / 2);
 	}
+	.login-container{
+		padding-top: 100px;
+	}
 }
 @media screen and (min-width: 828px) {
 	.signin-image {
 		width: 380px;
 	}
 	.login-container {
+		padding-top: 105px;
 		flex-direction: row;
 		gap: 3.5rem;
 	}
