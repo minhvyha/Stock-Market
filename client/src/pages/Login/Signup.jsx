@@ -3,6 +3,7 @@ import SignUpImage from '../../assets/images/SignUp.png';
 import { Link, useNavigate } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
 import './Login.css'
+import NavIntro from "../../components/NavIntro";
 import useWindowDimensions from '../../components/useWindowDimensions';
 
 function Signup({ handleCallBackResponse, setUser }) {

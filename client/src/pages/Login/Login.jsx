@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import SignInImage from '../../assets/images/SignIn.png';
-
-
+import NavIntro from "../../components/NavIntro";
 import { Link, useNavigate } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
 import './Login.css';
