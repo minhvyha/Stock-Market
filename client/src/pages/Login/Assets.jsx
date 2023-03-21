@@ -4,7 +4,9 @@ import NavIntro from '../../components/NavIntro';
 
 
 function Assets() {
-	return <div>Assets</div>;
+	return <div>
+		
+	</div>;
 }
 
 export default Assets;
