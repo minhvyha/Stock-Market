@@ -3,7 +3,7 @@ import './Learn.css';
 import NavIntro from '../../components/NavIntro';
 
 function Learn() {
-	return <div>Learn</div>;
+	return <div><NavIntro /></div>;
 }
 
 export default Learn;
