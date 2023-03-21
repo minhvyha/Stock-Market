@@ -5,7 +5,7 @@ import NavIntro from "../../components/NavIntro";
 function Learn() {
   return (
     <div>
-      <NavIntro activePage={'learn'} />
+      <NavIntro activePage={"learn"} />
     </div>
   );
 }
