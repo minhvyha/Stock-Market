@@ -5,7 +5,7 @@ import NavIntro from "../../components/NavIntro";
 function Assets() {
   return (
     <div>
-      <NavIntro />
+      <NavIntro activePage={'assets'} />
     </div>
   );
 }
