@@ -37,7 +37,7 @@ nav ul li a {
 	text-transform: uppercase;
 	transition: 0.2s;
 }
-nav a:hover {
+nav ul li a:hover, nav ul li.active a:hover {
 	color: var(--first-color);
 }
 .menu-symbol {

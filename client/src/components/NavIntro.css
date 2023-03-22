@@ -22,6 +22,9 @@
 .scroll-header nav ul li a {
 	color: var(--dark-text);
 }
+nav ul li.active a{
+	color: var(--second-color);
+}
 #intro-image-light {
 	position: absolute;
 	left: 0;
