@@ -12,7 +12,7 @@ import './Intro.css';
 function Intro() {
 	return (
 		<div className="intro-container">
-			<NavIntro />
+			<NavIntro activePage={'home'} />
 			<div className="intro-content-container">
 				<div className="intro-form-container">
 					<FiveStar />

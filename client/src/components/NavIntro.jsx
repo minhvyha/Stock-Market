@@ -32,7 +32,7 @@ function NavIntro({activePage}) {
 					</div>
 
 				<ul>
-					<li>
+					<li className={activePage === 'home' ? 'a' : 'asdf'}>
 						<Link to="/">Home</Link>
 					</li>
 					<li>
