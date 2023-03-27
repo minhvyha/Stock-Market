@@ -78,6 +78,7 @@ function Signup({ handleCallBackResponse, setUser }) {
 				'Password must have minimum length of 8 and contain at least one letter and one number.'
 			);
 			return true;
+			
 		}
 		if (password !== confirmation) {
 			setErrorLogin('Those passwords didn’t match. Try again.');
