@@ -40,7 +40,8 @@ function Signup({ handleCallBackResponse, setUser }) {
 			theme: 'outline',
 			size: 'large',
 			width: buttonWidth,
-			logo_alignment: "center"
+			logo_alignment: "center",
+			text: 'continue_with'
 		});
 		google.accounts.id.prompt();
 	}, []);

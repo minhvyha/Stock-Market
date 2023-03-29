@@ -34,13 +34,15 @@ function Login({ setUser }) {
 		} else if (width > 827 && width < 992) {
 			buttonWidth = 240;
 		}
-		google.accounts.id.renderButton(document.getElementById('signInDiv'), {
+		let signInDiv = document.getElementById("signInDiv")
+		google.accounts.id.renderButton(signInDiv, {
+			type: 'standard',
 			theme: 'outline',
 			size: 'large',
 			width: buttonWidth,
+			text: 'signin_with',
 			logo_alignment: 'center',
 		});
-		google.accounts.id.prompt();
 	}, []);
 
 	function handleSignIn() {
