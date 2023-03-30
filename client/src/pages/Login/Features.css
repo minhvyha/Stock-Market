@@ -6,5 +6,8 @@
   display: flex;
   width: 100%;
   align-items: center;
+  font-size: 32px;
+  font-weight: 700;
   justify-content: center;
+  padding-inline: 20px;
 }
