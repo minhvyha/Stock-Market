@@ -30,7 +30,7 @@ function Signup({ handleCallBackResponse, setUser }) {
 			callback: handleCallBackResponse,
 		});
 		let buttonWidth = 300
-		if (width <350){
+		if (width < 350){
 			buttonWidth = 220
 		}
 		else if (width > 827 && width < 992){
