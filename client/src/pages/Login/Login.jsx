@@ -8,7 +8,7 @@ import useWindowDimensions from '../../components/useWindowDimensions';
 
 function Login({ setUser }) {
 	const [errorLogin, setErrorLogin] = useState();
-	const { height, width } = useWindowDimensions();
+	const { width } = useWindowDimensions();
 
 	var emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
 	var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/g;
