@@ -14,17 +14,28 @@ function Features() {
         <div className="feature">
           <i class="fa-solid fa-chart-line"></i>
           <div className="content-title">Real-time Chart</div>
-          <div className="content-description"></div>
+          <div className="content-description">
+            Futuris use "TradingView" to create a real-time chart of a feature's
+            price changes, helping investors make informed decisions based on
+            the latest market trends.
+          </div>
         </div>
         <div className="feature">
           <i class="fa-solid fa-arrows-rotate"></i>
           <div className="content-title">Recurring Order</div>
-          <div className="content-description"></div>
+          <div className="content-description">
+            Auto invest is a website that sets up recurring orders for your
+            favorite products, ensuring you never run out of essentials.
+          </div>
         </div>
         <div className="feature">
           <i class="fa-solid fa-money-bills"></i>
-          <div className="content-title">Demo Mode</div>
-          <div className="content-description"></div>
+          <div className="content-title">Demo Trading</div>
+          <div className="content-description">
+            Futuris offers a demo trading feature that lets you practice without
+            risking real money. Test your strategies in real-time market
+            conditions and hone your skills.
+          </div>
         </div>
       </div>
     </div>
