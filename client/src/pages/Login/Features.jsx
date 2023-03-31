@@ -17,13 +17,13 @@ function Features() {
           <div className="content-description"></div>
         </div>
         <div className="feature">
-          <i class="fa-solid fa-chart-line"></i>
-          <div className="content-title"></div>
+          <i class="fa-solid fa-arrows-rotate"></i>
+          <div className="content-title">Recurring Order</div>
           <div className="content-description"></div>
         </div>
         <div className="feature">
-          <i class="fa-solid fa-chart-line"></i>
-          <div className="content-title"></div>
+          <i class="fa-solid fa-money-bills"></i>
+          <div className="content-title">Demo Mode</div>
           <div className="content-description"></div>
         </div>
       </div>
