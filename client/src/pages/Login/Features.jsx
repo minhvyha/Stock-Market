@@ -13,7 +13,7 @@ function Features() {
       <div className="feature-content">
         <div className="feature">
           <i class="fa-solid fa-chart-line"></i>
-          <div className="content-title"></div>
+          <div className="content-title">Real-time Chart</div>
           <div className="content-description"></div>
         </div>
         <div className="feature">
