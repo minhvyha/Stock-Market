@@ -1,9 +1,9 @@
-.feature-container{
+.feature-container {
   padding-top: 130px;
   display: flex;
   flex-direction: column;
 }
-.feature-title{
+.feature-title {
   text-align: center;
   display: flex;
   width: 100%;
@@ -12,4 +12,26 @@
   font-weight: 700;
   justify-content: center;
   padding-inline: 18px;
+}
+.feature {
+  gap: 0.6rem;
+}
+.feature-content {
+  padding-inline: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin: 3rem 0;
+}
+.feature i {
+  font-size: 50px;
+  color: var(--first-color);
+}
+.content-title {
+  font-size: 18px;
+}
+.content-description {
+  text-align: center;
+  font-size: 14px;
+  color: var(--dark-subtext);
 }
