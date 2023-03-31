@@ -1,5 +1,5 @@
 .feature-container {
-  padding-top: 130px;
+  padding-top: 150px;
   display: flex;
   flex-direction: column;
 }
@@ -11,13 +11,13 @@
   font-size: 32px;
   font-weight: 700;
   justify-content: center;
-  padding-inline: 18px;
+  padding-inline: 26px;
 }
 .feature {
   gap: 0.6rem;
 }
 .feature-content {
-  padding-inline: 18px;
+  padding-inline: 26px;
   display: flex;
   flex-direction: column;
   gap: 3rem;
@@ -35,3 +35,23 @@
   font-size: 14px;
   color: var(--dark-subtext);
 }
+@media screen and (min-width: 300px) {
+  .feature i {
+    font-size: 55px;
+  }
+  .feature-title, .feature-content{
+    padding-inline: 36px;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .feature-title, .feature-content{
+    max-width: 720px;
+    margin-inline: auto;
+  }
+  .feature-content{
+    gap: 3.5rem;
+  }
+}
+
+@media screen and (min-width: 992px) {}
