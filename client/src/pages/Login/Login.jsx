@@ -15,7 +15,7 @@ function Login({ setUser }) {
 
 	const navigate = useNavigate();
 
-	function handleCallBackResponse(response) {
+	function loginHandleCallBackResponse(response) {
 		let userObject = jwt_decode(response.credential);
 		console.log(userObject);
 		setUser(userObject);
@@ -26,7 +26,7 @@ function Login({ setUser }) {
 		/* global google */
 		google.accounts.id.initialize({
 			client_id: process.env.REACT_APP_CLIENT_ID,
-			callback: handleCallBackResponse,
+			callback: loginHandleCallBackResponse,
 		});
 		let buttonWidth = 300;
 		if (width < 350) {

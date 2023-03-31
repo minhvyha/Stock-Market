@@ -6,7 +6,7 @@ import './Login.css'
 import NavIntro from "../../components/NavIntro";
 import useWindowDimensions from '../../components/useWindowDimensions';
 
-function Signup({ handleCallBackResponse, setUser }) {
+function Signup({ setUser }) {
 	const [errorLogin, setErrorLogin] = useState();
 	const { width } = useWindowDimensions();
 
@@ -15,7 +15,7 @@ function Signup({ handleCallBackResponse, setUser }) {
 
 	const navigate = useNavigate();
 
-	function handleCallBackResponse(response) {
+	function signupHandleCallBackResponse(response) {
 		console.log('Encoded JWT ID token: ' + response.credential);
 		let userObject = jwt_decode(response.credential);
 		console.log(userObject);
@@ -27,7 +27,7 @@ function Signup({ handleCallBackResponse, setUser }) {
 		/* global google */
 		google.accounts.id.initialize({
 			client_id: process.env.REACT_APP_CLIENT_ID,
-			callback: handleCallBackResponse,
+			callback: signupHandleCallBackResponse,
 		});
 		let buttonWidth = 300
 		if (width < 350){

@@ -74,7 +74,7 @@ nav ul li a:hover, nav ul li.active a:hover {
 	}
 	ul {
 		position: fixed;
-		padding-top: 70px;
+		padding-top: 100px;
 		width: 100%;
 		height: 100vh;
 		background: var(--dark-container);
@@ -89,7 +89,7 @@ nav ul li a:hover, nav ul li.active a:hover {
 	}
 	nav ul li {
 		display: block;
-		margin: 50px 0;
+		margin: 35px 0;
 		line-height: 30px;
 	}
 	nav ul li a {
