@@ -1,5 +1,7 @@
 .feature-container{
   padding-top: 130px;
+  display: flex;
+  flex-direction: column;
 }
 .feature-title{
   text-align: center;
