@@ -127,11 +127,12 @@
 	background-color: var(--dark-alternative-container);
 	padding-top: 50px;
 }
-.feature-container {
+.intro-feature .feature-container {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	gap: 0.5rem;
+	padding: 0;
 }
 .intro-feature {
 	display: flex;
@@ -197,7 +198,7 @@
 	.intro-feature-container {
 		padding-inline: 50px;
 	}
-	.feature-container {
+	.intro-feature .feature-container {
 		justify-content: space-around;
 		gap: 1rem;
 	}

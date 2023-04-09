@@ -22,7 +22,10 @@
 .scroll-header nav ul li a {
 	color: var(--dark-text);
 }
-nav ul li.active a{
+.scroll-header nav ul li.active a	{
+	color: black;
+}
+nav ul li.active a	{
 	color: var(--second-color);
 }
 #intro-image-light {

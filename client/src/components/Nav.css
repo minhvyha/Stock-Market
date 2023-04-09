@@ -1,124 +1,123 @@
 /* ============== NAV BAR ============== */
 .navBar {
-	height: 105px;
-	width: 100%;
-	box-shadow: 0 10px 10px rgb(0 0 0 / 25%);
-	position: fixed;
-	background-color: var(--dark-nav-background);
-	z-index: var(--z-modal);
-	top: 0;
+  height: 105px;
+  width: 100%;
+  box-shadow: 0 10px 10px rgb(0 0 0 / 25%);
+  position: fixed;
+  background-color: var(--dark-nav-background);
+  z-index: var(--z-modal);
+  top: 0;
 }
 .nav-subcontainer {
-	display: flex;
-	margin-inline: auto;
-	align-items: center;
-	max-width: 1124px;
-	position: relative;
-	justify-content: space-between;
-	z-index: 2;
-	margin: 0;
+  display: flex;
+  margin-inline: auto;
+  align-items: center;
+  max-width: 1124px;
+  position: relative;
+  justify-content: space-between;
+  z-index: 2;
+  margin: 0;
 }
 .logo {
-	width: 180px;
+  width: 180px;
 }
 nav ul {
-	float: right;
+  float: right;
 }
 nav ul li {
-	display: inline-block;
-	line-height: 105px;
-	margin: 0 5px;
+  display: inline-block;
+  line-height: 105px;
+  margin: 0 5px;
 }
 nav ul li a {
-	color: var(--dark-text);
-	font-size: 17px;
-	padding: 7px 10px;
-	border-radius: 3px;
-	text-transform: uppercase;
-	transition: 0.2s;
+  color: var(--dark-text);
+  font-size: 17px;
+  padding: 7px 10px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  transition: 0.2s;
 }
-nav ul li a:hover, nav ul li.active a:hover {
-	color: var(--first-color);
+nav ul li a:hover,
+nav ul li.active a:hover {
+  color: var(--first-color);
 }
 .menu-symbol {
-	color: whtie;
+  color: whtie;
 }
 .checkbtn {
-	font-size: 30px;
-	color: white;
-	float: right;
-	line-height: 80px;
-	cursor: pointer;
-	display: none;
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  cursor: pointer;
+  display: none;
 }
 #intro-check {
-	display: none;
+  display: none;
 }
 @media (max-width: 755px) {
-
-	.navBar{
-		height: 100px;
-	}
-	.checkbtn {
-		display: block;
-		line-height: 100px;
-	}
-	.nav-container{
-	padding-inline: 0 !important;
-
-	}
-	.nav-subcontainer{
-		padding-inline: 20px;
-	width: 100%;
-
-	}
-	ul {
-		position: fixed;
-		padding-top: 100px;
-		width: 100%;
-		height: 100vh;
-		background: var(--dark-container);
-		top: -100%;
-		text-align: center;
-		transition: opacity .6s cubic-bezier(.67,0,.175,1),top .6s cubic-bezier(.47,0,.175,1),visibility .6s cubic-bezier(.47,0,.175,1);
-		z-index: -1;
-		opacity: 0;
-	}
-	label.logo {
-		padding: 0 15px;
-	}
-	nav ul li {
-		display: block;
-		margin: 35px 0;
-		line-height: 30px;
-	}
-	nav ul li a {
-		font-size: 20px;
-		color: white;
-	}
-	nav a:hover,
-	nav a.active {
-		background: none;
-		color: var(--first-color);
-	}
-	#intro-check:checked ~ ul {
-		top: 0;
-		opacity: 1;
-	}
-	
+  .navBar {
+    height: 100px;
+  }
+  .checkbtn {
+    display: block;
+    line-height: 100px;
+  }
+  .nav-container {
+    padding-inline: 0 !important;
+  }
+  .nav-subcontainer {
+    padding-inline: 20px;
+    width: 100%;
+  }
+  ul {
+    position: fixed;
+    padding-top: 10 0px;
+    width: 100%;
+    height: 100vh;
+    background: var(--dark-container);
+    top: -100%;
+    text-align: center;
+    transition: opacity 0.6s cubic-bezier(0.67, 0, 0.175, 1),
+      top 0.6s cubic-bezier(0.47, 0, 0.175, 1),
+      visibility 0.6s cubic-bezier(0.47, 0, 0.175, 1);
+    z-index: -1;
+    opacity: 0;
+  }
+  label.logo {
+    padding: 0 15px;
+  }
+  nav ul li {
+    display: block;
+    margin: 35px 0;
+    line-height: 30px;
+  }
+  nav ul li a {
+    font-size: 20px;
+    color: white;
+  }
+  nav a:hover,
+  nav a.active {
+    background: none;
+    color: var(--first-color);
+  }
+  #intro-check:checked ~ ul {
+    top: 0;
+    opacity: 1;
+  }
 }
 @media (max-width: 967px) {
-	nav ul li a{
-		padding: 4px 4px;
-	}
-	label.logo {
-		font-size: 30px;
-		padding-left: 50px;
-	}
-	nav ul li a {
-		font-size: 14px;
-	}
-	.logo{
-		width: 140px;
-	}
+  nav ul li a {
+    padding: 4px 4px;
+  }
+  label.logo {
+    font-size: 30px;
+    padding-left: 50px;
+  }
+  nav ul li a {
+    font-size: 14px;
+  }
+  .logo {
+    width: 140px;
+  }
 }
