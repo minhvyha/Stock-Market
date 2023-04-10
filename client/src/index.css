@@ -98,10 +98,7 @@ body {
 	top: 0;
 	left: 0;
 }
-iframe {
-	margin: 0 !important;
-	transform: translateX(-10px);
-}
+
 .main-container {
 	padding-top: 100px;
 	padding-inline: 15px;
