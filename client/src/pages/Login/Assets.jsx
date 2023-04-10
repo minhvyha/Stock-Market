@@ -8,6 +8,7 @@ function Assets() {
   return (
     <div>
       <NavIntro activePage={'assets'} />
+      
       <CryptoMarket/>
     </div>
   );
