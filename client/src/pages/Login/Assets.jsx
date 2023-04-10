@@ -10,13 +10,13 @@ function Assets() {
       <NavIntro activePage={'assets'} />
       <div className="assets-container">
         <div className="assets-subcontainer">
-          <div className="assets-title">Crypto Market Overview</div>
+          <div className="assets-title">Crypto Market<br/> Overview</div>
           <div className="crypto-container">
             <CryptoMarket />
           </div>
         </div>
         <div className="assets-subcontainer">
-          <div className="assets-title">Stock Market Overview</div>
+          <div className="assets-title">Stock Market<br/>Overview</div>
           <div className="stock-container">
             <StockMarket />
           </div>

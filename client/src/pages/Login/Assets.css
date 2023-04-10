@@ -22,6 +22,9 @@ align-items: center;
 }
 
 @media screen and (min-width: 300px) {
+  .assets-title{
+    font-size: 34px;
+  }
   .stock-container, .crypto-container{
     width: 280px;
   }
@@ -29,7 +32,17 @@ align-items: center;
     gap: 1.5rem;
   }
 }
-@media screen and (min-width: 350px) {}
+@media screen and (min-width: 350px) {
+    .assets-title{
+    font-size: 36px;
+  }
+  .stock-container, .crypto-container{
+    width: 330px;
+  }
+  .assets-subcontainer{
+    gap: 1.8rem;
+  }
+}
 @media screen and (min-width: 576px) {}
 @media screen and (min-width: 828px) {}
 @media screen and (min-width: 992px) {} 
