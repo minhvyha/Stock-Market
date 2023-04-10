@@ -15,7 +15,14 @@
 display: flex;
 flex-direction: column;
 gap: 1rem;
+align-items: center;
 }
 .crypto-container{
   width: 250px;
 }
+
+@media screen and (min-width: 300px) {}
+@media screen and (min-width: 350px) {}
+@media screen and (min-width: 576px) {}
+@media screen and (min-width: 828px) {}
+@media screen and (min-width: 992px) {} 
