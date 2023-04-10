@@ -12,6 +12,7 @@
     "chartjs-plugin-crosshair": "^1.2.0",
     "dotenv": "^16.0.2",
     "fs": "^0.0.1-security",
+    "jquery": "^3.6.4",
     "jwt-decode": "^3.1.2",
     "nanoid": "^4.0.0",
     "react": "^18.2.0",
