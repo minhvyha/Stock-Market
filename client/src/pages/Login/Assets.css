@@ -17,11 +17,14 @@ flex-direction: column;
 gap: 1rem;
 align-items: center;
 }
-.stock-container.crypto-container{
+.stock-container, .crypto-container{
   width: 250px;
 }
 
 @media screen and (min-width: 300px) {
+  .stock-container, .crypto-container{
+    width: 280px;
+  }
   .assets-subcontainer{
     gap: 1.5rem;
   }
