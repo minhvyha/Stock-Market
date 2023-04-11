@@ -49,6 +49,7 @@
     ]
   },
   "devDependencies": {
-    "file-loader": "^6.2.0"
+    "file-loader": "^6.2.0",
+    "mixitup": "^3.3.1"
   }
 }

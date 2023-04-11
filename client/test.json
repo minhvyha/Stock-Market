@@ -1,0 +1,107 @@
+{
+  "meta": { "found": 92982, "returned": 3, "limit": 3, "page": 1 },
+  "data": [
+    {
+      "uuid": "674feadd-4826-44ca-9552-a86c415a3f9b",
+      "title": "Data Center Transformation Global Market to Reach $18.6 Billion by 2030: Growing Importance of Data Center Optimization Underpins Market Expansion",
+      "description": "/PRNewswire/ -- The",
+      "keywords": "Research and Markets",
+      "snippet": "DUBLIN, April 10, 2023 /PRNewswire/ -- The \"Data Center Transformation - Global Strategic Business Report\" report has been added to ResearchAndMarkets.com's off...",
+      "url": "https://www.prnewswire.com/news-releases/data-center-transformation-global-market-to-reach-18-6-billion-by-2030-growing-importance-of-data-center-optimization-underpins-market-expansion-301793360.html",
+      "image_url": "https://mma.prnewswire.com/media/539438/Research_and_Markets_Logo.jpg?p=facebook",
+      "language": "en",
+      "published_at": "2023-04-11T01:15:00.000000Z",
+      "source": "prnewswire.com",
+      "relevance_score": null,
+      "entities": [
+        {
+          "symbol": "MSFT",
+          "name": "Microsoft Corporation",
+          "exchange": "NASDAQ",
+          "exchange_long": "NASDAQ Stock Exchange",
+          "country": "us",
+          "type": "equity",
+          "industry": "Technology",
+          "match_score": 12.338751,
+          "sentiment_score": 0,
+          "highlights": [
+            {
+              "highlight": "Micro Focus International PLC\n\n<em>Microsoft</em> <em>Corporation</em>\n\nMindteck\n\nNetApp, Inc.\n\nNTT Communications Corporation\n\nPerformance Technologies S.A.\n\nRahi Systems, Inc.\n\nSchneider Electric SA\n\nSoftchoice Corporation\n\nTech Mahindra Ltd.\n\nWipro Ltd.\n\nWhat`s New for 2023?",
+              "sentiment": 0,
+              "highlighted_in": "main_text"
+            }
+          ]
+        }
+      ],
+      "similar": []
+    },
+    {
+      "uuid": "ab51bc2e-415f-4e14-a380-37432fd451eb",
+      "title": "China’s auto parts makers join Apple in offshore factory push",
+      "description": "While some international names like Airbus SE and Tesla Inc. are doubling down on Asia’s biggest economy, the shift is an increasing threat to China’s status as the world’s factory and its bid to regain the trust of global business amid the unpredictability of President Xi Jinping’s rule.",
+      "keywords": "",
+      "snippet": "China’s auto parts makers join Apple in offshore factory push\n\nChinese car parts makers are facing growing pressure from overseas customers to set up factorie...",
+      "url": "https://www.moneycontrol.com/news/world/chinas-auto-parts-makers-join-apple-in-offshore-factory-push-10392171.html",
+      "image_url": "https://images.moneycontrol.com/static-mcnews/2023/04/397275739-770x433.jpg",
+      "language": "en",
+      "published_at": "2023-04-11T01:00:32.000000Z",
+      "source": "moneycontrol.com",
+      "relevance_score": null,
+      "entities": [
+        {
+          "symbol": "TSLA",
+          "name": "Tesla, Inc.",
+          "exchange": "NASDAQ",
+          "exchange_long": "NASDAQ Stock Exchange",
+          "country": "us",
+          "type": "equity",
+          "industry": "Consumer Cyclical",
+          "match_score": 11.654371,
+          "sentiment_score": 0.34,
+          "highlights": [
+            {
+              "highlight": "While some international names like Airbus SE and <em>Tesla</em> <em>Inc</em>. are doubling down on Asia’s biggest economy, the shift is an increasing threat to China’s status as the world’s factory and its bid to regain the trust of global business amid the unpredictability of President Xi Jinping’s rule.",
+              "sentiment": 0.34,
+              "highlighted_in": "main_text"
+            }
+          ]
+        }
+      ],
+      "similar": []
+    },
+    {
+      "uuid": "065c29fa-7714-4f44-8309-4533ab74851e",
+      "title": "US proposes to slash EV mileage ratings to meet fuel economy rules By Reuters",
+      "description": "US proposes to slash EV mileage ratings to meet fuel economy rules",
+      "keywords": "",
+      "snippet": "© Reuters. FILE PHOTO: A electric vehicle charger is seen as a vehicle charges in Manhattan, New York, U.S., December 7, 2021. REUTERS/Andrew Kelly\n\nVOWG_p -0....",
+      "url": "https://www.investing.com/news/stock-market-news/us-proposes-to-slash-ev-mileage-ratings-to-meet-fuel-economy-rules-3051986",
+      "image_url": "https://i-invdn-com.investing.com/news/LYNXMPEE6B0L1_L.jpg",
+      "language": "en",
+      "published_at": "2023-04-11T00:30:54.000000Z",
+      "source": "investing.com",
+      "relevance_score": null,
+      "entities": [
+        {
+          "symbol": "TSLA",
+          "name": "Tesla, Inc.",
+          "exchange": "NASDAQ",
+          "exchange_long": "NASDAQ Stock Exchange",
+          "country": "us",
+          "type": "equity",
+          "industry": "Consumer Cyclical",
+          "match_score": 10.282454,
+          "sentiment_score": 0.0516,
+          "highlights": [
+            {
+              "highlight": "<em>Tesla</em> (NASDAQ: ) backed the environmental groups petition.\n\nThe Environmental Protection Agency on Wednesday will propose new rules to spur sweeping cuts in vehicle emissions that will push automakers towards a big increase in electric vehicle sales, sources told Reuters last week.",
+              "sentiment": 0.0516,
+              "highlighted_in": "main_text"
+            }
+          ]
+        }
+      ],
+      "similar": []
+    }
+  ]
+}
