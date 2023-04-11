@@ -55,6 +55,7 @@ align-items: center;
   .stock-container, .crypto-container{
     width: 540px;
   }
+  
 }
 @media screen and (min-width: 828px) {
   .stock-container, .crypto-container{
