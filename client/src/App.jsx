@@ -100,7 +100,7 @@ function App() {
 					</Route>
 					<Route path="intro" element={<Intro />} />
 					<Route path="assets" element={<Assets />} />
-					<Route path="learn" element={<News />} />
+					<Route path="news" element={<News />} />
 					<Route path="features" element={<Features />} />
 					<Route path="demo" element={<Demo />} />
 					<Route path="login" element={<Login setUser={setUser} />} />

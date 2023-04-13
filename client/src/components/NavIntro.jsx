@@ -32,8 +32,8 @@ function NavIntro({ activePage }) {
 					<li className={activePage === 'assets' ? 'active' : ''}>
 						<Link to="/assets">Assets</Link>
 					</li>
-					<li className={activePage === 'learn' ? 'active' : ''}>
-						<Link to="/learn">Learn</Link>
+					<li className={activePage === 'news' ? 'active' : ''}>
+						<Link to="/news">News</Link>
 					</li>
 					<li className={activePage === 'features' ? 'active' : ''}>
 						<Link to="/features">Features</Link>

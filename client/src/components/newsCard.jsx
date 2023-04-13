@@ -1,6 +1,6 @@
 import React from 'react'
 
-function newsCard({title, description, imageUrl, url}) {
+function NewsCard({title, description, imageUrl, url}) {
   return (
     <a className='news-card-container' href={url}>
       <img src={imageUrl} alt="" />
@@ -16,4 +16,4 @@ function newsCard({title, description, imageUrl, url}) {
   )
 }
 
-export default newsCard
+export default NewsCard
