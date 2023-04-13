@@ -1,0 +1,9 @@
+.news-wrapper{
+  padding-top: 150px;
+}
+.news-cards{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}

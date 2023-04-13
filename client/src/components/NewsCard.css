@@ -2,8 +2,9 @@
   display: flex;
   flex-direction: column;
   width: 250px;
-  background-color: var(--dark-container);
+  background-color: var(--dark-alternative-container);
   border-radius: 8px;
+  overflow: hidden;
 }
 .news-card-image{
   width: 100%;
@@ -11,11 +12,16 @@
 .news-card-content{
   color: white;
   padding: 20px;
-
+  display: flex;
+  flex-direction: column;
+gap: .7rem;
 }
 .news-card-title{
   font-size: 18px;
   font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .news-card-description{
   font-size: 14px;

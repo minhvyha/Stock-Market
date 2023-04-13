@@ -20,9 +20,12 @@ function News() {
   }, [])
   
   return (
-    <div>
+    <div className="news-wrapper">
       <NavIntro activePage={"learn"} />
+      <div className="news-cards">
+
       {news}
+      </div>
     </div>
   );
 }
