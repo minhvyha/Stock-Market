@@ -23,6 +23,9 @@ gap: .7rem;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.news-card-description{
+.news-card-description, .news-card-time, .news-card-source{
   font-size: 14px;
+}
+.news-card-source{
+  color: var(--first-color);
 }

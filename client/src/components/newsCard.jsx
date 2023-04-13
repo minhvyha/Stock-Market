@@ -1,7 +1,11 @@
 import React from 'react'
 import './NewsCard.css'
 
-function NewsCard({title, description, imageUrl, url, alt}) {
+function NewsCard({title, description, imageUrl, url, alt, time}) {
+  function formatDate(string){
+    var options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return new Date(string).toLocaleDateString([],options);
+  }
   return (
     <a className='news-card-container' href={url}>
       <img className='news-card-image' src={imageUrl} alt={alt} />
@@ -11,6 +15,12 @@ function NewsCard({title, description, imageUrl, url, alt}) {
         </div>
         <div className='news-card-description'>
           {description}
+        </div>
+        <div className='news-card-source'>
+          {alt}
+        </div>
+        <div className='news-card-time'>
+          {formatDate(time)}
         </div>
       </div>
     </a>
