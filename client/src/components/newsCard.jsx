@@ -1,9 +1,10 @@
 import React from 'react'
+import './NewsCard.css'
 
-function NewsCard({title, description, imageUrl, url}) {
+function NewsCard({title, description, imageUrl, url, alt}) {
   return (
     <a className='news-card-container' href={url}>
-      <img src={imageUrl} alt="" />
+      <img className='news-card-image' src={imageUrl} alt={alt} />
       <div className='news-card-content'>
         <div className='news-card-title'>
           {title}

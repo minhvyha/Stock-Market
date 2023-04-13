@@ -1,0 +1,22 @@
+.news-card-container{
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  background-color: var(--dark-container);
+  border-radius: 8px;
+}
+.news-card-image{
+  width: 100%;
+}
+.news-card-content{
+  color: white;
+  padding: 20px;
+
+}
+.news-card-title{
+  font-size: 18px;
+  font-weight: bold;
+}
+.news-card-description{
+  font-size: 14px;
+}

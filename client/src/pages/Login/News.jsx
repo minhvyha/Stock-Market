@@ -12,7 +12,7 @@ function News() {
       const response = await fetch(`https://api.marketaux.com/v1/news/all?exchanges=NYSE&filter_entities=true&limit=3&published_after=2023-04-10T03:15&api_token=${process.env.REACT_APP_NEWS_API}`)
       const responseJson = await response.json()
       let newsContent = responseJson['data'].map(info =>{
-        return <NewsCard key={nanoid()} title={info.title} description={info.description} imageUrl={info.image_url} url={info.url} />
+        return <NewsCard key={nanoid()} title={info.title} description={info.description} imageUrl={info.image_url} url={info.url} alt={info.source} />
       })
       setNews(newsContent)
     }
