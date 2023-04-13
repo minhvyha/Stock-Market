@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./News.css";
+import newsCard from "../../components/newsCard";
 import NavIntro from "../../components/NavIntro";
 
 function News() {
@@ -13,9 +14,13 @@ function News() {
     }
     fetchData()
   }, [])
+  let newsContent = news.map(info =>{
+    return <newsCard title={info.title} description={info.description} imageUrl={info.image_url} url={info.url} />
+  })
   return (
     <div>
       <NavIntro activePage={"learn"} />
+      {newsContent}
     </div>
   );
 }
