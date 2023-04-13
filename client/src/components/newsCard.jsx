@@ -1,8 +1,10 @@
 import React from 'react'
 
-function newsCard() {
+function newsCard({title, description, imageUrl, url}) {
   return (
-    <div>newsCard</div>
+    <div className='news-card-container'>
+
+    </div>
   )
 }
 
