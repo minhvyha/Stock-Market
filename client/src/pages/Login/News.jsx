@@ -63,8 +63,20 @@ function News() {
   return (
     <div className="news-wrapper">
       <NavIntro activePage={'news'} />
+      <div className='news-container'>
+        <div className='news-title'>
+          Stock Market News
+        </div>
       <div className="news-cards">{stockNews}</div>
+      </div>
+      <div className='news-container'>
+        <div className='news-title'>
+          Crypto Market News
+        </div>
+        <div className='news-cards'>
       {cryptoNews}
+        </div>
+      </div>
     </div>
   );
 }
