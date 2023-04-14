@@ -3,6 +3,7 @@ import './News.css';
 import { nanoid } from 'nanoid';
 import NewsCard from '../../components/NewsCard';
 import NavIntro from '../../components/NavIntro';
+import Loading from '../../components/Loading';
 
 function News() {
   let [stockNews, setStockNews] = useState();
@@ -64,7 +65,8 @@ function News() {
   return (
     <div className="news-wrapper">
       <NavIntro activePage={'news'} />
-      <div className="news-container">
+      {(stockNews && cryptoNews) ? <div>
+        <div className="news-container">
         <div className="news-title">Stock Market News</div>
         <div className="news-cards">{stockNews}</div>
       </div>
@@ -72,6 +74,8 @@ function News() {
         <div className="news-title">Crypto Market News</div>
         <div className="news-cards">{cryptoNews}</div>
       </div>
+      </div>: <Loading />}
+
     </div>
   );
 }
