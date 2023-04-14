@@ -16,28 +16,29 @@ function News() {
 
       const responseEthereum = await fetch(
         `https://newsapi.org/v2/everything?q=crypto&apiKey=${process.env.REACT_APP_CRYPTO_NEWS_API}&language=en`
-      )
-      const ethereumtResponseJson = await responseEthereum.json()
-      let cryptoNewsContent = []
-      let count = 0
-      while (count < 6){
-        console.log(1)
-        let curNews = ethereumtResponseJson['articles'].shift()
-        if ( curNews.urlToImage === undefined || curNews.urlToImage === null){
-          continue
+      );
+      const ethereumtResponseJson = await responseEthereum.json();
+      let cryptoNewsContent = [];
+      let count = 0;
+      while (count < 6) {
+        console.log(1);
+        let curNews = ethereumtResponseJson['articles'].shift();
+        if (curNews.urlToImage === undefined || curNews.urlToImage === null) {
+          continue;
         }
         cryptoNewsContent.unshift(
-          <NewsCard key={nanoid()}
-          title={curNews.title}
-          description={curNews.description}
-          imageUrl={curNews.urlToImage}
-          url={curNews.url}
-          alt={curNews.author}
-          time={curNews.publishedAt} />
-        )
-        count++
+          <NewsCard
+            key={nanoid()}
+            title={curNews.title}
+            description={curNews.description}
+            imageUrl={curNews.urlToImage}
+            url={curNews.url}
+            alt={curNews.author}
+            time={curNews.publishedAt}
+          />
+        );
+        count++;
       }
-
 
       const stockResponseJson = await responseStock.json();
       let stockNewsContent = stockResponseJson['data'].map((info) => {
@@ -53,8 +54,8 @@ function News() {
           />
         );
       });
-      console.log(cryptoNewsContent)
-      setCryptoNews(cryptoNewsContent)
+      console.log(cryptoNewsContent);
+      setCryptoNews(cryptoNewsContent);
       setStockNews(stockNewsContent);
     }
     fetchData();
@@ -63,19 +64,13 @@ function News() {
   return (
     <div className="news-wrapper">
       <NavIntro activePage={'news'} />
-      <div className='news-container'>
-        <div className='news-title'>
-          Stock Market News
-        </div>
-      <div className="news-cards">{stockNews}</div>
+      <div className="news-container">
+        <div className="news-title">Stock Market News</div>
+        <div className="news-cards">{stockNews}</div>
       </div>
-      <div className='news-container'>
-        <div className='news-title'>
-          Crypto Market News
-        </div>
-        <div className='news-cards'>
-      {cryptoNews}
-        </div>
+      <div className="news-container">
+        <div className="news-title">Crypto Market News</div>
+        <div className="news-cards">{cryptoNews}</div>
       </div>
     </div>
   );
