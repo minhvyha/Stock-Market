@@ -66,7 +66,7 @@ function News() {
     <div className="news-wrapper">
       <NavIntro activePage={'news'} />
       {stockNews && cryptoNews ? (
-        <div>
+        <div className='news-content-container'>
           <div className="news-container">
             <div className="news-title">Stock Market News</div>
             <div className="news-cards">{stockNews}</div>

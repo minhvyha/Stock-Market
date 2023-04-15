@@ -1,9 +1,9 @@
 .news-card-container{
   display: flex;
   flex-direction: column;
-  width: 250px;
+  width: 100%;
   background-color: var(--dark-alternative-container);
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
 }
 .news-card-image{
@@ -14,7 +14,7 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
-gap: .7rem;
+  gap: .7rem;
 }
 .news-card-title{
   font-size: 18px;

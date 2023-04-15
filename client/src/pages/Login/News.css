@@ -1,9 +1,25 @@
 .news-wrapper {
-  padding-top: 150px;
+  padding-top: 130px;
+}
+.news-content-container{
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.news-container{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-inline: 20px;
 }
 .news-cards {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
   align-items: center;
+}
+.news-title{
+  text-align: center;
+  font-size: 34px;
+  font-weight: bold;
 }
