@@ -29,3 +29,9 @@
 .news-card-source{
   color: var(--first-color);
 }
+
+@media screen and (min-width: 300px) {}
+@media screen and (min-width: 350px) {}
+@media screen and (min-width: 576px) {}
+@media screen and (min-width: 828px) {}
+@media screen and (min-width: 992px) {} 
