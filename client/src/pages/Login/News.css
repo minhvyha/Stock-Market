@@ -1,5 +1,6 @@
 .news-wrapper {
   padding-top: 130px;
+  padding-bottom: 50px;
 }
 .news-content-container{
   display: flex;
@@ -27,7 +28,7 @@
 }
 @media screen and (min-width: 300px) {
   .news-title{
-    font-size: 36px;
+    font-size: 34px;
   }
   .news-container{
     max-width: 280px;
@@ -35,7 +36,7 @@
 }
 @media screen and (min-width: 350px) {
   .news-title{
-    font-size: 42px;
+    font-size: 36px;
   }
   .news-container{
     max-width: 330px;
@@ -43,7 +44,7 @@
 }
 @media screen and (min-width: 576px) {
   .news-title{
-    font-size: 44px;
+    font-size: 40px;
   }
   .news-container{
     max-width: 476px;
