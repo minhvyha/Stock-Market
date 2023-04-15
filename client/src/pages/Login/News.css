@@ -8,7 +8,7 @@
   align-items: center;
 }
 .news-container{
-  max-width: 320px;
+  max-width: 280px;
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
@@ -29,8 +29,18 @@
   .news-title{
     font-size: 36px;
   }
+  .news-container{
+    max-width: 320px;
+  }
 }
-@media screen and (min-width: 350px) {}
+@media screen and (min-width: 350px) {
+  .news-title{
+    font-size: 42px;
+  }
+  .news-container{
+    max-width: 400px;
+  }
+}
 @media screen and (min-width: 576px) {}
 @media screen and (min-width: 828px) {}
 @media screen and (min-width: 992px) {}
