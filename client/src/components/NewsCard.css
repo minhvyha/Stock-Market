@@ -24,12 +24,23 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  @supports (-webkit-line-clamp: 2) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: initial;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
 }
 .news-card-description, .news-card-time, .news-card-source{
   font-size: 14px;
 }
 .news-card-source{
   color: var(--first-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @media screen and (min-width: 300px) {
@@ -49,5 +60,23 @@
   }
 }
 @media screen and (min-width: 576px) {}
-@media screen and (min-width: 828px) {}
+@media screen and (min-width: 828px) {
+  .news-card-container{
+    width: 30%;
+    height: 100%;
+  }
+  .news-card-description{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @supports (-webkit-line-clamp: 2) {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: initial;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+  }
+}
 @media screen and (min-width: 992px) {} 
