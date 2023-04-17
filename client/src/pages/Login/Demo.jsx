@@ -6,6 +6,12 @@ function Demo() {
   return (
     <div>
       <NavIntro activePage={"demo"} />
+      <div className="demo-signup-container">
+
+      </div>
+      <div className="demo-instruction-container">
+
+      </div>
     </div>
   );
 }
