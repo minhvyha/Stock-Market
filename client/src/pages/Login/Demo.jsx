@@ -4,7 +4,7 @@ import NavIntro from '../../components/NavIntro';
 
 function Demo() {
   return (
-    <div>
+    <div className='demo-wrapper'>
       <NavIntro activePage={'demo'} />
       <div className="demo-signup-container">
         <div className="demo-title">Futuris Demo Trading</div>
