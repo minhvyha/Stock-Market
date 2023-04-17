@@ -1,5 +1,5 @@
 .news-wrapper {
-  padding-top: 130px;
+  padding-top: 140px;
   padding-bottom: 50px;
 }
 .news-content-container {
@@ -54,6 +54,7 @@
 @media screen and (min-width: 828px) {
   .news-container {
     max-width: 100%;
+    gap: 2.5rem;
   }
   .news-cards {
     flex-direction: row;
@@ -63,10 +64,11 @@
 }
 @media screen and (min-width: 992px) {
   .news-title {
-    font-size: 46px;
+    font-size: 42px;
   }
   .news-content-container {
     max-width: 1280px;
     margin-inline: auto;
+    gap: 4rem;
   }
 }

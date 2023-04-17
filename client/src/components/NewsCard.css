@@ -10,6 +10,7 @@
 }
 .news-card-image{
   width: 100%;
+  height: 150px;
 }
 .news-card-content{
   color: white;
@@ -45,22 +46,25 @@
 
 @media screen and (min-width: 300px) {
   .news-card-title{
+    font-size: 20px;
+  }
+  .news-card-description, .news-card-time, .news-card-source{
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 350px) {
+  .news-card-title{
     font-size: 22px;
   }
   .news-card-description, .news-card-time, .news-card-source{
     font-size: 16px;
   }
 }
-@media screen and (min-width: 350px) {
-  .news-card-title{
-    font-size: 26px;
-  }
-  .news-card-description, .news-card-time, .news-card-source{
-    font-size: 17px;
-  }
-}
 @media screen and (min-width: 576px) {}
 @media screen and (min-width: 828px) {
+  .news-card-image{
+    height: 190px;
+  }
   .news-card-container{
     width: 30%;
     height: 100%;
