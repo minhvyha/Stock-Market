@@ -1,9 +1,16 @@
 .demo-wrapper{
-
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  max-width: 1280px;
 }
 
 @media screen and (min-width: 300px) {}
 @media screen and (min-width: 350px) {}
 @media screen and (min-width: 576px) {}
-@media screen and (min-width: 828px) {}
+@media screen and (min-width: 828px) {
+  .demo-wrapper{
+    margin-top: 105px;
+  }
+}
 @media screen and (min-width: 992px) {} 
