@@ -26,8 +26,8 @@ function Demo() {
         <div className="demo-card-container">
           <div className="demo-card">
             <i class="fa-solid fa-address-card"></i>
-            <div className="demo-card-title">Register an Futuris account</div>
-            <div className="demo-card-description">...</div>
+            <div className="demo-card-title">Register a Futuris account</div>
+            <div className="demo-card-description">Experience the future of online services with a Futuris account. Sign up now to enjoy personalized features and seamless access to our platform.</div>
           </div>
           <div className="demo-card">
             <i class="fa-solid fa-toggle-on"></i>
