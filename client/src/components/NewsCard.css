@@ -7,6 +7,13 @@
   background-color: var(--dark-alternative-container);
   border-radius: 12px;
   overflow: hidden;
+  transition: .2s all ease-in-out;
+}
+.news-card-container:hover{
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 24px 6px;
+}
+.news-card-container:hover .news-card-title{
+  color: var(--first-color);
 }
 .news-card-image{
   width: 100%;
@@ -21,6 +28,8 @@
 }
 .news-card-title{
   font-size: 18px;
+  transition: .1s all ease-in-out;
+
   font-weight: bold;
   white-space: nowrap;
   overflow: hidden;
