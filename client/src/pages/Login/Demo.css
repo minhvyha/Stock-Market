@@ -1,29 +1,50 @@
 .demo-wrapper {
   display: flex;
   flex-direction: column;
-  margin-top: 100px;
-  max-width: 1280px;
 }
-.demo-title{
+.demo-title {
   font-size: 32px;
   font-weight: bold;
+}
+.demo-subtitle{
+  text-align: center;
+}
+.demo-signup-wrapper{
+  width: 100%;
+  
+}
+.demo-signup-container {
+  margin-top: 120px;
+  max-width: 1280px;
+  margin-inline: auto;
+  gap: 1.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 @media screen and (min-width: 300px) {
 }
 @media screen and (min-width: 350px) {
 }
 @media screen and (min-width: 576px) {
-  .demo-title{
+  .demo-title {
     font-size: 36px;
   }
 }
 @media screen and (min-width: 828px) {
-  .demo-wrapper {
-    margin-top: 105px;
+  .demo-signup-container {
+    margin-top: 135px;
   }
-  .demo-title{
+  .demo-title {
     font-size: 40px;
   }
 }
 @media screen and (min-width: 992px) {
+  .demo-title {
+    font-size: 46px;
+  }
+  .demo-subtitle{
+    font-size: 20px;
+  }
 }

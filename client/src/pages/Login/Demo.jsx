@@ -7,6 +7,7 @@ function Demo() {
   return (
     <div className='demo-wrapper'>
       <NavIntro activePage={'demo'} />
+      <div className='demo-signup-wrapper'>
       <div className="demo-signup-container">
         <div className="demo-title">Futuris Demo Trading</div>
         <div className='demo-subtitle'>Demo feature allows you to trade stock and crypto with <br />real-time market data and risk free.</div>
@@ -15,6 +16,7 @@ function Demo() {
 							Get started
 						</button>
 					</Link>
+      </div>
       </div>
       <div className="demo-instruction-container">
         <div className="demo-title">How to Use Demo Mode</div>
