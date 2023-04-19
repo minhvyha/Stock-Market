@@ -1,10 +1,13 @@
 .demo-wrapper {
   display: flex;
   flex-direction: column;
+  height: calc(100vh - 100px);
+  justify-content: center;
 }
 .demo-title {
   font-size: 32px;
   font-weight: bold;
+  text-align: center;
 }
 .demo-subtitle{
   text-align: center;
@@ -30,6 +33,10 @@
 @media screen and (min-width: 576px) {
   .demo-title {
     font-size: 36px;
+  }
+  .demo-wrapper{
+  height: calc(100vh - 105px);
+
   }
 }
 @media screen and (min-width: 828px) {
