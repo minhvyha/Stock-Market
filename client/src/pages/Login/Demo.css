@@ -1,8 +1,9 @@
 .demo-wrapper {
   display: flex;
   flex-direction: column;
+  margin-top: 100px;
   height: calc(100vh - 100px);
-  justify-content: center;
+  gap: 3.5rem;
 }
 .demo-title {
   font-size: 32px;
@@ -17,8 +18,9 @@
   
 }
 .demo-signup-container {
-  margin-top: 120px;
+  margin-top: 50px;
   max-width: 1280px;
+  padding-inline: 20px;
   margin-inline: auto;
   gap: 1.5rem;
   width: 100%;
@@ -36,6 +38,7 @@
   }
   .demo-wrapper{
   height: calc(100vh - 105px);
+  margin-top: 105px;
 
   }
 }
