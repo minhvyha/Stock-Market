@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: column;
   margin-top: 100px;
-  height: calc(100vh - 100px);
-  gap: 3.5rem;
+  padding-bottom: 50px;
+  gap: 4rem;
 }
 .demo-title {
   font-size: 32px;
@@ -31,13 +31,13 @@
 .demo-instruction-container{
   display: flex;
   flex-direction: column;
-  gap: 1.8rem;
+  gap: 2.5rem;
   padding-inline: 20px;
 }
 .demo-card-container{
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem;
 }
 .demo-card{
   display: flex;
@@ -50,7 +50,7 @@
   color: var(--first-color);
 }
 .demo-card-title{
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   text-align: center;
 }

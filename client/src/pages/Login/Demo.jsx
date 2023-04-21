@@ -28,18 +28,16 @@ function Demo() {
             <i class="fa-solid fa-address-card"></i>
             <div className="demo-card-title">Register a Futuris account</div>
             <div className="demo-card-description">
-              Experience the future of online services with a Futuris account.
               Sign up now to enjoy personalized features and seamless access to
-              our platform.
+              our demo account.
             </div>
           </div>
           <div className="demo-card">
             <i class="fa-solid fa-toggle-on"></i>
             <div className="demo-card-title">Turn on demo mode</div>
             <div className="demo-card-description">
-              Experience our platform with no commitment. Turn on demo mode to
-              explore our features, get a feel for our platform, and see if it's
-              the right fit for you.
+              Turn on demo mode to explore our features, get a feel for our
+              platform, and see if it's the right fit for you.
             </div>
           </div>
           <div className="demo-card">
@@ -49,8 +47,7 @@ function Demo() {
             </div>
             <div className="demo-card-description">
               Enter the exciting world of trading: Buy and sell stocks and
-              cryptocurrencies with ease. Sign up now and start investing in
-              your future.
+              cryptocurrencies with ease.
             </div>
           </div>
         </div>
