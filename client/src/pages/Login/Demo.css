@@ -31,21 +31,22 @@
 .demo-instruction-container{
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: 1.8rem;
   padding-inline: 20px;
 }
 .demo-card-container{
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
 }
 .demo-card{
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 0.8rem;
 }
 .demo-card i {
-  font-size: 60px;
+  font-size: 75px;
   color: var(--first-color);
 }
 .demo-card-title{
@@ -56,6 +57,7 @@
 .demo-card-description{
   text-align: center;
   font-size: 14px;
+  color: var(--dark-subtext);
 }
 @media screen and (min-width: 300px) {
 }

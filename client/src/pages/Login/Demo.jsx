@@ -36,14 +36,22 @@ function Demo() {
           <div className="demo-card">
             <i class="fa-solid fa-toggle-on"></i>
             <div className="demo-card-title">Turn on demo mode</div>
-            <div className="demo-card-description">...</div>
+            <div className="demo-card-description">
+              Experience our platform with no commitment. Turn on demo mode to
+              explore our features, get a feel for our platform, and see if it's
+              the right fit for you.
+            </div>
           </div>
           <div className="demo-card">
             <i class="fa-solid fa-chart-line"></i>
             <div className="demo-card-title">
               Start trading stock and crypto
             </div>
-            <div className="demo-card-description">...</div>
+            <div className="demo-card-description">
+              Enter the exciting world of trading: Buy and sell stocks and
+              cryptocurrencies with ease. Sign up now and start investing in
+              your future.
+            </div>
           </div>
         </div>
       </div>
