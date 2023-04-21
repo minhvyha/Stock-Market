@@ -27,7 +27,11 @@ function Demo() {
           <div className="demo-card">
             <i class="fa-solid fa-address-card"></i>
             <div className="demo-card-title">Register a Futuris account</div>
-            <div className="demo-card-description">Experience the future of online services with a Futuris account. Sign up now to enjoy personalized features and seamless access to our platform.</div>
+            <div className="demo-card-description">
+              Experience the future of online services with a Futuris account.
+              Sign up now to enjoy personalized features and seamless access to
+              our platform.
+            </div>
           </div>
           <div className="demo-card">
             <i class="fa-solid fa-toggle-on"></i>
@@ -36,7 +40,9 @@ function Demo() {
           </div>
           <div className="demo-card">
             <i class="fa-solid fa-chart-line"></i>
-            <div className="demo-card-title">Start trading stock and crypto</div>
+            <div className="demo-card-title">
+              Start trading stock and crypto
+            </div>
             <div className="demo-card-description">...</div>
           </div>
         </div>
