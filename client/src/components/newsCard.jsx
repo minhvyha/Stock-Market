@@ -10,7 +10,6 @@ function NewsCard({title, description, imageUrl, url, alt, time}) {
   return (
     <a className='news-card-container' href={url}>
       <img className='news-card-image' src={imageUrl} alt={alt} />
-      <div className='news-card-content'>
         <div className='news-card-title'>
           {title}
         </div>
@@ -23,7 +22,6 @@ function NewsCard({title, description, imageUrl, url, alt, time}) {
         <div className='news-card-time'>
           {formatDate(time)}
         </div>
-      </div>
     </a>
   )
 }

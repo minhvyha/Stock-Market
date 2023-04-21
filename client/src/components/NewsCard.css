@@ -8,6 +8,13 @@
   border-radius: 12px;
   overflow: hidden;
   transition: .2s all ease-in-out;
+  min-height: 450px;
+  color: white;
+  padding-bottom: 25px;
+  justify-content: space-between;
+}
+.news-card-container div{
+  padding-inline: 20px;
 }
 .news-card-container:hover{
   box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 24px 6px;
@@ -20,7 +27,6 @@
   height: 150px;
 }
 .news-card-content{
-  color: white;
   padding: 20px;
   display: flex;
   flex-direction: column;
