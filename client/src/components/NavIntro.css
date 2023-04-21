@@ -49,4 +49,7 @@ nav ul li.active a	{
 	#intro-image-light{
 		left: 20px;
 	}
+	.scroll-header nav ul li.active a	{
+		color: var(--first-color);
+	}
 }

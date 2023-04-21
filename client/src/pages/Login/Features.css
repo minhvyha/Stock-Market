@@ -1,4 +1,4 @@
-.feature-container {
+.feature-page-container {
   margin-top: 100px;
   display: flex;
   flex-direction: column;
@@ -60,7 +60,7 @@
 }
 
 @media screen and (min-width: 992px) {
-  .feature-container{
+  .feature-page-container{
     margin-top: 105px;
     gap: 2rem;
   }

@@ -4,7 +4,7 @@ import NavIntro from '../../components/NavIntro';
 
 function Features() {
   return (
-    <div className="feature-container">
+    <div className="feature-page-container">
       <NavIntro activePage={'features'} />
       <div className="feature-title">
         All the features you need for
