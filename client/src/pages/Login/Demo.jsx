@@ -25,7 +25,7 @@ function Demo() {
         <div className="demo-title">How to Use Demo Mode</div>
         <div className="demo-card-container">
           <div className="demo-card">
-            <i class="fa-solid fa-address-card"></i>
+            <i className="fa-solid fa-address-card"></i>
             <div className="demo-card-title">Register a Futuris account</div>
             <div className="demo-card-description">
               Sign up now to enjoy personalized features and seamless access to
@@ -33,7 +33,7 @@ function Demo() {
             </div>
           </div>
           <div className="demo-card">
-            <i class="fa-solid fa-toggle-on"></i>
+            <i className="fa-solid fa-toggle-on"></i>
             <div className="demo-card-title">Turn on demo mode</div>
             <div className="demo-card-description">
               Turn on demo mode to explore our features, get a feel for our
@@ -41,7 +41,7 @@ function Demo() {
             </div>
           </div>
           <div className="demo-card">
-            <i class="fa-solid fa-chart-line"></i>
+            <i className="fa-solid fa-chart-line"></i>
             <div className="demo-card-title">
               Start trading stock and crypto
             </div>
