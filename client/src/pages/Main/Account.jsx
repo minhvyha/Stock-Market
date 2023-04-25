@@ -5,6 +5,7 @@ import Personal from '../../components/Account/Personal';
 import Appearance from '../../components/Account/Appearance';
 import Password from '../../components/Account/Password';
 import Help from '../../components/Account/Help';
+import { nanoid } from 'nanoid';
 
 function Account() {
 	const [isDropDown, setIsDropDown] = useState(false);
@@ -21,6 +22,7 @@ function Account() {
 	let settings = settingList.map((setting) => {
 		return (
 			<div
+				key={nanoid()}
 				id={`account-${setting.name}`}
 				className="account-setting-list"
 				onClick={() => {
