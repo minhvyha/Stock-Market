@@ -10,6 +10,7 @@ function Home() {
     <div className="main-container">
       <div id="home-chart-container">
         <AdvancedRealTimeChart
+				allow_symbol_change={false}
           symbol={stock}
           copyrightStyles={{
             parent: {
