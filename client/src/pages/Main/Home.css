@@ -13,6 +13,10 @@
 .choose-input-container label {
 	text-align: center;
 }
+#home-chart-container{
+	display: flex;
+	align-items: center;
+}
 .symbol-list-box {
 	width: 8.6rem;
 	border: 1px solid #000000;
