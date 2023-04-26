@@ -99,7 +99,7 @@ body {
 }
 
 .main-container {
-  padding-top: 100px;
+  margin-top: 100px;
   padding-inline: 15px;
   padding-bottom: 100px;
   max-width: 300px;
@@ -163,7 +163,7 @@ body.dark {
 /* ============== BREAKPOINT ============== */
 @media screen and (min-width: 300px) {
   .main-container {
-    max-width: 100vw;
+    max-width: 100%;
   }
   .chart-container {
     width: 100%;
@@ -194,6 +194,8 @@ body.dark {
 @media screen and (min-width: 488px) {
   .main-container {
     padding-inline: 2.5rem;
+		margin-top: 105px;
+    height: calc(100vh - 105px);
   }
 }
 @media screen and (min-height: 720px) {
@@ -206,8 +208,7 @@ body.dark {
     height: 480px;
   }
   .main-container {
-    padding-top: 105px;
-    height: calc(100vh - 105px);
+
   }
 }
 @media screen and (min-width: 350px) {
@@ -271,8 +272,7 @@ body.dark {
   }
   .main-container {
     flex-direction: row;
-    margin: 0 !important;
-    width: 100vw;
+    width: 100%;
     justify-content: space-between;
     padding-bottom: 2rem;
   }
