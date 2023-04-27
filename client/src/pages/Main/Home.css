@@ -8,7 +8,7 @@
 	align-items: center;
 	gap: 0.7rem;
 	justify-content: center;
-	margin-bottom: 1rem;
+	margin-bottom: 0.5rem;
 }
 .choose-input-container label {
 	text-align: center;
@@ -20,6 +20,7 @@
 }
 #home-chart-container div{
 	width: 100%;
+	height: 300px !important;
 }
 .symbol-list-box {
 	width: 8.6rem;

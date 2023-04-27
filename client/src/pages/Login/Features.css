@@ -1,9 +1,9 @@
 .feature-page-container {
   margin-top: 100px;
   display: flex;
+  padding-top: 20px;
   flex-direction: column;
   height: calc(100vh - 100px);
-  justify-content: center;
 }
 .feature-title {
   text-align: center;

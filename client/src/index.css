@@ -82,7 +82,6 @@ html {
   --z-modal: 1000;
 }
 #root {
-  height: 100vh;
 }
 #tradingview_288b8 {
   width: 900px;
@@ -106,8 +105,8 @@ body {
   justify-content: center;
   flex-direction: column;
   margin-inline: auto;
-  height: calc(100vh - 100px);
 	padding-top: 2rem;
+	padding-bottom: 100px;
 	gap: 1rem;
 }
 
