@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Symbol } from './SP500';
 import axios from 'axios';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { nanoid } from 'nanoid';
-
 import Login from './pages/Login/Login';
 import Signup from './pages/Login/Signup';
 import Home from './pages/Main/Home';
@@ -32,6 +31,7 @@ function App() {
 		stock: {},
 		cash: 100_000,
 	});
+	const windowSize = useRef([window.innerWidth, window.innerHeight]);
 	const [data, setData] = useState();
 	const [isLightMode, setIsLightMode] = useState(true);
 	const [successPopUpOpen, setSuccessPopUpOpen] = useState(false);
@@ -51,6 +51,7 @@ function App() {
 					setStock,
 					handleSignOut,
 					setIsLightMode,
+					windowSize
 				}}
 			>
 				<Routes>

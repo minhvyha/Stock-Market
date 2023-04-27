@@ -18,7 +18,7 @@
 
 }
 .select-box .options-container.active{
-   margin-top: 58px;
+   margin-top: 59px;
 }
 
 .selected {
@@ -62,12 +62,12 @@
 .select-box .options-container::-webkit-scrollbar {
 	width: 8px;
 	background: #0d141f;
-	border-radius: 0 8px 8px 0;
+	border-radius: 0 2px 2px 0;
 }
 
 .select-box .options-container::-webkit-scrollbar-thumb {
 	background: #525861;
-	border-radius: 0 8px 8px 0;
+	border-radius: 0 2px 2px 0;
 }
 
 .select-box .option,

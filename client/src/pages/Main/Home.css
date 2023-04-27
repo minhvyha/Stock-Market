@@ -16,6 +16,10 @@
 #home-chart-container{
 	display: flex;
 	align-items: center;
+	flex: 3;
+}
+#home-chart-container div{
+	width: 100%;
 }
 .symbol-list-box {
 	width: 8.6rem;
