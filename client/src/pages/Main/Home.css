@@ -16,7 +16,6 @@
 #home-chart-container {
   display: flex;
   align-items: center;
-  flex: 3;
 }
 #home-chart-container div {
   width: 100%;
@@ -75,9 +74,38 @@
 }
 @media screen and (min-width: 300px) {
 }
+@media screen and (min-height: 600px) {
+	#home-chart-container div {
+		height: 350px !important;
+	}
+}
+@media screen and (min-height: 800px) {
+	#home-chart-container div {
+		height: 500px !important;
+	}
+}
+@media screen and (min-height: 900px) {
+	#home-chart-container div {
+		height: 550px !important;
+	}
+}
+@media screen and (min-height: 1000px) {
+	#home-chart-container div {
+		height: 650px !important;
+	}
+}
+@media screen and (min-height: 1100px) {
+	#home-chart-container div {
+		height: 750px !important;
+	}
+}
 @media screen and (min-width: 350px) {
 }
 @media screen and (min-width: 828px) {
+	#home-chart-container div {
+		width: 550px;
+	}
+
 }
 @media screen and (min-width: 992px) {
 }

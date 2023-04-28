@@ -81,8 +81,7 @@ html {
   --z-fixed: 100;
   --z-modal: 1000;
 }
-#root {
-}
+
 #tradingview_288b8 {
   width: 900px;
   height: 500px;
@@ -102,11 +101,11 @@ body {
   padding-inline: 15px;
   max-width: 300px;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-direction: column;
   margin-inline: auto;
 	padding-top: 2rem;
-	padding-bottom: 100px;
+	padding-bottom: 150px;
 	gap: 1rem;
 }
 
@@ -164,6 +163,7 @@ body.dark {
 @media screen and (min-width: 300px) {
   .main-container {
     max-width: 100%;
+    padding-inline: 1.8rem;
   }
   .chart-container {
     width: 100%;
@@ -206,9 +206,6 @@ body.dark {
 @media screen and (min-height: 790px) {
   .chart-container {
     height: 480px;
-  }
-  .main-container {
-
   }
 }
 @media screen and (min-width: 350px) {
@@ -273,7 +270,6 @@ body.dark {
   .main-container {
     flex-direction: row;
     width: 100%;
-    justify-content: space-between;
     padding-bottom: 2rem;
   }
   .side-container {
@@ -283,7 +279,6 @@ body.dark {
     justify-content: center;
     gap: 1rem;
     width: 25%;
-		flex: 1;
   }
   .chart-container {
     margin-right: 2rem;
