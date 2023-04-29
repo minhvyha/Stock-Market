@@ -16,7 +16,7 @@ function Nav() {
 			<div className="nav-container">
 				<input type="checkbox" id="intro-check" />
 				<div className="nav-subcontainer">
-					<Link to="/">
+					<Link className='logo-link' to="/">
 						<img id="intro-image" className="logo" src={LogoTextDark} alt="" />
 						<img
 							id="intro-image-light"

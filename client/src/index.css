@@ -195,7 +195,6 @@ body.dark {
   .main-container {
     padding-inline: 2.5rem;
 		margin-top: 105px;
-    height: calc(100vh - 105px);
   }
 }
 @media screen and (min-height: 720px) {
@@ -271,9 +270,9 @@ body.dark {
     flex-direction: row;
     width: 100%;
     padding-bottom: 2rem;
+    height:  calc(100vh - 105px);
   }
   .side-container {
-    width: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -287,6 +286,13 @@ body.dark {
   }
 }
 @media screen and (min-width: 992px) {
+  .side-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    width: 20%;
+  }
   .intro-title {
     font-size: 2.75rem;
   }

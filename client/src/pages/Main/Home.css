@@ -107,4 +107,12 @@
   }
 }
 @media screen and (min-width: 992px) {
+  #home-chart-container div {
+    width: 700px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  #home-chart-container div {
+    width: 800px;
+  }
 }

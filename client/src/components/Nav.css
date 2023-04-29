@@ -21,6 +21,9 @@
 #check{
   display: none;
 }
+.logo-link{
+  display: flex;
+}
 .logo {
   width: 180px;
 }
