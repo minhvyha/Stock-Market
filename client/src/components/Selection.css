@@ -1,116 +1,117 @@
 .select-box {
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 .select-box .options-container {
-	background: #2f3640;
-	color: #f5f6fa;
-	max-height: 0;
-	width: 100%;
-	opacity: 0;
-	transition: all 0.4s ease-in-out;
-	border-radius: 1px 1px 6px 6px;
-	overflow: hidden;
-	order: 1;
-	overflow-y: scroll;
-
+  background: #2f3640;
+  color: #f5f6fa;
+  max-height: 0;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+  border-radius: 1px 1px 6px 6px;
+  overflow: hidden;
+  order: 1;
+  overflow-y: scroll;
 }
-.select-box .options-container.active{
-   margin-top: 59px;
+.select-box .options-container.active {
+  margin-top: 58px;
 }
-
+.options-container.active ~ .selected {
+  margin-bottom: 8px;
+}
 .selected {
-	background: #2f3640;
-	border-radius: 4px;
-	margin-bottom: 8px;
-	color: #f5f6fa;
-	position: relative;
-	order: 0;
+  background: #2f3640;
+  border-radius: 4px;
+  color: #f5f6fa;
+  position: relative;
+  order: 0;
+  transition: 0.2s all;
 }
 
 .selected::after {
-	content: '';
-	background: url('../assets/images/arrow-down.svg');
-	background-size: contain;
-	background-repeat: no-repeat;
-	position: absolute;
-	height: 100%;
-	width: 32px;
-	right: 10px;
-	top: 8px;
-	transition: all 0.4s ease-in-out;
+  content: '';
+  background: url('../assets/images/arrow-down.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  height: 100%;
+  width: 32px;
+  right: 10px;
+  top: 8px;
+  transition: all 0.4s ease-in-out;
 }
 
 .select-box .options-container.font-size-selector {
-	margin-top: 0px;
-	transition: all 0.48s ease-in-out;
-	border-radius: 6px;
+  margin-top: 0px;
+  transition: all 0.48s ease-in-out;
+  border-radius: 6px;
 }
 
 .select-box .options-container.active {
-	opacity: 1;
-	max-height: 240px;
+  opacity: 1;
+  max-height: 240px;
 }
 
 .select-box .options-container.active + .selected::after {
-	transform: rotateX(180deg);
-	top: -6px;
+  transform: rotateX(180deg);
+  top: -6px;
 }
 
 .select-box .options-container::-webkit-scrollbar {
-	width: 8px;
-	background: #0d141f;
-	border-radius: 0 2px 2px 0;
+  width: 8px;
+  background: #0d141f;
+  border-radius: 0 2px 2px 0;
 }
 
 .select-box .options-container::-webkit-scrollbar-thumb {
-	background: #525861;
-	border-radius: 0 2px 2px 0;
+  background: #525861;
+  border-radius: 0 2px 2px 0;
 }
 
 .select-box .option,
 .selected {
-	padding: 12px 24px;
-	cursor: pointer;
+  padding: 12px 24px;
+  cursor: pointer;
 }
 
 .select-box .option:hover {
-	background: #414b57;
+  background: #414b57;
 }
 
 .select-box label {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .select-box .option .radio {
-	display: none;
+  display: none;
 }
 
 /* Searchbox */
 
 .search-box input {
-	width: 100%;
-	padding: 12px 16px;
-	font-family: 'Roboto', sans-serif;
-	font-size: 16px;
-	position: absolute;
-	border-radius: 8px 8px 0 0;
-	z-index: 100;
-	border: 8px solid #2f3640;
+  width: 100%;
+  padding: 12px 16px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  position: absolute;
+  border-radius: 4px 4px 0 0;
+  z-index: 100;
+  border: 8px solid #2f3640;
 
-	opacity: 0;
-	pointer-events: none;
-	transition: all 0.4s;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s;
 }
 
 .search-box input:focus {
-	outline: none;
-	border: 8px solid #2f3640;
+  outline: none;
+  border: 8px solid #2f3640;
 }
 
 .select-box .options-container.active ~ .search-box input {
-	opacity: 1;
-	pointer-events: auto;
+  opacity: 1;
+  pointer-events: auto;
 }

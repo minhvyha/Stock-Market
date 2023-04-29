@@ -101,12 +101,13 @@ body {
   padding-inline: 15px;
   max-width: 300px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-direction: column;
   margin-inline: auto;
 	padding-top: 1.5rem;
 	padding-bottom: 130px;
 	gap: 1rem;
+  
 }
 
 /* ============== DARK MODE CSS ============== */
@@ -271,6 +272,8 @@ body.dark {
     width: 100%;
     padding-bottom: 2rem;
     height:  calc(100vh - 105px);
+    max-width: 1280px;
+    padding-inline: 50px;
   }
   .side-container {
     display: flex;

@@ -97,10 +97,16 @@
   #home-chart-container div {
     width: 700px;
   }
+  .home-chart-description {
+    font-size: 34px;
+  }
 }
 @media screen and (min-width: 1280px) {
   #home-chart-container div {
     width: 800px;
+  }
+  .home-chart-description {
+    font-size: 36px;
   }
 }
 @media screen and (min-height: 600px) {
