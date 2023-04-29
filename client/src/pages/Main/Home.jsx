@@ -9,26 +9,25 @@ function Home() {
 
   return (
     <div className="main-container">
-      <div className='home-chart-wrapper'>
-      <div className='home-chart-description'>
+      <div className="home-chart-wrapper">
+        <div className="home-chart-description">
           {title} ({stock}) - {sector}
         </div>
-      <div id="home-chart-container">
-        
-        <AdvancedRealTimeChart
-				hide_side_toolbar={true}
-				autosize={true}
-				allow_symbol_change={false}
-          symbol={stock}
-          copyrightStyles={{
-            parent: {
-              fontSize: '0px',
-              display: 'none',
-            },
-          }}
-          theme="dark"
-        />
-      </div>
+        <div id="home-chart-container">
+          <AdvancedRealTimeChart
+            hide_side_toolbar={true}
+            autosize={true}
+            allow_symbol_change={false}
+            symbol={stock}
+            copyrightStyles={{
+              parent: {
+                fontSize: '0px',
+                display: 'none',
+              },
+            }}
+            theme="dark"
+          />
+        </div>
       </div>
       <div className="side-container">
         <Selection />
