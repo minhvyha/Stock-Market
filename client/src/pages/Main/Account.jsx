@@ -8,9 +8,8 @@ import Help from '../../components/Account/Help';
 import { nanoid } from 'nanoid';
 
 function Account() {
-	const [isDropDown, setIsDropDown] = useState(false);
-	const [activeSetting, setActiveSetting] = useState(Personal);
-	const { handleSignOut, user } = useContext(MainPageContext);
+
+	let { handleSignOut, user, activeSetting, isDropDown, setActiveSetting, setIsDropDown } = useContext(MainPageContext);
 
 	let settingList = [
 		{ name: 'personal', component: Personal },

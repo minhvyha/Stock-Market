@@ -17,6 +17,7 @@ import Portfolio from './pages/Main/Portfolio';
 import Account from './pages/Main/Account';
 import Buy from './pages/Main/Buy';
 import Sell from './pages/Main/Sell';
+import Personal from './components/Account/Personal';
 import SuccessPopUp from './components/SuccessPopUp';
 import FailPopUp from './components/FailPopUp';
 import Loader from './components/Loader';
@@ -36,9 +37,12 @@ function App() {
   const [isLightMode, setIsLightMode] = useState(true);
   const [successPopUpOpen, setSuccessPopUpOpen] = useState(false);
   const [stock, setStock] = useState('AAPL');
-  let [title, setTitle] = useState('Apple');
-  let [sector, setSector] = useState('Information Technology');
-  let [activePage, setActivePage] = useState('home');
+  const [isDropDown, setIsDropDown] = useState(false);
+  const [activeSetting, setActiveSetting] = useState('personal');
+
+  const [title, setTitle] = useState('Apple');
+  const [sector, setSector] = useState('Information Technology');
+  const [activePage, setActivePage] = useState('home');
   function handleSignOut(event) {
     setUser({});
   }
@@ -61,6 +65,10 @@ function App() {
           handleSignOut,
           setIsLightMode,
           setActivePage,
+          isDropDown,
+          setIsDropDown,
+          activeSetting,
+          setActiveSetting,
         }}
       >
         <Routes>
