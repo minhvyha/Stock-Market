@@ -1,9 +1,9 @@
 import React, { useContext, useState } from 'react';
 import { MainPageContext } from '../../App';
 import './Home.css';
-import { TechnicalAnalysis } from "react-ts-tradingview-widgets";
-import { FundamentalData } from "react-ts-tradingview-widgets";
-import { CompanyProfile } from "react-ts-tradingview-widgets";
+import { TechnicalAnalysis } from 'react-ts-tradingview-widgets';
+import { FundamentalData } from 'react-ts-tradingview-widgets';
+import { CompanyProfile } from 'react-ts-tradingview-widgets';
 import { AdvancedRealTimeChart } from 'react-ts-tradingview-widgets';
 import Selection from '../../components/Selection';
 
@@ -41,17 +41,46 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className='main-wrapper'>
-              <div className='symbol-info-title'>
-                Symbol Profile
-              </div>
-        <CompanyProfile colorTheme="dark" copyrightStyles={{
-                parent: {
-                  fontSize: '0px',
-                  display: 'none',
-                },
-              }} height={400} width="100%"></CompanyProfile>
-
+      <div className="symbol-info-wrapper">
+        <div className="symbol-info-title">Symbol Profile</div>
+        <CompanyProfile
+          symbol={stock}
+          colorTheme="dark"
+          copyrightStyles={{
+            parent: {
+              fontSize: '0px',
+              display: 'none',
+            },
+          }}
+          height={350}
+          width="100%"
+        ></CompanyProfile>
+        <div className="technical-wrapper">
+          <FundamentalData
+            colorTheme="dark"
+            symbol={stock}
+            copyrightStyles={{
+              parent: {
+                fontSize: '0px',
+                display: 'none',
+              },
+            }}
+            width="100%"
+            height={350}
+          />
+          <TechnicalAnalysis
+            colorTheme="dark"
+            symbol={stock}
+            copyrightStyles={{
+              parent: {
+                fontSize: '0px',
+                display: 'none',
+              },
+            }}
+            height={350}
+            width="100%"
+          />
+        </div>
       </div>
     </div>
   );
