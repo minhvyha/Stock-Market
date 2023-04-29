@@ -26,96 +26,99 @@ import Loader from './components/Loader';
 export const MainPageContext = React.createContext();
 
 function App() {
-	const [user, setUser] = useState({
-		name: 'Minh Vy Ha',
-		stock: {},
-		cash: 100_000,
-	});
-	const windowSize = useRef([window.innerWidth, window.innerHeight]);
-	const [data, setData] = useState();
-	const [isLightMode, setIsLightMode] = useState(true);
-	const [successPopUpOpen, setSuccessPopUpOpen] = useState(false);
-	const [stock, setStock] = useState('AAPL');
-	let [title, setTitle] = useState('Apple')
-  let [sector, setSector] = useState('Information Technology')
-	function handleSignOut(event) {
-		setUser({});
-	}
+  const [user, setUser] = useState({
+    name: 'Minh Vy Ha',
+    stock: {},
+    cash: 100_000,
+  });
+  const windowSize = useRef([window.innerWidth, window.innerHeight]);
+  const [data, setData] = useState();
+  const [isLightMode, setIsLightMode] = useState(true);
+  const [successPopUpOpen, setSuccessPopUpOpen] = useState(false);
+  const [stock, setStock] = useState('AAPL');
+  let [title, setTitle] = useState('Apple');
+  let [sector, setSector] = useState('Information Technology');
+  let [activePage, setActivePage] = useState('home');
+  function handleSignOut(event) {
+    setUser({});
+  }
 
-	return (
-		<BrowserRouter>
-			<MainPageContext.Provider
-				value={{
-					Symbol,
-					user,
-					data,
-					stock,
-					title,
-					sector,
-					windowSize,
-					setStock,
-					setTitle,
-					setSector,
-					handleSignOut,
-					setIsLightMode,
-				}}
-			>
-				<Routes>
-					<Route path="/" element={<ShareLayout />}>
-						<Route index element={<Navigate to="/home" />} />
-						<Route
-							path="/home"
-							element={
-								<ProtectedRoute user={user}>
-									<Home />
-								</ProtectedRoute>
-							}
-							key={nanoid()}
-						/>
-						<Route
-							path="portfolio"
-							element={
-								<ProtectedRoute user={user}>
-									<Portfolio />
-								</ProtectedRoute>
-							}
-						/>
-						<Route
-							path="account"
-							element={
-								<ProtectedRoute user={user}>
-									<Account />
-								</ProtectedRoute>
-							}
-						/>
-						<Route
-							path="buy"
-							element={
-								<ProtectedRoute user={user}>
-									<Buy />
-								</ProtectedRoute>
-							}
-						/>
-						<Route
-							path="sell"
-							element={
-								<ProtectedRoute user={user}>
-									<Sell />
-								</ProtectedRoute>
-							}
-						/>
-					</Route>
-					<Route path="intro" element={<Intro />} />
-					<Route path="assets" element={<Assets />} />
-					<Route path="news" element={<News />} />
-					<Route path="features" element={<Features />} />
-					<Route path="demo" element={<Demo />} />
-					<Route path="login" element={<Login setUser={setUser} />} />
-					<Route path="signup" element={<Signup setUser={setUser} />} />
-				</Routes>
-			</MainPageContext.Provider>
-		</BrowserRouter>
-	);
+  return (
+    <BrowserRouter>
+      <MainPageContext.Provider
+        value={{
+          Symbol,
+          user,
+          data,
+          stock,
+          title,
+          sector,
+          windowSize,
+          activePage,
+          setStock,
+          setTitle,
+          setSector,
+          handleSignOut,
+          setIsLightMode,
+          setActivePage,
+        }}
+      >
+        <Routes>
+          <Route path="/" element={<ShareLayout />}>
+            <Route index element={<Navigate to="/home" />} />
+            <Route
+              path="/home"
+              element={
+                <ProtectedRoute user={user}>
+                  <Home />
+                </ProtectedRoute>
+              }
+              key={nanoid()}
+            />
+            <Route
+              path="portfolio"
+              element={
+                <ProtectedRoute user={user}>
+                  <Portfolio />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="account"
+              element={
+                <ProtectedRoute user={user}>
+                  <Account />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="buy"
+              element={
+                <ProtectedRoute user={user}>
+                  <Buy />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="sell"
+              element={
+                <ProtectedRoute user={user}>
+                  <Sell />
+                </ProtectedRoute>
+              }
+            />
+          </Route>
+          <Route path="intro" element={<Intro />} />
+          <Route path="assets" element={<Assets />} />
+          <Route path="news" element={<News />} />
+          <Route path="features" element={<Features />} />
+          <Route path="demo" element={<Demo />} />
+          <Route path="login" element={<Login setUser={setUser} />} />
+          <Route path="signup" element={<Signup setUser={setUser} />} />
+        </Routes>
+      </MainPageContext.Provider>
+    </BrowserRouter>
+  );
 }
 
 export default App;

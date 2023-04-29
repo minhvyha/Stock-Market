@@ -6,8 +6,7 @@ import Selection from '../../components/Selection';
 
 function Home() {
   const { stock, title, sector } = useContext(MainPageContext);
-    console.log(title)
-    console.log(sector)
+
   return (
     <div className="main-container">
       <div className='home-chart-wrapper'>
