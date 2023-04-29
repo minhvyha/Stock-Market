@@ -106,7 +106,7 @@ body {
   margin-inline: auto;
 	padding-top: 1.5rem;
 	padding-bottom: 130px;
-	gap: 1rem;
+	gap: 5rem;
   
 }
 
@@ -268,10 +268,8 @@ body.dark {
     padding: 9px 0;
   }
   .main-container {
-    flex-direction: row;
     width: 100%;
     padding-bottom: 2rem;
-    height:  calc(100vh - 105px);
     max-width: 1280px;
     padding-inline: 50px;
   }
