@@ -12,7 +12,7 @@ function Home() {
     <div className="main-container">
       <div className='home-chart-wrapper'>
       <div className='home-chart-description'>
-          {title} - {sector}
+          {title} ({stock}) - {sector}
         </div>
       <div id="home-chart-container">
         

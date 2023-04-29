@@ -2,6 +2,16 @@
 .symbol-list-box::-webkit-input-placeholder {
   font-size: 18px;
 }
+.home-chart-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.home-chart-description{
+  font-size: 26px;
+  font-weight: bold;
+}
 .choose-input-container {
   width: 100%;
   display: flex;

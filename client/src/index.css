@@ -104,8 +104,8 @@ body {
   justify-content: space-evenly;
   flex-direction: column;
   margin-inline: auto;
-	padding-top: 2rem;
-	padding-bottom: 150px;
+	padding-top: 1.5rem;
+	padding-bottom: 130px;
 	gap: 1rem;
 }
 
