@@ -33,6 +33,7 @@
 .home-chart-description {
   font-size: 26px;
   font-weight: bold;
+  text-align: center;
 }
 .choose-input-container {
   width: 100%;
@@ -114,15 +115,18 @@
   .technical-wrapper #tradingview_widget_wrapper{
     width: 50%;
   }
-  #home-chart-container div {
+  .home-chart-wrapper {
     width: 550px;
   }
   .home-chart-description, .symbol-info-wrapper {
     font-size: 32px;
   }
+  .home-chart-description{
+    text-align: left;
+  }
 }
 @media screen and (min-width: 992px) {
-  #home-chart-container div {
+  .home-chart-wrapper {
     width: 700px;
   }
   .home-chart-description, .symbol-info-wrapper {
@@ -130,7 +134,7 @@
   }
 }
 @media screen and (min-width: 1280px) {
-  #home-chart-container div {
+  .home-chart-wrapper {
     width: 800px;
   }
   .home-chart-description, .symbol-info-wrapper {
