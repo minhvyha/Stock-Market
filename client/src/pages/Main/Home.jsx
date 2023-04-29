@@ -9,6 +9,7 @@ function Home() {
 
   return (
     <div className="main-container">
+      <div className='main-wrapper'>
       <div className="home-chart-wrapper">
         <div className="home-chart-description">
           {title} ({stock}) - {sector}
@@ -35,6 +36,7 @@ function Home() {
           <div className="action-buy">Buy</div>
           <div className="action-sell">Sell</div>
         </div>
+      </div>
       </div>
     </div>
   );

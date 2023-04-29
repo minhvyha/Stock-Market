@@ -2,6 +2,11 @@
 .symbol-list-box::-webkit-input-placeholder {
   font-size: 18px;
 }
+.main-wrapper{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
 .home-chart-wrapper {
   display: flex;
   flex-direction: column;
