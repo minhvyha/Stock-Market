@@ -36,6 +36,8 @@ function App() {
 	const [isLightMode, setIsLightMode] = useState(true);
 	const [successPopUpOpen, setSuccessPopUpOpen] = useState(false);
 	const [stock, setStock] = useState('AAPL');
+	let [title, setTitle] = useState('Apple')
+  let [sector, setSector] = useState('Information Technology')
 	function handleSignOut(event) {
 		setUser({});
 	}
@@ -48,10 +50,14 @@ function App() {
 					user,
 					data,
 					stock,
+					title,
+					sector,
+					windowSize,
 					setStock,
+					setTitle,
+					setSector,
 					handleSignOut,
 					setIsLightMode,
-					windowSize
 				}}
 			>
 				<Routes>

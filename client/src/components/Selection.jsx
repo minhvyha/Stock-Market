@@ -6,7 +6,7 @@ import './Selection.css';
 
 function Selection({ handleChoose }) {
 	const [isDropDown, setIsDropDown] = useState(false);
-	const { setStock } = useContext(MainPageContext);
+	const { setStock, setTitle, setSector } = useContext(MainPageContext);
 
 	function selectBoxClick() {
 		const optionsContainer = document.querySelector('.options-container');
@@ -27,6 +27,9 @@ function Selection({ handleChoose }) {
 				className="option"
 				onClick={() => {
 					setStock(company.Symbol);
+					setTitle(company.Name)
+					setSector(company.Sector)
+
 					document.querySelector(
 						'.selected'
 					).innerHTML = `${company.Symbol}`;
