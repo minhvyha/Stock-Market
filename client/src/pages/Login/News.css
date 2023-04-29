@@ -26,6 +26,10 @@
   font-size: 32px;
   font-weight: bold;
 }
+.news-container #tradingview_widget_wrapper{
+width: 1280px;
+max-width: 100%;
+}
 @media screen and (min-width: 300px) {
   .news-title {
     font-size: 34px;
@@ -50,6 +54,9 @@
     max-width: 476px;
     padding-inline: 40px;
   }
+.news-container #tradingview_widget_wrapper{
+  padding-inline: 20px;
+}
 }
 @media screen and (min-width: 828px) {
   .news-container {

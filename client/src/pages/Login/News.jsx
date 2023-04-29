@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './News.css';
+import { Timeline } from 'react-ts-tradingview-widgets';
+
 import { nanoid } from 'nanoid';
 import NewsCard from '../../components/NewsCard';
 import NavIntro from '../../components/NavIntro';
@@ -66,7 +68,7 @@ function News() {
     <div className="news-wrapper">
       <NavIntro activePage={'news'} />
       {stockNews && cryptoNews ? (
-        <div className='news-content-container'>
+        <div className="news-content-container">
           <div className="news-container">
             <div className="news-title">Stock Market News</div>
             <div className="news-cards">{stockNews}</div>
@@ -74,6 +76,22 @@ function News() {
           <div className="news-container">
             <div className="news-title">Crypto Market News</div>
             <div className="news-cards">{cryptoNews}</div>
+          </div>
+          <div className="news-container">
+            <div className="news-title">Market Snap</div>
+            <Timeline
+              copyrightStyles={{
+                parent: {
+                  fontSize: '0px',
+                  display: 'none',
+                },
+              }}
+              colorTheme="dark"
+              feedMode="market"
+              market="crypto"
+              height={500}
+              width="100%"
+            ></Timeline>
           </div>
         </div>
       ) : (
