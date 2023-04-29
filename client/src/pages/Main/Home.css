@@ -2,13 +2,13 @@
 .symbol-list-box::-webkit-input-placeholder {
   font-size: 18px;
 }
-.home-chart-wrapper{
+.home-chart-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 1.5rem;
 }
-.home-chart-description{
+.home-chart-description {
   font-size: 26px;
   font-weight: bold;
 }
@@ -84,6 +84,25 @@
 }
 @media screen and (min-width: 300px) {
 }
+
+@media screen and (min-width: 828px) {
+  #home-chart-container div {
+    width: 550px;
+  }
+  .home-chart-description {
+    font-size: 32px;
+  }
+}
+@media screen and (min-width: 992px) {
+  #home-chart-container div {
+    width: 700px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  #home-chart-container div {
+    width: 800px;
+  }
+}
 @media screen and (min-height: 600px) {
   #home-chart-container div {
     height: 350px !important;
@@ -107,22 +126,5 @@
 @media screen and (min-height: 1100px) {
   #home-chart-container div {
     height: 750px !important;
-  }
-}
-@media screen and (min-width: 350px) {
-}
-@media screen and (min-width: 828px) {
-  #home-chart-container div {
-    width: 550px;
-  }
-}
-@media screen and (min-width: 992px) {
-  #home-chart-container div {
-    width: 700px;
-  }
-}
-@media screen and (min-width: 1280px) {
-  #home-chart-container div {
-    width: 800px;
   }
 }
