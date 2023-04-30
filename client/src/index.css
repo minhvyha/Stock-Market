@@ -272,6 +272,7 @@ body.dark {
     padding-bottom: 2rem;
     max-width: 1280px;
     padding-inline: 50px;
+    padding-top: 3rem;
   }
   .side-container {
     display: flex;

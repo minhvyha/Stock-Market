@@ -1,6 +1,7 @@
 import React from 'react';
 import './Portfolio'
 
+
 function Portfolio() {
 	return (
 		<div className="main-container">
