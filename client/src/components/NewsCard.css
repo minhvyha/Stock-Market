@@ -1,40 +1,38 @@
-
-
-.news-card-container{
+.news-card-container {
   display: flex;
   flex-direction: column;
   width: 100%;
   background-color: var(--dark-alternative-container);
   border-radius: 8px;
   overflow: hidden;
-  transition: .2s all ease-in-out;
+  transition: 0.2s all ease-in-out;
   min-height: 450px;
   color: white;
   padding-bottom: 25px;
   justify-content: space-between;
 }
-.news-card-container div{
+.news-card-container div {
   padding-inline: 20px;
 }
-.news-card-container:hover{
+.news-card-container:hover {
   box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 24px 6px;
 }
-.news-card-container:hover .news-card-title{
+.news-card-container:hover .news-card-title {
   color: var(--first-color);
 }
-.news-card-image{
+.news-card-image {
   width: 100%;
   height: 150px;
 }
-.news-card-content{
+.news-card-content {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: .7rem;
+  gap: 0.7rem;
 }
-.news-card-title{
+.news-card-title {
   font-size: 18px;
-  transition: .1s all ease-in-out;
+  transition: 0.1s all ease-in-out;
 
   font-weight: bold;
   white-space: nowrap;
@@ -49,10 +47,12 @@
     -webkit-box-orient: vertical;
   }
 }
-.news-card-description, .news-card-time, .news-card-source{
+.news-card-description,
+.news-card-time,
+.news-card-source {
   font-size: 14px;
 }
-.news-card-source{
+.news-card-source {
   color: var(--first-color);
   white-space: nowrap;
   overflow: hidden;
@@ -60,31 +60,36 @@
 }
 
 @media screen and (min-width: 300px) {
-  .news-card-title{
+  .news-card-title {
     font-size: 20px;
   }
-  .news-card-description, .news-card-time, .news-card-source{
+  .news-card-description,
+  .news-card-time,
+  .news-card-source {
     font-size: 14px;
   }
 }
 @media screen and (min-width: 350px) {
-  .news-card-title{
+  .news-card-title {
     font-size: 22px;
   }
-  .news-card-description, .news-card-time, .news-card-source{
+  .news-card-description,
+  .news-card-time,
+  .news-card-source {
     font-size: 16px;
   }
 }
-@media screen and (min-width: 576px) {}
+@media screen and (min-width: 576px) {
+}
 @media screen and (min-width: 828px) {
-  .news-card-image{
+  .news-card-image {
     height: 190px;
   }
-  .news-card-container{
+  .news-card-container {
     width: 30%;
     height: 100%;
   }
-  .news-card-description{
+  .news-card-description {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -98,4 +103,5 @@
     }
   }
 }
-@media screen and (min-width: 992px) {} 
+@media screen and (min-width: 992px) {
+}
