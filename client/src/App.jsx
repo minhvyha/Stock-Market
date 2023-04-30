@@ -29,14 +29,16 @@ export const MainPageContext = React.createContext();
 function App() {
   const [user, setUser] = useState({
     name: 'Minh Vy Ha',
-    stock: {},
+    assets: {
+
+    },
     cash: 100_000,
   });
   const windowSize = useRef([window.innerWidth, window.innerHeight]);
   const [data, setData] = useState();
   const [isLightMode, setIsLightMode] = useState(true);
   const [successPopUpOpen, setSuccessPopUpOpen] = useState(false);
-  const [stock, setStock] = useState('AAPL');
+  const [assets, setAssets] = useState('AAPL');
   const [isDropDown, setIsDropDown] = useState(false);
   const [activeSetting, setActiveSetting] = useState('personal');
 
@@ -54,12 +56,12 @@ function App() {
           Symbol,
           user,
           data,
-          stock,
+          assets,
           title,
           sector,
           windowSize,
           activePage,
-          setStock,
+          setAssets,
           setTitle,
           setSector,
           handleSignOut,

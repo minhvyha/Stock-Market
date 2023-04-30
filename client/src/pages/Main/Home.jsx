@@ -8,21 +8,21 @@ import { AdvancedRealTimeChart } from 'react-ts-tradingview-widgets';
 import Selection from '../../components/Selection';
 
 function Home() {
-  const { stock, title, sector } = useContext(MainPageContext);
+  const { assets, title, sector } = useContext(MainPageContext);
 
   return (
     <div className="main-container">
       <div className="main-wrapper">
         <div className="home-chart-wrapper">
           <div className="home-chart-description">
-            {title} ({stock}) - {sector}
+            {title} ({sector === 'crypto' ? `${assets.split('USD')[0]}/USD`: assets}) - {sector}
           </div>
           <div id="home-chart-container">
             <AdvancedRealTimeChart
               hide_side_toolbar={true}
               autosize={true}
               allow_symbol_change={false}
-              symbol={stock}
+              symbol={assets}
               copyrightStyles={{
                 parent: {
                   fontSize: '0px',
@@ -44,7 +44,7 @@ function Home() {
       <div className="symbol-info-wrapper">
         <div className="symbol-info-title">Symbol Profile</div>
         <CompanyProfile
-          symbol={stock}
+          symbol={assets}
           colorTheme="dark"
           copyrightStyles={{
             parent: {
@@ -58,7 +58,7 @@ function Home() {
         <div className="technical-wrapper">
           <FundamentalData
             colorTheme="dark"
-            symbol={stock}
+            symbol={assets}
             copyrightStyles={{
               parent: {
                 fontSize: '0px',
@@ -70,7 +70,7 @@ function Home() {
           />
           <TechnicalAnalysis
             colorTheme="dark"
-            symbol={stock}
+            symbol={assets}
             copyrightStyles={{
               parent: {
                 fontSize: '0px',

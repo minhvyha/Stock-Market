@@ -1,13 +1,13 @@
 import React, { useContext, useState } from 'react';
 import { Symbol } from '../SP500';
-import {Cryptocurrencies} from '../Crypto.js'
+import { Cryptocurrencies } from '../Crypto.js';
 import { MainPageContext } from '../App';
 import { nanoid } from 'nanoid';
 import './Selection.css';
 
-function Selection({ handleChoose }) {
+function Selection({  }) {
   const [isDropDown, setIsDropDown] = useState(false);
-  const { setStock, setTitle, setSector } = useContext(MainPageContext);
+  const { setAssets, setTitle, setSector } = useContext(MainPageContext);
 
   function selectBoxClick() {
     const optionsContainer = document.querySelector('.options-container');
@@ -21,19 +21,19 @@ function Selection({ handleChoose }) {
     }
   }
 
-  let cryptoOptionList = Cryptocurrencies.map((crypto) =>{
+  let cryptoOptionList = Cryptocurrencies.map((crypto) => {
     return (
       <div
         key={nanoid()}
         className="option"
         onClick={() => {
-          setStock(`${crypto.id}/USD`);
+          setAssets(`${crypto.id}USD`);
           setTitle(crypto.name);
           setSector(crypto.details.type);
 
           document.querySelector('.selected').innerHTML = `${crypto.id}`;
           setIsDropDown((value) => !value);
-          handleChoose();
+
         }}
       >
         <input
@@ -46,8 +46,8 @@ function Selection({ handleChoose }) {
           htmlFor={`${crypto.id}`}
         >{`${crypto.name} - ${crypto.id}`}</label>
       </div>
-    ); 
-  })
+    );
+  });
 
   let optionList = Symbol.map((company) => {
     return (
@@ -55,13 +55,13 @@ function Selection({ handleChoose }) {
         key={nanoid()}
         className="option"
         onClick={() => {
-          setStock(company.Symbol);
+          setAssets(company.Symbol);
           setTitle(company.Name);
           setSector(company.Sector);
 
           document.querySelector('.selected').innerHTML = `${company.Symbol}`;
           setIsDropDown((value) => !value);
-          handleChoose();
+
         }}
       >
         <input
@@ -79,6 +79,39 @@ function Selection({ handleChoose }) {
 
   const filterList = (searchTerm) => {
     const optionsList = document.querySelectorAll('.option');
+    let customSelection = document.getElementById('custom-selection')
+    if (customSelection !== null){
+      customSelection.remove()
+    }
+    if (searchTerm !== ''){
+      let customOption = document.createElement('div');
+      customOption.classList.add('option');
+      customOption.id = ('custom-selection')
+      customOption.addEventListener('click', () => {
+        console.log('123')
+        setAssets(searchTerm);
+        setTitle(searchTerm);
+        setSector('Custom Selection');
+  
+        document.querySelector('.selected').innerHTML = searchTerm;
+        setIsDropDown((value) => !value);
+      });
+      customOption.innerHTML = `
+      <input
+      type="radio"
+      className="radio"
+      id="${searchTerm}-custom-selection"
+      name="category"
+      style="display: none"
+    />
+    <label
+      htmlFor="${searchTerm}-custom-selection"
+    >${searchTerm} - Custom Selection</label>
+      `;
+      document.getElementById('options-container').appendChild(customOption)
+    }
+
+    
     searchTerm = searchTerm.toLowerCase();
     optionsList.forEach((option) => {
       let label =
@@ -95,6 +128,7 @@ function Selection({ handleChoose }) {
     <div className="choose-input-container">
       <div className="select-box">
         <div
+        id='options-container'
           className={
             isDropDown ? 'options-container active' : 'options-container'
           }
