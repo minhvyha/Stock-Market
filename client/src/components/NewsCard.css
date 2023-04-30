@@ -5,7 +5,7 @@
   flex-direction: column;
   width: 100%;
   background-color: var(--dark-alternative-container);
-  border-radius: 12px;
+  border-radius: 8px;
   overflow: hidden;
   transition: .2s all ease-in-out;
   min-height: 450px;

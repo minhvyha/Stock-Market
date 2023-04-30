@@ -14,7 +14,7 @@ function News() {
   useEffect(() => {
     async function fetchData() {
       const responseStock = await fetch(
-        `https://api.marketaux.com/v1/news/all?exchanges=NYSE,NASDAQ&filter_entities=true&limit=3&published_after=2023-04-10T03:15&api_token=${process.env.REACT_APP_NEWS_API}`
+        `https://api.marketaux.com/v1/news/all?exchanges=NYSE,NASDAQ&filter_entities=true&limit=3&language=en&published_after=2023-04-10T03:15&api_token=${process.env.REACT_APP_NEWS_API}`
       );
 
       const responseEthereum = await fetch(
