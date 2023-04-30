@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Symbol } from '../SP500';
+import {Cryptocurrencies} from '../Crypto.js'
 import { MainPageContext } from '../App';
 import { nanoid } from 'nanoid';
 import './Selection.css';
@@ -19,6 +20,34 @@ function Selection({ handleChoose }) {
       searchBox.focus();
     }
   }
+
+  let cryptoOptionList = Cryptocurrencies.map((crypto) =>{
+    return (
+      <div
+        key={nanoid()}
+        className="option"
+        onClick={() => {
+          setStock(`${crypto.id}USD`);
+          setTitle(crypto.name);
+          setSector(crypto.details.type);
+
+          document.querySelector('.selected').innerHTML = `${crypto.id}`;
+          setIsDropDown((value) => !value);
+          handleChoose();
+        }}
+      >
+        <input
+          type="radio"
+          className="radio"
+          id={`${crypto.id}`}
+          name="category"
+        />
+        <label
+          htmlFor={`${crypto.id}`}
+        >{`${crypto.name} - ${crypto.id}`}</label>
+      </div>
+    ); 
+  })
 
   let optionList = Symbol.map((company) => {
     return (
@@ -71,6 +100,7 @@ function Selection({ handleChoose }) {
           }
         >
           {optionList}
+          {cryptoOptionList}
         </div>
 
         <div className="selected" onClick={selectBoxClick}>
