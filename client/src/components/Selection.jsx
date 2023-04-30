@@ -27,7 +27,7 @@ function Selection({ handleChoose }) {
         key={nanoid()}
         className="option"
         onClick={() => {
-          setStock(`${crypto.id}USD`);
+          setStock(`${crypto.id}/USD`);
           setTitle(crypto.name);
           setSector(crypto.details.type);
 
