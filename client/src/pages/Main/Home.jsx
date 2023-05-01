@@ -15,7 +15,9 @@ function Home() {
       <div className="main-wrapper">
         <div className="home-chart-wrapper">
           <div className="home-chart-description">
-            {title} ({sector === 'crypto' ? `${assets.split('USD')[0]}/USD`: assets}) - {sector}
+            {title} (
+            {sector === 'crypto' ? `${assets.split('USD')[0]}/USD` : assets}) -{' '}
+            {sector}
           </div>
           <div id="home-chart-container">
             <AdvancedRealTimeChart
