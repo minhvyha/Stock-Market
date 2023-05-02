@@ -12,12 +12,12 @@ const PieChart = ({ data }) => {
       activeOuterRadiusOffset={12}
       colors={{ scheme: 'oranges' }}
       tooltip={(e) => {
-        let { datum: t } = e;
-        console.log(t);
+        let { datum: PieComputedDatum } = e;
+        console.log(PieComputedDatum);
         return (
           <div style={{background: '#ffffff', color: '#000000' }}>
-            {t.id}
-            {t.value}
+            {PieComputedDatum.id}
+            {PieComputedDatum.value}
           </div>
         );
       }}
