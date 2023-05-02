@@ -30,9 +30,11 @@ function App() {
   const [user, setUser] = useState({
     name: 'Minh Vy Ha',
     assets: {
-
+      "AAPL": 50_000,
+      "BTCUSD": 50_000, 
     },
     cash: 100_000,
+    totalAssets: 200_000
   });
   const windowSize = useRef([window.innerWidth, window.innerHeight]);
   const [data, setData] = useState();
