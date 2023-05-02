@@ -2,7 +2,6 @@ import React, { useContext, useEffect } from 'react';
 import './Portfolio';
 import PieChart from '../../components/PieChart';
 import { MainPageContext } from '../../App';
-import data from '../../MockData';
 
 function Portfolio() {
   const { user } = useContext(MainPageContext);
