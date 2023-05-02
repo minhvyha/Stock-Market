@@ -1,32 +1,35 @@
 .popup-loader {
-   position: fixed;
-   left: 0;
-   top: 0;
-   width: 100%;
-   height: 100%;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   overflow: auto;
-   background-color: hsla(216, 10%, 20%, 0.713);
-   z-index: var(--z-modal);
-   transition: 0.4s all ease-in-out;
- }
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  background-color: hsla(216, 10%, 20%, 0.713);
+  z-index: var(--z-modal);
+  transition: 0.4s all ease-in-out;
+}
 .loader {
-   background-color: var(--container-color);
-   opacity: 85%;
+  background-color: var(--container-color);
+  opacity: 85%;
 }
 @keyframes spin {
-   from {transform:rotate(0deg);}
-   to {transform:rotate(360deg);}
- }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 .screen-loader {
-   animation: spin 1.6s linear infinite;
-   border: 16px solid var(--container-color);
-   border-radius: 50%;
-   border-top: 16px solid var(--first-color);
-   width: 120px;
-   height: 120px;
-   opacity: 1;
- }
- 
+  animation: spin 1.6s linear infinite;
+  border: 16px solid var(--container-color);
+  border-radius: 50%;
+  border-top: 16px solid var(--first-color);
+  width: 120px;
+  height: 120px;
+  opacity: 1;
+}

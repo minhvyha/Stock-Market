@@ -8,52 +8,52 @@ import Down from '../assets/images/Down.png';
 import Account from '../assets/images/Account.png';
 
 function Footer() {
-	return (
-		<footer>
-			<NavLink to="/home" exact="true" activeclassname="active">
-				<div className="footer-item-container">
-					<img src={Logo} alt="" />
-					<label>Home</label>
-				</div>
-			</NavLink>
-			<NavLink to="/portfolio" exact="true" activeclassname="active">
-				<div className="footer-item-container">
-					<img src={Wallet} alt="" />
+  return (
+    <footer>
+      <NavLink to="/home" exact="true" activeclassname="active">
+        <div className="footer-item-container">
+          <img src={Logo} alt="" />
+          <label>Home</label>
+        </div>
+      </NavLink>
+      <NavLink to="/portfolio" exact="true" activeclassname="active">
+        <div className="footer-item-container">
+          <img src={Wallet} alt="" />
 
-					<label>Portfolio</label>
-				</div>
-			</NavLink>
-			<NavLink
-				to="/buy"
-				className={({ isActive }) => (isActive ? 'active-footer' : '')}
-			>
-				<div className="footer-item-container">
-					<img src={Card} alt="" />
+          <label>Portfolio</label>
+        </div>
+      </NavLink>
+      <NavLink
+        to="/buy"
+        className={({ isActive }) => (isActive ? 'active-footer' : '')}
+      >
+        <div className="footer-item-container">
+          <img src={Card} alt="" />
 
-					<label>Buy</label>
-				</div>
-			</NavLink>
-			<NavLink
-				to="/sell"
-				className={({ isActive }) => (isActive ? 'active-footer' : '')}
-			>
-				<div className="footer-item-container">
-					<img src={Down} alt="" />
+          <label>Buy</label>
+        </div>
+      </NavLink>
+      <NavLink
+        to="/sell"
+        className={({ isActive }) => (isActive ? 'active-footer' : '')}
+      >
+        <div className="footer-item-container">
+          <img src={Down} alt="" />
 
-					<label>Sell</label>
-				</div>
-			</NavLink>
-			<NavLink
-				to="/account"
-				className={({ isActive }) => (isActive ? 'active-footer' : '')}
-			>
-				<div className="footer-item-container">
-					<img src={Account} alt="" />
-					<label>Account</label>
-				</div>
-			</NavLink>
-		</footer>
-	);
+          <label>Sell</label>
+        </div>
+      </NavLink>
+      <NavLink
+        to="/account"
+        className={({ isActive }) => (isActive ? 'active-footer' : '')}
+      >
+        <div className="footer-item-container">
+          <img src={Account} alt="" />
+          <label>Account</label>
+        </div>
+      </NavLink>
+    </footer>
+  );
 }
 
 export default Footer;

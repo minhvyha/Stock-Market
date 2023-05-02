@@ -8,9 +8,9 @@ import { MainPageContext } from '../App';
 function Nav() {
   const { activePage, setActivePage } = useContext(MainPageContext);
   function handleNavigation(page) {
-		setActivePage(page)
-		console.log(page)
-		let input = document.getElementById('check');
+    setActivePage(page);
+    console.log(page);
+    let input = document.getElementById('check');
     if (input) {
       input.checked = false;
     }

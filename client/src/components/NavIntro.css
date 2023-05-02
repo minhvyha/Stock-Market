@@ -1,55 +1,56 @@
 #intro-image {
-	cursor: pointer;
+  cursor: pointer;
 }
-.navBar.intro-nav .nav-container{
-	background-color: var(--dark-nav-background);
-	box-shadow: none;
-	transition: 0.25s ease;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	max-width: 1280px;
-	margin-inline: auto;
-	width: 100%;
-	padding-inline: 50px;
+.navBar.intro-nav .nav-container {
+  background-color: var(--dark-nav-background);
+  box-shadow: none;
+  transition: 0.25s ease;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 1280px;
+  margin-inline: auto;
+  width: 100%;
+  padding-inline: 50px;
 }
-.navBar.intro-nav{
-	transition: .25s ease;
+.navBar.intro-nav {
+  transition: 0.25s ease;
 }
-.scroll-header .navBar.intro-nav .nav-container, .scroll-header .navBar.intro-nav{
-	background-color: var(--first-color);
+.scroll-header .navBar.intro-nav .nav-container,
+.scroll-header .navBar.intro-nav {
+  background-color: var(--first-color);
 }
 .scroll-header nav ul li a {
-	color: var(--dark-text);
+  color: var(--dark-text);
 }
-.scroll-header nav ul li.active a	{
-	color: black;
+.scroll-header nav ul li.active a {
+  color: black;
 }
-nav ul li.active a	{
-	color: var(--second-color);
+nav ul li.active a {
+  color: var(--second-color);
 }
 #intro-image-light {
-	position: absolute;
-	left: 0;
-	visibility: hidden;
-	opacity: 0;
+  position: absolute;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
 }
 .scroll-header #intro-image-light {
-	visibility: visible;
-	opacity: 1;
+  visibility: visible;
+  opacity: 1;
 }
 .scroll-header #intro-image {
-	visibility: hidden;
-	opacity: 0;
+  visibility: hidden;
+  opacity: 0;
 }
 .navBar.intro-nav a img {
-	transition: all 0.25s ease;
+  transition: all 0.25s ease;
 }
 @media (max-width: 755px) {
-	#intro-image-light{
-		left: 20px;
-	}
-	.scroll-header nav ul li.active a	{
-		color: var(--first-color);
-	}
+  #intro-image-light {
+    left: 20px;
+  }
+  .scroll-header nav ul li.active a {
+    color: var(--first-color);
+  }
 }
