@@ -1,0 +1,15 @@
+const authKey = (permission) => {
+  return (req, res, next) => {
+    if (!req.params.key) {
+      return res.status(401).json('Do not have permission to access.');
+    }
+    const key = req.params.key;
+    if (permission !== key) {
+      return res.status(401).json('Do not have permission to access.');
+    }
+    next();
+  };
+  
+};
+
+module.exports = { authKey };
