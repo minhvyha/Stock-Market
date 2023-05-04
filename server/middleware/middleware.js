@@ -9,7 +9,6 @@ const authKey = (permission) => {
     }
     next();
   };
-  
 };
 
 module.exports = { authKey };
