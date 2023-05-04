@@ -9,6 +9,10 @@ const UserSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.Mixed,
     require: true,
   },
+  email:{
+    type: String,
+    require: true
+  },
   cash: {
     type: Number,
     default: 0,
@@ -17,6 +21,7 @@ const UserSchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
+  
 });
 
 const UserModel = mongoose.model('user', UserSchema);

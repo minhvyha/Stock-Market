@@ -20,9 +20,22 @@ const connectDB = async () => {
 };
 
 //Routes go here
-app.get('/:key', [authGet(), authKey(process.env.PASSWORD)], (req, res) => {
-  UserModel.findById(req.body._id);
-});
+app.get(
+  '/:key/:email',
+  [authGet(), authKey(process.env.PASSWORD)],
+  (req, res) => {
+    const user = UserModel.findOne({ email: req.params.email });
+    user.select('name');
+    user.exec(function (err, user) {
+      if (err) {
+        console.log(err);
+      }
+      res.json(user)
+      console.log(user);
+    });
+    // console.log(user);
+  }
+);
 
 app.post('/addUser', [authKey(process.env.PASSWORD)], async (req, res) => {
   const user = req.body;

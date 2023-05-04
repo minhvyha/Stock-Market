@@ -13,9 +13,10 @@ const authKey = (permission) => {
 
 const authGet = () => {
   return (req, res, next) => {
-    if (!req.params._id) {
+    if (!req.params.email) {
       return res.status(401).json('Invalid id.');
     }
+    // console.log(req.params.email)
     next();
   };
 };
