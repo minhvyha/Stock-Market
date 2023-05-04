@@ -7,7 +7,7 @@ const UserSchema = new mongoose.Schema({
   },
   assets: {
     type: mongoose.Schema.Types.Mixed,
-    require: true,
+    default: {}
   },
   email:{
     type: String,

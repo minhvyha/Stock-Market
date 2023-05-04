@@ -1,5 +1,5 @@
 require('dotenv').config();
-const { authKey, authGet } = require('./middleware/middleware');
+const { authKey, authGet, authAddUser } = require('./middleware/middleware');
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
@@ -24,9 +24,9 @@ app.get(
   '/:key/:email',
   [authGet(), authKey(process.env.PASSWORD)],
   (req, res) => {
-    const user = UserModel.findOne({ email: req.params.email });
-    user.select('-password');
-    user.exec(function (err, user) {
+    const query = UserModel.findOne({ email: req.params.email });
+    query.select('-password');
+    query.exec(function (err, user) {
       if (err) {
         console.log(err);
       }
@@ -37,7 +37,7 @@ app.get(
   }
 );
 
-app.post('/addUser/:key', [authKey(process.env.PASSWORD)], async (req, res) => {
+app.post('/addUser/:key', [authAddUser(), authKey(process.env.PASSWORD)], async (req, res) => {
   const user = req.body;
   console.log('add user') 
   console.log(user)

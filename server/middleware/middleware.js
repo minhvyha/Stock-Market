@@ -23,9 +23,18 @@ const authGet = () => {
 
 const authAddUser = () => {
   return (req, res, next) => {
-    if (!req.params.email) {
-      return res.status(401).json('Invalid id.');
-    }
+    const user = req.body;
+    const userEmail = user.email;
+    const query = UserModel.findOne({ email: userEmail });
+    query.select('-password');
+    query.exec(function (err, user) {
+      if (err) {
+        console.log(err);
+      }
+      if (user) {
+        return res.status(400).json('Email already register.');
+      }
+    });
     // console.log(req.params.email)
     next();
   };
