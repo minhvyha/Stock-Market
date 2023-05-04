@@ -21,4 +21,14 @@ const authGet = () => {
   };
 };
 
-module.exports = { authKey, authGet };
+const authAddUser = () => {
+  return (req, res, next) => {
+    if (!req.params.email) {
+      return res.status(401).json('Invalid id.');
+    }
+    // console.log(req.params.email)
+    next();
+  };
+};
+
+module.exports = { authKey, authGet, authAddUser };

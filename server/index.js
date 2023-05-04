@@ -37,8 +37,10 @@ app.get(
   }
 );
 
-app.post('/addUser', [authKey(process.env.PASSWORD)], async (req, res) => {
+app.post('/addUser/:key', [authKey(process.env.PASSWORD)], async (req, res) => {
   const user = req.body;
+  console.log('add user') 
+  console.log(user)
   const newUser = new UserModel(user);
   await newUser.save();
   res.json(user);
