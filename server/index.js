@@ -4,7 +4,10 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const PORT = process.env.PORT || 3010;
+const { UserModel } = require('./models/UserModel');
 
+app.use(express.json())
+ 
 mongoose.set('strictQuery', false);
 const connectDB = async () => {
   try {
@@ -22,6 +25,32 @@ app.get('/:key', [authKey(process.env.PASSWORD)], (req, res) => {
   res.send({ title: 'Books', body: 'asdf' });
 });
 
+app.post("/addUser", [authKey(process.env.PASSWORD)], async (req, res) =>{
+  const user = req.body;
+  const newUser = new UserModel(user);
+  await newUser.save();
+  res.json(user);
+})
+
+app.post("/editUser", [authKey(process.env.PASSWORD)], async (req, res) =>{
+  const user = req.body;
+  UserModel.findByIdAndUpdate(note._id, user, (err, result) => {
+    if (err) {
+      res.json(err);
+    } else {
+      res.json(result);
+    }
+  });
+})
+
+app.post("/deleteUser", [authKey(process.env.PASSWORD)], async (req, res) =>{
+  const id = req.body._id;
+  UserModel.deleteOne({ _id: id }).then((result) => {
+    res.json(result);
+  });
+})
+
+
 app.get('/books', async (req, res) => {
   const book = await Book.find();
 
@@ -31,6 +60,7 @@ app.get('/books', async (req, res) => {
     res.send('Something went wrong.');
   }
 });
+
 
 app.get('/add-note', async (req, res) => {
   try {
