@@ -58,8 +58,8 @@ app.post('/editUser', [authKey(process.env.PASSWORD)], async (req, res) => {
 });
 
 app.post('/deleteUser', [authKey(process.env.PASSWORD)], async (req, res) => {
-  const id = req.body._id;
-  UserModel.deleteOne({ _id: id }).then((result) => {
+  const email = req.body.email;
+  UserModel.deleteOne({ email: email }).then((result) => {
     res.json(result);
   });
 });
