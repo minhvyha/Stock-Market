@@ -6,8 +6,8 @@ const app = express();
 const PORT = process.env.PORT || 3010;
 const { UserModel } = require('./models/UserModel');
 
-app.use(express.json())
- 
+app.use(express.json());
+
 mongoose.set('strictQuery', false);
 const connectDB = async () => {
   try {
@@ -21,17 +21,17 @@ const connectDB = async () => {
 
 //Routes go here
 app.get('/:key', [authGet(), authKey(process.env.PASSWORD)], (req, res) => {
-  UserModel.findById(req.body._id)
+  UserModel.findById(req.body._id);
 });
 
-app.post("/addUser", [authKey(process.env.PASSWORD)], async (req, res) =>{
+app.post('/addUser', [authKey(process.env.PASSWORD)], async (req, res) => {
   const user = req.body;
   const newUser = new UserModel(user);
   await newUser.save();
   res.json(user);
-})
+});
 
-app.post("/editUser", [authKey(process.env.PASSWORD)], async (req, res) =>{
+app.post('/editUser', [authKey(process.env.PASSWORD)], async (req, res) => {
   const user = req.body;
   UserModel.findByIdAndUpdate(note._id, user, (err, result) => {
     if (err) {
@@ -40,43 +40,13 @@ app.post("/editUser", [authKey(process.env.PASSWORD)], async (req, res) =>{
       res.json(result);
     }
   });
-})
+});
 
-app.post("/deleteUser", [authKey(process.env.PASSWORD)], async (req, res) =>{
+app.post('/deleteUser', [authKey(process.env.PASSWORD)], async (req, res) => {
   const id = req.body._id;
   UserModel.deleteOne({ _id: id }).then((result) => {
     res.json(result);
   });
-})
-
-
-app.get('/books', async (req, res) => {
-  const book = await Book.find();
-
-  if (book) {
-    res.json(book);
-  } else {
-    res.send('Something went wrong.');
-  }
-});
-
-
-app.get('/add-note', async (req, res) => {
-  try {
-    await Book.insertMany([
-      {
-        title: 'Sons Of Anarchy',
-        body: 'Body text goes here...',
-      },
-      {
-        title: 'Games of Thrones',
-        body: 'Body text goes here...',
-      },
-    ]);
-    res.json({ Data: 'Added' });
-  } catch (error) {
-    console.log('err', +error);
-  }
 });
 
 //Connect to the database before listening
