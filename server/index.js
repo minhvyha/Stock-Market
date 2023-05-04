@@ -1,5 +1,5 @@
 require('dotenv').config();
-const { authKey } = require('./middleware/middleware');
+const { authKey, authGet } = require('./middleware/middleware');
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
@@ -20,9 +20,8 @@ const connectDB = async () => {
 };
 
 //Routes go here
-app.get('/:key', [authKey(process.env.PASSWORD)], (req, res) => {
-  console.log(req.body);
-  res.send({ title: 'Books', body: 'asdf' });
+app.get('/:key', [authGet(), authKey(process.env.PASSWORD)], (req, res) => {
+  UserModel.findById(req.body._id)
 });
 
 app.post("/addUser", [authKey(process.env.PASSWORD)], async (req, res) =>{

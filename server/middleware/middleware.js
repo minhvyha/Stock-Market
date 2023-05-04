@@ -11,4 +11,13 @@ const authKey = (permission) => {
   };
 };
 
-module.exports = { authKey };
+const authGet = () => {
+  return (req, res, next) => {
+    if (!req.params._id) {
+      return res.status(401).json('Do not have permission to access.');
+    }
+    next();
+  };
+};
+
+module.exports = { authKey, authGet };
