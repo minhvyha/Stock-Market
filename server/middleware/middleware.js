@@ -14,7 +14,7 @@ const authKey = (permission) => {
 const authGet = () => {
   return (req, res, next) => {
     if (!req.params._id) {
-      return res.status(401).json('Do not have permission to access.');
+      return res.status(401).json('Invalid id.');
     }
     next();
   };
