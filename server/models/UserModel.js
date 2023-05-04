@@ -21,7 +21,10 @@ const UserSchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
-  
+  password: {
+    type: String,
+    require: true
+  }
 });
 
 const UserModel = mongoose.model('user', UserSchema);

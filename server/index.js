@@ -25,7 +25,7 @@ app.get(
   [authGet(), authKey(process.env.PASSWORD)],
   (req, res) => {
     const user = UserModel.findOne({ email: req.params.email });
-    user.select('name');
+    user.select('-password');
     user.exec(function (err, user) {
       if (err) {
         console.log(err);
