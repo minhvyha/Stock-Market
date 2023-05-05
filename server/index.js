@@ -37,18 +37,16 @@ app.get(
   }
 );
 
-app.post('/addUser/:key', [authAddUser(), authKey(process.env.PASSWORD)], async (req, res) => {
+app.post('/addUser/:key', [authAddUser(UserModel), authKey(process.env.PASSWORD)], async (req, res) => {
   const user = req.body;
-  console.log('add user') 
-  console.log(user)
   const newUser = new UserModel(user);
   await newUser.save();
   res.json(user);
 });
 
-app.post('/editUser', [authKey(process.env.PASSWORD)], async (req, res) => {
+app.post('/editUser/:key', [authKey(process.env.PASSWORD)], async (req, res) => {
   const user = req.body;
-  UserModel.findByIdAndUpdate(note._id, user, (err, result) => {
+  UserModel.updateOne({email : user.email}, user, (err, result) => {
     if (err) {
       res.json(err);
     } else {
@@ -57,7 +55,7 @@ app.post('/editUser', [authKey(process.env.PASSWORD)], async (req, res) => {
   });
 });
 
-app.post('/deleteUser', [authKey(process.env.PASSWORD)], async (req, res) => {
+app.post('/deleteUser/:key', [authKey(process.env.PASSWORD)], async (req, res) => {
   const email = req.body.email;
   UserModel.deleteOne({ email: email }).then((result) => {
     res.json(result);

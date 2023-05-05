@@ -21,7 +21,7 @@ const authGet = () => {
   };
 };
 
-const authAddUser = () => {
+const authAddUser = (UserModel) => {
   return (req, res, next) => {
     const user = req.body;
     const userEmail = user.email;
@@ -34,9 +34,9 @@ const authAddUser = () => {
       if (user) {
         return res.status(400).json('Email already register.');
       }
+      next();
     });
     // console.log(req.params.email)
-    next();
   };
 };
 
