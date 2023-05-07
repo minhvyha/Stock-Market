@@ -7,11 +7,11 @@ const UserSchema = new mongoose.Schema({
   },
   assets: {
     type: mongoose.Schema.Types.Mixed,
-    default: {}
+    default: {},
   },
-  email:{
+  email: {
     type: String,
-    require: true
+    require: true,
   },
   cash: {
     type: Number,
@@ -23,10 +23,10 @@ const UserSchema = new mongoose.Schema({
   },
   password: {
     type: String,
-    require: true
-  }
+    require: true,
+  },
 });
 
 const UserModel = mongoose.model('user', UserSchema);
 
-module.exports = {UserModel};
+module.exports = { UserModel };
