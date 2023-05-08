@@ -19,7 +19,7 @@ const connectDB = async () => {
   }
 };
 
-//Routes go here
+//Routes go
 app.get(
   '/:key/:email',
   [authGet(), authKey(process.env.PASSWORD)],
