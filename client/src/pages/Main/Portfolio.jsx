@@ -4,7 +4,8 @@ import PieChart from '../../components/PieChart';
 import { MainPageContext } from '../../App';
 import PortfolioData from '../../components/PortfolioData';
 import { nanoid } from 'nanoid';
-
+import { Doughnut } from 'react-chartjs-2';
+import Pie from '../../components/Pie';
 
 function Portfolio() {
   const { user } = useContext(MainPageContext);
@@ -34,7 +35,7 @@ function Portfolio() {
         <div className='portfolio-pie-chart' >
           <PieChart data={newData} />
         </div>
-
+<Pie />
       </div>
     </div>
   );
