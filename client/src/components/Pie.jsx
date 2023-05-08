@@ -25,11 +25,6 @@ ChartJS.overrides['doughnut'].plugins.legend.labels ={
     return [];
   }
 }
-
-ChartJS.overrides['doughnut'].plugins.title = {
-  color: 'white',
-  display: true,
-};
 function Pie() {
   return (
     <Doughnut
