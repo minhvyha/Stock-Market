@@ -1,13 +1,13 @@
-import React from 'react'
-import './PortfolioData.css'
+import React from 'react';
+import './PortfolioData.css';
 
-function PortfolioData({name, amount}) {
+function PortfolioData({ name, amount }) {
   return (
-    <div className='portfolio-data-container'>
-      <div className='data-name'>{name}</div>
-      <div className='data-amount'>{amount}</div>
+    <div className="portfolio-data-container">
+      <div className="portfolio-data"><strong>{name}</strong> - {amount}%</div>
+      
     </div>
-  )
+  );
 }
 
-export default PortfolioData
+export default PortfolioData;

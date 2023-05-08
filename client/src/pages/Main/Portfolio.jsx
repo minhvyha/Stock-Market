@@ -1,9 +1,10 @@
 import React, { useContext, useEffect } from 'react';
-import './Portfolio';
+import './Portfolio.css';
 import PieChart from '../../components/PieChart';
 import { MainPageContext } from '../../App';
 import PortfolioData from '../../components/PortfolioData';
 import { nanoid } from 'nanoid';
+
 
 function Portfolio() {
   const { user } = useContext(MainPageContext);
@@ -21,19 +22,19 @@ function Portfolio() {
   newData.sort((a, b) => b.value - a.value);
   let portfolioData = newData.map((data) =>{
     return (
-      <PortfolioData key={nanoid()} name={data.id} amount={data.value} />
+      <PortfolioData key={nanoid()} name={data.id} amount={data.value * 100 / user.totalAssets} />
     )
   })
 
   return (
     <div className="main-container">
-      <h1>Portfolio</h1>
-      <div className="portfolio-title"></div>
+      <div className="portfolio-title">Portfolio</div>
       <div className="portfolio-content-container">
         <div className="portfolio-content">{portfolioData}</div>
-        <div style={{ height: 500 }}>
+        <div className='portfolio-pie-chart' >
           <PieChart data={newData} />
         </div>
+
       </div>
     </div>
   );

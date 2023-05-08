@@ -1,0 +1,8 @@
+.portfolio-content-container{
+  display: flex;
+  flex-direction: column;
+}
+.portfolio-pie-chart{
+  height: 500px;
+
+}
