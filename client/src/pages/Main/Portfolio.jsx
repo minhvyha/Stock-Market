@@ -2,6 +2,8 @@ import React, { useContext, useEffect } from 'react';
 import './Portfolio';
 import PieChart from '../../components/PieChart';
 import { MainPageContext } from '../../App';
+import PortfolioData from '../../components/PortfolioData';
+import { nanoid } from 'nanoid';
 
 function Portfolio() {
   const { user } = useContext(MainPageContext);
@@ -16,14 +18,22 @@ function Portfolio() {
       value: value,
     });
   }
-  
-  console.log(newData.sort((a, b) => b.value - a.value));
+  newData.sort((a, b) => b.value - a.value);
+  let portfolioData = newData.map((data) =>{
+    return (
+      <PortfolioData key={nanoid()} name={data.id} amount={data.value} />
+    )
+  })
 
   return (
     <div className="main-container">
       <h1>Portfolio</h1>
-      <div style={{ height: 500 }}>
-        <PieChart data={newData} />
+      <div className="portfolio-title"></div>
+      <div className="portfolio-content-container">
+        <div className="portfolio-content">{portfolioData}</div>
+        <div style={{ height: 500 }}>
+          <PieChart data={newData} />
+        </div>
       </div>
     </div>
   );
