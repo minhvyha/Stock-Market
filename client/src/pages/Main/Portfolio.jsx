@@ -1,10 +1,8 @@
 import React, { useContext, useEffect } from 'react';
 import './Portfolio.css';
-import PieChart from '../../components/PieChart';
 import { MainPageContext } from '../../App';
 import PortfolioData from '../../components/PortfolioData';
 import { nanoid } from 'nanoid';
-import { Doughnut } from 'react-chartjs-2';
 import Pie from '../../components/Pie';
 
 function Portfolio() {
@@ -21,11 +19,17 @@ function Portfolio() {
     });
   }
   newData.sort((a, b) => b.value - a.value);
+  let labels = []
+  let dataSet = []
   let portfolioData = newData.map((data) =>{
+    labels.push(data.id)
+    dataSet.push(data.value)
     return (
       <PortfolioData key={nanoid()} name={data.id} amount={data.value * 100 / user.totalAssets} />
     )
   })
+  console.log(labels)
+  console.log(dataSet)
 
   return (
     <div className="main-container">
@@ -33,9 +37,8 @@ function Portfolio() {
       <div className="portfolio-content-container">
         <div className="portfolio-content">{portfolioData}</div>
         <div className='portfolio-pie-chart' >
-          <PieChart data={newData} />
+<Pie labels={labels} data={dataSet} />
         </div>
-<Pie />
       </div>
     </div>
   );

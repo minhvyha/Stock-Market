@@ -2,12 +2,14 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend, Title } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
 import React from 'react';
 ChartJS.register(ArcElement, Tooltip, Legend, Title);
-ChartJS.overrides['doughnut'].plugins.legend.labels ={
+ChartJS.overrides['doughnut'].plugins.legend.labels = {
   color: 'white',
   generateLabels(chart) {
     const data = chart.data;
     if (data.labels.length && data.datasets.length) {
-      const {labels: {pointStyle}} = chart.legend.options;
+      const {
+        labels: { pointStyle },
+      } = chart.legend.options;
       return data.labels.map((label, i) => {
         const meta = chart.getDatasetMeta(0);
         const style = meta.controller.getStyle(i);
@@ -18,27 +20,38 @@ ChartJS.overrides['doughnut'].plugins.legend.labels ={
           lineWidth: style.borderWidth,
           pointStyle: pointStyle,
           hidden: !chart.getDataVisibility(i),
-          index: i
+          index: i,
         };
       });
     }
     return [];
-  }
-}
-function Pie() {
+  },
+};
+function Pie({ labels, data }) {
   return (
     <Doughnut
       redraw={true}
       data={{
-        labels: ['Red', 'Blue', 'Yellow'],
+        labels: labels,
         datasets: [
           {
             label: 'My First Dataset',
-            data: [300, 50, 100],
+            data: data,
             backgroundColor: [
-              'rgb(255, 99, 132)',
-              'rgb(54, 162, 235)',
-              'rgb(255, 205, 86)',
+              '#ae5404',
+              '#c85f04',
+              '#e16b05',
+              '#fa7705',
+              '#fa851e',
+              '#fb9237',
+              '#fba050',
+              '#fcae69',
+              '#fcbb82',
+              '#fdc99b',
+              '#fdd6b4',
+              '#fee4cd',
+              '#fef1e6',
+              '#ffffff',
             ],
             hoverOffset: 4,
           },
