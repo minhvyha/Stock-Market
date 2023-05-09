@@ -1,7 +1,18 @@
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, Title } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
 import React from 'react';
+
 ChartJS.register(ArcElement, Tooltip, Legend, Title);
+console.log(ChartJS.defaults.plugins.tooltip.bodyColor)
+ChartJS.overrides['doughnut'].plugins.tooltip.callbacks.label = 
+  function(context) {
+    console.log(context)
+    let label = " " + context.label + ": " + `${context.formattedValue}$`;
+
+
+    return label;
+  }
+
 ChartJS.overrides['doughnut'].plugins.legend.labels = {
   color: 'white',
   generateLabels(chart) {

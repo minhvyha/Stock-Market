@@ -23,7 +23,7 @@ function Portfolio() {
   let dataSet = []
   let portfolioData = newData.map((data) =>{
     labels.push(data.id)
-    dataSet.push(data.value)
+    dataSet.push(`${data.value}`)
     return (
       <PortfolioData key={nanoid()} name={data.id} amount={data.value * 100 / user.totalAssets} />
     )

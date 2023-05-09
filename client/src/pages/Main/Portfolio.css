@@ -1,5 +1,5 @@
 .portfolio-section {
-  gap: 2.5rem;
+  gap: 2rem;
 }
 .portfolio-pie-chart {
   height: 500px;
@@ -26,4 +26,7 @@
   display: flex;
   width: 100%;
   justify-content: center;
+}
+.portfolio-data{
+  font-size: 18px;
 }
