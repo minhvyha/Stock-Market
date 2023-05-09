@@ -32,8 +32,8 @@ function Portfolio() {
   console.log(dataSet)
 
   return (
-    <div className="main-container">
-      <div className="portfolio-title">Portfolio</div>
+    <div className="main-container portfolio-section">
+      <div className="portfolio-title">Portfolio Overview</div>
       <div className="portfolio-content-container">
         <div className="portfolio-content">{portfolioData}</div>
         <div className='portfolio-pie-chart' >

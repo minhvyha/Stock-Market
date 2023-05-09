@@ -10,7 +10,7 @@ function Nav() {
   function handleNavigation(page) {
     setActivePage(page);
     console.log(page);
-    let input = document.getElementById('check');
+    let input = document.getElementById('intro-check');
     if (input) {
       input.checked = false;
     }

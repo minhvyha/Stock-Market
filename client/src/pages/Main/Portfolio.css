@@ -1,8 +1,29 @@
-.portfolio-content-container{
+.portfolio-section {
+  gap: 2.5rem;
+}
+.portfolio-pie-chart {
+  height: 500px;
+}
+.portfolio-content-container {
   display: flex;
   flex-direction: column;
+  gap: 1rem;
 }
-.portfolio-pie-chart{
-  height: 500px;
-
+.portfolio-title {
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+}
+.portfolio-content {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--dark-button-background);
+  border-radius: 3px;
+  gap: 0.5rem;
+  padding: 10px 16px;
+}
+.portfolio-data-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }

@@ -35,7 +35,7 @@ function Pie({ labels, data }) {
         labels: labels,
         datasets: [
           {
-            label: 'My First Dataset',
+            label: 'Assets Allocation',
             data: data,
             backgroundColor: [
               '#ae5404',
