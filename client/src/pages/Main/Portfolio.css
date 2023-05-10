@@ -18,7 +18,10 @@
   background-color: var(--dark-button-background);
   border-radius: 3px;
   gap: 0.5rem;
+}
+.portfolio-content, .portfolio-pie-chart{
   padding: 10px 16px;
+
 }
 .portfolio-data-container {
   display: flex;
@@ -28,3 +31,23 @@
 .portfolio-data{
   font-size: 18px;
 }
+@media screen and (min-width: 300px) {}
+@media screen and (min-width: 350px) {}
+@media screen and (min-width: 576px) {}
+@media screen and (min-width: 756px) {
+  .portfolio-content-container{
+    flex-direction: row;
+  }
+  .portfolio-content{
+    width: 50%;
+    justify-content: center;
+  }
+  .portfolio-pie-chart{
+    width: 50%;
+  }
+  .portfolio-content, .portfolio-pie-chart{
+    padding: 0;
+  }
+}
+@media screen and (min-width: 828px) {}
+@media screen and (min-width: 992px) {}
