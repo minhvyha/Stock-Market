@@ -19,25 +19,42 @@ function Portfolio() {
     });
   }
   newData.sort((a, b) => b.value - a.value);
-  let labels = []
-  let dataSet = []
-  let portfolioData = newData.map((data) =>{
-    labels.push(data.id)
-    dataSet.push(`${data.value}`)
-    return (
-      <PortfolioData key={nanoid()} name={data.id} amount={data.value * 100 / user.totalAssets} />
-    )
-  })
-  console.log(labels)
-  console.log(dataSet)
+  let labels = [];
+  let dataSet = [];
+  let newPortfolioData = [];
+  let otherAmount = user.totalAssets;
+  for (let i = 0; i < newData.length && i < 5; i++) {
+    let data = newData[i];
+    labels.push(data.id);
+    dataSet.push(`${data.value}`);
+    otherAmount -= data.value;
+    newPortfolioData.push(
+      <PortfolioData
+        key={nanoid()}
+        name={data.id}
+        amount={((data.value * 100) / user.totalAssets).toFixed(2)}
+      />
+    );
+  }
+  if (otherAmount !== 0) {
+    labels.push('other');
+    dataSet.push(otherAmount);
+    newPortfolioData.push(
+      <PortfolioData
+        key={nanoid()}
+        name={'Other'}
+        amount={((otherAmount * 100) / user.totalAssets).toFixed(2)}
+      />
+    );
+  }
 
   return (
     <div className="main-container portfolio-section">
       <div className="portfolio-title">Portfolio Overview</div>
       <div className="portfolio-content-container">
-        <div className="portfolio-content">{portfolioData}</div>
-        <div className='portfolio-pie-chart' >
-<Pie labels={labels} data={dataSet} />
+        <div className="portfolio-content">{newPortfolioData}</div>
+        <div className="portfolio-pie-chart">
+          <Pie labels={labels} data={dataSet} />
         </div>
       </div>
     </div>

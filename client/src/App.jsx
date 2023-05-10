@@ -32,9 +32,13 @@ function App() {
     assets: {
       "AAPL": 50_000,
       "BTCUSD": 50_000, 
+      "ETHUSD" : 180_000,
+      "AMZN" : 92_000,
+      "MATICUSD": 22000,
+      "BNBUSD": 80_012
     },
     cash: 100_000,
-    totalAssets: 200_000
+    totalAssets: 572_012
   });
   const windowSize = useRef([window.innerWidth, window.innerHeight]);
   const [data, setData] = useState();
