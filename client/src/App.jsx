@@ -38,7 +38,9 @@ function App() {
       "BNBUSD": 80_012
     },
     cash: 100_000,
-    totalAssets: 572_012
+    totalAssets: 572_012,
+    image: 'https://api.dicebear.com/6.x/identicon/svg?seed=Minh_Vy_Ha'
+
   });
   const windowSize = useRef([window.innerWidth, window.innerHeight]);
   const [data, setData] = useState();

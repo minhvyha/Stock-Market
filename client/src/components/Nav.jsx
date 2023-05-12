@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { MainPageContext } from '../App';
 
 function Nav() {
-  const { activePage, setActivePage } = useContext(MainPageContext);
+  const { activePage, setActivePage, user } = useContext(MainPageContext);
   function handleNavigation(page) {
     setActivePage(page);
     console.log(page);
@@ -67,6 +67,14 @@ function Nav() {
             <Link to="/account">Account</Link>
           </li>
         </ul>
+          <div
+            id="account-image"
+            onClick={() => handleNavigation('account')}
+          >
+            <Link to="/account">
+              <img src={user.image} alt="" />
+            </Link>
+          </div>
       </div>
     </nav>
   );
