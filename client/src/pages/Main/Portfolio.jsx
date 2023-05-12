@@ -23,7 +23,7 @@ function Portfolio() {
   let dataSet = [];
   let newPortfolioData = [];
   let otherAmount = user.totalAssets;
-  for (let i = 0; i < newData.length && i < 5; i++) {
+  for (let i = 0; i < newData.length && i < 6; i++) {
     let data = newData[i];
     labels.push(data.id);
     dataSet.push(`${data.value}`);

@@ -57,6 +57,8 @@ function Pie({ labels, data }) {
               '#fba050',
               '#fcbb82',
               '#fdd6b4',
+              '#ffe4cf',
+
             ],
             hoverOffset: 5,
           },
