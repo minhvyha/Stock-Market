@@ -43,10 +43,16 @@
   .portfolio-title{
     font-size: 32px;
   }
+  .portfolio-data{
+    font-size: 19px;
+  }
 }
 @media screen and (min-width: 350px) {
   .portfolio-title{
     font-size: 34px;
+  }
+  .portfolio-data{
+    font-size: 20px;
   }
   .portfolio-content{
     min-width: 300px;
@@ -59,6 +65,9 @@
 @media screen and (min-width: 576px) {
   .portfolio-title{
     font-size: 36px;
+  }
+  .portfolio-data{
+    font-size: 22px;
   }
 }
 @media screen and (min-width: 756px) {
@@ -78,6 +87,9 @@
       max-width: 600px;
     
   }
+  .portfolio-data{
+    font-size: 24px;
+  }
   .portfolio-pie-chart{
     width: 50%;
   }
@@ -92,6 +104,9 @@
   .portfolio-content-container{
     gap: 1.8rem;
   }
+  .portfolio-data{
+    font-size: 25px;
+  }
 }
 @media screen and (min-width: 992px) {
   .portfolio-section{
@@ -102,5 +117,8 @@
   }
   .portfolio-content-container{
     gap: 2rem;
+  }
+  .portfolio-data{
+    font-size: 26px;
   }
 }
