@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { MainPageContext } from '../App';
 
 function Nav() {
-  const { activePage, setActivePage, user } = useContext(MainPageContext);
+  const { activePage, setActivePage } = useContext(MainPageContext);
   function handleNavigation(page) {
     setActivePage(page);
     console.log(page);
@@ -18,7 +18,6 @@ function Nav() {
   return (
     <nav className="navBar intro-nav">
       <div className="nav-container">
-        <input type="checkbox" id="intro-check" />
         <div className="nav-subcontainer">
           <Link className="logo-link" to="/">
             <img id="intro-image" className="logo" src={LogoTextDark} alt="" />
@@ -29,10 +28,10 @@ function Nav() {
               alt=""
             />
           </Link>
-          <label htmlFor="intro-check" className="checkbtn">
-            <i className="fas fa-bars menu-symbol"></i>
-          </label>
+          
         </div>
+      <div className='nav-content-wrapper'>
+      <input type="checkbox" id="intro-check" />
 
         <ul>
           <li
@@ -59,22 +58,21 @@ function Nav() {
           >
             <Link to="/sell">Sell</Link>
           </li>
-          <li
-            id="account"
-            className={activePage === 'account' ? 'active' : ''}
-            onClick={() => handleNavigation('account')}
-          >
-            <Link to="/account">Account</Link>
-          </li>
         </ul>
           <div
+          className={activePage === 'account' ? 'account-image active' : 'account-image'}
             id="account-image"
             onClick={() => handleNavigation('account')}
           >
             <Link to="/account">
-              <img src={user.image} alt="" />
+            <i className="fa-solid fa-circle-user"></i>
             </Link>
           </div>
+      <label htmlFor="intro-check" className="checkbtn">
+            <i className="fas fa-bars menu-symbol"></i>
+          </label>
+      </div>
+      
       </div>
     </nav>
   );
