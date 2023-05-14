@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Symbol } from '../SP500';
 import { Cryptocurrencies } from '../Crypto.js';
 import { MainPageContext } from '../App';
@@ -7,7 +7,9 @@ import './Selection.css';
 
 function Selection({  }) {
   const [isDropDown, setIsDropDown] = useState(false);
-  const { setAssets, setTitle, setSector } = useContext(MainPageContext);
+  const [searchValue, setSearchValue] = useState('')
+  const [searchList, setSearchList] = useState()
+  const { setAssets, setTitle, setSector, assets } = useContext(MainPageContext);
 
   function selectBoxClick() {
     const optionsContainer = document.querySelector('.options-container');
@@ -21,61 +23,51 @@ function Selection({  }) {
     }
   }
 
-  let cryptoOptionList = Cryptocurrencies.map((crypto) => {
-    return (
-      <div
-        key={nanoid()}
-        className="option"
-        onClick={() => {
-          setAssets(`${crypto.id}USD`);
-          setTitle(crypto.name);
-          setSector(crypto.details.type);
 
-          document.querySelector('.selected').innerHTML = `${crypto.id}`;
-          setIsDropDown((value) => !value);
 
-        }}
-      >
-        <input
-          type="radio"
-          className="radio"
-          id={`${crypto.id}`}
-          name="category"
-        />
-        <label
-          htmlFor={`${crypto.id}`}
-        >{`${crypto.name} - ${crypto.id}`}</label>
-      </div>
-    );
-  });
+  useEffect(() =>{
+    const timeoutId = setTimeout( async ()=>{
+      const searchApi = await fetch(
+        `https://financialmodelingprep.com/api/v3/search?query=${searchValue}&limit=40&apikey=${process.env.REACT_APP_STOCK_SEARCH}`
+      );
 
-  let optionList = Symbol.map((company) => {
-    return (
-      <div
-        key={nanoid()}
-        className="option"
-        onClick={() => {
-          setAssets(company.Symbol);
-          setTitle(company.Name);
-          setSector(company.Sector);
+      const stockValue = await searchApi.json()
+      console.log(stockValue)
+      let optionList = stockValue.map((data) => {
+        return (
+          <div
+            key={nanoid()}
+            className="option"
+            onClick={() => {
+              setAssets(data.symbol);
+              setTitle(data.name);
+              setSector(data.exchangeShortName);
+    
+              document.querySelector('.selected').innerHTML = `${data.symbol}`;
+              setIsDropDown((value) => !value);
+    
+            }}
+          >
+            <input
+              type="radio"
+              className="radio"
+              id={`${data.symbol}`}
+              name="category"
+            />
+            <label
+              htmlFor={`${data.symbol}`}
+            >{`${data.symbol} - ${data.name}`}</label>
+          </div>
+        );
+      });
+      setSearchList(optionList)
+    }, 2000)
+    return () => clearTimeout(timeoutId)
+  }, [searchValue])
 
-          document.querySelector('.selected').innerHTML = `${company.Symbol}`;
-          setIsDropDown((value) => !value);
-
-        }}
-      >
-        <input
-          type="radio"
-          className="radio"
-          id={`${company.Symbol}`}
-          name="category"
-        />
-        <label
-          htmlFor={`${company.Symbol}`}
-        >{`${company.Name} - ${company.Symbol}`}</label>
-      </div>
-    );
-  });
+  function handleSearch (event){
+    setSearchValue(event.target.value)
+  }
 
   const filterList = (searchTerm) => {
     const optionsList = document.querySelectorAll('.option');
@@ -133,8 +125,7 @@ function Selection({  }) {
             isDropDown ? 'options-container active' : 'options-container'
           }
         >
-          {optionList}
-          {cryptoOptionList}
+          {searchList}
         </div>
 
         <div className="selected" onClick={selectBoxClick}>
@@ -145,9 +136,7 @@ function Selection({  }) {
           <input
             type="text"
             placeholder="Start Typing..."
-            onKeyUp={function (e) {
-              filterList(e.target.value);
-            }}
+            onKeyUp={handleSearch}
           />
         </div>
       </div>
