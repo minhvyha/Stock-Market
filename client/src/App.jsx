@@ -28,17 +28,17 @@ export const MainPageContext = React.createContext();
 
 function App() {
   const [user, setUser] = useState({
-    // name: 'Minh Vy Ha',
-    // assets: {
-    //   "AAPL": 50_000,
-    //   "BTCUSD": 50_000, 
-    //   "ETHUSD" : 180_000,
-    //   "AMZN" : 92_000,
-    //   "MATICUSD": 22000,
-    //   "BNBUSD": 80_012
-    // },
-    // cash: 100_000,
-    // totalAssets: 572_012,
+    name: 'Minh Vy Ha',
+    assets: {
+      "AAPL": 50_000,
+      "BTCUSD": 50_000, 
+      "ETHUSD" : 180_000,
+      "AMZN" : 92_000,
+      "MATICUSD": 22000,
+      "BNBUSD": 80_012
+    },
+    cash: 100_000,
+    totalAssets: 572_012,
 
   });
   const windowSize = useRef([window.innerWidth, window.innerHeight]);

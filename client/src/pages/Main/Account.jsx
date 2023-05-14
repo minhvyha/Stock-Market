@@ -5,6 +5,8 @@ import Personal from '../../components/Account/Personal';
 import Appearance from '../../components/Account/Appearance';
 import Password from '../../components/Account/Password';
 import Help from '../../components/Account/Help';
+import Contact from '../../components/Account/Contact';
+import Trade from '../../components/Account/Trade';
 import { nanoid } from 'nanoid';
 
 function Account() {
@@ -18,10 +20,12 @@ function Account() {
   } = useContext(MainPageContext);
 
   let settingList = [
-    { name: 'personal', component: Personal },
-    { name: 'password', component: Password },
+    { name: 'my details', component: Personal },
+    {name : 'trade', component: Trade, external: true},
+    { name: 'security and password', component: Password },
     { name: 'appearance', component: Appearance },
     { name: 'help', component: Help },
+    {name : 'contact us', component: Contact},
   ];
 
   let settings = settingList.map((setting) => {
@@ -36,9 +40,11 @@ function Account() {
           document
             .getElementById('account-main-content')
             .classList.add('account-active');
+          console.log(activeSetting)
         }}
       >
         {capitalize(setting.name)}
+        {setting.external ? <i class="fa-solid fa-arrow-up-right-from-square"></i>: <i class="fa-solid fa-chevron-right"></i>}
       </div>
     );
   });
@@ -60,6 +66,7 @@ function Account() {
           name="category"
         />
         <label for="automobiles">{value}</label>
+        
       </div>
     );
   });
@@ -96,12 +103,11 @@ function Account() {
   return (
     <div className="main-container">
       <div id="account-nav" className="account-navigation-bar">
-        <div className="account-nav-title">Setting</div>
         {settings}
       </div>
       <div id="account-main-content" className="account-main-content">
-        {activeSetting === 'personal' ? <Personal /> : null}
-        {activeSetting === 'password' ? <Password /> : null}
+        {activeSetting === 'my details' ? <Personal /> : null}
+        {activeSetting === 'security and password' ? <Password /> : null}
         {activeSetting === 'appearance' ? <Appearance /> : null}
         {activeSetting === 'help' ? <Help /> : null}
       </div>

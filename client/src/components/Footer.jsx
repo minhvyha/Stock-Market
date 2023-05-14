@@ -6,17 +6,30 @@ import Wallet from '../assets/images/Wallet.png';
 import Card from '../assets/images/Card.png';
 import Down from '../assets/images/Down.png';
 import Account from '../assets/images/Account.png';
+import { useContext } from 'react';
+import { MainPageContext } from '../App';
 
 function Footer() {
+  let { activePage, setActivePage } = useContext(MainPageContext);
   return (
     <footer>
-      <NavLink to="/home" exact="true" activeclassname="active">
+      <NavLink
+        to="/home"
+        className={({ activePage }) =>
+        activePage ? 'active-footer' : ''
+        }
+      >
         <div className="footer-item-container">
           <img src={Logo} alt="" />
           <label>Home</label>
         </div>
       </NavLink>
-      <NavLink to="/portfolio" exact="true" activeclassname="active">
+      <NavLink
+        to="/portfolio"
+        className={({ activePage }) =>
+        activePage ? 'active-footer' : ''
+        }
+      >
         <div className="footer-item-container">
           <img src={Wallet} alt="" />
 
@@ -25,7 +38,9 @@ function Footer() {
       </NavLink>
       <NavLink
         to="/buy"
-        className={({ isActive }) => (isActive ? 'active-footer' : '')}
+        className={({ activePage }) =>
+        activePage ? 'active-footer' : ''
+        }
       >
         <div className="footer-item-container">
           <img src={Card} alt="" />
@@ -35,7 +50,9 @@ function Footer() {
       </NavLink>
       <NavLink
         to="/sell"
-        className={({ isActive }) => (isActive ? 'active-footer' : '')}
+        className={({ activePage }) =>
+        activePage ? 'active-footer' : ''
+        }
       >
         <div className="footer-item-container">
           <img src={Down} alt="" />
@@ -45,7 +62,9 @@ function Footer() {
       </NavLink>
       <NavLink
         to="/account"
-        className={({ isActive }) => (isActive ? 'active-footer' : '')}
+        className={({ activePage }) =>
+        activePage ? 'active-footer' : ''
+        }
       >
         <div className="footer-item-container">
           <img src={Account} alt="" />

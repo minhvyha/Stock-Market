@@ -21,6 +21,10 @@ footer a {
 }
 .footer-item-container img {
   width: 28px;
+  filter: grayscale(1);
+}
+.footer-item-container img.active{
+  filter: none;
 }
 .footer-item-container label {
   font-size: 9px;

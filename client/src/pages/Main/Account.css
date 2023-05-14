@@ -62,8 +62,27 @@
 
 
 /* ============== ACCOUNT NAV CSS ============== */
-.account-setting-list {
+.account-navigation-bar div {
 	cursor: pointer;
+	border-top: 1px solid rgb(100, 100, 100);
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+.account-navigation-bar div:first-child{
+	border-top: none;
+}
+#account-nav{
+	display: flex;
+	flex-direction: column;
+	font-size: 16px;
+}
+
+#account-nav::-webkit-scrollbar {
+	display: none; /* for Chrome, Safari, and Opera */
 }
 .account-main-content {
 	display: none;
