@@ -20,11 +20,11 @@ function Account() {
     setIsDropDown,
   } = useContext(MainPageContext);
 
-  let navigate = useNavigate()
+  let navigate = useNavigate();
   let settingList = [
     { name: 'my details', component: Personal },
-    { name: 'trade',link:'/buy', external: true },
-    { name: 'futuris news',link: '/news', external: true },
+    { name: 'trade', link: '/buy', external: true },
+    { name: 'futuris news', link: '/news', external: true },
     { name: 'security and password', component: Password },
     { name: 'appearance', component: Appearance },
     { name: 'help', component: Help },
@@ -38,11 +38,10 @@ function Account() {
         id={`account-${setting.name}`}
         className="account-setting-list"
         onClick={() => {
-          if(setting.external){
-            setActiveSetting('')
-            navigate(setting.link)
-          }
-          else{
+          if (setting.external) {
+            setActiveSetting('');
+            navigate(setting.link);
+          } else {
             setActiveSetting(setting.name);
             document.getElementById('account-nav').classList.add('disable');
             document
@@ -117,7 +116,9 @@ function Account() {
         <div id="account-nav" className="account-navigation-bar">
           {settings}
         </div>
-        <div className="accout-logout-btn" onClick={handleSignOut}>Log out</div>
+        <div className="accout-logout-btn" onClick={handleSignOut}>
+          Log out
+        </div>
       </div>
       <div id="account-main-content" className="account-main-content">
         {activeSetting === 'my details' ? <Personal /> : null}

@@ -49,8 +49,11 @@
 #home-chart-container {
   display: flex;
   align-items: center;
-  background-color: #131722;
   
+}
+#tradingview_widget_wrapper{
+  background-color: #131722;
+
 }
 #home-chart-container div {
   width: 100%;
