@@ -47,7 +47,7 @@ function App() {
   const [successPopUpOpen, setSuccessPopUpOpen] = useState(false);
   const [assets, setAssets] = useState('AAPL');
   const [isDropDown, setIsDropDown] = useState(false);
-  const [activeSetting, setActiveSetting] = useState('personal');
+  const [activeSetting, setActiveSetting] = useState('');
 
   const [title, setTitle] = useState('Apple');
   const [sector, setSector] = useState('Information Technology');

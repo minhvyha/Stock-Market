@@ -4,9 +4,12 @@ import NavIntro from "../../components/NavIntro";
 import { Link, useNavigate } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
 import './Login.css';
+import { useContext } from 'react';
 import useWindowDimensions from '../../components/useWindowDimensions';
+import { MainPageContext } from '../../App';
 
 function Login({ setUser }) {
+	const {user} = useContext(MainPageContext)
 	const [errorLogin, setErrorLogin] = useState();
 	const { width } = useWindowDimensions();
 
@@ -14,6 +17,12 @@ function Login({ setUser }) {
 	var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/g;
 
 	const navigate = useNavigate();
+
+	useEffect(() =>{
+		if(user){
+			navigate('/')
+		}
+	}, [])
 
 	function loginHandleCallBackResponse(response) {
 		let userObject = jwt_decode(response.credential);

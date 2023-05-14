@@ -1,20 +1,27 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import SignUpImage from '../../assets/images/SignUp.png';
 import { Link, useNavigate } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
 import './Login.css'
 import NavIntro from "../../components/NavIntro";
 import useWindowDimensions from '../../components/useWindowDimensions';
+import { MainPageContext } from '../../App';
 
 function Signup({ setUser }) {
+	const {user} = useContext(MainPageContext)
 	const [errorLogin, setErrorLogin] = useState();
 	const { width } = useWindowDimensions();
-
 	var emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
 	var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/g;
-
+	
 	const navigate = useNavigate();
-
+	
+	useEffect(() =>{
+		if(user){
+			navigate('/')
+		}
+	}, [])
+	
 	function signupHandleCallBackResponse(response) {
 		console.log('Encoded JWT ID token: ' + response.credential);
 		let userObject = jwt_decode(response.credential);

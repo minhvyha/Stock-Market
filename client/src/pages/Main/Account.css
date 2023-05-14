@@ -72,6 +72,17 @@
 	align-items: center;
 	justify-content: space-between;
 }
+.account-wrapper{
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+.accout-logout-btn{
+	cursor: pointer;
+	padding: 8px 24px;
+	background-color: var(--first-color);
+	width: fit-content;
+}
 .account-navigation-bar div:first-child{
 	border-top: none;
 }

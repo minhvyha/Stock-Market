@@ -8,6 +8,7 @@ import Help from '../../components/Account/Help';
 import Contact from '../../components/Account/Contact';
 import Trade from '../../components/Account/Trade';
 import { nanoid } from 'nanoid';
+import { useNavigate } from 'react-router-dom';
 
 function Account() {
   let {
@@ -19,13 +20,15 @@ function Account() {
     setIsDropDown,
   } = useContext(MainPageContext);
 
+  let navigate = useNavigate()
   let settingList = [
     { name: 'my details', component: Personal },
-    {name : 'trade', component: Trade, external: true},
+    { name: 'trade',link:'/buy', external: true },
+    { name: 'futuris news',link: '/news', external: true },
     { name: 'security and password', component: Password },
     { name: 'appearance', component: Appearance },
     { name: 'help', component: Help },
-    {name : 'contact us', component: Contact},
+    { name: 'contact us', component: Contact },
   ];
 
   let settings = settingList.map((setting) => {
@@ -35,16 +38,25 @@ function Account() {
         id={`account-${setting.name}`}
         className="account-setting-list"
         onClick={() => {
-          setActiveSetting(setting.name);
-          document.getElementById('account-nav').classList.add('disable');
-          document
-            .getElementById('account-main-content')
-            .classList.add('account-active');
-          console.log(activeSetting)
+          if(setting.external){
+            setActiveSetting('')
+            navigate(setting.link)
+          }
+          else{
+            setActiveSetting(setting.name);
+            document.getElementById('account-nav').classList.add('disable');
+            document
+              .getElementById('account-main-content')
+              .classList.add('account-active');
+          }
         }}
       >
         {capitalize(setting.name)}
-        {setting.external ? <i className="fa-solid fa-arrow-up-right-from-square"></i>: <i className="fa-solid fa-chevron-right"></i>}
+        {setting.external ? (
+          <i className="fa-solid fa-arrow-up-right-from-square"></i>
+        ) : (
+          <i className="fa-solid fa-chevron-right"></i>
+        )}
       </div>
     );
   });
@@ -66,7 +78,6 @@ function Account() {
           name="category"
         />
         <label for="automobiles">{value}</label>
-        
       </div>
     );
   });
@@ -102,8 +113,11 @@ function Account() {
 
   return (
     <div className="main-container">
-      <div id="account-nav" className="account-navigation-bar">
-        {settings}
+      <div className="account-wrapper">
+        <div id="account-nav" className="account-navigation-bar">
+          {settings}
+        </div>
+        <div className="accout-logout-btn" onClick={handleSignOut}>Log out</div>
       </div>
       <div id="account-main-content" className="account-main-content">
         {activeSetting === 'my details' ? <Personal /> : null}

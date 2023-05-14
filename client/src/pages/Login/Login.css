@@ -4,7 +4,8 @@
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	height: 100vh;
+	/* height: 100vh; */
+	margin-top: 105px;
 }
 .signin-image {
 	width: 180px;
@@ -150,6 +151,7 @@
 	}
 	.login-container{
 		padding-top: 100px;
+		margin-top: 0;
 	}
 }
 @media screen and (min-width: 828px) {
