@@ -19,7 +19,8 @@ function Nav() {
     <nav className="navBar intro-nav">
       <div className="nav-container">
         <div className="nav-subcontainer">
-          <Link className="logo-link" to="/">
+            
+          <Link className="logo-link" to="/" onClick={() => handleNavigation('home')}>
             <img id="intro-image" className="logo" src={LogoTextDark} alt="" />
             <img
               id="intro-image-light"

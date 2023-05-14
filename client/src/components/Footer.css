@@ -21,9 +21,10 @@ footer a {
 }
 .footer-item-container img {
   width: 28px;
+  transition: .2s all ;
   filter: grayscale(1);
 }
-.footer-item-container img.active{
+a.active .footer-item-container img{
   filter: none;
 }
 .footer-item-container label {

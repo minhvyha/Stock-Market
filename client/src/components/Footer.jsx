@@ -11,62 +11,66 @@ import { MainPageContext } from '../App';
 
 function Footer() {
   let { activePage, setActivePage } = useContext(MainPageContext);
+  function handleFooter(page) {
+    setActivePage(page);
+    console.log(page);
+  }
   return (
     <footer>
-      <NavLink
-        to="/home"
-        className={({ activePage }) =>
-        activePage ? 'active-footer' : ''
-        }
-      >
-        <div className="footer-item-container">
+      <NavLink to="/home">
+        <div
+          className="footer-item-container"
+          onClick={function () {
+            handleFooter('home');
+          }}
+        >
           <img src={Logo} alt="" />
           <label>Home</label>
         </div>
       </NavLink>
-      <NavLink
-        to="/portfolio"
-        className={({ activePage }) =>
-        activePage ? 'active-footer' : ''
-        }
-      >
-        <div className="footer-item-container">
+      <NavLink to="/portfolio">
+        <div
+          className="footer-item-container"
+          onClick={function () {
+            handleFooter('portfolio');
+          }}
+        >
           <img src={Wallet} alt="" />
 
           <label>Portfolio</label>
         </div>
       </NavLink>
-      <NavLink
-        to="/buy"
-        className={({ activePage }) =>
-        activePage ? 'active-footer' : ''
-        }
-      >
-        <div className="footer-item-container">
+      <NavLink to="/buy">
+        <div
+          className="footer-item-container"
+          onClick={function () {
+            handleFooter('buy');
+          }}
+        >
           <img src={Card} alt="" />
 
           <label>Buy</label>
         </div>
       </NavLink>
-      <NavLink
-        to="/sell"
-        className={({ activePage }) =>
-        activePage ? 'active-footer' : ''
-        }
-      >
-        <div className="footer-item-container">
+      <NavLink to="/sell">
+        <div
+          className="footer-item-container"
+          onClick={function () {
+            handleFooter('sell');
+          }}
+        >
           <img src={Down} alt="" />
 
           <label>Sell</label>
         </div>
       </NavLink>
-      <NavLink
-        to="/account"
-        className={({ activePage }) =>
-        activePage ? 'active-footer' : ''
-        }
-      >
-        <div className="footer-item-container">
+      <NavLink to="/account">
+        <div
+          className="footer-item-container"
+          onClick={function () {
+            handleFooter('account');
+          }}
+        >
           <img src={Account} alt="" />
           <label>Account</label>
         </div>

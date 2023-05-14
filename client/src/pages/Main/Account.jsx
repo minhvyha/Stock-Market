@@ -44,7 +44,7 @@ function Account() {
         }}
       >
         {capitalize(setting.name)}
-        {setting.external ? <i class="fa-solid fa-arrow-up-right-from-square"></i>: <i class="fa-solid fa-chevron-right"></i>}
+        {setting.external ? <i className="fa-solid fa-arrow-up-right-from-square"></i>: <i className="fa-solid fa-chevron-right"></i>}
       </div>
     );
   });
