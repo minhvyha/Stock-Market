@@ -1,6 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Symbol } from '../SP500';
-import { Cryptocurrencies } from '../Crypto.js';
 import { MainPageContext } from '../App';
 import { nanoid } from 'nanoid';
 import './Selection.css';
@@ -26,42 +24,45 @@ function Selection({  }) {
 
 
   useEffect(() =>{
-    const timeoutId = setTimeout( async ()=>{
-      const searchApi = await fetch(
-        `https://financialmodelingprep.com/api/v3/search?query=${searchValue}&limit=40&apikey=${process.env.REACT_APP_STOCK_SEARCH}`
-      );
 
-      const stockValue = await searchApi.json()
-      console.log(stockValue)
-      let optionList = stockValue.map((data) => {
-        return (
-          <div
-            key={nanoid()}
-            className="option"
-            onClick={() => {
-              setAssets(data.symbol);
-              setTitle(data.name);
-              setSector(data.exchangeShortName);
-    
-              document.querySelector('.selected').innerHTML = `${data.symbol}`;
-              setIsDropDown((value) => !value);
-    
-            }}
-          >
-            <input
-              type="radio"
-              className="radio"
-              id={`${data.symbol}`}
-              name="category"
-            />
-            <label
-              htmlFor={`${data.symbol}`}
-            >{`${data.symbol} - ${data.name}`}</label>
-          </div>
+    const timeoutId = setTimeout( async ()=>{
+
+      if(searchValue !== ''){
+        const searchApi = await fetch(
+          `https://financialmodelingprep.com/api/v3/search?query=${searchValue}&exchange=NASDAQ&exchange=CRYPTO&exchange=NSYE&limit=40&apikey=${process.env.REACT_APP_STOCK_SEARCH}`
         );
-      });
-      setSearchList(optionList)
-    }, 2000)
+  
+        const stockValue = await searchApi.json()
+        let optionList = stockValue.map((data) => {
+          return (
+            <div
+              key={nanoid()}
+              className="option"
+              onClick={() => {
+                setAssets(data.symbol);
+                setTitle(data.name);
+                setSector(data.exchangeShortName);
+      
+                document.querySelector('.selected').innerHTML = `${data.symbol}`;
+                setIsDropDown((value) => !value);
+      
+              }}
+            >
+              <input
+                type="radio"
+                className="radio"
+                id={`${data.symbol}`}
+                name="category"
+              />
+              <label
+                htmlFor={`${data.symbol}`}
+              >{`${data.symbol} - ${data.name}`}</label>
+            </div>
+          );
+        });
+        setSearchList(optionList)
+      }
+    }, 1000)
     return () => clearTimeout(timeoutId)
   }, [searchValue])
 

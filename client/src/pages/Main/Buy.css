@@ -1,42 +1,110 @@
-.buy-main-container {
+.trade-main-container {
   display: flex;
   width: 100%;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
   text-align: center;
 }
-.buy-intro-container {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-.buy-title {
-  font-size: 1.4rem;
-  font-weight: 600;
-}
-.buy-image {
-  width: 230px;
-}
-.buy-search-container {
-  border: 1.2px solid rgb(24, 24, 24);
-  padding: 0.5rem;
-  border-radius: 0.3rem;
-  text-align: left;
+.trade-information {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+.trade-title, .available-credit{
+  font-weight: bold;
+}
+.trade-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.trade-instruction, .buy-title{
+  font-weight: bold;
+  display: flex;
   align-items: center;
-  transition: 0.25s all ease-in-out;
+}
+.quanity-selection-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: .5rem;
+}
+
+
+.quanity-selection-container input, .price-selection-container input{
+  display: none;
+}
+#quanity-btn:checked ~ #quanity-input{
+background-color: white;
+}
+.quanity-selection-container label, .price-selection-container label{
+  background-color: rgb(97, 97, 97);
   cursor: pointer;
+  color: black;
+  flex: 1;
+  padding: 8px 8px;
+  border-radius: 2.5px;
+  font-size: 14px;
 }
-.buy-search-container:hover {
-  background-color: var(--background-light-color);
-  color: var(--text-dark-color);
+.quanity-selection-container input:checked + label{
+  background-color: white;
 }
-.buy-search-title {
+.trade-col.quanity-wrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.available-credit-description{
+  font-weight: normal;
+  font-size: 14px;
+}
+.quanity-input-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: .5rem;
+}
+.quanity-input-container input:focus{
+  outline: none !important;
+}
+.quanity-input-container input.buy-input-active:focus, .price-input-container input:focus{
+  border: 2px solid var(--first-color);
+  
+}
+.quanity-input-container input, .price-input-container input{
+  width: 50%;
+  color: white;
+  background-color: transparent;
+  border: 2px solid rgb(116, 116, 116);
+  padding: 8px 8px;
+  border-radius: 2.5px;
+  font-size: 12px;
+}
+.trade-search-title {
   font-size: 0.9rem;
   font-weight: 600;
 }
-.buy-search-subtitle {
+.trade-search-subtitle {
   font-size: 0.65rem;
+}
+.instruction-wrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.price-selection-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: .5rem;
+}
+.price-input-container{
+  display: flex;
+
+}
+.price-input-container input{
+  flex: 1;
+}
+.price-selection-container input:checked + label{
+  background-color: white;
 }

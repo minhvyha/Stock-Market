@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Symbol } from './SP500';
 import axios from 'axios';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { nanoid } from 'nanoid';
@@ -49,8 +48,8 @@ function App() {
   const [isDropDown, setIsDropDown] = useState(false);
   const [activeSetting, setActiveSetting] = useState('');
 
-  const [title, setTitle] = useState('Apple');
-  const [sector, setSector] = useState('Information Technology');
+  const [title, setTitle] = useState('Apple Inc.');
+  const [sector, setSector] = useState('NASDAQ');
   const [activePage, setActivePage] = useState('home');
   function handleSignOut(event) {
     setUser({});
