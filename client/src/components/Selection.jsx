@@ -7,7 +7,7 @@ function Selection() {
   const [isDropDown, setIsDropDown] = useState(false);
   const [searchValue, setSearchValue] = useState('')
   const [searchList, setSearchList] = useState()
-  const { setAssets, setTitle, setSector, assets } = useContext(MainPageContext);
+  const { setAssets, setTitle, setSector } = useContext(MainPageContext);
 
   function selectBoxClick() {
     const optionsContainer = document.querySelector('.options-container');

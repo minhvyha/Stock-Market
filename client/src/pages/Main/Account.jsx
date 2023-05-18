@@ -25,6 +25,16 @@ function Account() {
     { name: 'contact us', component: Contact },
   ];
 
+  function back(){
+    setActiveSetting('');
+            document
+              .getElementsByClassName('account-wrapper')[0]
+              .classList.remove('disable');
+            document
+              .getElementById('account-main-content')
+              .classList.remove('account-active');
+  }
+
   let settings = settingList.map((setting) => {
     return (
       <div
@@ -71,14 +81,15 @@ function Account() {
         </div>
       </div>
       <div id="account-main-content" className="account-main-content">
-        <div id='setting-back-button' >
-          <i class="fa-solid fa-arrow-left-long"></i>
+        <div id='setting-back-button' onClick={back} >
+          <i className="fa-solid fa-arrow-left-long" ></i>
           Back
         </div>
         {activeSetting === 'my details' ? <Personal /> : null}
         {activeSetting === 'security and password' ? <Password /> : null}
         {activeSetting === 'appearance' ? <Appearance /> : null}
         {activeSetting === 'help' ? <Help /> : null}
+        {activeSetting === 'contact us' ? <Contact /> : null}
       </div>
     </div>
   );

@@ -1,8 +1,12 @@
 import { nanoid } from 'nanoid';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { MainPageContext } from '../../App';
 
 function Appearance() {
-  const [isDropDown, setIsDropDown] = useState(false);
+  const {fontSize, setFontSize, isDarkMode, setIsDarkMode} = useContext(MainPageContext)
+  const [isFontDropDown, setIsFontDropDown] = useState(false);
+  const [isThemeDropDown, setIsThemeDropDown] = useState(false);
+
   function handleFontChange(size){
     const allElement = document.getElementsByTagName('*')[0];
     allElement.style.fontSize = size.toLowerCase();
@@ -13,8 +17,8 @@ function Appearance() {
       key={nanoid()}
         className="option"
         onClick={() => {
-          document.querySelector('.selected').innerHTML = `${value}`;
-          setIsDropDown((value) => !value);
+          setIsFontDropDown((value) => !value);
+          setFontSize(value)
           handleFontChange(value)
         }}
       >
@@ -22,12 +26,34 @@ function Appearance() {
           type="radio"
           className="radio"
           id={`font-size-${value}`}
-          name="category"
+          name="font-size-radio"
         />
-        <label for="automobiles">{value}</label>
+        <label htmlFor="font-size-radio">{value}</label>
       </div>
     );
   });
+
+  let themeList = ['Light', 'Dark'].map((value) => {
+    return (
+      <div
+      key={nanoid()}
+        className="option"
+        onClick={() => {
+          setIsThemeDropDown((value) => !value);
+          setIsDarkMode(value === 'Dark' ? true : false)
+        }}
+      >
+        <input
+          type="radio"
+          className="radio"
+          id={`theme-${value}`}
+          name="theme-radio"
+        />
+        <label htmlFor="theme-radio">{value}</label>
+      </div>
+    );
+  });
+
   return (
     <div className='appearance-col'>
       <div className="eye-disability-support-container setting-row">
@@ -35,7 +61,7 @@ function Appearance() {
         <div className="select-box setting-select-box">
           <div
             className={
-              isDropDown
+              isFontDropDown
                 ? 'options-container font-size-selector active'
                 : 'options-container font-size-selector'
             }
@@ -46,10 +72,10 @@ function Appearance() {
           <div
             className="selected"
             onClick={() => {
-              setIsDropDown((value) => !value);
+              setIsFontDropDown((value) => !value);
             }}
           >
-            Select Font Size
+            {fontSize}
           </div>
         </div>
         
@@ -59,21 +85,21 @@ function Appearance() {
         <div className="select-box setting-select-box">
           <div
             className={
-              isDropDown
+              isThemeDropDown
                 ? 'options-container font-size-selector active'
                 : 'options-container font-size-selector'
             }
           >
-            {optionList}
+            {themeList}
           </div>
 
           <div
             className="selected"
             onClick={() => {
-              setIsDropDown((value) => !value);
+              setIsThemeDropDown((value) => !value);
             }}
           >
-            Select Font Size
+            {isDarkMode? 'Dark' : 'Light'}
           </div>
         </div>
         

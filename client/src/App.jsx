@@ -16,10 +16,8 @@ import Portfolio from './pages/Main/Portfolio';
 import Account from './pages/Main/Account';
 import Buy from './pages/Main/Buy';
 import Sell from './pages/Main/Sell';
-import Personal from './components/Account/Personal';
 import SuccessPopUp from './components/SuccessPopUp';
 import FailPopUp from './components/FailPopUp';
-import Loader from './components/Loader';
 
 // https://cloud.iexapis.com/stable/stock/AAPL/quote?token=
 
@@ -29,20 +27,20 @@ function App() {
   const [user, setUser] = useState({
     name: 'Minh Vy Ha',
     assets: {
-      "AAPL": 50_000,
-      "BTCUSD": 50_000, 
-      "ETHUSD" : 180_000,
-      "AMZN" : 92_000,
-      "MATICUSD": 22000,
-      "BNBUSD": 80_012
+      AAPL: 50_000,
+      BTCUSD: 50_000,
+      ETHUSD: 180_000,
+      AMZN: 92_000,
+      MATICUSD: 22000,
+      BNBUSD: 80_012,
     },
     cash: 100_000,
     totalAssets: 572_012,
-
   });
+  const [fontSize, setFontSize] = useState('Medium');
   const windowSize = useRef([window.innerWidth, window.innerHeight]);
   const [data, setData] = useState();
-  const [isLightMode, setIsLightMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(true);
   const [successPopUpOpen, setSuccessPopUpOpen] = useState(false);
   const [assets, setAssets] = useState('AAPL');
   const [isDropDown, setIsDropDown] = useState(false);
@@ -55,10 +53,23 @@ function App() {
     setUser({});
   }
 
+  useEffect(() =>{
+    if (isDarkMode){
+      document.getElementsByTagName('body')[0].classList.add('dark')
+    }
+    else{
+
+      document.getElementsByTagName('body')[0].classList.remove('dark')
+    }
+
+  }, [isDarkMode])
+
   return (
     <BrowserRouter>
       <MainPageContext.Provider
         value={{
+          fontSize,
+          setFontSize,
           Symbol,
           user,
           data,
@@ -71,7 +82,8 @@ function App() {
           setTitle,
           setSector,
           handleSignOut,
-          setIsLightMode,
+          isDarkMode,
+          setIsDarkMode,
           setActivePage,
           isDropDown,
           setIsDropDown,

@@ -111,7 +111,7 @@
 	justify-content: space-between;
 }
 .setting-select-box{
-	width: 150px;
+	width: 130px;
 	font-size: 12px;
 }
 .setting-select-box .selected{
@@ -124,11 +124,15 @@
 .select-box .options-container.font-size-selector{
 	position: absolute;
 	margin-top: 50px;
+	z-index: 1000000;
 }
 #account-main-content{
-	display: flex;
+	display: none;
 	flex-direction: column;
-	gap: .8rem;
+	gap: 1.2rem;
+}
+#account-main-content.account-active{
+	display: flex;
 }
 .setting-row-title{
 	padding-top: 8px;
@@ -158,6 +162,36 @@
 	flex-direction: column;
 	gap: 1rem;
 }
+
+.help-container{
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+.help-title{
+	font-size: 28px;
+	font-weight: bold;
+	text-align: center;
+}
+.help-subtitle, .help-content-description, .help-note{
+	font-size: 14px;
+	color:var(--dark-subtext) ;
+}
+.help-content{
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+.help-content-wrapper{
+	display: flex;
+	flex-direction: column;
+	gap: .5rem;
+}
+.help-content-title{
+	font-size: 18px;
+	font-weight: bold;
+}
+
 @media screen and (min-width: 300px) {
 }
 @media screen and (min-width: 350px) {
@@ -166,6 +200,31 @@
 	.account-main-content {
 		display: block;
 	}
+	.help-title{
+		font-size: 32px;
+	}
+	.help-subtitle, .help-content-description, .help-note{
+		font-size: 16px;
+	}
+	.help-container{
+		gap: 1.5rem;
+	}
+	.help-content-title{
+		font-size: 20px;
+	}
+
 }
 @media screen and (min-width: 992px) {
+	.help-title{
+		font-size: 34px;
+	}
+	.help-subtitle, .help-content-description, .help-note{
+		font-size: 18px;
+	}
+	.help-container{
+		gap: 1.7rem;
+	}
+	.help-content-title{
+		font-size: 22px;
+	}
 }
