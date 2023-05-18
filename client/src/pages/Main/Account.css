@@ -102,7 +102,7 @@
 .account-main-content.account-active {
 	display: block;
 }
-#account-nav.account-navigation-bar.disable, .account-navigation-bar.disable ~ .accout-logout-btn {
+.account-wrapper.disable, .account-wrapper.disable ~ .accout-logout-btn {
 	display: none;
 }
 .setting-row{
@@ -125,8 +125,13 @@
 	position: absolute;
 	margin-top: 50px;
 }
+#account-main-content{
+	display: flex;
+	flex-direction: column;
+	gap: .8rem;
+}
 .setting-row-title{
-	padding-top: 12px;
+	padding-top: 8px;
 }
 .setting-select-box .selected::after{
 	width: 28px;
@@ -135,6 +140,23 @@
 }
 .setting-select-box.select-box .options-container.active + .selected::after{
 	top: -6px;
+}
+#setting-back-button{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: .5rem;
+	cursor: pointer;
+	width: fit-content;
+	font-size: 12px;
+}
+#setting-back-button i{ 
+ font-size: 14px;
+}
+.appearance-col{
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
 }
 @media screen and (min-width: 300px) {
 }

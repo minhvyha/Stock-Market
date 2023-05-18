@@ -11,13 +11,8 @@ import { nanoid } from 'nanoid';
 import { useNavigate } from 'react-router-dom';
 
 function Account() {
-  let {
-    handleSignOut,
-    user,
-    activeSetting,
-    setActiveSetting,
-    setIsDropDown,
-  } = useContext(MainPageContext);
+  let { handleSignOut, user, activeSetting, setActiveSetting } =
+    useContext(MainPageContext);
 
   let navigate = useNavigate();
   let settingList = [
@@ -42,7 +37,9 @@ function Account() {
             navigate(setting.link);
           } else {
             setActiveSetting(setting.name);
-            document.getElementById('account-nav').classList.add('disable');
+            document
+              .getElementsByClassName('account-wrapper')[0]
+              .classList.add('disable');
             document
               .getElementById('account-main-content')
               .classList.add('account-active');
@@ -59,21 +56,9 @@ function Account() {
     );
   });
 
-  
-
-  function handlePopUp() {
-    document.getElementById('sign-out-form').style.display = 'grid';
-  }
-
-  function handleCancel() {
-    document.getElementById('sign-out-form').style.display = 'none';
-  }
-
   function capitalize(word) {
     return word[0].toUpperCase() + word.slice(1).toLowerCase();
   }
-
-  
 
   return (
     <div className="main-container">
@@ -86,33 +71,15 @@ function Account() {
         </div>
       </div>
       <div id="account-main-content" className="account-main-content">
+        <div id='setting-back-button' >
+          <i class="fa-solid fa-arrow-left-long"></i>
+          Back
+        </div>
         {activeSetting === 'my details' ? <Personal /> : null}
         {activeSetting === 'security and password' ? <Password /> : null}
         {activeSetting === 'appearance' ? <Appearance /> : null}
         {activeSetting === 'help' ? <Help /> : null}
       </div>
-      <div className="sign-out-container">
-				<h2 className="sign-out-name">{user.name}</h2>
-				
-				<button className="btn-sign-out" onClick={handlePopUp}>
-					Sign Out
-				</button>
-				<div id="sign-out-form">
-					<div className="sign-out-inner">
-						<h4>Are you sure you want to sign out?</h4>
-						<div className="sign-out-action-container">
-							<button className="cancel-btn" onClick={handleCancel}>
-								CANCEL
-							</button>
-							<button
-								className="real-btn-sign-out"
-								onClick={handleSignOut}
-							>
-							</button>
-						</div>
-					</div>
-				</div>
-			</div>
     </div>
   );
 }
