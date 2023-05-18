@@ -5,7 +5,7 @@
   width: 100%;
 }
 .select-box .options-container {
-  background: #2f3640;
+  background: var(--dark-button-atlernative-background);
   color: #f5f6fa;
   max-height: 0;
   width: 100%;
@@ -23,7 +23,7 @@
   margin-bottom: 8px;
 }
 .selected {
-  background: #2f3640;
+  background: var(--dark-button-atlernative-background);
   border-radius: 4px;
   color: #f5f6fa;
   position: relative;
@@ -46,7 +46,7 @@
 
 .select-box .options-container.font-size-selector {
   margin-top: 0px;
-  transition: all 0.48s ease-in-out;
+  transition: all 0.4s;
   border-radius: 6px;
 }
 
@@ -62,12 +62,12 @@
 
 .select-box .options-container::-webkit-scrollbar {
   width: 8px;
-  background: #0d141f;
+  background: #4d4d4d;
   border-radius: 0 2px 2px 0;
 }
 
 .select-box .options-container::-webkit-scrollbar-thumb {
-  background: #525861;
+  background: #2c2c2c;
   border-radius: 0 2px 2px 0;
 }
 
@@ -99,7 +99,7 @@
   position: absolute;
   border-radius: 4px 4px 0 0;
   z-index: 100;
-  border: 8px solid #2f3640;
+  border: 8px solid var(--dark-button-atlernative-background);
 
   opacity: 0;
   pointer-events: none;
@@ -108,7 +108,7 @@
 
 .search-box input:focus {
   outline: none;
-  border: 8px solid #2f3640;
+  border: 8px solid var(--dark-button-atlernative-background);
 }
 
 .select-box .options-container.active ~ .search-box input {

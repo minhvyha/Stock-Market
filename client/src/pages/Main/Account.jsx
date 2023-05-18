@@ -15,7 +15,6 @@ function Account() {
     handleSignOut,
     user,
     activeSetting,
-    isDropDown,
     setActiveSetting,
     setIsDropDown,
   } = useContext(MainPageContext);
@@ -60,26 +59,7 @@ function Account() {
     );
   });
 
-  let fontSize = ['Small', 'Medium', 'Large'];
-  let optionList = fontSize.map((value) => {
-    return (
-      <div
-        className="option"
-        onClick={() => {
-          document.querySelector('.selected').innerHTML = `${value}`;
-          setIsDropDown((value) => !value);
-        }}
-      >
-        <input
-          type="radio"
-          className="radio"
-          id={`font-size-${value}`}
-          name="category"
-        />
-        <label for="automobiles">{value}</label>
-      </div>
-    );
-  });
+  
 
   function handlePopUp() {
     document.getElementById('sign-out-form').style.display = 'grid';
@@ -89,26 +69,11 @@ function Account() {
     document.getElementById('sign-out-form').style.display = 'none';
   }
 
-  function selectBoxClick() {
-    setIsDropDown((value) => !value);
-  }
-
-  function changeFontSizeRoot(fontSize) {
-    const root = document.querySelector(':root');
-    root.style.setProperty('--my-color', 'blue');
-  }
-
   function capitalize(word) {
     return word[0].toUpperCase() + word.slice(1).toLowerCase();
   }
 
-  function changeFontSize(value) {
-    switch (value) {
-      case 'Small':
-      case 'Medium':
-      case 'Large':
-    }
-  }
+  
 
   return (
     <div className="main-container">
@@ -126,26 +91,9 @@ function Account() {
         {activeSetting === 'appearance' ? <Appearance /> : null}
         {activeSetting === 'help' ? <Help /> : null}
       </div>
-      {/* <div className="sign-out-container">
+      <div className="sign-out-container">
 				<h2 className="sign-out-name">{user.name}</h2>
-				<div className="eye-disability-support-container">
-					<div>Font Size: </div>
-					<div className="select-box">
-						<div
-							className={
-								isDropDown
-									? 'options-container font-size-selector active'
-									: 'options-container font-size-selector'
-							}
-						>
-							{optionList}
-						</div>
-
-						<div className="selected" onClick={selectBoxClick}>
-							Select Font Size
-						</div>
-					</div>
-				</div>
+				
 				<button className="btn-sign-out" onClick={handlePopUp}>
 					Sign Out
 				</button>
@@ -160,12 +108,11 @@ function Account() {
 								className="real-btn-sign-out"
 								onClick={handleSignOut}
 							>
-								<Link to="/intro">SIGN OUT</Link>
 							</button>
 						</div>
 					</div>
 				</div>
-			</div> */}
+			</div>
     </div>
   );
 }

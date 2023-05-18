@@ -3,7 +3,7 @@ import { MainPageContext } from '../App';
 import { nanoid } from 'nanoid';
 import './Selection.css';
 
-function Selection({  }) {
+function Selection() {
   const [isDropDown, setIsDropDown] = useState(false);
   const [searchValue, setSearchValue] = useState('')
   const [searchList, setSearchList] = useState()

@@ -95,14 +95,46 @@
 #account-nav::-webkit-scrollbar {
 	display: none; /* for Chrome, Safari, and Opera */
 }
+
 .account-main-content {
 	display: none;
 }
 .account-main-content.account-active {
 	display: block;
 }
-.account-navigation-bar.disable {
+#account-nav.account-navigation-bar.disable, .account-navigation-bar.disable ~ .accout-logout-btn {
 	display: none;
+}
+.setting-row{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.setting-select-box{
+	width: 150px;
+	font-size: 12px;
+}
+.setting-select-box .selected{
+	padding: 12px 16px;
+
+}
+.setting-select-box .options-container.active ~ .selected{
+	margin-bottom: 0;
+}
+.select-box .options-container.font-size-selector{
+	position: absolute;
+	margin-top: 50px;
+}
+.setting-row-title{
+	padding-top: 12px;
+}
+.setting-select-box .selected::after{
+	width: 28px;
+	top: 6px;
+	transition: .4s all;
+}
+.setting-select-box.select-box .options-container.active + .selected::after{
+	top: -6px;
 }
 @media screen and (min-width: 300px) {
 }
