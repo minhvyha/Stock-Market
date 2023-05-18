@@ -1,5 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap');
-
 /* BREAK OUT TEMPLATE */
 /* @media screen and (min-width: 300px) {}
 @media screen and (min-width: 350px) {}
