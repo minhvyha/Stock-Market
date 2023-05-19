@@ -19,7 +19,8 @@ function Login({ setUser }) {
 	const navigate = useNavigate();
 
 	useEffect(() =>{
-		if(user){
+		console.log(user)
+		if(!user){
 			navigate('/')
 		}
 	}, [])

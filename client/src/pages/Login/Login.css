@@ -20,7 +20,7 @@
 .error-text-form {
 	color: rgb(255, 72, 72);
 	font-size: 11px;
-	padding-top: 0.5rem;
+	padding-top: 1rem;
 }
 .txt_field {
 	position: relative;
@@ -167,6 +167,7 @@
 		content: '';
 		width: 450px;
 		height: 450px;
+		z-index: -1;
 		right: calc((100% - 380px - 320px - 3.5rem) / 2 - (450px - 320px) / 2);
 	}
 	.login-form-title {

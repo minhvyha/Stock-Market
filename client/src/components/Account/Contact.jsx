@@ -22,6 +22,10 @@ const Contact = () => {
     });
   };
 
+  function checkForm(){
+
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
@@ -32,9 +36,9 @@ const Contact = () => {
         process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
         {
           from_name: form.name,
-          to_name: "JavaScript Mastery",
+          to_name: "Minh",
           from_email: form.email,
-          to_email: "sujata@jsmastery.pro",
+          to_email: "minhvy.ha@outlook.com",
           message: form.message,
         },
         process.env.REACT_APP_EMAILJS_PUBLIC_KEY
@@ -61,7 +65,7 @@ const Contact = () => {
 
   return (
     <div
-      className={`xl:mt-12 flex flex-col gap-10 overflow-hidden`}
+      className={`xl:mt-12 flex flex-col gap-8 overflow-hidden`}
     >
         <h3 className={styles.sectionHeadText}>Contact</h3>
 
