@@ -28,8 +28,8 @@ const Contact = () => {
 
     emailjs
       .send(
-        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
         {
           from_name: form.name,
           to_name: "JavaScript Mastery",
@@ -37,7 +37,7 @@ const Contact = () => {
           to_email: "sujata@jsmastery.pro",
           message: form.message,
         },
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
       )
       .then(
         () => {
@@ -63,12 +63,12 @@ const Contact = () => {
     <div
       className={`xl:mt-12 flex flex-col gap-10 overflow-hidden`}
     >
-        <h3 className={styles.sectionHeadText}>Contact.</h3>
+        <h3 className={styles.sectionHeadText}>Contact</h3>
 
         <form
           ref={formRef}
           onSubmit={handleSubmit}
-          className='mt-12 flex flex-col gap-8'
+          className=' flex flex-col gap-8'
         >
           <label className='flex flex-col'>
             <span className='text-white font-medium mb-4'>Your Name</span>
@@ -77,7 +77,7 @@ const Contact = () => {
               name='name'
               value={form.name}
               onChange={handleChange}
-              placeholder="What's your good name?"
+              placeholder="What's your name?"
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
             />
           </label>

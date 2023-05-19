@@ -25,6 +25,9 @@
 .account-image i:hover{
   color: var(--first-color);
 }
+.scroll-header nav .account-image i{
+ color: black;
+}
 .account-image.active i{
   color: var(--second-color);
 }
