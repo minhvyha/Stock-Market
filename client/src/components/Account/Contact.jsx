@@ -3,6 +3,8 @@ import emailjs from "@emailjs/browser";
 import { styles } from '../../styles';
 
 const Contact = () => {
+	var emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+
   const formRef = useRef();
   const [form, setForm] = useState({
     name: "",
@@ -23,13 +25,29 @@ const Contact = () => {
   };
 
   function checkForm(){
-
+    let {name, email, message} = form
+		if (name === '' || email === '' || message === '') {
+			setError('Please fill out all the form.');
+			return false;
+		}
+		if (email.match(emailRegex) === null) {
+      setError('Invalid email.');
+			return false;
+		}
+    function setError(err){
+      document.getElementById('error-message').innerHTML = err
+    }
+    return true
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-
+    if (checkForm() === false){
+      setLoading(false)
+      return
+    }
+    
     emailjs
       .send(
         process.env.REACT_APP_EMAILJS_SERVICE_ID,
@@ -68,7 +86,7 @@ const Contact = () => {
       className={`xl:mt-12 flex flex-col gap-8 overflow-hidden`}
     >
         <h3 className={styles.sectionHeadText}>Contact</h3>
-
+      <p id='error-message' className='error-text-form'></p>
         <form
           ref={formRef}
           onSubmit={handleSubmit}

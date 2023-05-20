@@ -20,7 +20,7 @@ function Login({ setUser }) {
 
 	useEffect(() =>{
 		console.log(user)
-		if(!user){
+		if(user !== {}){
 			navigate('/')
 		}
 	}, [])
