@@ -51,10 +51,10 @@ function App() {
   const [title, setTitle] = useState('Apple Inc.');
   const [sector, setSector] = useState('NASDAQ');
   const [activePage, setActivePage] = useState('home');
-  let url = window.location.pathname
   useEffect(() => {
+    let url = window.location.pathname
     setActivePage(url.slice(1))
-  }, [url])
+  }, [window.location.pathname])
   function handleSignOut(event) {
     setUser({});
   }

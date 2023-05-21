@@ -11,7 +11,7 @@ import { nanoid } from 'nanoid';
 import { useNavigate } from 'react-router-dom';
 
 function Account() {
-  let { handleSignOut, user, activeSetting, setActiveSetting } =
+  let { handleSignOut, activeSetting, setActiveSetting } =
     useContext(MainPageContext);
 
   let navigate = useNavigate();
