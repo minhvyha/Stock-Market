@@ -11,7 +11,12 @@ module.exports = {
         "black-200": "#090325",
         "white-100": "#f3f3f3",
         'main-color': '#fa8e30',
+        "buy-box": "rgb(97, 97, 97)",
 
+      },
+      borderColor:{
+        "buy-border" : "rgb(116, 116, 116)",
+        "buy-outline": '#fa8e30'
       },
       boxShadow: {
         card: "0px 35px 120px -15px #211e35",

@@ -22,7 +22,7 @@ footer a {
 .footer-item-container img {
   width: 28px;
   transition: .2s all ;
-  filter: grayscale(1);
+  filter: grayscale(1) brightness(1.2);
 }
 a.active .footer-item-container img{
   filter: none;

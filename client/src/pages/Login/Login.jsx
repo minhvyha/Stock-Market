@@ -20,7 +20,8 @@ function Login({ setUser }) {
 
 	useEffect(() =>{
 		console.log(user)
-		if(user !== {}){
+		console.log(Object.keys(user).length === 0)
+		if(Object.keys(user).length !== 0 && user.constructor === Object){
 			navigate('/')
 		}
 	}, [])

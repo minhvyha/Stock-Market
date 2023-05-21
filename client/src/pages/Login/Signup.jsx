@@ -17,7 +17,7 @@ function Signup({ setUser }) {
 	const navigate = useNavigate();
 	
 	useEffect(() =>{
-		if(user !== {}){
+		if(Object.keys(user).length !== 0 && user.constructor === Object){
 			navigate('/')
 		}
 	}, [])

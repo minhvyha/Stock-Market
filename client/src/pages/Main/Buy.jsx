@@ -1,10 +1,50 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './Buy.css';
 import BuyImage from '../../assets/images/BuyImage.png';
 import { MainPageContext } from '../../App';
+import { nanoid } from 'nanoid';
 
 function Buy() {
   const { user } = useContext(MainPageContext);
+  const [quote, setQuote] = useState('');
+  const [selected, setSelected] = useState(false);
+  const [searchList, setSearchList] = useState();
+  const [isDropDown, setIsDropDown] = useState(false);
+  useEffect(() => {
+    const timeoutId = setTimeout(async () => {
+      if (quote !== '') {
+        const searchApi = await fetch(
+          `https://financialmodelingprep.com/api/v3/search?query=${quote}&exchange=NASDAQ&exchange=CRYPTO&exchange=NSYE&limit=40&apikey=${process.env.REACT_APP_STOCK_SEARCH}`
+        );
+
+        const stockValue = await searchApi.json();
+        let optionList = stockValue.map((data) => {
+          return (
+            <div
+              key={nanoid()}
+              className="option"
+              onClick={() => {
+                setIsDropDown((value) => !value);
+              }}
+            >
+              <input
+                type="radio"
+                className="radio"
+                id={`${data.symbol}`}
+                name="category"
+              />
+              <label
+                htmlFor={`${data.symbol}`}
+              >{`${data.symbol} - ${data.name}`}</label>
+            </div>
+          );
+        });
+        setSearchList(optionList);
+      }
+    }, 1000);
+    return () => clearTimeout(timeoutId);
+  }, [quote]);
+
   function handleQuanitySelection(id) {
     let input = document.getElementsByClassName('quanity-input');
     for (let i = 0; i < input.length; i++) {
@@ -29,15 +69,23 @@ function Buy() {
         </div>
         <div className="trade-row">
           <div className="trade-instruction">Order Type:</div>
-          <div className="trade-type-info">
-            Buy
-            <div className="available-credit">
-              {user.cash.toLocaleString('en-US', {
-                style: 'currency',
-                currency: 'USD',
-              })}
-            </div>
+          <div className="trade-type-info">Buy</div>
+        </div>
+        <div className="flex flex-row">
+          <div className="bg-white text-black p-2.5 rounded-sm flex align-center">
+            Quote
           </div>
+          <input
+            type="text"
+            placeholder="Stock | Crypto"
+            onChange={(e) => {
+              setQuote(e.target.value);
+              
+            }}
+            className="bg-black focus:border-buy-outline border-2 focus:outline-none placeholder:text-sm border-solid placeholder:text-gray-400	border-buy-border border-l-0 flex-1 text-white p-2"
+            value={quote}
+          />
+          <div></div>
         </div>
         <div className="trade-col quanity-wrapper">
           <div className="quanity-selection-container">
