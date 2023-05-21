@@ -25,6 +25,10 @@ const UserSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
+  dob:{
+    type: String,
+    default: '01/01/2004'
+  }
 
 });
 

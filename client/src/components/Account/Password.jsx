@@ -54,7 +54,7 @@ function Password() {
 
   };
   return (
-    <div className={`xl:mt-12 flex flex-col gap-8 overflow-hidden`}>
+    <div className={`xl:mt-12 flex flex-col gap-4 overflow-hidden`}>
         <h3 className={styles.sectionHeadText}>Change Password</h3>
         <p id='error-message' className='error-text-form'></p>
 
@@ -64,36 +64,33 @@ function Password() {
           className=' flex flex-col gap-8'
         >
           <label className='flex flex-row items-center'>
-            <span className='text-white font-medium'>Old Password</span>
             <input
               type='password'
               name='password'
               value={form.password}
               onChange={handleChange}
-              placeholder="What's your name?"
+              placeholder="Old password"
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
             />
           </label>
           <label className='flex flex-row items-center'>
-            <span className='text-white font-medium'>Your email</span>
             <input
               type='password'
               name='newPassword'
               autoComplete=''
               value={form.newPassword}
               onChange={handleChange}
-              placeholder="What's your web address?"
+              placeholder="New password"
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
             />
           </label>
           <label className='flex flex-row items-center'>
-            <span className='text-white font-medium'>Your Message</span>
             <input
               type='password'
               name='confirmPassword'
               value={form.confirmPassword}
               onChange={handleChange}
-              placeholder="What's your web address?"
+              placeholder="Confirm password"
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
             />
           </label>
@@ -102,7 +99,7 @@ function Password() {
             type='submit'
             className='bg-main-color py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary'
           >
-            {loading ? "Sending..." : "Send"}
+            {loading ? "Changing..." : "Change"}
           </button>
         </form>
     </div>

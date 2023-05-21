@@ -76,7 +76,7 @@ function Account() {
         <div id="account-nav" className="account-navigation-bar">
           {settings}
         </div>
-        <div className="accout-logout-btn" onClick={handleSignOut}>
+        <div className="accout-logout-btn rounded-sm" onClick={handleSignOut}>
           Log out
         </div>
       </div>
