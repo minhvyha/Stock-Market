@@ -8,18 +8,18 @@ function Personal() {
    var dobRegex = /^(?:0[1-9]|[12]\d|3[01])([\/.-])(?:0[1-9]|1[012])\1(?:19|20)\d\d$/
    
 	const { user } = useContext(MainPageContext);
-	return <div className='personal-container'>
+	return <div className='personal-container flex gap-6 flex-col'>
         <h3 className={styles.sectionHeadText}>My details</h3>
 
       <div className='personal-name'>
-         <input type="text" className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium' placeholder={user.name} disabled={true} />
+         <input type="text" className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium w-64' placeholder={user.name}/>
          
       </div>
       <div className='personal-email'>
-         <input type="text" className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium' placeholder={user.email} disabled={true} />
+         <input type="text" className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium w-64' placeholder={user.email}/>
       </div>
       <div className='personal-dob'>
-         <input type="text" className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium' placeholder={user.dob} disabled={true} />
+         <input type="text" className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium w-64' placeholder={user.dob}/>
       </div>
       <button
             type='submit'
