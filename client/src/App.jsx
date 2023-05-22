@@ -16,8 +16,6 @@ import Portfolio from './pages/Main/Portfolio';
 import Account from './pages/Main/Account';
 import Buy from './pages/Main/Buy';
 import Sell from './pages/Main/Sell';
-import SuccessPopUp from './components/SuccessPopUp';
-import FailPopUp from './components/FailPopUp';
 
 // https://cloud.iexapis.com/stable/stock/AAPL/quote?token=
 

@@ -1,14 +1,15 @@
-import React, { useContext, useEffect, useState } from "react";
-import "./Buy.css";
-import { MainPageContext } from "../../App";
-import { nanoid } from "nanoid";
-import Loading from "../../components/Loading";
+import React, { useContext, useEffect, useState } from 'react';
+import './Buy.css';
+import { MainPageContext } from '../../App';
+import { nanoid } from 'nanoid';
+import Loading from '../../components/Loading';
 
 function Buy() {
   const { user } = useContext(MainPageContext);
-  const [quote, setQuote] = useState("");
-  const [loading, setLoading] = useState(false)
+  const [quote, setQuote] = useState('');
+  const [loading, setLoading] = useState(false);
   const [selected, setSelected] = useState(false);
+  const [price, setPrice] = useState(0)
   const [searchList, setSearchList] = useState();
   const [isDropDown, setIsDropDown] = useState(false);
   useEffect(() => {
@@ -16,7 +17,7 @@ function Buy() {
       return;
     }
     const timeoutId = setTimeout(async () => {
-      if (quote !== "") {
+      if (quote !== '') {
         const searchApi = await fetch(
           `https://financialmodelingprep.com/api/v3/search?query=${quote}&exchange=NASDAQ&exchange=CRYPTO&exchange=NSYE&limit=5&apikey=${process.env.REACT_APP_STOCK_SEARCH}`
         );
@@ -31,15 +32,19 @@ function Buy() {
                 setIsDropDown((value) => !value);
                 setQuote(data.symbol);
                 setSelected(true);
-                setLoading(true)
+                setLoading(true);
                 let priceApi = await fetch(
                   `https://financialmodelingprep.com/api/v3/quote-short/${data.symbol}?apikey=${process.env.REACT_APP_STOCK_SEARCH}`
                 );
                 let result = await priceApi.json();
+                setPrice(result[0].price)
                 document.getElementById(
                   'price-input'
-                  ).value = `${result[0].price} - estimated`;
-                setLoading(false)
+                ).value = `${result[0].price.toLocaleString('en-US', {
+                  style: 'currency',
+                  currency: 'USD',
+                })} - estimated`;
+                setLoading(false);
               }}
             >
               <input
@@ -63,13 +68,24 @@ function Buy() {
   }, [quote]);
 
   function handleQuanitySelection(id) {
-    let input = document.getElementsByClassName("quanity-input");
+    let input = document.getElementsByClassName('quanity-input');
     for (let i = 0; i < input.length; i++) {
       input[i].disabled = true;
-      input[i].classList.remove("buy-input-active");
+      input[i].classList.remove('buy-input-active');
     }
     document.getElementById(id).disabled = false;
-    document.getElementById(id).classList.add("buy-input-active");
+    document.getElementById(id).classList.add('buy-input-active');
+  }
+
+  async function handleBuy(){
+    if (!selected){
+      return
+    }
+    let priceApi = await fetch(
+      `https://financialmodelingprep.com/api/v3/quote-short/${quote}?apikey=${process.env.REACT_APP_STOCK_SEARCH}`
+    );
+    let result = await priceApi.json();
+    let price = result[0].price
   }
   return (
     <div className="main-container">
@@ -77,9 +93,9 @@ function Buy() {
         <div className="trade-information">
           <div className="buy-title">Place Order:</div>
           <div className="available-credit">
-            {user.cash.toLocaleString("en-US", {
-              style: "currency",
-              currency: "USD",
+            {user.cash.toLocaleString('en-US', {
+              style: 'currency',
+              currency: 'USD',
             })}
             <div className="available-credit-description">Available</div>
           </div>
@@ -115,14 +131,14 @@ function Buy() {
               type="radio"
               id="quanity-btn"
               name="quanity-btn"
-              onChange={() => handleQuanitySelection("quanity-input")}
+              onChange={() => handleQuanitySelection('quanity-input')}
               defaultChecked={true}
             />
             <label htmlFor="quanity-btn">Quanity</label>
             <input
               type="radio"
               id="value-btn"
-              onChange={() => handleQuanitySelection("value-input")}
+              onChange={() => handleQuanitySelection('value-input')}
               name="quanity-btn"
             />
             <label htmlFor="value-btn">Value (USD)</label>
@@ -133,6 +149,9 @@ function Buy() {
               placeholder="Quanity"
               className="quanity-input buy-input-active"
               id="quanity-input"
+              onChange={(e) =>{
+                document.getElementById('value-input').value = (e.target.value) * Number(price)
+              }}
             />
             <input
               type="number"
@@ -140,6 +159,9 @@ function Buy() {
               className="quanity-input"
               disabled={true}
               id="value-input"
+              onChange={(e) =>{
+                document.getElementById('quanity-input').value = e.target.value / Number(price)
+              }}
             />
           </div>
         </div>
@@ -169,7 +191,7 @@ function Buy() {
           </div>
           <div className="price-input-container">
             <input
-              type="number"
+              type="text"
               placeholder="Price"
               className="price-input focus:outline-none"
               id="price-input"
@@ -177,11 +199,11 @@ function Buy() {
           </div>
         </div>
         <button
-            type='submit'
-            className='bg-main-color py-3 px-8 rounded-md outline-none w-fit text-white font-bold shadow-md shadow-primary'
-          >
-              Place order
-          </button>
+          onClick={handleBuy}
+          className="bg-main-color py-3 px-8 rounded-md outline-none w-fit text-white font-bold shadow-md shadow-primary"
+        >
+          Place order
+        </button>
       </div>
       {loading && <Loading />}
     </div>
