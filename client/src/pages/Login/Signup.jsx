@@ -22,11 +22,25 @@ function Signup({ setUser }) {
 		}
 	}, [])
 	
-	function signupHandleCallBackResponse(response) {
+	async function signupHandleCallBackResponse(response) {
 		console.log('Encoded JWT ID token: ' + response.credential);
 		let userObject = jwt_decode(response.credential);
-		console.log(userObject);
-		setUser(userObject);
+		var baseUrl = `https://futuris.cyclic.app/addUser/${process.env.REACT_APP_DATABASE_KEY}/`
+
+		let result = await fetch(baseUrl, {
+			method: 'POST',
+			headers: {
+					'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+							name: userObject.name,
+							email: userObject.email,
+							password: 'google'
+			})
+	});
+	let user = await result.json()
+	console.log(user)
+		setUser(user);
 		navigate('/');
 	}
 

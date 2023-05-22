@@ -67,11 +67,21 @@ function Login({ setUser }) {
 		});
 	}, []);
 
-	function handleSignIn() {
+	async function handleSignIn() {
 		if (checkError()) {
 			return;
 		}
-		setUser({ name: 'asdf' });
+		let email = document.getElementById('email-login').value;
+		let password = document.getElementById('password-login').value;
+		var baseUrl = `https://futuris.cyclic.app/${process.env.REACT_APP_DATABASE_KEY}/${email}/${password}`
+		const fetchResult = await fetch(baseUrl)
+		const result = await fetchResult.json()
+		if ( result === null){
+			setErrorLogin('No account found.')
+			setLoading(false)
+			return
+		}
+		setUser(result);
 		navigate('/');
 	}
 
@@ -100,7 +110,7 @@ function Login({ setUser }) {
 
 	return (
 		<div className="login-container" id="login-container">
-			{Loading && <Loading />}
+			{loading && <Loading />}
       <NavIntro activePage={'login'} />
 
 			<img src={SignInImage} alt="Sign In Image" className="signin-image" />
