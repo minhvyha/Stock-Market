@@ -7,11 +7,14 @@ import './Login.css';
 import { useContext } from 'react';
 import useWindowDimensions from '../../components/useWindowDimensions';
 import { MainPageContext } from '../../App';
+import Loading from '../../components/Loading'
 
 function Login({ setUser }) {
+
 	const {user} = useContext(MainPageContext)
 	const [errorLogin, setErrorLogin] = useState();
 	const { width } = useWindowDimensions();
+	const [loading, setLoading] = useState(false)
 
 	var emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
 	var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/g;
@@ -19,17 +22,25 @@ function Login({ setUser }) {
 	const navigate = useNavigate();
 
 	useEffect(() =>{
-		console.log(user)
-		console.log(Object.keys(user).length === 0)
 		if(Object.keys(user).length !== 0 && user.constructor === Object){
 			navigate('/')
 		}
 	}, [])
 
-	function loginHandleCallBackResponse(response) {
+	
+	async function loginHandleCallBackResponse(response) {
+		setLoading(true)
 		let userObject = jwt_decode(response.credential);
-		console.log(userObject);
-		setUser(userObject);
+		var baseUrl = `https://futuris.cyclic.app/${process.env.REACT_APP_DATABASE_KEY}/${userObject.email}`
+		const fetchResult = await fetch(baseUrl)
+		const result = await fetchResult.json()
+		if ( result === null){
+			setErrorLogin('No account found.')
+			setLoading(false)
+			return
+		}
+		setUser(result);
+		setLoading(false)
 		navigate('/');
 	}
 
@@ -89,6 +100,7 @@ function Login({ setUser }) {
 
 	return (
 		<div className="login-container" id="login-container">
+			{Loading && <Loading />}
       <NavIntro activePage={'login'} />
 
 			<img src={SignInImage} alt="Sign In Image" className="signin-image" />

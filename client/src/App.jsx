@@ -24,21 +24,7 @@ import FailPopUp from './components/FailPopUp';
 export const MainPageContext = React.createContext();
 
 function App() {
-  const [user, setUser] = useState({
-    name: 'Minh Vy Ha',
-    email: "minhvy.ha@outlook.com",
-    assets: {
-      AAPL: 50_000,
-      BTCUSD: 50_000,
-      ETHUSD: 180_000,
-      AMZN: 92_000,
-      MATICUSD: 22000,
-      BNBUSD: 80_012,
-    },
-    cash: 100_000,
-    totalAssets: 572_012,
-    dob:'01/01/2004'
-  });
+  const [user, setUser] = useState({});
   const [fontSize, setFontSize] = useState('Medium');
   const windowSize = useRef([window.innerWidth, window.innerHeight]);
   const [data, setData] = useState();
@@ -55,6 +41,8 @@ function App() {
     let url = window.location.pathname
     setActivePage(url.slice(1))
   }, [window.location.pathname])
+
+
   function handleSignOut(event) {
     setUser({});
   }
@@ -64,10 +52,8 @@ function App() {
       document.getElementsByTagName('body')[0].classList.add('dark')
     }
     else{
-
       document.getElementsByTagName('body')[0].classList.remove('dark')
     }
-
   }, [isDarkMode])
 
   return (
