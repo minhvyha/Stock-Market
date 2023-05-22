@@ -12,6 +12,7 @@ function Portfolio() {
     id: 'Cash',
     value: user.cash,
   });
+  console.log(user.assets)
   for (const [key, value] of Object.entries(user.assets)) {
     newData.push({
       id: key,

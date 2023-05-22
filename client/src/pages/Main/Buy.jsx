@@ -29,7 +29,7 @@ function Buy() {
             >
               <input
                 type="radio"
-                className="radio"
+                className="radio hidden"
                 id={`${data.symbol}`}
                 name="category"
               />
@@ -40,6 +40,7 @@ function Buy() {
           );
         });
         setSearchList(optionList);
+        console.log(searchList)
       }
     }, 1000);
     return () => clearTimeout(timeoutId);
@@ -71,10 +72,11 @@ function Buy() {
           <div className="trade-instruction">Order Type:</div>
           <div className="trade-type-info">Buy</div>
         </div>
-        <div className="flex flex-row">
+        <div className="flex flex-row relative">
           <div className="bg-white text-black p-2.5 rounded-sm flex align-center">
             Quote
           </div>
+
           <input
             type="text"
             placeholder="Stock | Crypto"
@@ -85,7 +87,9 @@ function Buy() {
             className="bg-black focus:border-buy-outline border-2 focus:outline-none placeholder:text-sm border-solid placeholder:text-gray-400	border-buy-border border-l-0 flex-1 text-white p-2"
             value={quote}
           />
-          <div></div>
+          <div className='flex flex-col absolute z-50 bg-tertiary w-full mt-12'>
+            {searchList}
+          </div>
         </div>
         <div className="trade-col quanity-wrapper">
           <div className="quanity-selection-container">

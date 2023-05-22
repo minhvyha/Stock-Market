@@ -136,6 +136,7 @@ function Selection() {
         <div className="search-box">
           <input
             type="text"
+            className='text-black'
             placeholder="Start Typing..."
             onKeyUp={handleSearch}
           />
