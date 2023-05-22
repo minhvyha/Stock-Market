@@ -31,7 +31,7 @@ function Login({ setUser }) {
 	async function loginHandleCallBackResponse(response) {
 		setLoading(true)
 		let userObject = jwt_decode(response.credential);
-		var baseUrl = `https://futuris.cyclic.app/${process.env.REACT_APP_DATABASE_KEY}/${userObject.email}`
+		var baseUrl = `https://futuris.cyclic.app/${process.env.REACT_APP_DATABASE_KEY}/${userObject.email.toLowerCase()}`
 		const fetchResult = await fetch(baseUrl)
 		const result = await fetchResult.json()
 		if ( result === null){
@@ -71,11 +71,13 @@ function Login({ setUser }) {
 		if (checkError()) {
 			return;
 		}
-		let email = document.getElementById('email-login').value;
+		let email = document.getElementById('email-login').value.toLowerCase();
 		let password = document.getElementById('password-login').value;
 		var baseUrl = `https://futuris.cyclic.app/${process.env.REACT_APP_DATABASE_KEY}/${email}/${password}`
 		const fetchResult = await fetch(baseUrl)
 		const result = await fetchResult.json()
+		console.log(baseUrl)
+		console.log(result)
 		if ( result === null){
 			setErrorLogin('No account found.')
 			setLoading(false)

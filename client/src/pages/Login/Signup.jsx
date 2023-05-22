@@ -23,10 +23,8 @@ function Signup({ setUser }) {
 	}, [])
 	
 	async function signupHandleCallBackResponse(response) {
-		console.log('Encoded JWT ID token: ' + response.credential);
 		let userObject = jwt_decode(response.credential);
 		var baseUrl = `https://futuris.cyclic.app/addUser/${process.env.REACT_APP_DATABASE_KEY}/`
-
 		let result = await fetch(baseUrl, {
 			method: 'POST',
 			headers: {
@@ -67,11 +65,25 @@ function Signup({ setUser }) {
 		google.accounts.id.prompt();
 	}, []);
 
-	function handleSignUp() {
+	async function handleSignUp() {
 		if (checkError()) {
 			return;
 		}
-		setUser({ name: 'asdf' });
+		let email = document.getElementById('email-login').value;
+		let password = document.getElementById('password-login').value;
+		var baseUrl = `https://futuris.cyclic.app/addUser/${process.env.REACT_APP_DATABASE_KEY}/`
+		let result = await fetch(baseUrl, {
+			method: 'POST',
+			headers: {
+					'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+							name: 'User',
+							email: email,
+							password: password
+			})
+	});
+		setUser(result);
 		navigate('/');
 	}
 
