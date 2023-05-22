@@ -6,7 +6,6 @@ import Appearance from '../../components/Account/Appearance';
 import Password from '../../components/Account/Password';
 import Help from '../../components/Account/Help';
 import Contact from '../../components/Account/Contact';
-import Trade from '../../components/Account/Trade';
 import { nanoid } from 'nanoid';
 import { useNavigate } from 'react-router-dom';
 

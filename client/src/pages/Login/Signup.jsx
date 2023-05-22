@@ -31,7 +31,7 @@ function Signup({ setUser }) {
 					'Content-Type': 'application/json'
 			},
 			body: JSON.stringify({
-							name: userObject.name,
+							name: userObject.name.toLowerCase(),
 							email: userObject.email,
 							password: 'google'
 			})
@@ -69,7 +69,7 @@ function Signup({ setUser }) {
 		if (checkError()) {
 			return;
 		}
-		let email = document.getElementById('email-login').value;
+		let email = document.getElementById('email-login').value.toLowerCase();
 		let password = document.getElementById('password-login').value;
 		var baseUrl = `https://futuris.cyclic.app/addUser/${process.env.REACT_APP_DATABASE_KEY}/`
 		let result = await fetch(baseUrl, {

@@ -1,12 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./Buy.css";
-import BuyImage from "../../assets/images/BuyImage.png";
 import { MainPageContext } from "../../App";
 import { nanoid } from "nanoid";
+import Loading from "../../components/Loading";
 
 function Buy() {
   const { user } = useContext(MainPageContext);
   const [quote, setQuote] = useState("");
+  const [loading, setLoading] = useState(false)
   const [selected, setSelected] = useState(false);
   const [searchList, setSearchList] = useState();
   const [isDropDown, setIsDropDown] = useState(false);
@@ -26,10 +27,19 @@ function Buy() {
             <div
               key={nanoid()}
               className="option"
-              onClick={() => {
+              onClick={async () => {
                 setIsDropDown((value) => !value);
                 setQuote(data.symbol);
                 setSelected(true);
+                setLoading(true)
+                let priceApi = await fetch(
+                  `https://financialmodelingprep.com/api/v3/quote-short/${data.symbol}?apikey=${process.env.REACT_APP_STOCK_SEARCH}`
+                );
+                let result = await priceApi.json();
+                document.getElementById(
+                  'price-input'
+                  ).value = `${result[0].price} - estimated`;
+                setLoading(false)
               }}
             >
               <input
@@ -161,18 +171,19 @@ function Buy() {
             <input
               type="number"
               placeholder="Price"
-              className="price-input"
+              className="price-input focus:outline-none"
               id="price-input"
             />
           </div>
         </div>
         <button
             type='submit'
-            className='bg-main-color py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary'
+            className='bg-main-color py-3 px-8 rounded-md outline-none w-fit text-white font-bold shadow-md shadow-primary'
           >
               Place order
           </button>
       </div>
+      {loading && <Loading />}
     </div>
   );
 }

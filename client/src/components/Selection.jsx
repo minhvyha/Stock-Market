@@ -44,7 +44,7 @@ function Selection() {
                 setSector(data.exchangeShortName);
       
                 document.querySelector('.selected').innerHTML = `${data.symbol}`;
-                setIsDropDown((value) => !value);
+                setIsDropDown(false);
       
               }}
             >
@@ -81,13 +81,12 @@ function Selection() {
       customOption.classList.add('option');
       customOption.id = ('custom-selection')
       customOption.addEventListener('click', () => {
-        console.log('123')
         setAssets(searchTerm);
         setTitle(searchTerm);
         setSector('Custom Selection');
   
         document.querySelector('.selected').innerHTML = searchTerm;
-        setIsDropDown((value) => !value);
+        setIsDropDown(false);
       });
       customOption.innerHTML = `
       <input

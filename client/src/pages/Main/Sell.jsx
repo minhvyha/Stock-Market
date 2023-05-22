@@ -1,12 +1,13 @@
 import React, { useContext, useState, useEffect } from 'react';
-import './Sell.css'
-import SellImage from '../../assets/images/SellImage.png'
+import './Sell.css';
 import { MainPageContext } from '../../App';
 import { nanoid } from 'nanoid';
+import Loading from '../../components/Loading';
 
 function Sell() {
-	const { user } = useContext(MainPageContext);
-  const [quote, setQuote] = useState("");
+  const { user } = useContext(MainPageContext);
+  const [quote, setQuote] = useState('');
+  const [loading, setLoading] = useState(false);
   const [selected, setSelected] = useState(false);
   const [searchList, setSearchList] = useState();
   const [isDropDown, setIsDropDown] = useState(false);
@@ -15,21 +16,29 @@ function Sell() {
       return;
     }
     const timeoutId = setTimeout(async () => {
-      if (quote !== "") {
+      if (quote !== '') {
         const searchApi = await fetch(
           `https://financialmodelingprep.com/api/v3/search?query=${quote}&exchange=NASDAQ&exchange=CRYPTO&exchange=NSYE&limit=40&apikey=${process.env.REACT_APP_STOCK_SEARCH}`
         );
-
         const stockValue = await searchApi.json();
         let optionList = stockValue.map((data) => {
           return (
             <div
               key={nanoid()}
               className="option"
-              onClick={() => {
+              onClick={async () => {
                 setIsDropDown((value) => !value);
                 setQuote(data.symbol);
                 setSelected(true);
+                setLoading(true)
+                let priceApi = await fetch(
+                  `https://financialmodelingprep.com/api/v3/quote-short/${data.symbol}?apikey=${process.env.REACT_APP_STOCK_SEARCH}`
+                );
+                let result = await priceApi.json();
+                document.getElementById(
+                  'price-input'
+                  ).value = `${result[0].price} - estimated`;
+                  setLoading(false)
               }}
             >
               <input
@@ -46,31 +55,30 @@ function Sell() {
         });
         setSearchList(optionList);
         setIsDropDown(true);
-        console.log(searchList);
       }
     }, 1000);
     return () => clearTimeout(timeoutId);
   }, [quote]);
 
   function handleQuanitySelection(id) {
-    let input = document.getElementsByClassName("quanity-input");
+    let input = document.getElementsByClassName('quanity-input');
     for (let i = 0; i < input.length; i++) {
       input[i].disabled = true;
-      input[i].classList.remove("buy-input-active");
+      input[i].classList.remove('buy-input-active');
     }
     document.getElementById(id).disabled = false;
-    document.getElementById(id).classList.add("buy-input-active");
+    document.getElementById(id).classList.add('buy-input-active');
   }
 
-
-	return <div className="main-container">
-		<div className="trade-main-container">
+  return (
+    <div className="main-container">
+      <div className="trade-main-container">
         <div className="trade-information">
           <div className="buy-title">Place Order:</div>
           <div className="available-credit">
-            {user.cash.toLocaleString("en-US", {
-              style: "currency",
-              currency: "USD",
+            {user.cash.toLocaleString('en-US', {
+              style: 'currency',
+              currency: 'USD',
             })}
             <div className="available-credit-description">Available</div>
           </div>
@@ -106,14 +114,14 @@ function Sell() {
               type="radio"
               id="quanity-btn"
               name="quanity-btn"
-              onChange={() => handleQuanitySelection("quanity-input")}
+              onChange={() => handleQuanitySelection('quanity-input')}
               defaultChecked={true}
             />
             <label htmlFor="quanity-btn">Quanity</label>
             <input
               type="radio"
               id="value-btn"
-              onChange={() => handleQuanitySelection("value-input")}
+              onChange={() => handleQuanitySelection('value-input')}
               name="quanity-btn"
             />
             <label htmlFor="value-btn">Value (USD)</label>
@@ -160,21 +168,25 @@ function Sell() {
           </div>
           <div className="price-input-container">
             <input
-              type="number"
+              type="text"
               placeholder="Price"
-              className="price-input"
+              className="price-input focus:outline-none"
               id="price-input"
+              disabled={true}
             />
           </div>
         </div>
         <button
-            type='submit'
-            className='bg-main-color py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary'
-          >
-              Place order
-          </button>
+          type="submit"
+          className="bg-main-color py-3 px-8 rounded-md outline-none w-fit text-white font-bold shadow-md shadow-primary"
+        >
+          Place order
+        </button>
       </div>
-	</div>;
+      {loading && <Loading />}
+
+    </div>
+  );
 }
 
 export default Sell;
