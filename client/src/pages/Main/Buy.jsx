@@ -1,20 +1,23 @@
-import React, { useContext, useEffect, useState } from 'react';
-import './Buy.css';
-import BuyImage from '../../assets/images/BuyImage.png';
-import { MainPageContext } from '../../App';
-import { nanoid } from 'nanoid';
+import React, { useContext, useEffect, useState } from "react";
+import "./Buy.css";
+import BuyImage from "../../assets/images/BuyImage.png";
+import { MainPageContext } from "../../App";
+import { nanoid } from "nanoid";
 
 function Buy() {
   const { user } = useContext(MainPageContext);
-  const [quote, setQuote] = useState('');
+  const [quote, setQuote] = useState("");
   const [selected, setSelected] = useState(false);
   const [searchList, setSearchList] = useState();
   const [isDropDown, setIsDropDown] = useState(false);
   useEffect(() => {
+    if (selected) {
+      return;
+    }
     const timeoutId = setTimeout(async () => {
-      if (quote !== '') {
+      if (quote !== "") {
         const searchApi = await fetch(
-          `https://financialmodelingprep.com/api/v3/search?query=${quote}&exchange=NASDAQ&exchange=CRYPTO&exchange=NSYE&limit=40&apikey=${process.env.REACT_APP_STOCK_SEARCH}`
+          `https://financialmodelingprep.com/api/v3/search?query=${quote}&exchange=NASDAQ&exchange=CRYPTO&exchange=NSYE&limit=5&apikey=${process.env.REACT_APP_STOCK_SEARCH}`
         );
 
         const stockValue = await searchApi.json();
@@ -25,6 +28,8 @@ function Buy() {
               className="option"
               onClick={() => {
                 setIsDropDown((value) => !value);
+                setQuote(data.symbol);
+                setSelected(true);
               }}
             >
               <input
@@ -40,20 +45,21 @@ function Buy() {
           );
         });
         setSearchList(optionList);
-        console.log(searchList)
+        setIsDropDown(true);
+        console.log(searchList);
       }
     }, 1000);
     return () => clearTimeout(timeoutId);
   }, [quote]);
 
   function handleQuanitySelection(id) {
-    let input = document.getElementsByClassName('quanity-input');
+    let input = document.getElementsByClassName("quanity-input");
     for (let i = 0; i < input.length; i++) {
       input[i].disabled = true;
-      input[i].classList.remove('buy-input-active');
+      input[i].classList.remove("buy-input-active");
     }
     document.getElementById(id).disabled = false;
-    document.getElementById(id).classList.add('buy-input-active');
+    document.getElementById(id).classList.add("buy-input-active");
   }
   return (
     <div className="main-container">
@@ -61,9 +67,9 @@ function Buy() {
         <div className="trade-information">
           <div className="buy-title">Place Order:</div>
           <div className="available-credit">
-            {user.cash.toLocaleString('en-US', {
-              style: 'currency',
-              currency: 'USD',
+            {user.cash.toLocaleString("en-US", {
+              style: "currency",
+              currency: "USD",
             })}
             <div className="available-credit-description">Available</div>
           </div>
@@ -82,14 +88,16 @@ function Buy() {
             placeholder="Stock | Crypto"
             onChange={(e) => {
               setQuote(e.target.value);
-              
+              setSelected(false);
             }}
             className="bg-black focus:border-buy-outline border-2 focus:outline-none placeholder:text-sm border-solid placeholder:text-gray-400	border-buy-border border-l-0 flex-1 text-white p-2"
             value={quote}
           />
-          <div className='flex flex-col absolute z-50 bg-tertiary w-full mt-12'>
-            {searchList}
-          </div>
+          {isDropDown && (
+            <div className="flex flex-col absolute z-50 bg-tertiary w-full mt-12 gap-2 py-2">
+              {searchList}
+            </div>
+          )}
         </div>
         <div className="trade-col quanity-wrapper">
           <div className="quanity-selection-container">
@@ -97,14 +105,14 @@ function Buy() {
               type="radio"
               id="quanity-btn"
               name="quanity-btn"
-              onChange={() => handleQuanitySelection('quanity-input')}
+              onChange={() => handleQuanitySelection("quanity-input")}
               defaultChecked={true}
             />
             <label htmlFor="quanity-btn">Quanity</label>
             <input
               type="radio"
               id="value-btn"
-              onChange={() => handleQuanitySelection('value-input')}
+              onChange={() => handleQuanitySelection("value-input")}
               name="quanity-btn"
             />
             <label htmlFor="value-btn">Value (USD)</label>
@@ -158,6 +166,12 @@ function Buy() {
             />
           </div>
         </div>
+        <button
+            type='submit'
+            className='bg-main-color py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary'
+          >
+              Place order
+          </button>
       </div>
     </div>
   );
