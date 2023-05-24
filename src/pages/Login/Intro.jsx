@@ -16,7 +16,7 @@ function Intro() {
 				<div className="intro-form-container">
 					<FiveStar />
 					<h1 className="intro-title">
-						Most Advanced Stock and Crypto Exchange {process.env.REACT_APP_NEWS_API}
+						Most Advanced Stock and Crypto Exchange
 					</h1>
 					<p className="intro-subtitle">
 						Trade stocks and cryptocurrencies on our secure, fast and
