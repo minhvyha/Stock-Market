@@ -18,7 +18,7 @@ function News() {
       );
 
       const responseEthereum = await fetch(
-        `https://newsapi.org/v2/everything?q=crypto&apiKey=${process.env.REACT_APP_CRYPTO_NEWS_API}&language=en`
+        `https://futuris.cyclic.app/${process.env.REACT_APP_DATABASE_KEY}/newsApi/crypto`
       );
       const ethereumtResponseJson = await responseEthereum.json();
       let cryptoNewsContent = [];
