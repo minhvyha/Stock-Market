@@ -19,7 +19,7 @@ function Sell() {
     const timeoutId = setTimeout(async () => {
       if (quote !== '') {
         const searchApi = await fetch(
-          `https://financialmodelingprep.com/api/v3/search?query=${quote}&exchange=NASDAQ&exchange=CRYPTO&exchange=NSYE&limit=40&apikey=${process.env.REACT_APP_STOCK_SEARCH}`
+          `https://financialmodelingprep.com/api/v3/search?query=${quote}&exchange=NASDAQ&exchange=CRYPTO&exchange=NSYE&limit=5&apikey=${process.env.REACT_APP_STOCK_SEARCH}`
         );
         const stockValue = await searchApi.json();
         let optionList = stockValue.map((data) => {
