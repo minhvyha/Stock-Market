@@ -39,8 +39,8 @@ function Home() {
         <div className="side-container">
           <Selection />
           <div className="action-container">
-            <div className="action-buy" onClick={e => navigate('/buy')} >Buy</div>
-            <div className="action-sell" onClick={e => navigate('/sell')}>Sell</div>
+            <div className="action-buy cursor-pointer" onClick={e => navigate('/buy')} >Buy</div>
+            <div className="action-sell cursor-pointer" onClick={e => navigate('/sell')}>Sell</div>
           </div>
         </div>
       </div>
