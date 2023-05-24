@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, } from 'react-router-dom';
 import { nanoid } from 'nanoid';
 import Login from './pages/Login/Login';
 import Signup from './pages/Login/Signup';
@@ -94,7 +94,7 @@ function App() {
               key={nanoid()}
             />
             <Route
-              path="portfolio"
+              path="/portfolio"
               element={
                 <ProtectedRoute user={user}>
                   <Portfolio />
@@ -102,7 +102,7 @@ function App() {
               }
             />
             <Route
-              path="account"
+              path="/account"
               element={
                 <ProtectedRoute user={user}>
                   <Account />
@@ -110,7 +110,7 @@ function App() {
               }
             />
             <Route
-              path="buy"
+              path="/buy"
               element={
                 <ProtectedRoute user={user}>
                   <Buy />
@@ -118,7 +118,7 @@ function App() {
               }
             />
             <Route
-              path="sell"
+              path="/sell"
               element={
                 <ProtectedRoute user={user}>
                   <Sell />
@@ -126,13 +126,15 @@ function App() {
               }
             />
           </Route>
-          <Route path="intro" element={<Intro />} />
-          <Route path="assets" element={<Assets />} />
-          <Route path="news" element={<News />} />
-          <Route path="features" element={<Features />} />
-          <Route path="demo" element={<Demo />} />
-          <Route path="login" element={<Login setUser={setUser} />} />
-          <Route path="signup" element={<Signup setUser={setUser} />} />
+          <Route path="/intro" element={<Intro />} />
+          <Route path="/assets" element={<Assets />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/features" element={<Features />} />
+          <Route path="/demo" element={<Demo />} />
+          <Route path="/login" element={<Login setUser={setUser} />} />
+          <Route path="/signup" element={<Signup setUser={setUser} />} />
+          <Route path="/*" element={<Navigate to="/" />} />
+
         </Routes>
       </MainPageContext.Provider>
     </BrowserRouter>
