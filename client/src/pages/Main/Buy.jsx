@@ -82,11 +82,13 @@ function Buy() {
       document.getElementById('buy-error-message').innerHTML = ``;
       return;
     }
+    setLoading(false)
     document.getElementById('buy-error-message').innerHTML = `* ${error}`;
   }
 
   async function handleBuy() {
     setBuyError(null);
+    setLoading(true)
     if (!selected) {
       setBuyError('Please fill out all the form.');
       return;
@@ -102,9 +104,6 @@ function Buy() {
     let result = await priceApi.json();
     let cost = result[0].price * quanity;
     if (cost > user.cash) {
-      console.log(cost);
-      console.log(user.cash);
-
       setBuyError('Not enough cash.');
       return;
     }
@@ -134,6 +133,7 @@ function Buy() {
     });
     let newUser = await buyResult.json();
     setUser(newUser);
+    setLoading(false)
   }
   return (
     <div className="main-container">
