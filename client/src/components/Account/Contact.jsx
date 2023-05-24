@@ -83,7 +83,7 @@ const Contact = () => {
 
   return (
     <div
-      className={`xl:mt-12 flex flex-col gap-8 overflow-hidden`}
+      className={`xl:mt-12 flex flex-col gap-2 overflow-hidden`}
     >
         <h3 className={styles.sectionHeadText}>Contact</h3>
       <p id='error-message' className='error-text-form'></p>

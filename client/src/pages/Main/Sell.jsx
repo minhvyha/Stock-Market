@@ -9,6 +9,7 @@ function Sell() {
   const [quote, setQuote] = useState('');
   const [loading, setLoading] = useState(false);
   const [selected, setSelected] = useState(false);
+  const [price, setPrice] = useState(0);
   const [searchList, setSearchList] = useState();
   const [isDropDown, setIsDropDown] = useState(false);
   useEffect(() => {
@@ -35,6 +36,7 @@ function Sell() {
                   `https://financialmodelingprep.com/api/v3/quote-short/${data.symbol}?apikey=${process.env.REACT_APP_STOCK_SEARCH}`
                 );
                 let result = await priceApi.json();
+                setPrice(result[0].price);
                 document.getElementById(
                   'price-input'
                 ).value = `${result[0].price} - estimated`;
@@ -72,11 +74,11 @@ function Sell() {
 
   function setSellError(error) {
     if (error === null) {
-      document.getElementById('buy-error-message').innerHTML = ``;
+      document.getElementById('sell-error-message').innerHTML = ``;
       return;
     }
     setLoading(false)
-    document.getElementById('buy-error-message').innerHTML = `* ${error}`;
+    document.getElementById('sell-error-message').innerHTML = `* ${error}`;
   }
 
   async function handleSell() {
@@ -88,7 +90,15 @@ function Sell() {
     }
     let quanity = document.getElementById('quanity-input').value;
     if (quanity <= 0) {
-      setSellError('Please enter valid buy quanity.');
+      setSellError('Please enter valid sell quanity.');
+      return;
+    }
+    if (!user.assets.hasOwnProperty(quote)) {
+      setSellError('You do not own the asset.');
+      return;
+    }
+    if (user.assets[quote].quanity < quanity) {
+      setSellError('You do not have enough to sell.');
       return;
     }
     let priceApi = await fetch(
@@ -96,21 +106,9 @@ function Sell() {
     );
     let result = await priceApi.json();
     let cost = result[0].price * quanity;
-    if (cost > user.cash) {
-      setSellError('Not enough cash.');
-      return;
-    }
-
     let newAssets = user.assets;
-    if (!newAssets.hasOwnProperty(quote)) {
-      newAssets[quote] = {
-        quanity: 0,
-        value: 0,
-      };
-    }
-    newAssets[quote].quanity += Number(quanity);
-    newAssets[quote].value += Number(cost);
-    console.log(newAssets);
+    newAssets[quote].quanity -= Number(quanity);
+    newAssets[quote].value = result[0].price * newAssets[quote].quanity;
 
     var baseUrl = `https://futuris.cyclic.app/${process.env.REACT_APP_DATABASE_KEY}/editUser`;
     let buyResult = await fetch(baseUrl, {
@@ -121,7 +119,7 @@ function Sell() {
       body: JSON.stringify({
         email: user.email,
         assets: newAssets,
-        cash: (user.cash -= cost),
+        cash: (user.cash += cost),
       }),
     });
     let newUser = await buyResult.json();
@@ -132,7 +130,7 @@ function Sell() {
   return (
     <div className="main-container">
       <div className="trade-main-container">
-        <div id="buy-error-message" className="text-red-500 text-left"></div>
+        <div id="sell-error-message" className="text-red-500 text-left"></div>
 
         <div className="trade-information">
           <div className="buy-title">Place Order:</div>
@@ -193,6 +191,10 @@ function Sell() {
               placeholder="Quanity"
               className="quanity-input buy-input-active"
               id="quanity-input"
+              onChange={(e) => {
+                document.getElementById('value-input').value =
+                  e.target.value * Number(price);
+              }}
             />
             <input
               type="number"
@@ -200,6 +202,10 @@ function Sell() {
               className="quanity-input"
               disabled={true}
               id="value-input"
+              onChange={(e) => {
+                document.getElementById('quanity-input').value =
+                  e.target.value / Number(price);
+              }}
             />
           </div>
         </div>
@@ -239,6 +245,7 @@ function Sell() {
         </div>
         <button
           type="submit"
+          onClick={handleSell}
           className="bg-main-color py-3 px-8 rounded-md outline-none w-fit text-white font-bold shadow-md shadow-primary"
         >
           Place order

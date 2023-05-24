@@ -1,10 +1,13 @@
-import React, {useState, useRef} from 'react'
+import React, {useState, useRef, useContext} from 'react'
 import { styles } from '../../styles';
+import Loading from '../Loading';
+import { MainPageContext } from '../../App';
 
 function Password() {
 	var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/g;
 
   const formRef = useRef();
+  const {user, setUser} = useContext(MainPageContext)
   const [form, setForm] = useState({
     password: "",
     newPassword: "",
@@ -24,6 +27,7 @@ function Password() {
   };
 
   function checkForm(){
+    setError(null)
     let {password, confirmPassword, newPassword} = form
 		if (password === '' || confirmPassword === '' || newPassword === '') {
 			setError('Please fill out all the form.');
@@ -39,18 +43,44 @@ function Password() {
 			);
 			return true;
 		}
-    function setError(err){
-      document.getElementById('error-message').innerHTML = err
+  }
+  function setError(error){
+    if (error === null) {
+      document.getElementById('error-message').innerHTML = ``;
+      return;
     }
+    setLoading(false)
+    document.getElementById('error-message').innerHTML = `* ${error}`;
+
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     if (checkForm() === false){
       setLoading(false)
       return
     }
+    var baseUrl = `https://futuris.cyclic.app/${process.env.REACT_APP_DATABASE_KEY}/${form.password}/changePassword`
+		let result = await fetch(baseUrl, {
+			method: 'POST',
+			headers: {
+					'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+							email: user.email,
+							password: form.newPassword
+			})
+	});
+  let code = result.status
+  if (code === 401){
+    setError('Incorrect password.')
+    setLoading(false)
+    return
+  }
+	let newUser = await result.json()
+  setUser(newUser)
+  setLoading(false)
 
   };
   return (
@@ -102,6 +132,8 @@ function Password() {
             {loading ? "Changing..." : "Change"}
           </button>
         </form>
+        {loading && <Loading />}
+        
     </div>
   )
 }
