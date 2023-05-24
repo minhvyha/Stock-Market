@@ -116,7 +116,7 @@ function Buy() {
       };
     }
     newAssets[quote].quanity += Number(quanity);
-    newAssets[quote].value += Number(cost);
+    newAssets[quote].value = result[0].price * newAssets[quote].quanity;
     console.log(newAssets);
 
     var baseUrl = `https://futuris.cyclic.app/${process.env.REACT_APP_DATABASE_KEY}/editUser`;

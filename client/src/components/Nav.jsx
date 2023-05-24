@@ -15,7 +15,7 @@ function Nav() {
     }
   }
   return (
-    <nav className="navBar intro-nav">
+    <nav className="navBar intro-nav bg-nav-button dark:bg-dark-nav-background">
       <div className="nav-container">
         <div className="nav-subcontainer">
             

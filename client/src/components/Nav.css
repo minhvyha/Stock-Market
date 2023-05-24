@@ -4,7 +4,6 @@
   width: 100%;
   box-shadow: 0 10px 10px rgb(0 0 0 / 25%);
   position: fixed;
-  background-color: var(--dark-nav-background);
   z-index: var(--z-modal);
   top: 0;
 }

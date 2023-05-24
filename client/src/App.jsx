@@ -47,10 +47,13 @@ function App() {
 
   useEffect(() =>{
     if (isDarkMode){
-      document.getElementsByTagName('body')[0].classList.add('dark')
+      document.getElementsByTagName('html')[0].classList.remove('light')
+      document.getElementsByTagName('html')[0].classList.add('dark')
     }
     else{
-      document.getElementsByTagName('body')[0].classList.remove('dark')
+      document.getElementsByTagName('html')[0].classList.add('light')
+      document.getElementsByTagName('html')[0].classList.remove('dark')
+
     }
   }, [isDarkMode])
 

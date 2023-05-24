@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: ["./src/**/*.{js,jsx,ts,tsx}",],
   theme: {
     extend: {
@@ -12,6 +13,9 @@ module.exports = {
         "white-100": "#f3f3f3",
         'main-color': '#fa8e30',
         "buy-box": "rgb(97, 97, 97)",
+        "dark-button": "#272727",
+        "nav-button": "#484848",
+        "dark-nav-background": "#191919"
 
       },
       borderColor:{

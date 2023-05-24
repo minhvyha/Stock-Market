@@ -57,8 +57,8 @@ function Portfolio() {
     <div className="main-container portfolio-section">
       <div className="portfolio-title">Portfolio Overview</div>
       <div className="portfolio-content-container">
-        <div className="portfolio-content">{newPortfolioData}</div>
-        <div className="portfolio-pie-chart">
+        <div className="portfolio-content bg-gray-400 dark:bg-dark-button">{newPortfolioData}</div>
+        <div className="portfolio-pie-chart bg-gray-400 dark:bg-transparent">
           <Pie labels={labels} data={dataSet} />
         </div>
       </div>

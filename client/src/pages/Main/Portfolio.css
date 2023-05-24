@@ -20,7 +20,6 @@
 .portfolio-content {
   display: flex;
   flex-direction: column;
-  background-color: var(--dark-button-background);
   border-radius: 3px;
   gap: 0.5rem;
 }

@@ -16,7 +16,7 @@ function Footer() {
     console.log(page);
   }
   return (
-    <footer>
+    <footer className='bg-nav-button dark:bg-dark-nav-background'>
       <NavLink to="/home">
         <div
           className="footer-item-container"

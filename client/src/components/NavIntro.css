@@ -2,7 +2,6 @@
   cursor: pointer;
 }
 .navBar.intro-nav .nav-container {
-  background-color: var(--dark-nav-background);
   box-shadow: none;
   transition: 0.25s ease;
   display: flex;
