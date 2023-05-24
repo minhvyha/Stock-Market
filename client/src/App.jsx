@@ -62,6 +62,7 @@ function App() {
           setFontSize,
           Symbol,
           user,
+          setUser,
           data,
           assets,
           title,

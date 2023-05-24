@@ -8,22 +8,26 @@ import Pie from '../../components/Pie';
 function Portfolio() {
   const { user } = useContext(MainPageContext);
   let newData = [];
+  let totalAssets = user.cash
   newData.push({
     id: 'Cash',
     value: user.cash,
   });
-  console.log(user.assets)
-  for (const [key, value] of Object.entries(user.assets)) {
-    newData.push({
-      id: key,
-      value: value,
-    });
+  if (user.assets !== undefined){
+    for (const key in user.assets) {
+      totalAssets += user.assets[key].value * user.assets[key].quanity
+      newData.push({
+        id: key,
+        value: user.assets[key].value * user.assets[key].quanity,
+      });
+    }
   }
   newData.sort((a, b) => b.value - a.value);
   let labels = [];
   let dataSet = [];
   let newPortfolioData = [];
-  let otherAmount = user.totalAssets;
+
+  let otherAmount = totalAssets;
   for (let i = 0; i < newData.length && i < 6; i++) {
     let data = newData[i];
     labels.push(data.id);
@@ -33,7 +37,7 @@ function Portfolio() {
       <PortfolioData
         key={nanoid()}
         name={data.id}
-        amount={((data.value * 100) / user.totalAssets).toFixed(2)}
+        amount={((data.value * 100) / totalAssets).toFixed(2)}
       />
     );
   }

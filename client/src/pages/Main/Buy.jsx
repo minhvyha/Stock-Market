@@ -5,11 +5,11 @@ import { nanoid } from 'nanoid';
 import Loading from '../../components/Loading';
 
 function Buy() {
-  const { user } = useContext(MainPageContext);
+  const { user, setUser } = useContext(MainPageContext);
   const [quote, setQuote] = useState('');
   const [loading, setLoading] = useState(false);
   const [selected, setSelected] = useState(false);
-  const [price, setPrice] = useState(0)
+  const [price, setPrice] = useState(0);
   const [searchList, setSearchList] = useState();
   const [isDropDown, setIsDropDown] = useState(false);
   useEffect(() => {
@@ -37,7 +37,7 @@ function Buy() {
                   `https://financialmodelingprep.com/api/v3/quote-short/${data.symbol}?apikey=${process.env.REACT_APP_STOCK_SEARCH}`
                 );
                 let result = await priceApi.json();
-                setPrice(result[0].price)
+                setPrice(result[0].price);
                 document.getElementById(
                   'price-input'
                 ).value = `${result[0].price.toLocaleString('en-US', {
@@ -77,19 +77,68 @@ function Buy() {
     document.getElementById(id).classList.add('buy-input-active');
   }
 
-  async function handleBuy(){
-    if (!selected){
-      return
+  function setBuyError(error) {
+    if (error === null) {
+      document.getElementById('buy-error-message').innerHTML = ``;
+      return;
+    }
+    document.getElementById('buy-error-message').innerHTML = `* ${error}`;
+  }
+
+  async function handleBuy() {
+    setBuyError(null);
+    if (!selected) {
+      setBuyError('Please fill out all the form.');
+      return;
+    }
+    let quanity = document.getElementById('quanity-input').value;
+    if (quanity <= 0) {
+      setBuyError('Please enter valid buy quanity.');
+      return;
     }
     let priceApi = await fetch(
       `https://financialmodelingprep.com/api/v3/quote-short/${quote}?apikey=${process.env.REACT_APP_STOCK_SEARCH}`
     );
     let result = await priceApi.json();
-    let price = result[0].price
+    let cost = result[0].price * quanity;
+    if (cost > user.cash) {
+      console.log(cost);
+      console.log(user.cash);
+
+      setBuyError('Not enough cash.');
+      return;
+    }
+
+    let newAssets = user.assets;
+    if (!newAssets.hasOwnProperty(quote)) {
+      newAssets[quote] = {
+        quanity: 0,
+        value: 0,
+      };
+    }
+    newAssets[quote].quanity += Number(quanity);
+    newAssets[quote].value += Number(cost);
+    console.log(newAssets);
+
+    var baseUrl = `https://futuris.cyclic.app/${process.env.REACT_APP_DATABASE_KEY}/editUser`;
+    let buyResult = await fetch(baseUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: user.email,
+        assets: newAssets,
+        cash: (user.cash -= cost),
+      }),
+    });
+    let newUser = await buyResult.json();
+    setUser(newUser);
   }
   return (
     <div className="main-container">
       <div className="trade-main-container">
+        <div id="buy-error-message" className="text-red-500 text-left"></div>
         <div className="trade-information">
           <div className="buy-title">Place Order:</div>
           <div className="available-credit">
@@ -149,8 +198,9 @@ function Buy() {
               placeholder="Quanity"
               className="quanity-input buy-input-active"
               id="quanity-input"
-              onChange={(e) =>{
-                document.getElementById('value-input').value = (e.target.value) * Number(price)
+              onChange={(e) => {
+                document.getElementById('value-input').value =
+                  e.target.value * Number(price);
               }}
             />
             <input
@@ -159,8 +209,9 @@ function Buy() {
               className="quanity-input"
               disabled={true}
               id="value-input"
-              onChange={(e) =>{
-                document.getElementById('quanity-input').value = e.target.value / Number(price)
+              onChange={(e) => {
+                document.getElementById('quanity-input').value =
+                  e.target.value / Number(price);
               }}
             />
           </div>
