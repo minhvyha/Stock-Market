@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { MainPageContext } from '../../App';
 import './Home.css';
 import { TechnicalAnalysis } from 'react-ts-tradingview-widgets';

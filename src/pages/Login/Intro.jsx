@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Logo from '../../assets/images/Logo.png';
 import IntroTrade from '../../assets/images/IntroTrade.png';
 import IntroPortfolio from '../../assets/images/IntroPortfolio.png';
 import IntroSecurity from '../../assets/images/IntroSecurity.png';

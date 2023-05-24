@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import './Portfolio.css';
 import { MainPageContext } from '../../App';
 import PortfolioData from '../../components/PortfolioData';

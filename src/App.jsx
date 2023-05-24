@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import axios from 'axios';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { nanoid } from 'nanoid';
 import Login from './pages/Login/Login';
@@ -25,9 +24,7 @@ function App() {
   const [user, setUser] = useState({});
   const [fontSize, setFontSize] = useState('Medium');
   const windowSize = useRef([window.innerWidth, window.innerHeight]);
-  const [data, setData] = useState();
   const [isDarkMode, setIsDarkMode] = useState(true);
-  const [successPopUpOpen, setSuccessPopUpOpen] = useState(false);
   const [assets, setAssets] = useState('AAPL');
   const [isDropDown, setIsDropDown] = useState(false);
   const [activeSetting, setActiveSetting] = useState('');
@@ -66,7 +63,6 @@ function App() {
           Symbol,
           user,
           setUser,
-          data,
           assets,
           title,
           sector,

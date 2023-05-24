@@ -7,7 +7,6 @@ function Personal() {
   const { user, setUser } = useContext(MainPageContext);
   const [loading, setLoading] = useState(false);
   const [name, setName] = useState(user.name);
-  const [email, setEmail] = useState(user.email);
   const [dob, setDob] = useState(user.dob);
   var dobRegex =
     /^(?:0[1-9]|[12]\d|3[01])([\/.-])(?:0[1-9]|1[012])\1(?:19|20)\d\d$/;
@@ -15,7 +14,7 @@ function Personal() {
   async function handleSubmit(){
     setLoading(true)
     setError(null);
-    if(name === '' || email ==='' || dob === ''){
+    if(name === '' || dob === ''){
       setError('Invalid form.')
       return
     }
@@ -30,7 +29,7 @@ function Personal() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        email: email,
+        email: user.email,
         name: name,
         dob: dob
       }),
@@ -69,7 +68,7 @@ function Personal() {
         <input
           type="text"
           className="bg-tertiary py-4 px-6   placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium w-60"
-          value={email}
+          value={user.email}
           disabled={true}
         />
       </div>
