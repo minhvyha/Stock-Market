@@ -6,3 +6,14 @@ base = "/"
   from = "/*"
   to = "/index.html"
   status = 200
+
+[context.production.environment]
+REACT_APP_CLIENT_ID = 492508981332-js4l4e26nhbkkhic3iv1injpjos9ttvt.apps.googleusercontent.com
+REACT_APP_GOOGLE_SECRET = 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
+REACT_APP_DATABASE_KEY = sinc6LWIkZe2ppOr
+REACT_APP_NEWS_API = x5b6LEHHxdUOo91Ab3rBcIHefbAsizWyb6cRSbyG
+REACT_APP_CRYPTO_NEWS_API = b8c5a2c80848422a90f35b74f42d2275
+REACT_APP_STOCK_SEARCH = c3d313a3c45b10359d9b4f1b34ae8bfe
+REACT_APP_EMAILJS_SERVICE_ID = service_i4jaotb
+REACT_APP_EMAILJS_TEMPLATE_ID=template_kr4nptd
+REACT_APP_EMAILJS_PUBLIC_KEY=ljCFKFI7leq8VsrIH
