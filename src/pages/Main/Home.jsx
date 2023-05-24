@@ -6,10 +6,11 @@ import { FundamentalData } from 'react-ts-tradingview-widgets';
 import { CompanyProfile } from 'react-ts-tradingview-widgets';
 import { AdvancedRealTimeChart } from 'react-ts-tradingview-widgets';
 import Selection from '../../components/Selection';
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
   const { assets, title, sector } = useContext(MainPageContext);
-
+  let navigate = useNavigate()
   return (
     <div className="main-container">
       <div className="main-wrapper">
@@ -38,8 +39,8 @@ function Home() {
         <div className="side-container">
           <Selection />
           <div className="action-container">
-            <div className="action-buy">Buy</div>
-            <div className="action-sell">Sell</div>
+            <div className="action-buy" onClick={e => navigate('/buy')} >Buy</div>
+            <div className="action-sell" onClick={e => navigate('/sell')}>Sell</div>
           </div>
         </div>
       </div>
