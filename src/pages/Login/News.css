@@ -54,9 +54,7 @@ max-width: 100%;
     max-width: 476px;
     padding-inline: 40px;
   }
-.news-container #tradingview_widget_wrapper{
-  padding-inline: 20px;
-}
+
 }
 @media screen and (min-width: 828px) {
   .news-container {
