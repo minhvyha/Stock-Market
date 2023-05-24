@@ -29,6 +29,7 @@ function Login({ setUser }) {
 
 	
 	async function loginHandleCallBackResponse(response) {
+		
 		setLoading(true)
 		let userObject = jwt_decode(response.credential);
 		var baseUrl = `https://futuris.cyclic.app/${process.env.REACT_APP_DATABASE_KEY}/${userObject.email.toLowerCase()}`
@@ -68,21 +69,22 @@ function Login({ setUser }) {
 	}, []);
 
 	async function handleSignIn() {
+		setErrorLogin(null)
+		setLoading(true)
 		if (checkError()) {
 			return;
 		}
 		let email = document.getElementById('email-login').value.toLowerCase();
 		let password = document.getElementById('password-login').value;
 		var baseUrl = `https://futuris.cyclic.app/${process.env.REACT_APP_DATABASE_KEY}/${email}/${password}`
+		
 		const fetchResult = await fetch(baseUrl)
-		const result = await fetchResult.json()
-		console.log(baseUrl)
-		console.log(result)
-		if ( result === null){
+		if (fetchResult.status === 401){
 			setErrorLogin('No account found.')
 			setLoading(false)
 			return
 		}
+		const result = await fetchResult.json()
 		setUser(result);
 		navigate('/');
 	}
@@ -104,7 +106,7 @@ function Login({ setUser }) {
 		}
 		if (password.match(passwordRegex) === null) {
 			setErrorLogin(
-				'Password must have minimum length of 8 and contain at least one letter and one number.'
+				'Password must have minimum length of 8 and contain at least one letter, one capital letter and one number.'
 			);
 			return true;
 		}
