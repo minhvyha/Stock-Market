@@ -3,7 +3,7 @@ import './News.css';
 import { Timeline } from 'react-ts-tradingview-widgets';
 
 import { nanoid } from 'nanoid';
-import NewsCard from '../../components/NewsCard';
+import NewsCard from '../../components/NewsCard.jsx'
 import NavIntro from '../../components/NavIntro';
 import Loading from '../../components/Loading';
 
