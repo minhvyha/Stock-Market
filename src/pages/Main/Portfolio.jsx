@@ -15,10 +15,10 @@ function Portfolio() {
   });
   if (user.assets !== undefined){
     for (const key in user.assets) {
-      totalAssets += user.assets[key].value * user.assets[key].quanity
+      totalAssets += user.assets[key].value * user.assets[key].quantity
       newData.push({
         id: key,
-        value: user.assets[key].value * user.assets[key].quanity,
+        value: user.assets[key].value * user.assets[key].quantity,
       });
     }
   }

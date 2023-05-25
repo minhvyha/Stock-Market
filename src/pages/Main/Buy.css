@@ -23,7 +23,7 @@
   display: flex;
   align-items: center;
 }
-.quanity-selection-container{
+.quantity-selection-container{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -31,13 +31,13 @@
 }
 
 
-.quanity-selection-container input, .price-selection-container input{
+.quantity-selection-container input, .price-selection-container input{
   display: none;
 }
-#quanity-btn:checked ~ #quanity-input{
+#quantity-btn:checked ~ #quantity-input{
 background-color: white;
 }
-.quanity-selection-container label, .price-selection-container label{
+.quantity-selection-container label, .price-selection-container label{
   background-color: rgb(97, 97, 97);
   cursor: pointer;
   color: black;
@@ -46,10 +46,10 @@ background-color: white;
   border-radius: 2.5px;
   font-size: 14px;
 }
-.quanity-selection-container input:checked + label{
+.quantity-selection-container input:checked + label{
   background-color: white;
 }
-.trade-col.quanity-wrapper{
+.trade-col.quantity-wrapper{
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -58,20 +58,20 @@ background-color: white;
   font-weight: normal;
   font-size: 14px;
 }
-.quanity-input-container{
+.quantity-input-container{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   gap: .5rem;
 }
-.quanity-input-container input:focus{
+.quantity-input-container input:focus{
   outline: none !important;
 }
-.quanity-input-container input.buy-input-active:focus, .price-input-container input:focus{
+.quantity-input-container input.buy-input-active:focus, .price-input-container input:focus{
   border: 2px solid var(--first-color);
   
 }
-.quanity-input-container input, .price-input-container input{
+.quantity-input-container input, .price-input-container input{
   width: 50%;
   color: white;
   background-color: transparent;

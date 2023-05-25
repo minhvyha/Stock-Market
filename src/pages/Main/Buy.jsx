@@ -67,8 +67,8 @@ function Buy() {
     return () => clearTimeout(timeoutId);
   }, [quote]);
 
-  function handleQuanitySelection(id) {
-    let input = document.getElementsByClassName('quanity-input');
+  function handlequantitySelection(id) {
+    let input = document.getElementsByClassName('quantity-input');
     for (let i = 0; i < input.length; i++) {
       input[i].disabled = true;
       input[i].classList.remove('buy-input-active');
@@ -93,16 +93,16 @@ function Buy() {
       setBuyError('Please fill out all the form.');
       return;
     }
-    let quanity = document.getElementById('quanity-input').value;
-    if (quanity <= 0) {
-      setBuyError('Please enter valid buy quanity.');
+    let quantity = document.getElementById('quantity-input').value;
+    if (quantity <= 0) {
+      setBuyError('Please enter valid buy quantity.');
       return;
     }
     let priceApi = await fetch(
       `https://financialmodelingprep.com/api/v3/quote-short/${quote}?apikey=${process.env.REACT_APP_STOCK_SEARCH}`
     );
     let result = await priceApi.json();
-    let cost = result[0].price * quanity;
+    let cost = result[0].price * quantity;
     if (cost > user.cash) {
       setBuyError('Not enough cash.');
       return;
@@ -111,12 +111,12 @@ function Buy() {
     let newAssets = user.assets;
     if (!newAssets.hasOwnProperty(quote)) {
       newAssets[quote] = {
-        quanity: 0,
+        quantity: 0,
         value: 0,
       };
     }
-    newAssets[quote].quanity += Number(quanity);
-    newAssets[quote].value = result[0].price * newAssets[quote].quanity;
+    newAssets[quote].quantity += Number(quantity);
+    newAssets[quote].value = result[0].price * newAssets[quote].quantity;
     console.log(newAssets);
 
     var baseUrl = `https://futuris.cyclic.app/${process.env.REACT_APP_DATABASE_KEY}/editUser`;
@@ -174,30 +174,30 @@ function Buy() {
             </div>
           )}
         </div>
-        <div className="trade-col quanity-wrapper">
-          <div className="quanity-selection-container">
+        <div className="trade-col quantity-wrapper">
+          <div className="quantity-selection-container">
             <input
               type="radio"
-              id="quanity-btn"
-              name="quanity-btn"
-              onChange={() => handleQuanitySelection('quanity-input')}
+              id="quantity-btn"
+              name="quantity-btn"
+              onChange={() => handlequantitySelection('quantity-input')}
               defaultChecked={true}
             />
-            <label htmlFor="quanity-btn">Quanity</label>
+            <label htmlFor="quantity-btn">quantity</label>
             <input
               type="radio"
               id="value-btn"
-              onChange={() => handleQuanitySelection('value-input')}
-              name="quanity-btn"
+              onChange={() => handlequantitySelection('value-input')}
+              name="quantity-btn"
             />
             <label htmlFor="value-btn">Value (USD)</label>
           </div>
-          <div className="quanity-input-container">
+          <div className="quantity-input-container">
             <input
               type="number"
-              placeholder="Quanity"
-              className="quanity-input buy-input-active"
-              id="quanity-input"
+              placeholder="quantity"
+              className="quantity-input buy-input-active"
+              id="quantity-input"
               onChange={(e) => {
                 document.getElementById('value-input').value =
                   e.target.value * Number(price);
@@ -206,11 +206,11 @@ function Buy() {
             <input
               type="number"
               placeholder="Value (optional)"
-              className="quanity-input"
+              className="quantity-input"
               disabled={true}
               id="value-input"
               onChange={(e) => {
-                document.getElementById('quanity-input').value =
+                document.getElementById('quantity-input').value =
                   e.target.value / Number(price);
               }}
             />
