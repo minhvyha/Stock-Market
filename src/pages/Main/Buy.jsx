@@ -67,7 +67,7 @@ function Buy() {
     return () => clearTimeout(timeoutId);
   }, [quote]);
 
-  function handlequantitySelection(id) {
+  function handleQuantitySelection(id) {
     let input = document.getElementsByClassName('quantity-input');
     for (let i = 0; i < input.length; i++) {
       input[i].disabled = true;
@@ -180,14 +180,14 @@ function Buy() {
               type="radio"
               id="quantity-btn"
               name="quantity-btn"
-              onChange={() => handlequantitySelection('quantity-input')}
+              onChange={() => handleQuantitySelection('quantity-input')}
               defaultChecked={true}
             />
             <label htmlFor="quantity-btn">quantity</label>
             <input
               type="radio"
               id="value-btn"
-              onChange={() => handlequantitySelection('value-input')}
+              onChange={() => handleQuantitySelection('value-input')}
               name="quantity-btn"
             />
             <label htmlFor="value-btn">Value (USD)</label>
