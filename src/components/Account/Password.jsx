@@ -74,7 +74,7 @@ function Password() {
 	});
   let code = result.status
   if (code === 401){
-    setError('Incorrect password.')
+    setError('Incorrect password or account register through google.')
     setLoading(false)
     return
   }
