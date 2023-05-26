@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { BrowserRouter, Routes, Route, Navigate, } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { nanoid } from 'nanoid';
 import Login from './pages/Login/Login';
 import Signup from './pages/Login/Signup';
@@ -33,26 +33,23 @@ function App() {
   const [sector, setSector] = useState('NASDAQ');
   const [activePage, setActivePage] = useState('home');
   useEffect(() => {
-    let url = window.location.pathname
-    setActivePage(url.slice(1))
-  }, [window.location.pathname])
-
+    let url = window.location.pathname;
+    setActivePage(url.slice(1));
+  }, [window.location.pathname]);
 
   function handleSignOut(event) {
     setUser({});
   }
 
-  useEffect(() =>{
-    if (isDarkMode){
-      document.getElementsByTagName('html')[0].classList.remove('light')
-      document.getElementsByTagName('html')[0].classList.add('dark')
+  useEffect(() => {
+    if (isDarkMode) {
+      document.getElementsByTagName('html')[0].classList.remove('light');
+      document.getElementsByTagName('html')[0].classList.add('dark');
+    } else {
+      document.getElementsByTagName('html')[0].classList.add('light');
+      document.getElementsByTagName('html')[0].classList.remove('dark');
     }
-    else{
-      document.getElementsByTagName('html')[0].classList.add('light')
-      document.getElementsByTagName('html')[0].classList.remove('dark')
-
-    }
-  }, [isDarkMode])
+  }, [isDarkMode]);
 
   return (
     <BrowserRouter>
@@ -134,7 +131,6 @@ function App() {
           <Route path="/login" element={<Login setUser={setUser} />} />
           <Route path="/signup" element={<Signup setUser={setUser} />} />
           <Route path="/*" element={<Navigate to="/" />} />
-
         </Routes>
       </MainPageContext.Provider>
     </BrowserRouter>
