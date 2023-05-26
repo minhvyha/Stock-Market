@@ -39,10 +39,6 @@ function App() {
   useEffect(() => {
     let url = window.location.pathname;
     setActivePage(url.slice(1));
-  }, [window.location.pathname]);
-
-  useEffect(() => {
-    console.log(user)
   }, []);
 
   useEffect(() =>{
