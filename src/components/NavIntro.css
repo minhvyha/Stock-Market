@@ -15,7 +15,6 @@
 .navBar.intro-nav {
   transition: 0.25s ease;
 }
-.scroll-header .navBar.intro-nav .nav-container,
 .scroll-header .navBar.intro-nav {
   background-color: var(--first-color);
 }
