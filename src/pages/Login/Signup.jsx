@@ -37,7 +37,6 @@ function Signup({ setUser }) {
       }),
     });
     let user = await result.json();
-    console.log(user);
     setUser(user);
     navigate('/');
   }

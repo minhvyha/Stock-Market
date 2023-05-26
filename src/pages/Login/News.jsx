@@ -24,7 +24,6 @@ function News() {
       let cryptoNewsContent = [];
       let count = 0;
       while (count < 6) {
-        console.log(1);
         let curNews = ethereumtResponseJson['articles'].shift();
         if (curNews.urlToImage === undefined || curNews.urlToImage === null) {
           continue;
@@ -57,7 +56,6 @@ function News() {
           />
         );
       });
-      console.log(cryptoNewsContent);
       setCryptoNews(cryptoNewsContent);
       setStockNews(stockNewsContent);
     }

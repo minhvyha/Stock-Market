@@ -61,7 +61,6 @@ function Buy() {
         });
         setSearchList(optionList);
         setIsDropDown(true);
-        console.log(searchList);
       }
     }, 1000);
     return () => clearTimeout(timeoutId);
@@ -117,7 +116,6 @@ function Buy() {
     }
     newAssets[quote].quantity += Number(quantity);
     newAssets[quote].value = result[0].price * newAssets[quote].quantity;
-    console.log(newAssets);
 
     var baseUrl = `https://futuris.cyclic.app/${process.env.REACT_APP_DATABASE_KEY}/editUser`;
     let buyResult = await fetch(baseUrl, {

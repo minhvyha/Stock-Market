@@ -6,7 +6,6 @@ function NewsCard({title, description, imageUrl, url, alt, time}) {
     var options = { year: 'numeric', month: 'long', day: 'numeric' };
     return new Date(string).toLocaleDateString([],options);
   }
-  console.log(imageUrl)
   return (
     <a className='news-card-container' href={url}>
       <img className='news-card-image' src={imageUrl} alt={alt} />

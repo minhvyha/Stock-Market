@@ -3,15 +3,12 @@ import { Doughnut } from 'react-chartjs-2';
 import React from 'react';
 
 ChartJS.register(ArcElement, Tooltip, Legend, Title, );
-console.log(ChartJS.defaults.layout);
 ChartJS.overrides['doughnut'].aspectRatio = 1.1
 ChartJS.defaults.layout.padding = 10
 ChartJS.overrides['doughnut'].plugins.tooltip.callbacks.label = function (
   context
 ) {
-  console.log(context);
   let label = ' ' + context.label + ': ' + `${context.formattedValue}$`;
-
   return label;
 };
 
