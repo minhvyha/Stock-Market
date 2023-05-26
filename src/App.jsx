@@ -26,7 +26,7 @@ function App() {
       ? JSON.parse(window.localStorage.getItem('FUTURIS_USER_OBJECT')).expDate >
         new Date().getTime()
         ? JSON.parse(window.localStorage.getItem('FUTURIS_USER_OBJECT')).user
-        : {}
+        : removeLocalStorage()
       : {}
   );
   const [fontSize, setFontSize] = useState('Medium');
@@ -55,6 +55,11 @@ function App() {
 
   function handleSignOut(event) {
     setUser({});
+  }
+
+  function removeLocalStorage(){
+    window.localStorage.removeItem('FUTURIS_USER_OBJECT')
+    return {}
   }
 
   useEffect(() => {
