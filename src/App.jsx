@@ -23,7 +23,10 @@ export const MainPageContext = React.createContext();
 function App() {
   const [user, setUser] = useState(
     window.localStorage.getItem('FUTURIS_USER_OBJECT') !== null
-      ? JSON.parse(window.localStorage.getItem('FUTURIS_USER_OBJECT'))
+      ? JSON.parse(window.localStorage.getItem('FUTURIS_USER_OBJECT')).expDate >
+        new Date().getTime()
+        ? JSON.parse(window.localStorage.getItem('FUTURIS_USER_OBJECT')).user
+        : {}
       : {}
   );
   const [fontSize, setFontSize] = useState('Medium');
@@ -41,9 +44,14 @@ function App() {
     setActivePage(url.slice(1));
   }, []);
 
-  useEffect(() =>{
-    window.localStorage.setItem('FUTURIS_USER_OBJECT', JSON.stringify(user))
-  }, [user])
+  useEffect(() => {
+    let expDate = new Date().setDate(new Date().getDate() + 1);
+    console.log(expDate);
+    window.localStorage.setItem(
+      'FUTURIS_USER_OBJECT',
+      JSON.stringify({ user: user, expDate: expDate })
+    );
+  }, [user]);
 
   function handleSignOut(event) {
     setUser({});
