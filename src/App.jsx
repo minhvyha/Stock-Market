@@ -21,7 +21,11 @@ import Sell from './pages/Main/Sell';
 export const MainPageContext = React.createContext();
 
 function App() {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState(
+    window.localStorage.getItem('FUTURIS_USER_OBJECT') !== null
+      ? JSON.parse(window.localStorage.getItem('FUTURIS_USER_OBJECT'))
+      : {}
+  );
   const [fontSize, setFontSize] = useState('Medium');
   const windowSize = useRef([window.innerWidth, window.innerHeight]);
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -36,6 +40,14 @@ function App() {
     let url = window.location.pathname;
     setActivePage(url.slice(1));
   }, [window.location.pathname]);
+
+  useEffect(() => {
+    console.log(user)
+  }, []);
+
+  useEffect(() =>{
+    window.localStorage.setItem('FUTURIS_USER_OBJECT', JSON.stringify(user))
+  }, [user])
 
   function handleSignOut(event) {
     setUser({});
