@@ -33,6 +33,7 @@ function Portfolio() {
     let data = newData[i];
     labels.push(data.id);
     dataSet.push(`${data.value}`);
+    console.log(data.value)
     otherAmount -= data.value;
     newPortfolioData.push(
       <PortfolioData
