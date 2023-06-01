@@ -43,7 +43,7 @@ function Portfolio() {
       />
     );
   }
-  if (otherAmount !== 0) {
+  if (otherAmount > 0) {
     labels.push('other');
     dataSet.push(otherAmount);
     newPortfolioData.push(
