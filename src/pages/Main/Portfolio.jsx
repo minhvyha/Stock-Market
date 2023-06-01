@@ -28,6 +28,7 @@ function Portfolio() {
   let newPortfolioData = [];
 
   let otherAmount = totalAssets;
+  console.log(otherAmount)
   for (let i = 0; i < newData.length && i < 6; i++) {
     let data = newData[i];
     labels.push(data.id);
