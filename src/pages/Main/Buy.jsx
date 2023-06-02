@@ -115,7 +115,7 @@ function Buy() {
       };
     }
     newAssets[quote].quantity += Number(quantity);
-    newAssets[quote].value = result[0].price * newAssets[quote].quantity;
+    newAssets[quote].value += result[0].price;
 
     var baseUrl = `https://futuris.cyclic.app/${process.env.REACT_APP_DATABASE_KEY}/editUser`;
     let buyResult = await fetch(baseUrl, {

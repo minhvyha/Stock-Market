@@ -6,10 +6,12 @@ import './Login.css';
 import NavIntro from '../../components/NavIntro';
 import useWindowDimensions from '../../components/useWindowDimensions';
 import { MainPageContext } from '../../App';
+import Loading from '../../components/Loading';
 
 function Signup({ setUser }) {
   const { user } = useContext(MainPageContext);
   const [errorLogin, setErrorLogin] = useState();
+	const [loading, setLoading] = useState(false)
   const { width } = useWindowDimensions();
   var emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
   var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/g;
@@ -64,7 +66,9 @@ function Signup({ setUser }) {
   }, []);
 
   async function handleSignUp() {
+    setLoading(true)
     if (checkError()) {
+      setLoading(false)
       return;
     }
     let email = document.getElementById('email-login').value.toLowerCase();
@@ -82,6 +86,8 @@ function Signup({ setUser }) {
       }),
     });
     setUser(result);
+    setLoading(false)
+
     navigate('/');
   }
 
@@ -151,6 +157,7 @@ function Signup({ setUser }) {
           Joined us before? <Link to="/login">Login</Link>
         </div>
       </div>
+      {loading && <Loading />}
     </div>
   );
 }
