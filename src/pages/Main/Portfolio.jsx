@@ -28,10 +28,12 @@ function Portfolio() {
   let newPortfolioData = [];
 
   let otherAmount = totalAssets;
+  console.log(otherAmount)
   for (let i = 0; i < newData.length && i < 6; i++) {
     let data = newData[i];
     labels.push(data.id);
     dataSet.push(`${data.value}`);
+    console.log(data.value)
     otherAmount -= data.value;
     newPortfolioData.push(
       <PortfolioData
@@ -41,7 +43,7 @@ function Portfolio() {
       />
     );
   }
-  if (otherAmount !== 0) {
+  if (otherAmount > 0) {
     labels.push('other');
     dataSet.push(otherAmount);
     newPortfolioData.push(
