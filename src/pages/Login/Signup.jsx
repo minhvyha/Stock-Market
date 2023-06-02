@@ -85,7 +85,9 @@ function Signup({ setUser }) {
         password: password,
       }),
     });
-    setUser(result);
+    let user = await result.json();
+
+    setUser(user);
     setLoading(false)
 
     navigate('/');
