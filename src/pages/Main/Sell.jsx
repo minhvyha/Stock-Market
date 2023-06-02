@@ -76,13 +76,13 @@ function Sell() {
       document.getElementById('sell-error-message').innerHTML = ``;
       return;
     }
-    setLoading(false)
+    setLoading(false);
     document.getElementById('sell-error-message').innerHTML = `* ${error}`;
   }
 
   async function handleSell() {
     setSellError(null);
-    setLoading(true)
+    setLoading(true);
     if (!selected) {
       setSellError('Please fill out all the form.');
       return;
@@ -123,7 +123,7 @@ function Sell() {
     });
     let newUser = await buyResult.json();
     setUser(newUser);
-    setLoading(false)
+    setLoading(false);
   }
 
   return (
