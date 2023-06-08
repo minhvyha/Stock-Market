@@ -25,6 +25,7 @@ function Signup({ setUser }) {
   }, []);
 
   async function signupHandleCallBackResponse(response) {
+    setLoading(true)
     let userObject = jwt_decode(response.credential);
     var baseUrl = `https://futuris.cyclic.app/addUser/${process.env.REACT_APP_DATABASE_KEY}/`;
     let result = await fetch(baseUrl, {
@@ -41,6 +42,8 @@ function Signup({ setUser }) {
     let user = await result.json();
     setUser(user);
     navigate('/');
+    setLoading(false)
+
   }
 
   useEffect(() => {
