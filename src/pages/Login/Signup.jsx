@@ -11,7 +11,7 @@ import Loading from '../../components/Loading';
 function Signup({ setUser }) {
   const { user } = useContext(MainPageContext);
   const [errorLogin, setErrorLogin] = useState();
-	const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
   const { width } = useWindowDimensions();
   var emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
   var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/g;
@@ -25,7 +25,7 @@ function Signup({ setUser }) {
   }, []);
 
   async function signupHandleCallBackResponse(response) {
-    setLoading(true)
+    setLoading(true);
     let userObject = jwt_decode(response.credential);
     var baseUrl = `https://futuris.cyclic.app/addUser/${process.env.REACT_APP_DATABASE_KEY}/`;
     let result = await fetch(baseUrl, {
@@ -42,8 +42,7 @@ function Signup({ setUser }) {
     let user = await result.json();
     setUser(user);
     navigate('/');
-    setLoading(false)
-
+    setLoading(false);
   }
 
   useEffect(() => {
@@ -69,9 +68,9 @@ function Signup({ setUser }) {
   }, []);
 
   async function handleSignUp() {
-    setLoading(true)
+    setLoading(true);
     if (checkError()) {
-      setLoading(false)
+      setLoading(false);
       return;
     }
     let email = document.getElementById('email-login').value.toLowerCase();
@@ -91,7 +90,7 @@ function Signup({ setUser }) {
     let user = await result.json();
 
     setUser(user);
-    setLoading(false)
+    setLoading(false);
 
     navigate('/');
   }
