@@ -18,7 +18,7 @@ function News() {
       );
 
       const responseEthereum = await fetch(
-        `https://futuris.cyclic.app/${process.env.REACT_APP_DATABASE_KEY}/newsApi/crypto`
+        `https://protected-ridge-45795-fa6808efefb4.herokuapp.com/${process.env.REACT_APP_DATABASE_KEY}/newsApi/crypto`
       );
       const ethereumtResponseJson = await responseEthereum.json();
       let cryptoNewsContent = [];

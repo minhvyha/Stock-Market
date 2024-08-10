@@ -32,7 +32,7 @@ function Login({ setUser }) {
 		
 		setLoading(true)
 		let userObject = jwt_decode(response.credential);
-		var baseUrl = `https://futuris.cyclic.app/${process.env.REACT_APP_DATABASE_KEY}/${userObject.email.toLowerCase()}`
+		var baseUrl = `https://protected-ridge-45795-fa6808efefb4.herokuapp.com/${process.env.REACT_APP_DATABASE_KEY}/${userObject.email.toLowerCase()}`
 		const fetchResult = await fetch(baseUrl)
 		const result = await fetchResult.json()
 		if ( result === null){
@@ -76,7 +76,7 @@ function Login({ setUser }) {
 		}
 		let email = document.getElementById('email-login').value.toLowerCase();
 		let password = document.getElementById('password-login').value;
-		var baseUrl = `https://futuris.cyclic.app/${process.env.REACT_APP_DATABASE_KEY}/${email}/${password}`
+		var baseUrl = `https://protected-ridge-45795-fa6808efefb4.herokuapp.com/${process.env.REACT_APP_DATABASE_KEY}/${email}/${password}`
 		
 		const fetchResult = await fetch(baseUrl)
 		if (fetchResult.status === 401){

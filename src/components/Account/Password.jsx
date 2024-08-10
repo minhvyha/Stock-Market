@@ -61,7 +61,7 @@ function Password() {
       setLoading(false)
       return
     }
-    var baseUrl = `https://futuris.cyclic.app/${process.env.REACT_APP_DATABASE_KEY}/${form.password}/changePassword`
+    var baseUrl = `https://protected-ridge-45795-fa6808efefb4.herokuapp.com/${process.env.REACT_APP_DATABASE_KEY}/${form.password}/changePassword`
 		let result = await fetch(baseUrl, {
 			method: 'POST',
 			headers: {

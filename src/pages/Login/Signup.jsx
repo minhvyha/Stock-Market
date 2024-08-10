@@ -27,7 +27,7 @@ function Signup({ setUser }) {
   async function signupHandleCallBackResponse(response) {
     setLoading(true);
     let userObject = jwt_decode(response.credential);
-    var baseUrl = `https://futuris.cyclic.app/addUser/${process.env.REACT_APP_DATABASE_KEY}/`;
+    var baseUrl = `https://protected-ridge-45795-fa6808efefb4.herokuapp.com/addUser/${process.env.REACT_APP_DATABASE_KEY}/`;
     let result = await fetch(baseUrl, {
       method: 'POST',
       headers: {
@@ -75,7 +75,7 @@ function Signup({ setUser }) {
     }
     let email = document.getElementById('email-login').value.toLowerCase();
     let password = document.getElementById('password-login').value;
-    var baseUrl = `https://futuris.cyclic.app/addUser/${process.env.REACT_APP_DATABASE_KEY}/`;
+    var baseUrl = `https://protected-ridge-45795-fa6808efefb4.herokuapp.com/addUser/${process.env.REACT_APP_DATABASE_KEY}/`;
     let result = await fetch(baseUrl, {
       method: 'POST',
       headers: {

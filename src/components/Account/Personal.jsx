@@ -22,7 +22,7 @@ function Personal() {
       setError('Invalid date of birth.')
       return
     }
-    var baseUrl = `https://futuris.cyclic.app/${process.env.REACT_APP_DATABASE_KEY}/editUser`;
+    var baseUrl = `https://protected-ridge-45795-fa6808efefb4.herokuapp.com/${process.env.REACT_APP_DATABASE_KEY}/editUser`;
     let buyResult = await fetch(baseUrl, {
       method: 'POST',
       headers: {

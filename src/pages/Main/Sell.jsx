@@ -109,7 +109,7 @@ function Sell() {
     newAssets[quote].quantity -= Number(quantity);
     newAssets[quote].value = result[0].price * newAssets[quote].quantity;
 
-    var baseUrl = `https://futuris.cyclic.app/${process.env.REACT_APP_DATABASE_KEY}/editUser`;
+    var baseUrl = `https://protected-ridge-45795-fa6808efefb4.herokuapp.com/${process.env.REACT_APP_DATABASE_KEY}/editUser`;
     let buyResult = await fetch(baseUrl, {
       method: 'POST',
       headers: {
